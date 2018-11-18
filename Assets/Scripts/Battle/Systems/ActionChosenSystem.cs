@@ -1,12 +1,10 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Battle.Enums;
 using Entitas.Extensions;
 
 public class ActionChosenSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.ChooseAction};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.Battle};
-
     public ActionChosenSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -22,8 +20,14 @@ public class ActionChosenSystem : GameReactiveSystem
             && entity.battleAction.ActionType != ActionType.ChooseAction;
     }
 
+    protected override bool IsInValidStates()
+    {
+        return _context.battleState.CurrentBattleState == BattleState.ChooseAction &&
+               _context.gameState.CurrentGameState == GameState.Battle;
+    }
+
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        _context.SetNewSubstate(SubState.ChooseTarget);
+        _context.SetNewBattlestate(BattleState.ChooseTarget);
     }
 }

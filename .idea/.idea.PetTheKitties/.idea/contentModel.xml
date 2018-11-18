@@ -40,6 +40,7 @@
               <e p="GameBattleComponent.cs" t="Include" />
               <e p="GameBattleEndComponent.cs" t="Include" />
               <e p="GameBattleImageComponent.cs" t="Include" />
+              <e p="GameBattleStateComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterBattleStateComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
@@ -66,6 +67,7 @@
               <e p="GameViewComponent.cs" t="Include" />
               <e p="GameWinConditionComponent.cs" t="Include" />
               <e p="GameWinConditionsFulfilledComponent.cs" t="Include" />
+              <e p="GameWorldStateComponent.cs" t="Include" />
             </e>
             <e p="GameAttribute.cs" t="Include" />
             <e p="GameComponentsLookup.cs" t="Include" />
@@ -109,6 +111,7 @@
               <e p="BattleComponent.cs" t="Include" />
               <e p="BattleEndComponent.cs" t="Include" />
               <e p="BattleImageComponent.cs" t="Include" />
+              <e p="BattleStateComponent.cs" t="Include" />
               <e p="CharacterBattleStateComponent.cs" t="Include" />
               <e p="DefendComponent.cs" t="Include" />
               <e p="DefenseStatComponent.cs" t="Include" />
@@ -122,6 +125,7 @@
               <e p="WinConditionsFulfilledComponent.cs" t="Include" />
             </e>
             <e p="Enums" t="Include">
+              <e p="BattleState.cs" t="Include" />
               <e p="ConditionModifier.cs" t="Include" />
               <e p="LoseCondition.cs" t="Include" />
               <e p="WinCondition.cs" t="Include" />
@@ -308,6 +312,7 @@
           <e p="World" t="Include">
             <e p="Components" t="Include">
               <e p="MovementSpeedComponent.cs" t="Include" />
+              <e p="WorldStateComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="EnterWorldStateSystem.cs" t="Include" />
@@ -315,6 +320,7 @@
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />
+            <e p="WorldState.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

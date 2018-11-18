@@ -28,6 +28,13 @@ public static class InputConfiguration
                 {
                     {InputAxis.Cancel, InputCommand.ExitMenu}
                 }
+            },
+            {
+                GameState.World, new Dictionary<string, InputCommand>()
+                {
+                    {InputAxis.Pause, InputCommand.Pause},
+                    {InputAxis.Move, InputCommand.Move}
+                }
             }
         };
 
@@ -41,6 +48,12 @@ public static class InputConfiguration
             },
             {
                 SubState.ChooseAction, new Dictionary<string, InputCommand>()
+                {
+                    {InputAxis.Pause, InputCommand.Pause}
+                }
+            },
+            {
+                SubState.ChooseTarget, new Dictionary<string, InputCommand>()
                 {
                     {InputAxis.Cancel, InputCommand.CancelAction},
                     {InputAxis.Pause, InputCommand.Pause}

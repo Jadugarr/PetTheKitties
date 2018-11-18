@@ -5,5 +5,6 @@
     CancelAction,
     ExitMenu,
     Pause,
-    Unpause
+    Unpause,
+    Move
 }

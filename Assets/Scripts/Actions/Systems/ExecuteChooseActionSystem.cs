@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Battle.Enums;
 using Entitas.Extensions;
 using UnityEngine;
 
 public class ExecuteChooseActionSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Waiting};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.Battle};
-
     public ExecuteChooseActionSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -23,8 +21,14 @@ public class ExecuteChooseActionSystem : GameReactiveSystem
         return entity.battleAction.ActionType == ActionType.ChooseAction && entity.executionTime.RemainingTime <= 0f;
     }
 
+    protected override bool IsInValidStates()
+    {
+        return _context.battleState.CurrentBattleState == BattleState.Waiting &&
+               _context.gameState.CurrentGameState == GameState.Battle;
+    }
+
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        _context.SetNewSubstate(SubState.ChooseAction);
+        _context.SetNewBattlestate(BattleState.ChooseAction);
     }
 }

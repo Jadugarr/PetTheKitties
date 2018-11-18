@@ -16,34 +16,36 @@ public static class GameComponentsLookup {
     public const int Battle = 5;
     public const int BattleEnd = 6;
     public const int BattleImage = 7;
-    public const int ChangeScene = 8;
-    public const int CharacterBattleState = 9;
-    public const int Defend = 10;
-    public const int DefenseStat = 11;
-    public const int Enemy = 12;
-    public const int EnemySpawnCooldown = 13;
-    public const int EnemySpawnInput = 14;
-    public const int ExecuteAction = 15;
-    public const int ExecutionTime = 16;
-    public const int GameState = 17;
-    public const int Health = 18;
-    public const int Id = 19;
-    public const int Input = 20;
-    public const int LoseCondition = 21;
-    public const int LoseConditionsFulfilled = 22;
-    public const int MovementSpeed = 23;
-    public const int Player = 24;
-    public const int Position = 25;
-    public const int SceneLoaded = 26;
-    public const int Speed = 27;
-    public const int SubState = 28;
-    public const int Target = 29;
-    public const int UnloadScene = 30;
-    public const int View = 31;
-    public const int WinCondition = 32;
-    public const int WinConditionsFulfilled = 33;
+    public const int BattleState = 8;
+    public const int ChangeScene = 9;
+    public const int CharacterBattleState = 10;
+    public const int Defend = 11;
+    public const int DefenseStat = 12;
+    public const int Enemy = 13;
+    public const int EnemySpawnCooldown = 14;
+    public const int EnemySpawnInput = 15;
+    public const int ExecuteAction = 16;
+    public const int ExecutionTime = 17;
+    public const int GameState = 18;
+    public const int Health = 19;
+    public const int Id = 20;
+    public const int Input = 21;
+    public const int LoseCondition = 22;
+    public const int LoseConditionsFulfilled = 23;
+    public const int MovementSpeed = 24;
+    public const int Player = 25;
+    public const int Position = 26;
+    public const int SceneLoaded = 27;
+    public const int Speed = 28;
+    public const int SubState = 29;
+    public const int Target = 30;
+    public const int UnloadScene = 31;
+    public const int View = 32;
+    public const int WinCondition = 33;
+    public const int WinConditionsFulfilled = 34;
+    public const int WorldState = 35;
 
-    public const int TotalComponents = 34;
+    public const int TotalComponents = 36;
 
     public static readonly string[] componentNames = {
         "ActionFinished",
@@ -54,6 +56,7 @@ public static class GameComponentsLookup {
         "Battle",
         "BattleEnd",
         "BattleImage",
+        "BattleState",
         "ChangeScene",
         "CharacterBattleState",
         "Defend",
@@ -79,7 +82,8 @@ public static class GameComponentsLookup {
         "UnloadScene",
         "View",
         "WinCondition",
-        "WinConditionsFulfilled"
+        "WinConditionsFulfilled",
+        "WorldState"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -91,6 +95,7 @@ public static class GameComponentsLookup {
         typeof(BattleComponent),
         typeof(BattleEndComponent),
         typeof(BattleImageComponent),
+        typeof(BattleStateComponent),
         typeof(ChangeSceneComponent),
         typeof(CharacterBattleStateComponent),
         typeof(DefendComponent),
@@ -116,6 +121,7 @@ public static class GameComponentsLookup {
         typeof(UnloadSceneComponent),
         typeof(ViewComponent),
         typeof(WinConditionComponent),
-        typeof(WinConditionsFulfilledComponent)
+        typeof(WinConditionsFulfilledComponent),
+        typeof(WorldStateComponent)
     };
 }
