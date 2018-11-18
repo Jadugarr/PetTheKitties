@@ -311,8 +311,8 @@
             </e>
             <e p="Systems" t="Include">
               <e p="EnterWorldStateSystem.cs" t="Include" />
+              <e p="InitializeWorldStateSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
-              <e p="WorldSceneLoadedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />
           </e>

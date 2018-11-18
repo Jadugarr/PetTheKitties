@@ -1,28 +1,19 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Extensions;
+using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
-public class WorldSceneLoadedSystem : GameReactiveSystem
+public class InitializeWorldStateSystem : GameInitializeSystem
 {
     protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Undefined};
     protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.World};
 
-    public WorldSceneLoadedSystem(IContext<GameEntity> context) : base(context)
+    public InitializeWorldStateSystem(GameContext context) : base(context)
     {
     }
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.SceneLoaded);
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.sceneLoaded.LoadedSceneName == GameSceneConstants.WorldScene;
-    }
-
-    protected override void ExecuteSystem(List<GameEntity> entities)
+    protected override void ExecuteSystem()
     {
         //Create player entity
         GameEntity playerEntity = _context.CreateEntity();

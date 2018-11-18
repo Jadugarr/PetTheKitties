@@ -12,6 +12,7 @@ public class EnterWorldStateSystem : GameReactiveSystem
 
     public EnterWorldStateSystem(IContext<GameEntity> context) : base(context)
     {
+        _sceneLoaded = _context.GetGroup(GameMatcher.SceneLoaded);
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -26,13 +27,18 @@ public class EnterWorldStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
+        _sceneLoaded.OnEntityAdded += OnWorldSceneLoaded;
+
+        _context.CreateEntity().AddChangeScene(GameSceneConstants.WorldScene, LoadSceneMode.Additive);
+    }
+
+    private void OnWorldSceneLoaded(IGroup<GameEntity> @group, GameEntity entity, int index, IComponent component)
+    {
         if (!GameSystemService.HasSystemMapping(GameState.World))
         {
             Debug.LogError("World systems haven't been created yet!");
         }
 
         GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameState.World));
-
-        _context.CreateEntity().AddChangeScene(GameSceneConstants.WorldScene, LoadSceneMode.Additive);
     }
 }

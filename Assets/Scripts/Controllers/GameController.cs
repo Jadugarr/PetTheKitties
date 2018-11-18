@@ -178,7 +178,7 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
 
         Systems worldNavigationSystems = new Feature("WorldNavigationSystems")
-            .Add(new WorldSceneLoadedSystem(context))
+            .Add(new InitializeWorldStateSystem(context))
             .Add(new WorldPlayerAddedSystem(context));
         
         GameSystemService.AddSystemMapping(GameState.World, worldNavigationSystems);
