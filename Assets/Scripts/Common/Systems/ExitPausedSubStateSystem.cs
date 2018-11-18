@@ -22,6 +22,6 @@ public class ExitPausedSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        UIService.HideWidget(AssetTypes.PauseOverlay);
+        UIService.HideWidget(UiAssetTypes.PauseOverlay);
     }
 }

@@ -12,7 +12,7 @@
 
     public override string GetName()
     {
-        return AssetTypes.PauseOverlay;
+        return UiAssetTypes.PauseOverlay;
     }
 
     public override UiComponentType GetComponentType()

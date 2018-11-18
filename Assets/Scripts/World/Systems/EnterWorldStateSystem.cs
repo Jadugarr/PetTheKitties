@@ -1,9 +1,15 @@
 using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class EnterWorldStateSystem : ReactiveSystem<GameEntity>
+public class EnterWorldStateSystem : GameReactiveSystem
 {
+    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Undefined};
+    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.World};
+
+    private IGroup<GameEntity> _sceneLoaded;
+
     public EnterWorldStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -15,11 +21,18 @@ public class EnterWorldStateSystem : ReactiveSystem<GameEntity>
 
     protected override bool Filter(GameEntity entity)
     {
-        return true;
+        return _context.gameState.CurrentGameState == GameState.World;
     }
 
-    protected override void Execute(List<GameEntity> entities)
+    protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        
+        if (!GameSystemService.HasSystemMapping(GameState.World))
+        {
+            Debug.LogError("World systems haven't been created yet!");
+        }
+
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameState.World));
+
+        _context.CreateEntity().AddChangeScene(GameSceneConstants.WorldScene, LoadSceneMode.Additive);
     }
 }

@@ -15,7 +15,7 @@ public class BattleResultWidget : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.BattleResultText;
+        return UiAssetTypes.BattleResultText;
     }
 
     public override UiComponentType GetComponentType()

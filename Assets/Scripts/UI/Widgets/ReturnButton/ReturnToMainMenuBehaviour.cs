@@ -22,7 +22,7 @@ public class ReturnToMainMenuBehaviour : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.ReturnButton;
+        return UiAssetTypes.ReturnButton;
     }
 
     public override UiComponentType GetComponentType()

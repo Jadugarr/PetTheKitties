@@ -55,6 +55,7 @@
               <e p="GameInputComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
+              <e p="GameMovementSpeedComponent.cs" t="Include" />
               <e p="GamePlayerComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
               <e p="GameSceneLoadedComponent.cs" t="Include" />
@@ -247,7 +248,6 @@
             </e>
           </e>
           <e p="UI" t="Include">
-            <e p="AssetTypes.cs" t="Include" />
             <e p="Layers" t="Include">
               <e p="DynamicUiLayer.cs" t="Include" />
               <e p="OverlayUiLayer.cs" t="Include" />
@@ -256,6 +256,7 @@
             <e p="Systems" t="Include">
               <e p="InitializeMainMenuSystem.cs" t="Include" />
             </e>
+            <e p="UiAssetTypes.cs" t="Include" />
             <e p="UiComponentType.cs" t="Include" />
             <e p="UIService.cs" t="Include" />
             <e p="Widgets" t="Include">
@@ -305,9 +306,15 @@
             <e p="ViewComponent.cs" t="Include" />
           </e>
           <e p="World" t="Include">
+            <e p="Components" t="Include">
+              <e p="MovementSpeedComponent.cs" t="Include" />
+            </e>
             <e p="Systems" t="Include">
               <e p="EnterWorldStateSystem.cs" t="Include" />
+              <e p="WorldPlayerAddedSystem.cs" t="Include" />
+              <e p="WorldSceneLoadedSystem.cs" t="Include" />
             </e>
+            <e p="WorldAssetTypes.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

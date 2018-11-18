@@ -32,7 +32,7 @@ public class InitializeBattleSystem : IInitializeSystem
 
     private void CreateReturnButton()
     {
-        UIService.ShowWidget(AssetTypes.ReturnButton, new ReturnButtonProperties());
+        UIService.ShowWidget(UiAssetTypes.ReturnButton, new ReturnButtonProperties());
     }
 
     private void CreatePlayerEntities()

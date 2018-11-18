@@ -39,7 +39,7 @@ public class ExitBattleStateSystem : GameReactiveSystem
         }
 
         UIService.HideWidget(new[]
-            {AssetTypes.ReturnButton, AssetTypes.Atb, AssetTypes.ActionChooser, AssetTypes.BattleResultText});
+            {UiAssetTypes.ReturnButton, UiAssetTypes.Atb, UiAssetTypes.ActionChooser, UiAssetTypes.BattleResultText});
         _context.SetNewSubstate(SubState.Undefined);
         GameEntity unloadSceneEntity = _context.CreateEntity();
         unloadSceneEntity.AddUnloadScene(GameSceneConstants.BattleScene);

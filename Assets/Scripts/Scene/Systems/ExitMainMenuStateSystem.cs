@@ -29,7 +29,7 @@ public class ExitMainMenuStateSystem : GameReactiveSystem
             GameSystemService.RemoveActiveSystems(mainMenuSystems);
         }
 
-        UIService.HideWidget(AssetTypes.MainMenu);
+        UIService.HideWidget(UiAssetTypes.MainMenu);
         GameEntity unloadScenEntity = _context.CreateEntity();
         unloadScenEntity.AddUnloadScene(GameSceneConstants.MainMenuScene);
     }

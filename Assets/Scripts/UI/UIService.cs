@@ -98,6 +98,7 @@ public static class UIService
         }
     }
 
+    // TODO: Load assets Async and make a promise out of this
     public static GameObject GetAsset(string assetPath)
     {
         if (loadedAssets.ContainsKey(assetPath))

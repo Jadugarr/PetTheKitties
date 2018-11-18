@@ -19,7 +19,7 @@ public class CharacterChooserItemWidget : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.CharacterChooserItem;
+        return UiAssetTypes.CharacterChooserItem;
     }
 
     public override UiComponentType GetComponentType()

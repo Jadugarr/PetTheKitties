@@ -42,7 +42,7 @@ public class ActionChooserWidget : AWidget
 
         if (chooseItemPrefab == null)
         {
-            chooseItemPrefab = UIService.GetAsset(AssetTypes.ActionChooserItem);
+            chooseItemPrefab = UIService.GetAsset(UiAssetTypes.ActionChooserItem);
         }
 
         foreach (BattleActionChoice propsActionType in props.ActionChoices)
@@ -59,7 +59,7 @@ public class ActionChooserWidget : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.ActionChooser;
+        return UiAssetTypes.ActionChooser;
     }
 
     public override UiComponentType GetComponentType()
@@ -86,6 +86,6 @@ public class ActionChooserWidget : AWidget
         ActionChooserProperties props = (ActionChooserProperties) properties;
         props.BattleActionEntity.ReplaceBattleAction(props.BattleActionEntity.battleAction.EntityId, actionType,
             ActionATBType.Waiting);
-        UIService.HideWidget(AssetTypes.ActionChooser);
+        UIService.HideWidget(UiAssetTypes.ActionChooser);
     }
 }

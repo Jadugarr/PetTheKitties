@@ -22,6 +22,6 @@ public class EnterPausedSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        UIService.ShowWidget(AssetTypes.PauseOverlay, null);
+        UIService.ShowWidget(UiAssetTypes.PauseOverlay, null);
     }
 }

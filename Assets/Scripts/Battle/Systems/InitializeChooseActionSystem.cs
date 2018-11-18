@@ -31,7 +31,7 @@ namespace Entitas.Battle.Systems
                 
                 if (characterEntity.isPlayer)
                 {
-                    UIService.ShowWidget(AssetTypes.ActionChooser,
+                    UIService.ShowWidget(UiAssetTypes.ActionChooser,
                         new ActionChooserProperties(currentEntity,
                             characterEntity.battleActionChoices.BattleActionChoices.ToArray(), context));
                 }

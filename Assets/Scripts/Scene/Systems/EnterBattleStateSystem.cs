@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Entitas;
 using Entitas.Battle.Systems;
 using Entitas.Extensions;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class EnterBattleStateSystem : GameReactiveSystem
@@ -41,15 +42,12 @@ public class EnterBattleStateSystem : GameReactiveSystem
 
         if (!GameSystemService.HasSystemMapping(GameState.Battle))
         {
-            CreateBattleSystems();
+            Debug.LogError("Didn't create battle state systems yet!");
+            return;
         }
 
         Systems battleSystems = GameSystemService.GetSystemMapping(GameState.Battle);
         GameSystemService.AddActiveSystems(battleSystems);
         _context.SetNewSubstate(SubState.Waiting);
-    }
-
-    private void CreateBattleSystems()
-    {
     }
 }

@@ -19,7 +19,7 @@ public class ActionChooserItemWidget : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.ActionChooserItem;
+        return UiAssetTypes.ActionChooserItem;
     }
 
     public override UiComponentType GetComponentType()

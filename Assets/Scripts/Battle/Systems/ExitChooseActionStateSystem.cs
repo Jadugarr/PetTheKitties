@@ -27,6 +27,6 @@ public class ExitChooseActionStateSystem : GameReactiveSystem
             GameSystemService.RemoveActiveSystems(GameSystemService.GetSubSystemMapping(SubState.ChooseAction));
         }
 
-        UIService.HideWidget(AssetTypes.ActionChooser);
+        UIService.HideWidget(UiAssetTypes.ActionChooser);
     }
 }

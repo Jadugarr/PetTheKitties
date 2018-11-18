@@ -52,6 +52,7 @@ public class GameController : MonoBehaviour
             .Add(new ExitBattleStateSystem(context))
             .Add(new EnterMainMenuStateSystem(context))
             .Add(new ExitMainMenuStateSystem(context))
+            .Add(new EnterWorldStateSystem(context))
             .Add(new ChangeSceneSystem(context))
             .Add(new UnloadSceneSystem(context))
             .Add(new CleanupSceneLoadedSystem(context))
@@ -118,7 +119,7 @@ public class GameController : MonoBehaviour
             .Add(new ActionFinishedSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.ExecuteAction, executeActionSystems);
-        
+
         Systems battleSystems = new Feature("BattleStateSystems")
             .Add(new InitializeBattleSystem(context))
             .Add(new InitializeATBSystem(context))
@@ -134,7 +135,7 @@ public class GameController : MonoBehaviour
 
 
         GameSystemService.AddSystemMapping(GameState.Battle, battleSystems);
-        
+
         Systems waitStateSystems = new Feature("WaitingSubStateSystems")
             .Add(new ActionTimeSystem(context))
             //Actions
@@ -142,38 +143,44 @@ public class GameController : MonoBehaviour
             .Add(new ExecuteActionsSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.Waiting, waitStateSystems);
-        
+
         Systems mainMenuSystems = new Feature("MainMenuSystems");
         mainMenuSystems.Add(new InitializeMainMenuSystem());
 
         GameSystemService.AddSystemMapping(GameState.MainMenu, mainMenuSystems);
-        
+
         Systems finalizeActionSystems = new Feature("finalizeActionSystems")
             .Add(new AddActionTimeSystem(context))
             .Add(new ActionTimeAddedSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.FinalizeAction, finalizeActionSystems);
-        
+
         Systems playerLostSystems = new Feature("PlayerLostSystems")
             .Add(new DisplayBattleLostSystem());
 
         GameSystemService.AddSubSystemMapping(SubState.PlayerLost, playerLostSystems);
-        
+
         Systems playerWonSystems = new Feature("PlayerWonSystems")
             .Add(new DisplayBattleWonSystem());
-        
+
         GameSystemService.AddSubSystemMapping(SubState.PlayerWon, playerWonSystems);
-        
+
         Systems chooseTargetSystems = new Feature("ChooseTargetSystems")
             .Add(new InitializeChooseTargetSystem(context))
             .Add(new ActionTargetChosenSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.ChooseTarget, chooseTargetSystems);
-        
+
         Systems chooseActionSystems = new Feature("ChooseActionSystems")
             .Add(new InitializeChooseActionSystem(context))
             .Add(new ActionChosenSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
+
+        Systems worldNavigationSystems = new Feature("WorldNavigationSystems")
+            .Add(new WorldSceneLoadedSystem(context))
+            .Add(new WorldPlayerAddedSystem(context));
+        
+        GameSystemService.AddSystemMapping(GameState.World, worldNavigationSystems);
     }
 }

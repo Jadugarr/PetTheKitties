@@ -1,4 +1,4 @@
-﻿public abstract class AssetTypes
+﻿public abstract class UiAssetTypes
 {
     public const string Atb = "UI/Battle/ATB/ATB";
     public const string ReturnButton = "TestComponents/ReturnButton";

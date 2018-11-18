@@ -16,7 +16,7 @@ public class ATBItemWidget : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.AtbItem;
+        return UiAssetTypes.AtbItem;
     }
 
     public override UiComponentType GetComponentType()

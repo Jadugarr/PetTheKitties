@@ -4,12 +4,12 @@ namespace Entitas.Battle.Systems
     {
         public void Initialize()
         {
-            UIService.ShowWidget(AssetTypes.BattleResultText, new BattleResultWidgetProperties("I won!"));
+            UIService.ShowWidget(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I won!"));
         }
 
         public void TearDown()
         {
-            UIService.HideWidget(AssetTypes.BattleResultText);
+            UIService.HideWidget(UiAssetTypes.BattleResultText);
         }
     }
 }

@@ -8,6 +8,8 @@ public class MainMenuBehaviour : AWidget
 
     [SerializeField] private Button exitGameButton;
 
+    [SerializeField] private Button worldNavigationButton;
+
     private GameContext context;
 
     public override void Open()
@@ -23,7 +25,7 @@ public class MainMenuBehaviour : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.MainMenu;
+        return UiAssetTypes.MainMenu;
     }
 
     public override UiComponentType GetComponentType()
@@ -34,6 +36,11 @@ public class MainMenuBehaviour : AWidget
     private void OnBattleButtonClicked()
     {
         context.SetNewGamestate(GameState.Battle);
+    }
+
+    private void OnWorldNavigationButtonClicked()
+    {
+        context.SetNewGamestate(GameState.World);
     }
 
     private void OnExitGameButtonClicked()
@@ -49,6 +56,7 @@ public class MainMenuBehaviour : AWidget
     {
         battlePrototypeButton.onClick.AddListener(OnBattleButtonClicked);
         exitGameButton.onClick.AddListener(OnExitGameButtonClicked);
+        worldNavigationButton.onClick.AddListener(OnWorldNavigationButtonClicked);
     }
 
     private void RemoveEventListeners()

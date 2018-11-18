@@ -23,7 +23,7 @@ public class ATBBarWidget : AWidget
 
     public override void Open()
     {
-        itemPrefab = UIService.GetAsset(AssetTypes.AtbItem);
+        itemPrefab = UIService.GetAsset(UiAssetTypes.AtbItem);
         chooseCommandDistance = ChooseMarker.transform.localPosition.x - StartMarker.transform.localPosition.x;
         executeActionDistance = ActMarker.transform.localPosition.x - ChooseMarker.transform.localPosition.x;
 
@@ -49,7 +49,7 @@ public class ATBBarWidget : AWidget
 
     public override string GetName()
     {
-        return AssetTypes.Atb;
+        return UiAssetTypes.Atb;
     }
 
     public override UiComponentType GetComponentType()

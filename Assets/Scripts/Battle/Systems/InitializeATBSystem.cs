@@ -11,6 +11,6 @@ public class InitializeATBSystem : IInitializeSystem
 
     public void Initialize()
     {
-        UIService.ShowWidget(AssetTypes.Atb, new ATBBarProperties(context));
+        UIService.ShowWidget(UiAssetTypes.Atb, new ATBBarProperties(context));
     }
 }
