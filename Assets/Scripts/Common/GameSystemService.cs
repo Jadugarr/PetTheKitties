@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
 public static class GameSystemService
@@ -98,6 +99,7 @@ public static class GameSystemService
     {
         if (!stateSystemMap.ContainsKey(state))
         {
+            systems.DeactivateReactiveSystems();
             stateSystemMap.Add(state, systems);
         }
         else
