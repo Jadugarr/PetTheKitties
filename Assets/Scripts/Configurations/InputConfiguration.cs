@@ -45,6 +45,13 @@ public static class InputConfiguration
                     {InputAxis.Cancel, InputCommand.CancelAction},
                     {InputAxis.Pause, InputCommand.Pause}
                 }
+            },
+            {
+                SubState.WorldNavigation, new Dictionary<string, InputCommand>()
+                {
+                    {InputAxis.Move, InputCommand.Move},
+                    {InputAxis.Pause, InputCommand.Pause}
+                }
             }
         };
     }
