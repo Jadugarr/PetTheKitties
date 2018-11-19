@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
 using Entitas;
-using Entitas.Battle.Enums;
 using UnityEngine;
 
 public class CheckPlayerDeadConditionSystem : GameReactiveSystem
 {
+    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
+    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
+    
     private IGroup<GameEntity> playerEntities;
 
     public CheckPlayerDeadConditionSystem(IContext<GameEntity> context) : base(context)
@@ -20,12 +22,6 @@ public class CheckPlayerDeadConditionSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return playerEntities.count == 0;
-    }
-
-    protected override bool IsInValidStates()
-    {
-        return _context.battleState.CurrentBattleState == BattleState.Undefined &&
-               _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

@@ -1,11 +1,13 @@
 using System.Collections.Generic;
 using Entitas;
-using Entitas.Battle.Enums;
 using Entitas.Extensions;
 using UnityEngine;
 
 public class ActionTimeAddedSystem : GameReactiveSystem
 {
+    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.FinalizeAction};
+    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
+    
     public ActionTimeAddedSystem(IContext<GameEntity> context) : base(context)
     {
         
@@ -21,14 +23,8 @@ public class ActionTimeAddedSystem : GameReactiveSystem
         return true;
     }
 
-    protected override bool IsInValidStates()
-    {
-        return _context.battleState.CurrentBattleState == BattleState.FinalizeAction &&
-               _context.gameState.CurrentGameState == GameState.Battle;
-    }
-
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        _context.SetNewBattlestate(BattleState.Waiting);
+        _context.SetNewSubstate(SubState.Waiting);
     }
 }

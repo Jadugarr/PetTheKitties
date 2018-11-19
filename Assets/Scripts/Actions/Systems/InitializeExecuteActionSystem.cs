@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Entitas.Battle.Enums;
 using Entitas.Extensions;
 using Entitas.Scripts.Common.Systems;
 
@@ -7,14 +6,11 @@ namespace Entitas.Actions.Systems
 {
     public class InitializeExecuteActionSystem : GameInitializeSystem
     {
+        protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.ExecuteAction};
+        protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.Battle};
+
         public InitializeExecuteActionSystem(GameContext context) : base(context)
         {
-        }
-
-        protected override bool IsInValidStates()
-        {
-            return _context.battleState.CurrentBattleState == BattleState.ExecuteAction &&
-                   _context.gameState.CurrentGameState == GameState.Battle;
         }
 
         protected override void ExecuteSystem()
@@ -35,7 +31,7 @@ namespace Entitas.Actions.Systems
 
             if (!entityFound)
             {
-                _context.SetNewBattlestate(BattleState.Waiting);
+                _context.SetNewSubstate(SubState.Waiting);
             }
         }
     }

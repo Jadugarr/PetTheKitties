@@ -131,9 +131,7 @@ public class GameController : MonoBehaviour
             .Add(new InitializeAndTeardownWinConditionsSystem(context))
             .Add(new InitializeAndTeardownLoseConditionsSystem(context))
             .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context))
-            //Input
-            .Add(new ProcessBattleCancelInputSystem(context));
+            .Add(new LoseConditionControllerSystem(context));
 
 
         GameSystemService.AddSystemMapping(GameState.Battle, battleSystems);
@@ -182,7 +180,7 @@ public class GameController : MonoBehaviour
         Systems worldNavigationSystems = new Feature("WorldNavigationSystems")
             .Add(new InitializeWorldStateSystem(context))
             .Add(new WorldPlayerAddedSystem(context));
-
+        
         GameSystemService.AddSystemMapping(GameState.World, worldNavigationSystems);
     }
 }

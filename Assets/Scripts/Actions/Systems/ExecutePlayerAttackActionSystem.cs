@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entitas;
-using Entitas.Battle.Enums;
 using UnityEngine;
 
 public class ExecutePlayerAttackActionSystem : GameReactiveSystem
 {
+    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.ExecuteAction};
+    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
+
     public ExecutePlayerAttackActionSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -24,12 +26,6 @@ public class ExecutePlayerAttackActionSystem : GameReactiveSystem
         }
 
         return false;
-    }
-
-    protected override bool IsInValidStates()
-    {
-        return _context.battleState.CurrentBattleState == BattleState.ExecuteAction &&
-               _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)
