@@ -4,9 +4,6 @@ using Entitas.Extensions;
 
 public class WinConditionControllerSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-
     public WinConditionControllerSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -29,6 +26,11 @@ public class WinConditionControllerSystem : GameReactiveSystem
         }
 
         return everythingFulfilled;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

@@ -4,9 +4,6 @@ using Entitas.Extensions;
 
 public class ProcessBattleCancelInputSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Undefined};
-
     public ProcessBattleCancelInputSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -19,6 +16,11 @@ public class ProcessBattleCancelInputSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity != null && entity.input != null && entity.input.InputCommand == InputCommand.CancelAction;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

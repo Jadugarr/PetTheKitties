@@ -6,11 +6,13 @@ using UnityEngine;
 
 public class InitializeWorldStateSystem : GameInitializeSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.World};
-
     public InitializeWorldStateSystem(GameContext context) : base(context)
     {
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.World;
     }
 
     protected override void ExecuteSystem()

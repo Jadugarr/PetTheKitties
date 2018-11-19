@@ -3,9 +3,6 @@ using Entitas;
 
 public class EnterBattleWonStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.PlayerWon};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-    
     public EnterBattleWonStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -18,6 +15,12 @@ public class EnterBattleWonStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.subState.CurrentSubState == SubState.PlayerWon;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.PlayerWon;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

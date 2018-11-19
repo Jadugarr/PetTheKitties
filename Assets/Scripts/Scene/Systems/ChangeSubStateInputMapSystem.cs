@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ChangeSubStateInputMapSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Undefined};
-    
     public ChangeSubStateInputMapSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -17,6 +14,11 @@ public class ChangeSubStateInputMapSystem : GameReactiveSystem
     }
 
     protected override bool Filter(GameEntity entity)
+    {
+        return true;
+    }
+
+    protected override bool IsInValidState()
     {
         return true;
     }

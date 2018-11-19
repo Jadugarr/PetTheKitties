@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ExitBattleLostStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-    
     public ExitBattleLostStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -19,6 +16,11 @@ public class ExitBattleLostStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.subState.PreviousSubState == SubState.PlayerLost;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

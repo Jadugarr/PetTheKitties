@@ -4,9 +4,6 @@ using Entitas.Battle.Systems;
 
 public class EnterFinalizeActionStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.FinalizeAction};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-
     public EnterFinalizeActionStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -19,6 +16,12 @@ public class EnterFinalizeActionStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.subState.CurrentSubState == SubState.FinalizeAction;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.FinalizeAction;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)
@@ -38,9 +41,6 @@ public class EnterFinalizeActionStateSystem : GameReactiveSystem
 
 public class ExitFinalizeActionStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-
     public ExitFinalizeActionStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -53,6 +53,11 @@ public class ExitFinalizeActionStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.subState.PreviousSubState == SubState.FinalizeAction;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

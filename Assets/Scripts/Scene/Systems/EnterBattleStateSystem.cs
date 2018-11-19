@@ -8,9 +8,6 @@ using UnityEngine.SceneManagement;
 
 public class EnterBattleStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-    
     private IGroup<GameEntity> sceneLoadedGroup;
 
     public EnterBattleStateSystem(GameContext context) : base(context)
@@ -26,6 +23,11 @@ public class EnterBattleStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.gameState.CurrentGameState == GameState.Battle;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

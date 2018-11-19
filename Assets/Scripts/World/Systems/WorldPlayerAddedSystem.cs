@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class WorldPlayerAddedSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.World};
-
     public WorldPlayerAddedSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -19,6 +16,11 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.isPlayer;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.World;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class LoseConditionControllerSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-
     public LoseConditionControllerSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -30,6 +27,11 @@ public class LoseConditionControllerSystem : GameReactiveSystem
         }
 
         return everythingFulfilled;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

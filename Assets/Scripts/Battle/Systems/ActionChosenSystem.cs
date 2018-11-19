@@ -4,9 +4,6 @@ using Entitas.Extensions;
 
 public class ActionChosenSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.ChooseAction};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.Battle};
-
     public ActionChosenSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -20,6 +17,12 @@ public class ActionChosenSystem : GameReactiveSystem
     {
         return entity.battleAction.ActionType != ActionType.None
             && entity.battleAction.ActionType != ActionType.ChooseAction;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.ChooseAction;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

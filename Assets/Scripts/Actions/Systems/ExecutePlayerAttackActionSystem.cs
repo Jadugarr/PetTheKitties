@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class ExecutePlayerAttackActionSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.ExecuteAction};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-
     public ExecutePlayerAttackActionSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -26,6 +23,12 @@ public class ExecutePlayerAttackActionSystem : GameReactiveSystem
         }
 
         return false;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.ExecuteAction;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

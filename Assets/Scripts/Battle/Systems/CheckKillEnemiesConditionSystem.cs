@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class CheckKillEnemiesConditionSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-    
     private IGroup<GameEntity> enemyEntities;
 
     public CheckKillEnemiesConditionSystem(GameContext context) : base(context)
@@ -22,6 +19,11 @@ public class CheckKillEnemiesConditionSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return enemyEntities.count == 0;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

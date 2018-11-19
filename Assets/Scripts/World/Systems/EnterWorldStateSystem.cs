@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EnterWorldStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.World};
-
     private IGroup<GameEntity> _sceneLoaded;
 
     public EnterWorldStateSystem(IContext<GameEntity> context) : base(context)
@@ -21,6 +18,11 @@ public class EnterWorldStateSystem : GameReactiveSystem
     }
 
     protected override bool Filter(GameEntity entity)
+    {
+        return _context.gameState.CurrentGameState == GameState.World;
+    }
+
+    protected override bool IsInValidState()
     {
         return _context.gameState.CurrentGameState == GameState.World;
     }

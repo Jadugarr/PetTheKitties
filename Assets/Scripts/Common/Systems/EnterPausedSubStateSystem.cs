@@ -3,9 +3,6 @@ using Entitas;
 
 public class EnterPausedSubStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Paused};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Undefined};
-
     public EnterPausedSubStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -16,6 +13,11 @@ public class EnterPausedSubStateSystem : GameReactiveSystem
     }
 
     protected override bool Filter(GameEntity entity)
+    {
+        return _context.subState.CurrentSubState == SubState.Paused;
+    }
+
+    protected override bool IsInValidState()
     {
         return _context.subState.CurrentSubState == SubState.Paused;
     }

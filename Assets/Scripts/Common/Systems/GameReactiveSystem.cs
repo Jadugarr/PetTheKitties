@@ -4,9 +4,6 @@ using UnityEngine;
 
 public abstract class GameReactiveSystem : ReactiveSystem<GameEntity>
 {
-    protected abstract IList<SubState> ValidSubStates { get; }
-    protected abstract IList<GameState> ValidGameStates { get; }
-
     protected GameContext _context;
 
     public GameReactiveSystem(IContext<GameEntity> context) : base(context)
@@ -23,8 +20,7 @@ public abstract class GameReactiveSystem : ReactiveSystem<GameEntity>
         GameState currentGameState = _context.gameState.CurrentGameState;
         SubState currentSubState = _context.subState.CurrentSubState;
 
-        if ((ValidGameStates.Contains(currentGameState) || ValidGameStates.Contains(GameState.Undefined))
-            && (ValidSubStates.Contains(currentSubState) || ValidSubStates.Contains(SubState.Undefined)))
+        if (IsInValidState())
         {
             ExecuteSystem(entities);
         }
@@ -33,6 +29,8 @@ public abstract class GameReactiveSystem : ReactiveSystem<GameEntity>
             Debug.Log("Tried executing system in wrong state: " + this);
         }
     }
+
+    protected abstract bool IsInValidState();
 
     protected abstract void ExecuteSystem(List<GameEntity> entities);
 }

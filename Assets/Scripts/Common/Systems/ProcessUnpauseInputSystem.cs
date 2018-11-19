@@ -4,9 +4,6 @@ using Entitas.Extensions;
 
 public class ProcessUnpauseInputSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Undefined};
-
     public ProcessUnpauseInputSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -19,6 +16,11 @@ public class ProcessUnpauseInputSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.input.InputCommand == InputCommand.Unpause;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

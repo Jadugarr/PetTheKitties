@@ -3,9 +3,6 @@ using Entitas;
 
 public class ReleaseDefenseActionSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Waiting};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.Battle};
-
     public ReleaseDefenseActionSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -18,6 +15,12 @@ public class ReleaseDefenseActionSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.isDefend && entity.executionTime.RemainingTime < 0f;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.Waiting;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

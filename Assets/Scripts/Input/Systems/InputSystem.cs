@@ -6,15 +6,16 @@ using UnityEngine;
 
 public class InputSystem : GameExecuteSystem, ICleanupSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1) {SubState.Undefined};
-
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1) {GameState.Undefined};
-
     private IGroup<GameEntity> inputComponents;
 
     public InputSystem(GameContext context) : base(context)
     {
         inputComponents = _context.GetGroup(GameMatcher.Input);
+    }
+
+    protected override bool IsInValidState()
+    {
+        return true;
     }
 
     protected override void ExecuteSystem()

@@ -5,9 +5,6 @@ using Entitas.Unity;
 
 public class ExitBattleStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Undefined};
-    
     private IGroup<GameEntity> viewGroup;
 
     public ExitBattleStateSystem(GameContext context) : base(context)
@@ -23,6 +20,11 @@ public class ExitBattleStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.gameState.PreviousGameState == GameState.Battle;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

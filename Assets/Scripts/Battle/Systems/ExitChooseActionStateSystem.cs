@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class ExitChooseActionStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
     public ExitChooseActionStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -18,6 +16,11 @@ public class ExitChooseActionStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.subState.PreviousSubState == SubState.ChooseAction;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

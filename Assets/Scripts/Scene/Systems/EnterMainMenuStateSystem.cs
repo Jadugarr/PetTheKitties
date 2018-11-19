@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class EnterMainMenuStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.Undefined};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.MainMenu};
-    
     private IGroup<GameEntity> sceneLoadedGroup;
 
     public EnterMainMenuStateSystem(GameContext context) : base(context)
@@ -23,6 +20,11 @@ public class EnterMainMenuStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.gameState.CurrentGameState == GameState.MainMenu;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.MainMenu;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

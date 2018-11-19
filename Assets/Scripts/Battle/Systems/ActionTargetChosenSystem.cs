@@ -5,9 +5,6 @@ using UnityEngine;
 
 public class ActionTargetChosenSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.ChooseTarget};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-
     public ActionTargetChosenSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -20,6 +17,12 @@ public class ActionTargetChosenSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return true;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.ChooseTarget;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

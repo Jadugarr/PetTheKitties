@@ -5,10 +5,6 @@ using UnityEngine;
 
 public class EnterChooseActionStateSystem : GameReactiveSystem
 {
-    protected override IList<SubState> ValidSubStates => new List<SubState>(1){SubState.ChooseAction};
-    protected override IList<GameState> ValidGameStates => new List<GameState>(1){GameState.Battle};
-    
-
     public EnterChooseActionStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -21,6 +17,12 @@ public class EnterChooseActionStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.subState.CurrentSubState == SubState.ChooseAction;
+    }
+
+    protected override bool IsInValidState()
+    {
+        return _context.gameState.CurrentGameState == GameState.Battle &&
+               _context.subState.CurrentSubState == SubState.ChooseAction;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)
