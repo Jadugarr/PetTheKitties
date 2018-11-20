@@ -25,7 +25,7 @@ public class InputSystem : GameExecuteSystem, ICleanupSystem
 
     private void CheckInput()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKey)
         {
             foreach (string currentAxis in InputAxis.AxisList)
             {
@@ -35,13 +35,22 @@ public class InputSystem : GameExecuteSystem, ICleanupSystem
                 {
                     InputCommand commandToExecute =
                         InputConfiguration.GetCommandByAxisName(currentAxis);
+                    GameEntity inputEntity = _context.CreateEntity();
                     if (commandToExecute != InputCommand.Undefined)
                     {
-                        GameEntity inputEntity = _context.CreateEntity();
                         inputEntity.AddInput(commandToExecute, axisValue);
+                    }
+                    else
+                    {
+                        inputEntity.AddInput(InputCommand.None, 0f);
                     }
                 }
             }
+        }
+        else
+        {
+            GameEntity inputEntity = _context.CreateEntity();
+            inputEntity.AddInput(InputCommand.None, 0f);
         }
     }
 

@@ -15,7 +15,7 @@ public class ProcessUnpauseInputSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.input.InputCommand == InputCommand.Unpause;
+        return entity.input.InputCommand == InputCommand.Unpause && _context.isPauseInputAvailable;
     }
 
     protected override bool IsInValidState()

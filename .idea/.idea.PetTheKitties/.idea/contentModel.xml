@@ -55,7 +55,9 @@
               <e p="GameInputComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
+              <e p="GameMoveCharacterComponent.cs" t="Include" />
               <e p="GameMovementSpeedComponent.cs" t="Include" />
+              <e p="GamePauseInputAvailableComponent.cs" t="Include" />
               <e p="GamePlayerComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
               <e p="GameSceneLoadedComponent.cs" t="Include" />
@@ -207,10 +209,12 @@
             <e p="Components" t="Include">
               <e p="EnemySpawnInputComponent.cs" t="Include" />
               <e p="InputComponent.cs" t="Include" />
+              <e p="PauseInputAvailableComponent.cs" t="Include" />
             </e>
             <e p="InputAxis.cs" t="Include" />
             <e p="InputCommand.cs" t="Include" />
             <e p="Systems" t="Include">
+              <e p="CheckPauseInputAvailabilitySystem.cs" t="Include" />
               <e p="InputSystem.cs" t="Include" />
             </e>
           </e>

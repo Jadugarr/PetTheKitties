@@ -2,6 +2,7 @@
 {
     //Undefined is for error cases
     Undefined,
+    None,
     CancelAction,
     ExitMenu,
     Pause,

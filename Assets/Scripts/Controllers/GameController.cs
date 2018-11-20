@@ -47,6 +47,7 @@ public class GameController : MonoBehaviour
             .Add(new InputSystem(context))
             .Add(new ProcessPauseInputSystem(context))
             .Add(new ProcessUnpauseInputSystem(context))
+            .Add(new CheckPauseInputAvailabilitySystem(context))
             //Scene
             .Add(new EnterBattleStateSystem(context))
             .Add(new ExitBattleStateSystem(context))
