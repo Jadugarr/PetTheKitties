@@ -317,6 +317,7 @@
             <e p="Systems" t="Include">
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
+              <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
             </e>

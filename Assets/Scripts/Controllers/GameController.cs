@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour
             .Add(new ProcessPauseInputSystem(context))
             .Add(new ProcessUnpauseInputSystem(context))
             .Add(new CheckPauseInputAvailabilitySystem(context))
+            .Add(new ProcessWorldMoveInputSystem(context))
             //Scene
             .Add(new EnterBattleStateSystem(context))
             .Add(new ExitBattleStateSystem(context))
@@ -178,10 +179,16 @@ public class GameController : MonoBehaviour
 
         GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
 
-        Systems worldNavigationSystems = new Feature("WorldNavigationSystems")
+        Systems worldSystems = new Feature("WorldSystems")
             .Add(new InitializeWorldStateSystem(context))
-            .Add(new WorldPlayerAddedSystem(context));
-        
-        GameSystemService.AddSystemMapping(GameState.World, worldNavigationSystems);
+            .Add(new WorldPlayerAddedSystem(context))
+            .Add(new MoveCharacterSystem(context));
+
+        GameSystemService.AddSystemMapping(GameState.World, worldSystems);
+
+        Systems worldMovementSystems = new Feature("WorldNavigationSystems")
+            .Add(new MoveCharacterSystem(context));
+
+        GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
 }

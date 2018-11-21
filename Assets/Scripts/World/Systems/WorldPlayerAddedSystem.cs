@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Unity;
 using UnityEngine;
 
 public class WorldPlayerAddedSystem : GameReactiveSystem
@@ -31,8 +32,11 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
 
         foreach (GameEntity gameEntity in entities)
         {
-            GameObject.Instantiate(playerObject, playerSpawnPointTransform.position,
+            GameObject playerView = GameObject.Instantiate(playerObject, playerSpawnPointTransform.position,
                 playerSpawnPointTransform.rotation);
+            playerView.Link(gameEntity);
+            gameEntity.AddView(playerView);
+            gameEntity.AddPosition(playerView.transform.position);
         }
     }
 }
