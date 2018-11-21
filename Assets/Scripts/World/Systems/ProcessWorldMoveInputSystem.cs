@@ -1,14 +1,17 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Extensions;
 using UnityEngine;
 
-public class ProcessWorldMoveInputSystem : GameReactiveSystem
+public class ProcessWorldMoveInputSystem : GameReactiveSystem//, ICleanupSystem
 {
-    private GameEntity playerEntity;
+    private IGroup<GameEntity> playerGroup;
+    private IGroup<GameEntity> moveCharacterGroup;
 
     public ProcessWorldMoveInputSystem(IContext<GameEntity> context) : base(context)
     {
-        
+        playerGroup = _context.GetGroup(GameMatcher.Player);
+        moveCharacterGroup = _context.GetGroup(GameMatcher.MoveCharacter);
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -28,17 +31,22 @@ public class ProcessWorldMoveInputSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (playerEntity == null)
-        {
-            playerEntity = _context.GetGroup(GameMatcher.Player).GetSingleEntity();
-        }
-        
+        GameEntity playerEntity = playerGroup.GetSingleEntity();
+
         for (var i = 0; i < entities.Count; i++)
         {
             GameEntity gameEntity = entities[i];
 
             _context.CreateEntity()
                 .AddMoveCharacter(playerEntity.id.Id, new Vector2(gameEntity.input.InputValue, 0).normalized);
+        }
+    }
+
+    public void Cleanup()
+    {
+        foreach (GameEntity gameEntity in moveCharacterGroup.GetEntities())
+        {
+            gameEntity.Destroy();
         }
     }
 }

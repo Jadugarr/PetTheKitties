@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Configurations;
 using Entitas.Actions.Systems;
 using Entitas.Battle.Systems;
+using Entitas.Position;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
@@ -41,6 +42,7 @@ public class GameController : MonoBehaviour
     private void CreateUniversalSystems(GameContext context)
     {
         Systems universalSystems = new Feature("UniversalSystems")
+//            .Add(new SyncPositionAndViewSystem(context))
             //Promises
             .Add(new InitPromisesSystem())
             //Input
@@ -80,6 +82,8 @@ public class GameController : MonoBehaviour
             .Add(new ExitExecuteActionStateSystem(context))
             .Add(new EnterFinalizeActionStateSystem(context))
             .Add(new ExitFinalizeActionStateSystem(context))
+            .Add(new EnterWorldNavigationSubStateSystem(context))
+            .Add(new ExitWorldNavigationSubStateSystem(context))
             //Position
             .Add(new RenderPositionSystem(context));
 
@@ -181,12 +185,11 @@ public class GameController : MonoBehaviour
 
         Systems worldSystems = new Feature("WorldSystems")
             .Add(new InitializeWorldStateSystem(context))
-            .Add(new WorldPlayerAddedSystem(context))
-            .Add(new MoveCharacterSystem(context));
+            .Add(new WorldPlayerAddedSystem(context));
 
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 
-        Systems worldMovementSystems = new Feature("WorldNavigationSystems")
+        Systems worldMovementSystems = new Feature("WorldMovementSystems")
             .Add(new MoveCharacterSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
