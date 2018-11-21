@@ -14,6 +14,8 @@ public class GameController : MonoBehaviour
     [SerializeField] private SpawnConfiguration spawnConfiguration;
     [SerializeField] private CharacterConfiguration characterConfiguration;
 
+    private Systems endFrameSystems;
+
     private void Awake()
     {
         Contexts contexts = Contexts.sharedInstance;
@@ -30,6 +32,7 @@ public class GameController : MonoBehaviour
         Contexts pools = Contexts.sharedInstance;
 
         CreateUniversalSystems(pools.game);
+        CreateEndFrameSystems(pools.game);
         CreateSystems(pools.game);
     }
 
@@ -42,7 +45,7 @@ public class GameController : MonoBehaviour
     private void CreateUniversalSystems(GameContext context)
     {
         Systems universalSystems = new Feature("UniversalSystems")
-//            .Add(new SyncPositionAndViewSystem(context))
+            .Add(new SyncPositionAndViewSystem(context))
             //Promises
             .Add(new InitPromisesSystem())
             //Input
@@ -83,11 +86,16 @@ public class GameController : MonoBehaviour
             .Add(new EnterFinalizeActionStateSystem(context))
             .Add(new ExitFinalizeActionStateSystem(context))
             .Add(new EnterWorldNavigationSubStateSystem(context))
-            .Add(new ExitWorldNavigationSubStateSystem(context))
-            //Position
-            .Add(new RenderPositionSystem(context));
+            .Add(new ExitWorldNavigationSubStateSystem(context));
 
         GameSystemService.AddActiveSystems(universalSystems);
+    }
+
+    private void CreateEndFrameSystems(GameContext context)
+    {
+        endFrameSystems = new Feature("EndFrameSystems")
+            //Position
+            .Add(new RenderPositionSystem(context));
     }
 
     private void InitConfigs()
@@ -105,6 +113,8 @@ public class GameController : MonoBehaviour
         {
             activeSystem.Execute();
         }
+
+        endFrameSystems.Execute();
 
         foreach (Systems activeSystem in activeSystems)
         {

@@ -3,7 +3,7 @@ using Entitas;
 using Entitas.Extensions;
 using UnityEngine;
 
-public class ProcessWorldMoveInputSystem : GameReactiveSystem//, ICleanupSystem
+public class ProcessWorldMoveInputSystem : GameReactiveSystem, ICleanupSystem
 {
     private IGroup<GameEntity> playerGroup;
     private IGroup<GameEntity> moveCharacterGroup;
