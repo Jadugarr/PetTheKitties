@@ -195,7 +195,8 @@ public class GameController : MonoBehaviour
 
         Systems worldSystems = new Feature("WorldSystems")
             .Add(new InitializeWorldStateSystem(context))
-            .Add(new WorldPlayerAddedSystem(context));
+            .Add(new WorldPlayerAddedSystem(context))
+            .Add(new KittyAddedSystem(context));
 
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 

@@ -20,7 +20,13 @@ public class InitializeWorldStateSystem : GameInitializeSystem
         //Create player entity
         GameEntity playerEntity = _context.CreateEntity();
         playerEntity.isPlayer = true;
-        playerEntity.AddMovementSpeed(0.1f);
+        playerEntity.AddMovementSpeed(5f);
+        
+        //Create test kitty
+        GameEntity kittyEntity = _context.CreateEntity();
+        kittyEntity.isKitty = true;
+        
+        
         _context.SetNewSubstate(SubState.WorldNavigation);
     }
 }

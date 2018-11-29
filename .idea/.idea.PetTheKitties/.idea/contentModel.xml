@@ -53,6 +53,7 @@
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
               <e p="GameInputComponent.cs" t="Include" />
+              <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
               <e p="GameMoveCharacterComponent.cs" t="Include" />
@@ -216,6 +217,14 @@
             <e p="Systems" t="Include">
               <e p="CheckPauseInputAvailabilitySystem.cs" t="Include" />
               <e p="InputSystem.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Kitty" t="Include">
+            <e p="Components" t="Include">
+              <e p="KittyComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="KittyAddedSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">
