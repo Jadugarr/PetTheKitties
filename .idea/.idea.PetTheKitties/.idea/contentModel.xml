@@ -162,6 +162,7 @@
           </e>
           <e p="Common" t="Include">
             <e p="Components" t="Include">
+              <e p="CollisionTriggerComponent.cs" t="Include" />
               <e p="IdComponent.cs" t="Include" />
             </e>
             <e p="GameState.cs" t="Include" />
@@ -228,6 +229,7 @@
             </e>
           </e>
           <e p="Player" t="Include">
+            <e p="InteractionTriggerBehaviour.cs" t="Include" />
             <e p="PlayerComponent.cs" t="Include" />
           </e>
           <e p="Position" t="Include">

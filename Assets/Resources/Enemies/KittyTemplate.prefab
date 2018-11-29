@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61838659466084010}
   m_Layer: 0
   m_Name: KittyTemplate
-  m_TagString: Enemy
+  m_TagString: Kitty
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

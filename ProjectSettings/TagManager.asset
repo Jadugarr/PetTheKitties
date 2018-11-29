@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - PlayerSpawnPoint
   - KittySpawnPoint
+  - Kitty
   layers:
   - Default
   - TransparentFX
