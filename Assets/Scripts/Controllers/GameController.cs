@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Configurations;
 using Entitas.Actions.Systems;
 using Entitas.Battle.Systems;
+using Entitas.Kitty.Systems;
 using Entitas.Position;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
@@ -201,7 +202,8 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 
         Systems worldMovementSystems = new Feature("WorldMovementSystems")
-            .Add(new MoveCharacterSystem(context));
+            .Add(new MoveCharacterSystem(context))
+            .Add(new ProcessPetKittyInputSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }

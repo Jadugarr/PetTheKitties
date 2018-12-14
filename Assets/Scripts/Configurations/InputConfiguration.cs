@@ -50,7 +50,8 @@ public static class InputConfiguration
                 SubState.WorldNavigation, new Dictionary<string, InputCommand>()
                 {
                     {InputAxis.Move, InputCommand.Move},
-                    {InputAxis.Pause, InputCommand.Pause}
+                    {InputAxis.Pause, InputCommand.Pause},
+                    {InputAxis.Interact, InputCommand.Interact}
                 }
             }
         };

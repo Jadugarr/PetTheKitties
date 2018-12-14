@@ -7,5 +7,6 @@
     ExitMenu,
     Pause,
     Unpause,
-    Move
+    Move,
+    Interact
 }

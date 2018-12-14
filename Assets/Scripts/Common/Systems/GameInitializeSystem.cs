@@ -11,9 +11,6 @@ namespace Entitas.Scripts.Common.Systems
 
         public void Initialize()
         {
-            GameState currentGameState = _context.gameState.CurrentGameState;
-            SubState currentSubState = _context.subState.CurrentSubState;
-
             if (IsInValidState())
             {
                 ExecuteSystem();

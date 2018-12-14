@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212396378395223642}
   - component: {fileID: 50614106481225758}
   - component: {fileID: 61871154944545126}
+  - component: {fileID: 114963281342817048}
   m_Layer: 0
   m_Name: WorldPlayer
   m_TagString: Player
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1129988597773570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.171248, y: -3.367328, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4011641947644692}
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -142,6 +143,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78125, y: 0.78125}
   m_EdgeRadius: 0
+--- !u!114 &114963281342817048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1129988597773570}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe67a0774c384b24b183c6a562ae9161, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212396378395223642
 SpriteRenderer:
   m_ObjectHideFlags: 1

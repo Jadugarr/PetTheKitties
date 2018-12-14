@@ -17,9 +17,6 @@ public abstract class GameReactiveSystem : ReactiveSystem<GameEntity>
 
     protected sealed override void Execute(List<GameEntity> entities)
     {
-        GameState currentGameState = _context.gameState.CurrentGameState;
-        SubState currentSubState = _context.subState.CurrentSubState;
-
         if (IsInValidState())
         {
             ExecuteSystem(entities);

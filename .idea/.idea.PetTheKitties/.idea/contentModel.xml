@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Semo\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Semo\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ReneL\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ReneL\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\PetTheKitties" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -42,6 +42,7 @@
               <e p="GameBattleImageComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterBattleStateComponent.cs" t="Include" />
+              <e p="GameCollisionTriggerComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
               <e p="GameDefenseStatComponent.cs" t="Include" />
               <e p="GameEnemyComponent.cs" t="Include" />
@@ -53,6 +54,7 @@
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
               <e p="GameInputComponent.cs" t="Include" />
+              <e p="GameInteractableComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
@@ -60,6 +62,7 @@
               <e p="GameMovementSpeedComponent.cs" t="Include" />
               <e p="GamePauseInputAvailableComponent.cs" t="Include" />
               <e p="GamePlayerComponent.cs" t="Include" />
+              <e p="GamePlayerInteractionComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
               <e p="GameSceneLoadedComponent.cs" t="Include" />
               <e p="GameSpeedComponent.cs" t="Include" />
@@ -223,14 +226,19 @@
           <e p="Kitty" t="Include">
             <e p="Components" t="Include">
               <e p="KittyComponent.cs" t="Include" />
+              <e p="PlayerInteractionComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="KittyAddedSystem.cs" t="Include" />
+              <e p="ProcessPetKittyInputSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">
+            <e p="Components" t="Include">
+              <e p="InteractableComponent.cs" t="Include" />
+              <e p="PlayerComponent.cs" t="Include" />
+            </e>
             <e p="InteractionTriggerBehaviour.cs" t="Include" />
-            <e p="PlayerComponent.cs" t="Include" />
           </e>
           <e p="Position" t="Include">
             <e p="PositionComponent.cs" t="Include" />

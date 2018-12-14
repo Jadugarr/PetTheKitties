@@ -25,6 +25,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem
         //Create test kitty
         GameEntity kittyEntity = _context.CreateEntity();
         kittyEntity.isKitty = true;
+        kittyEntity.isInteractable = true;
         
         
         _context.SetNewSubstate(SubState.WorldNavigation);
