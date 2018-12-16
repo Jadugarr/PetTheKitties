@@ -16,6 +16,11 @@ namespace Entitas.Kitty.Systems
 
         protected override bool Filter(GameEntity entity)
         {
+            if (!_context.isInteractInputAvailable)
+            {
+                return false;
+            }
+            
             if (entity.input.InputCommand == InputCommand.Interact && _context.hasPlayerInteraction)
             {
                 GameEntity interactableEntity =

@@ -55,6 +55,7 @@
               <e p="GameIdComponent.cs" t="Include" />
               <e p="GameInputComponent.cs" t="Include" />
               <e p="GameInteractableComponent.cs" t="Include" />
+              <e p="GameInteractInputAvailableComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
@@ -214,11 +215,13 @@
             <e p="Components" t="Include">
               <e p="EnemySpawnInputComponent.cs" t="Include" />
               <e p="InputComponent.cs" t="Include" />
+              <e p="InteractInputAvailableComponent.cs" t="Include" />
               <e p="PauseInputAvailableComponent.cs" t="Include" />
             </e>
             <e p="InputAxis.cs" t="Include" />
             <e p="InputCommand.cs" t="Include" />
             <e p="Systems" t="Include">
+              <e p="CheckInteractInputAvailableSystem.cs" t="Include" />
               <e p="CheckPauseInputAvailabilitySystem.cs" t="Include" />
               <e p="InputSystem.cs" t="Include" />
             </e>

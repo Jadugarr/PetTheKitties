@@ -3,109 +3,106 @@ using System.Collections;
 using Promises;
 using UnityEngine;
 
-namespace Entitas._tests
+public class PromiseTest : MonoBehaviour
 {
-    public class PromiseTest : MonoBehaviour
+    private Deferred<int> promise;
+    private Deferred<int> thenPromise;
+
+    private int controlValue = 0;
+
+    void Start()
     {
-        private Deferred<int> promise;
-        private Deferred<int> thenPromise;
+        MainThreadDispatcher.Init();
+    }
 
-        private int controlValue = 0;
-
-        void Start()
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            MainThreadDispatcher.Init();
+            var testPromise = Promise.WithCoroutine<int>(Coroutine);
+            testPromise.OnFulfilled += OnFulfilled;
+            testPromise.OnFailed += OnFailed;
         }
 
-        void Update()
+        if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            if (Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                var testPromise = Promise.WithCoroutine<int>(Coroutine);
-                testPromise.OnFulfilled += OnFulfilled;
-                testPromise.OnFailed += OnFailed;
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                IncreaseValue();
-                //FulfillPromise();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                FailPromise();
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha4))
-            {
-                FailPromise();
-            }
+            IncreaseValue();
+            //FulfillPromise();
         }
 
-        private void IncreaseValue()
+        if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            controlValue++;
-            Debug.Log("Current value: " + controlValue);
+            FailPromise();
         }
 
-        private IEnumerator Coroutine()
+        if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            while (controlValue < 5)
-            {
-                yield return 0;
-            }
+            FailPromise();
+        }
+    }
 
-            yield return 10;
+    private void IncreaseValue()
+    {
+        controlValue++;
+        Debug.Log("Current value: " + controlValue);
+    }
+
+    private IEnumerator Coroutine()
+    {
+        while (controlValue < 5)
+        {
+            yield return 0;
         }
 
-        private void OnFailed(Exception error)
-        {
-            Debug.Log(error.Message);
-        }
+        yield return 10;
+    }
 
-        private Deferred<int> StartPromiseSetup()
-        {
-            promise = new Deferred<int>();
-            promise.action = () =>
-            {
-                Debug.Log("Start promise logic gets executed now!");
-                return 0;
-            };
-            Debug.Log("Start promise setup complete");
-            return promise;
-        }
+    private void OnFailed(Exception error)
+    {
+        Debug.Log(error.Message);
+    }
 
-        private Deferred<int> NextPromiseSetup()
+    private Deferred<int> StartPromiseSetup()
+    {
+        promise = new Deferred<int>();
+        promise.action = () =>
         {
-            thenPromise = new Deferred<int>();
-            thenPromise.action = () =>
-            {
-                Debug.Log("Next promise logic gets executed now!");
-                return 0;
-            };
-            Debug.Log("Next promise setup complete");
-            return thenPromise;
-        }
+            Debug.Log("Start promise logic gets executed now!");
+            return 0;
+        };
+        Debug.Log("Start promise setup complete");
+        return promise;
+    }
 
-        private void FulfillPromise()
+    private Deferred<int> NextPromiseSetup()
+    {
+        thenPromise = new Deferred<int>();
+        thenPromise.action = () =>
         {
-            promise.Fulfill(5);
-        }
+            Debug.Log("Next promise logic gets executed now!");
+            return 0;
+        };
+        Debug.Log("Next promise setup complete");
+        return thenPromise;
+    }
 
-        private void FulfillThenPromise()
-        {
-            thenPromise.Fulfill(5);
-        }
+    private void FulfillPromise()
+    {
+        promise.Fulfill(5);
+    }
 
-        private void FailPromise()
-        {
-            promise.Fail(new Exception("Failed start promise"));
-        }
+    private void FulfillThenPromise()
+    {
+        thenPromise.Fulfill(5);
+    }
 
-        private void OnFulfilled(int result)
-        {
-            Debug.Log("Everything Fulfilled: " + result);
-        }
+    private void FailPromise()
+    {
+        promise.Fail(new Exception("Failed start promise"));
+    }
+
+    private void OnFulfilled(int result)
+    {
+        Debug.Log("Everything Fulfilled: " + result);
     }
 }
