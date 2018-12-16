@@ -14,7 +14,10 @@ namespace Entitas.Player
 
         private void OnDestroy()
         {
-            _context.RemovePlayerInteraction();
+            if (_context.hasPlayerInteraction)
+            {
+                _context.RemovePlayerInteraction();
+            }
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -23,14 +26,14 @@ namespace Entitas.Player
 
             if (entityLink != null)
             {
-                GameEntity gameEntity =  entityLink.entity as GameEntity;
+                GameEntity gameEntity = entityLink.entity as GameEntity;
 
                 if (gameEntity != null)
                 {
                     if (gameEntity.isInteractable)
                     {
                         _context.ReplacePlayerInteraction(gameEntity.id.Id);
-                    }                    
+                    }
                 }
             }
         }
@@ -39,7 +42,10 @@ namespace Entitas.Player
         {
             // Problem: If there are two or more objects in interaction range and one gets removed, the player can't interact
             // with the other object unless they move out and back in again
-            _context.RemovePlayerInteraction();
+            if (_context.hasPlayerInteraction)
+            {
+                _context.RemovePlayerInteraction();
+            }
         }
     }
 }
