@@ -8,5 +8,6 @@
     Pause,
     Unpause,
     Move,
-    Interact
+    Interact,
+    Jump
 }

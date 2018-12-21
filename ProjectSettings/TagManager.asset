@@ -10,6 +10,7 @@ TagManager:
   - PlayerSpawnPoint
   - KittySpawnPoint
   - Kitty
+  - Ground
   layers:
   - Default
   - TransparentFX
