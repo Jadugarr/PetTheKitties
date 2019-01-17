@@ -51,7 +51,8 @@ public static class InputConfiguration
                 {
                     {InputAxis.Move, InputCommand.Move},
                     {InputAxis.Pause, InputCommand.Pause},
-                    {InputAxis.Interact, InputCommand.Interact}
+                    {InputAxis.Interact, InputCommand.Interact},
+                    {InputAxis.Jump, InputCommand.Jump}
                 }
             }
         };

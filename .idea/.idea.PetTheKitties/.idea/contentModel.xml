@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ReneL\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ReneL\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Semo\.Rider2018.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Semo\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\PetTheKitties" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -51,7 +51,6 @@
               <e p="GameExecuteActionComponent.cs" t="Include" />
               <e p="GameExecutionTimeComponent.cs" t="Include" />
               <e p="GameGameStateComponent.cs" t="Include" />
-              <e p="GameGroundedComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
               <e p="GameInputComponent.cs" t="Include" />
@@ -239,12 +238,10 @@
           </e>
           <e p="Player" t="Include">
             <e p="Components" t="Include">
-              <e p="GroundedComponent.cs" t="Include" />
               <e p="InteractableComponent.cs" t="Include" />
               <e p="PlayerComponent.cs" t="Include" />
             </e>
             <e p="InteractionTriggerBehaviour.cs" t="Include" />
-            <e p="PlayerGroundedSystem.cs" t="Include" />
           </e>
           <e p="Position" t="Include">
             <e p="PositionComponent.cs" t="Include" />

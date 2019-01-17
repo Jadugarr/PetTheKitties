@@ -9,6 +9,7 @@ using Entitas.Kitty.Systems;
 using Entitas.Player;
 using Entitas.Position;
 using Entitas.Scripts.Common.Systems;
+using Entitas.World.Systems;
 using UnityEngine;
 
 [Serializable]
@@ -57,6 +58,7 @@ public class GameController : MonoBehaviour
             .Add(new ProcessUnpauseInputSystem(context))
             .Add(new CheckPauseInputAvailabilitySystem(context))
             .Add(new ProcessWorldMoveInputSystem(context))
+            .Add(new ProcessJumpInputSystem(context))
             //Scene
             .Add(new EnterBattleStateSystem(context))
             .Add(new ExitBattleStateSystem(context))
@@ -206,8 +208,7 @@ public class GameController : MonoBehaviour
         Systems worldMovementSystems = new Feature("WorldMovementSystems")
             .Add(new MoveCharacterSystem(context))
             .Add(new ProcessPetKittyInputSystem(context))
-            .Add(new CheckInteractInputAvailableSystem(context))
-            .Add(new PlayerGroundedSystem(context));
+            .Add(new CheckInteractInputAvailableSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }

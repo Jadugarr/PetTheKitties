@@ -117,7 +117,6 @@ public static class GameComponentsLookup {
         typeof(EnemySpawnInputComponent),
         typeof(Entitas.Input.Components.InteractInputAvailableComponent),
         typeof(Entitas.Kitty.Components.PlayerInteractionComponent),
-        typeof(Entitas.Player.Components.GroundedComponent),
         typeof(Entitas.Player.Components.InteractableComponent),
         typeof(ExecuteActionComponent),
         typeof(ExecutionTimeComponent),
