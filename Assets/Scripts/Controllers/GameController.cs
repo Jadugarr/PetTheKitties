@@ -208,9 +208,10 @@ public class GameController : MonoBehaviour
 
         Systems worldMovementSystems = new Feature("WorldMovementSystems")
             .Add(new MoveCharacterSystem(context))
-            .Add(new ProcessPetKittyInputSystem(context))
+            .Add(new ProcessInteractionInputSystem(context))
             .Add(new CheckInteractInputAvailableSystem(context))
-            .Add(new CharacterDirectionSystem(context));
+            .Add(new CharacterDirectionSystem(context))
+            .Add(new KittyInteractionSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }

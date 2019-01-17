@@ -33,25 +33,26 @@ public static class GameComponentsLookup {
     public const int Health = 22;
     public const int Id = 23;
     public const int Input = 24;
-    public const int JumpInputAvailable = 25;
-    public const int Kitty = 26;
-    public const int LoseCondition = 27;
-    public const int LoseConditionsFulfilled = 28;
-    public const int MoveCharacter = 29;
-    public const int MovementSpeed = 30;
-    public const int PauseInputAvailable = 31;
-    public const int Player = 32;
-    public const int Position = 33;
-    public const int SceneLoaded = 34;
-    public const int Speed = 35;
-    public const int SubState = 36;
-    public const int Target = 37;
-    public const int UnloadScene = 38;
-    public const int View = 39;
-    public const int WinCondition = 40;
-    public const int WinConditionsFulfilled = 41;
+    public const int InteractionTriggered = 25;
+    public const int JumpInputAvailable = 26;
+    public const int Kitty = 27;
+    public const int LoseCondition = 28;
+    public const int LoseConditionsFulfilled = 29;
+    public const int MoveCharacter = 30;
+    public const int MovementSpeed = 31;
+    public const int PauseInputAvailable = 32;
+    public const int Player = 33;
+    public const int Position = 34;
+    public const int SceneLoaded = 35;
+    public const int Speed = 36;
+    public const int SubState = 37;
+    public const int Target = 38;
+    public const int UnloadScene = 39;
+    public const int View = 40;
+    public const int WinCondition = 41;
+    public const int WinConditionsFulfilled = 42;
 
-    public const int TotalComponents = 42;
+    public const int TotalComponents = 43;
 
     public static readonly string[] componentNames = {
         "ActionFinished",
@@ -79,6 +80,7 @@ public static class GameComponentsLookup {
         "Health",
         "Id",
         "Input",
+        "InteractionTriggered",
         "JumpInputAvailable",
         "Kitty",
         "LoseCondition",
@@ -124,6 +126,7 @@ public static class GameComponentsLookup {
         typeof(HealthComponent),
         typeof(IdComponent),
         typeof(InputComponent),
+        typeof(InteractionTriggeredComponent),
         typeof(JumpInputAvailable),
         typeof(KittyComponent),
         typeof(LoseConditionComponent),

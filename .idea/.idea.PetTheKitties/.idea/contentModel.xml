@@ -56,6 +56,7 @@
               <e p="GameInputComponent.cs" t="Include" />
               <e p="GameInteractableComponent.cs" t="Include" />
               <e p="GameInteractInputAvailableComponent.cs" t="Include" />
+              <e p="GameInteractionTriggeredComponent.cs" t="Include" />
               <e p="GameJumpInputAvailableComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
@@ -236,15 +237,19 @@
             </e>
             <e p="Systems" t="Include">
               <e p="KittyAddedSystem.cs" t="Include" />
-              <e p="ProcessPetKittyInputSystem.cs" t="Include" />
+              <e p="KittyInteractionSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">
             <e p="Components" t="Include">
               <e p="InteractableComponent.cs" t="Include" />
+              <e p="InteractionTriggeredComponent.cs" t="Include" />
               <e p="PlayerComponent.cs" t="Include" />
             </e>
             <e p="InteractionTriggerBehaviour.cs" t="Include" />
+            <e p="Systems" t="Include">
+              <e p="ProcessInteractionInputSystem.cs" t="Include" />
+            </e>
           </e>
           <e p="Position" t="Include">
             <e p="PositionComponent.cs" t="Include" />
