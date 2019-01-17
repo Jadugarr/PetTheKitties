@@ -26,14 +26,14 @@ public static class GameComponentsLookup {
     public const int EnemySpawnInput = 15;
     public const int InteractInputAvailable = 16;
     public const int PlayerInteraction = 17;
-    public const int Grounded = 18;
-    public const int Interactable = 19;
-    public const int ExecuteAction = 20;
-    public const int ExecutionTime = 21;
-    public const int GameState = 22;
-    public const int Health = 23;
-    public const int Id = 24;
-    public const int Input = 25;
+    public const int Interactable = 18;
+    public const int ExecuteAction = 19;
+    public const int ExecutionTime = 20;
+    public const int GameState = 21;
+    public const int Health = 22;
+    public const int Id = 23;
+    public const int Input = 24;
+    public const int JumpInputAvailable = 25;
     public const int Kitty = 26;
     public const int LoseCondition = 27;
     public const int LoseConditionsFulfilled = 28;
@@ -72,7 +72,6 @@ public static class GameComponentsLookup {
         "EnemySpawnInput",
         "InteractInputAvailable",
         "PlayerInteraction",
-        "Grounded",
         "Interactable",
         "ExecuteAction",
         "ExecutionTime",
@@ -80,6 +79,7 @@ public static class GameComponentsLookup {
         "Health",
         "Id",
         "Input",
+        "JumpInputAvailable",
         "Kitty",
         "LoseCondition",
         "LoseConditionsFulfilled",
@@ -124,6 +124,7 @@ public static class GameComponentsLookup {
         typeof(HealthComponent),
         typeof(IdComponent),
         typeof(InputComponent),
+        typeof(JumpInputAvailable),
         typeof(KittyComponent),
         typeof(LoseConditionComponent),
         typeof(LoseConditionsFulfilledComponent),

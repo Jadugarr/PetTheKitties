@@ -59,6 +59,7 @@ public class GameController : MonoBehaviour
             .Add(new CheckPauseInputAvailabilitySystem(context))
             .Add(new ProcessWorldMoveInputSystem(context))
             .Add(new ProcessJumpInputSystem(context))
+            .Add(new CheckJumpInputAvailableSystem(context))
             //Scene
             .Add(new EnterBattleStateSystem(context))
             .Add(new ExitBattleStateSystem(context))

@@ -19,7 +19,7 @@ namespace Entitas.World.Systems
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity.input.InputCommand == InputCommand.Jump;
+            return entity.input.InputCommand == InputCommand.Jump && _context.isJumpInputAvailable;
         }
 
         protected override bool IsInValidState()
