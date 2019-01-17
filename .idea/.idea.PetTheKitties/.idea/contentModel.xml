@@ -341,6 +341,7 @@
               <e p="MovementSpeedComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
+              <e p="CharacterDirectionSystem.cs" t="Include" />
               <e p="EnterWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
