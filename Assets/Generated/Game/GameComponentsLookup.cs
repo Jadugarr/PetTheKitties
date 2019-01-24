@@ -34,25 +34,26 @@ public static class GameComponentsLookup {
     public const int Id = 23;
     public const int Input = 24;
     public const int InteractionTriggered = 25;
-    public const int JumpInputAvailable = 26;
-    public const int Kitty = 27;
-    public const int LoseCondition = 28;
-    public const int LoseConditionsFulfilled = 29;
-    public const int MoveCharacter = 30;
-    public const int MovementSpeed = 31;
-    public const int PauseInputAvailable = 32;
-    public const int Player = 33;
-    public const int Position = 34;
-    public const int SceneLoaded = 35;
-    public const int Speed = 36;
-    public const int SubState = 37;
-    public const int Target = 38;
-    public const int UnloadScene = 39;
-    public const int View = 40;
-    public const int WinCondition = 41;
-    public const int WinConditionsFulfilled = 42;
+    public const int JumpCharacter = 26;
+    public const int JumpInputAvailable = 27;
+    public const int Kitty = 28;
+    public const int LoseCondition = 29;
+    public const int LoseConditionsFulfilled = 30;
+    public const int MoveCharacter = 31;
+    public const int MovementSpeed = 32;
+    public const int PauseInputAvailable = 33;
+    public const int Player = 34;
+    public const int Position = 35;
+    public const int SceneLoaded = 36;
+    public const int Speed = 37;
+    public const int SubState = 38;
+    public const int Target = 39;
+    public const int UnloadScene = 40;
+    public const int View = 41;
+    public const int WinCondition = 42;
+    public const int WinConditionsFulfilled = 43;
 
-    public const int TotalComponents = 43;
+    public const int TotalComponents = 44;
 
     public static readonly string[] componentNames = {
         "ActionFinished",
@@ -81,6 +82,7 @@ public static class GameComponentsLookup {
         "Id",
         "Input",
         "InteractionTriggered",
+        "JumpCharacter",
         "JumpInputAvailable",
         "Kitty",
         "LoseCondition",
@@ -127,6 +129,7 @@ public static class GameComponentsLookup {
         typeof(IdComponent),
         typeof(InputComponent),
         typeof(InteractionTriggeredComponent),
+        typeof(JumpCharacterComponent),
         typeof(JumpInputAvailable),
         typeof(KittyComponent),
         typeof(LoseConditionComponent),

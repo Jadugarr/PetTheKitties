@@ -3,13 +3,15 @@ using UnityEngine;
 
 namespace Entitas.World.Systems
 {
-    public class ProcessJumpInputSystem : GameReactiveSystem
+    public class ProcessJumpInputSystem : GameReactiveSystem, ICleanupSystem
     {
         private IGroup<GameEntity> _playerGroup;
-        
+        private IGroup<GameEntity> _jumpGroup;
+
         public ProcessJumpInputSystem(IContext<GameEntity> context) : base(context)
         {
             _playerGroup = _context.GetGroup(GameMatcher.Player);
+            _jumpGroup = _context.GetGroup(GameMatcher.JumpCharacter);
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -31,25 +33,18 @@ namespace Entitas.World.Systems
         protected override void ExecuteSystem(List<GameEntity> entities)
         {
             GameEntity playerEntity = _playerGroup.GetSingleEntity();
-            GameObject playerView = playerEntity.view.View;
 
-            if (playerView)
+            if (playerEntity != null)
             {
-                float distanceToGround = playerView.GetComponent<Collider2D>().bounds.extents.y;
-                RaycastHit2D hit =
-                    Physics2D.Raycast(
-                        new Vector2(playerView.transform.position.x,
-                            playerView.transform.position.y - distanceToGround - 0.01f), Vector2.down, 0.1f);
+                _context.CreateEntity().AddJumpCharacter(playerEntity.id.Id);
+            }
+        }
 
-                if (hit.collider != null)
-                {
-                    Debug.Log("Tag of hit target: " + hit.collider.gameObject.tag);
-
-                    if (hit.collider.gameObject.tag.Equals(Tags.Ground))
-                    {
-                        playerView.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 5f);
-                    }
-                }
+        public void Cleanup()
+        {
+            foreach (GameEntity entity in _jumpGroup.GetEntities())
+            {
+                entity.Destroy();
             }
         }
     }

@@ -57,6 +57,7 @@
               <e p="GameInteractableComponent.cs" t="Include" />
               <e p="GameInteractInputAvailableComponent.cs" t="Include" />
               <e p="GameInteractionTriggeredComponent.cs" t="Include" />
+              <e p="GameJumpCharacterComponent.cs" t="Include" />
               <e p="GameJumpInputAvailableComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
@@ -342,6 +343,7 @@
           </e>
           <e p="World" t="Include">
             <e p="Components" t="Include">
+              <e p="JumpCharacterSystem.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />
             </e>
@@ -351,6 +353,7 @@
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
+              <e p="JumpCharacterSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessJumpInputSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 public class EnterPausedSubStateSystem : GameReactiveSystem
 {
@@ -25,5 +26,6 @@ public class EnterPausedSubStateSystem : GameReactiveSystem
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
         UIService.ShowWidget(UiAssetTypes.PauseOverlay, null);
+        Time.timeScale = 0f;
     }
 }

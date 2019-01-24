@@ -2,3 +2,13 @@ Kitteh Game Ideas
 
 - dragon cats
 - dumplings
+
+Game features:
+- pet kitties should follow player
+- pit falls
+- house to bring kitties back to
+
+Technical:
+- adressables
+- tilemaps
+- cinemachine

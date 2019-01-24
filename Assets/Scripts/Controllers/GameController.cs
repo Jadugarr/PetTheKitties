@@ -211,7 +211,8 @@ public class GameController : MonoBehaviour
             .Add(new ProcessInteractionInputSystem(context))
             .Add(new CheckInteractInputAvailableSystem(context))
             .Add(new CharacterDirectionSystem(context))
-            .Add(new KittyInteractionSystem(context));
+            .Add(new KittyInteractionSystem(context))
+            .Add(new JumpCharacterSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
