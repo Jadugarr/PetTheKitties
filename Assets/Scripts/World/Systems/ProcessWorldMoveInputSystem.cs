@@ -38,7 +38,7 @@ public class ProcessWorldMoveInputSystem : GameReactiveSystem, ICleanupSystem
             GameEntity gameEntity = entities[i];
 
             _context.CreateEntity()
-                .AddMoveCharacter(playerEntity.id.Id, new Vector2(gameEntity.input.InputValue, 0).normalized);
+                .AddMoveCharacter(playerEntity.id.Id, new Vector2(gameEntity.input.InputValue, 0));
         }
     }
 

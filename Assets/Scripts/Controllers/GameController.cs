@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Configurations;
 using Entitas.Actions.Systems;
 using Entitas.Battle.Systems;
+using Entitas.Camera.Systems;
 using Entitas.Input.Systems;
 using Entitas.Kitty.Systems;
 using Entitas.Player;
@@ -52,6 +53,7 @@ public class GameController : MonoBehaviour
             .Add(new SyncPositionAndViewSystem(context))
             //Promises
             .Add(new InitPromisesSystem())
+            .Add(new InitializeCameraSystem(context))
             //Input
             .Add(new InputSystem(context))
             .Add(new ProcessPauseInputSystem(context))
@@ -200,6 +202,7 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
 
         Systems worldSystems = new Feature("WorldSystems")
+            .Add(new SetCameraFollowTargetSystem(context))
             .Add(new InitializeWorldStateSystem(context))
             .Add(new WorldPlayerAddedSystem(context))
             .Add(new KittyAddedSystem(context));
@@ -207,11 +210,13 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 
         Systems worldMovementSystems = new Feature("WorldMovementSystems")
-            .Add(new MoveCharacterSystem(context))
             .Add(new ProcessInteractionInputSystem(context))
             .Add(new CheckInteractInputAvailableSystem(context))
-            .Add(new CharacterDirectionSystem(context))
             .Add(new KittyInteractionSystem(context))
+            .Add(new CharacterStartFollowSystem(context))
+            .Add(new CharacterFollowSystem(context))
+            .Add(new CharacterDirectionSystem(context))
+            .Add(new MoveCharacterSystem(context))
             .Add(new JumpCharacterSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);

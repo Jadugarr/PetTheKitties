@@ -7,8 +7,10 @@ Game features:
 - pet kitties should follow player
 - pit falls
 - house to bring kitties back to
+- kitties move randomly while following the character
+- proper character movement system
 
 Technical:
 - adressables
 - tilemaps
-- cinemachine
+- loading screens

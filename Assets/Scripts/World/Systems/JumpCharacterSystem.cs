@@ -37,7 +37,7 @@ public class JumpCharacterSystem : GameReactiveSystem
                 RaycastHit2D hit =
                     Physics2D.Raycast(
                         new Vector2(characterView.transform.position.x,
-                            characterView.transform.position.y - distanceToGround - 0.01f), Vector2.down, 0.1f);
+                            characterView.transform.position.y - distanceToGround - 0.01f), Vector2.down, 0.01f);
 
                 if (hit.collider != null)
                 {
@@ -45,7 +45,7 @@ public class JumpCharacterSystem : GameReactiveSystem
 
                     if (hit.collider.gameObject.tag.Equals(Tags.Ground))
                     {
-                        characterView.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, 5f);
+                        characterView.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, jumpingEntity.jumpForce.JumpForce);
                     }
                 }
             }

@@ -40,6 +40,7 @@
               <e p="GameBattleComponent.cs" t="Include" />
               <e p="GameBattleEndComponent.cs" t="Include" />
               <e p="GameBattleImageComponent.cs" t="Include" />
+              <e p="GameCameraComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterBattleStateComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
@@ -50,6 +51,7 @@
               <e p="GameEnemySpawnInputComponent.cs" t="Include" />
               <e p="GameExecuteActionComponent.cs" t="Include" />
               <e p="GameExecutionTimeComponent.cs" t="Include" />
+              <e p="GameFollowCharacterComponent.cs" t="Include" />
               <e p="GameGameStateComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
@@ -58,6 +60,7 @@
               <e p="GameInteractInputAvailableComponent.cs" t="Include" />
               <e p="GameInteractionTriggeredComponent.cs" t="Include" />
               <e p="GameJumpCharacterComponent.cs" t="Include" />
+              <e p="GameJumpForceComponent.cs" t="Include" />
               <e p="GameJumpInputAvailableComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
@@ -167,6 +170,15 @@
               <e p="WinConditionControllerSystem.cs" t="Include" />
             </e>
           </e>
+          <e p="Camera" t="Include">
+            <e p="Components" t="Include">
+              <e p="CameraComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="InitializeCameraSystem.cs" t="Include" />
+              <e p="SetCameraFollowTargetSystem.cs" t="Include" />
+            </e>
+          </e>
           <e p="Common" t="Include">
             <e p="Components" t="Include">
               <e p="CollisionTriggerComponent.cs" t="Include" />
@@ -237,6 +249,7 @@
               <e p="PlayerInteractionComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
+              <e p="CharacterStartFollowSystem.cs" t="Include" />
               <e p="KittyAddedSystem.cs" t="Include" />
               <e p="KittyInteractionSystem.cs" t="Include" />
             </e>
@@ -343,12 +356,15 @@
           </e>
           <e p="World" t="Include">
             <e p="Components" t="Include">
+              <e p="FollowCharacterComponent.cs" t="Include" />
               <e p="JumpCharacterSystem.cs" t="Include" />
+              <e p="JumpForceComponent.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="CharacterDirectionSystem.cs" t="Include" />
+              <e p="CharacterFollowSystem.cs" t="Include" />
               <e p="EnterWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
