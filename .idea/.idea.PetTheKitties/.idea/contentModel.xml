@@ -43,6 +43,7 @@
               <e p="GameCameraComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterBattleStateComponent.cs" t="Include" />
+              <e p="GameCharacterReachedGoalComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
               <e p="GameDefenseStatComponent.cs" t="Include" />
@@ -244,11 +245,16 @@
             </e>
           </e>
           <e p="Kitty" t="Include">
+            <e p="Behaviours" t="Include">
+              <e p="GoalTriggerBehaviour.cs" t="Include" />
+            </e>
             <e p="Components" t="Include">
+              <e p="CharacterReachedGoalComponent.cs" t="Include" />
               <e p="KittyComponent.cs" t="Include" />
               <e p="PlayerInteractionComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
+              <e p="CharacterReachedGoalSystem.cs" t="Include" />
               <e p="CharacterStartFollowSystem.cs" t="Include" />
               <e p="KittyAddedSystem.cs" t="Include" />
               <e p="KittyInteractionSystem.cs" t="Include" />

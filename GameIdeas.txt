@@ -4,7 +4,6 @@ Kitteh Game Ideas
 - dumplings
 
 Game features:
-- pet kitties should follow player
 - pit falls
 - house to bring kitties back to
 - kitties move randomly while following the character

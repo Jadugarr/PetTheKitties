@@ -215,6 +215,8 @@ public class GameController : MonoBehaviour
             .Add(new KittyInteractionSystem(context))
             .Add(new CharacterStartFollowSystem(context))
             .Add(new CharacterFollowSystem(context))
+            .Add(new CharacterReachedGoalSystem(context))
+            
             .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
             .Add(new JumpCharacterSystem(context));

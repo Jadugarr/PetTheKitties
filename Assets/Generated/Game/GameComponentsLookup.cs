@@ -26,37 +26,38 @@ public static class GameComponentsLookup {
     public const int EnemySpawnCooldown = 15;
     public const int EnemySpawnInput = 16;
     public const int InteractInputAvailable = 17;
-    public const int PlayerInteraction = 18;
-    public const int Interactable = 19;
-    public const int ExecuteAction = 20;
-    public const int ExecutionTime = 21;
-    public const int FollowCharacter = 22;
-    public const int GameState = 23;
-    public const int Health = 24;
-    public const int Id = 25;
-    public const int Input = 26;
-    public const int InteractionTriggered = 27;
-    public const int JumpCharacter = 28;
-    public const int JumpForce = 29;
-    public const int JumpInputAvailable = 30;
-    public const int Kitty = 31;
-    public const int LoseCondition = 32;
-    public const int LoseConditionsFulfilled = 33;
-    public const int MoveCharacter = 34;
-    public const int MovementSpeed = 35;
-    public const int PauseInputAvailable = 36;
-    public const int Player = 37;
-    public const int Position = 38;
-    public const int SceneLoaded = 39;
-    public const int Speed = 40;
-    public const int SubState = 41;
-    public const int Target = 42;
-    public const int UnloadScene = 43;
-    public const int View = 44;
-    public const int WinCondition = 45;
-    public const int WinConditionsFulfilled = 46;
+    public const int CharacterReachedGoal = 18;
+    public const int PlayerInteraction = 19;
+    public const int Interactable = 20;
+    public const int ExecuteAction = 21;
+    public const int ExecutionTime = 22;
+    public const int FollowCharacter = 23;
+    public const int GameState = 24;
+    public const int Health = 25;
+    public const int Id = 26;
+    public const int Input = 27;
+    public const int InteractionTriggered = 28;
+    public const int JumpCharacter = 29;
+    public const int JumpForce = 30;
+    public const int JumpInputAvailable = 31;
+    public const int Kitty = 32;
+    public const int LoseCondition = 33;
+    public const int LoseConditionsFulfilled = 34;
+    public const int MoveCharacter = 35;
+    public const int MovementSpeed = 36;
+    public const int PauseInputAvailable = 37;
+    public const int Player = 38;
+    public const int Position = 39;
+    public const int SceneLoaded = 40;
+    public const int Speed = 41;
+    public const int SubState = 42;
+    public const int Target = 43;
+    public const int UnloadScene = 44;
+    public const int View = 45;
+    public const int WinCondition = 46;
+    public const int WinConditionsFulfilled = 47;
 
-    public const int TotalComponents = 47;
+    public const int TotalComponents = 48;
 
     public static readonly string[] componentNames = {
         "ActionFinished",
@@ -77,6 +78,7 @@ public static class GameComponentsLookup {
         "EnemySpawnCooldown",
         "EnemySpawnInput",
         "InteractInputAvailable",
+        "CharacterReachedGoal",
         "PlayerInteraction",
         "Interactable",
         "ExecuteAction",
@@ -127,6 +129,7 @@ public static class GameComponentsLookup {
         typeof(EnemySpawnCooldownComponent),
         typeof(EnemySpawnInputComponent),
         typeof(Entitas.Input.Components.InteractInputAvailableComponent),
+        typeof(Entitas.Kitty.Components.CharacterReachedGoalComponent),
         typeof(Entitas.Kitty.Components.PlayerInteractionComponent),
         typeof(Entitas.Player.Components.InteractableComponent),
         typeof(ExecuteActionComponent),
