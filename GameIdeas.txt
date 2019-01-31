@@ -12,5 +12,4 @@ Game features:
 
 Technical:
 - adressables
-- tilemaps
 - loading screens

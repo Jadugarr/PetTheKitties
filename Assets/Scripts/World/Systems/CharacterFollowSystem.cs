@@ -30,10 +30,14 @@ namespace Entitas.World.Systems
 
                 if (currentDistance > MaxDistanceToCharacter)
                 {
-                    Vector2 moveDirection = new Vector2((entityToFollow.view.View.transform.position -
-                                                         followEntity.view.View.transform.position).x, 0f);
+                    Vector2 moveDirection = entityToFollow.view.View.transform.position -
+                                            followEntity.view.View.transform.position;
                     _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
-                    _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
+
+                    if (moveDirection.y > 0.5f)
+                    {
+                        _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
+                    }
                 }
             }
         }

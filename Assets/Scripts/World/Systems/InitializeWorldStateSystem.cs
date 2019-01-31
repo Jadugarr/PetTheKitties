@@ -22,14 +22,14 @@ public class InitializeWorldStateSystem : GameInitializeSystem
         GameEntity playerEntity = _context.CreateEntity();
         playerEntity.isPlayer = true;
         playerEntity.AddMovementSpeed(5f);
-        playerEntity.AddJumpForce(5f);
+        playerEntity.AddJumpForce(10f);
         
         //Create test kitty
         GameEntity kittyEntity = _context.CreateEntity();
         kittyEntity.isKitty = true;
         kittyEntity.isInteractable = true;
         kittyEntity.AddMovementSpeed(5f);
-        kittyEntity.AddJumpForce(1f);
+        kittyEntity.AddJumpForce(10f);
         
         _context.SetNewSubstate(SubState.WorldNavigation);
     }
