@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
     {
         Systems universalSystems = new Feature("UniversalSystems")
             .Add(new SyncPositionAndViewSystem(context))
+            .Add(new SyncVelocitySystem(context))
             //Promises
             .Add(new InitPromisesSystem())
             .Add(new InitializeCameraSystem(context))
@@ -103,7 +104,9 @@ public class GameController : MonoBehaviour
     {
         endFrameSystems = new Feature("EndFrameSystems")
             //Position
-            .Add(new RenderPositionSystem(context));
+            .Add(new RenderPositionSystem(context))
+            //Velocity
+            .Add(new RenderVelocitySystem(context));
     }
 
     private void InitConfigs()
@@ -216,7 +219,6 @@ public class GameController : MonoBehaviour
             .Add(new CharacterStartFollowSystem(context))
             .Add(new CharacterFollowSystem(context))
             .Add(new CharacterReachedGoalSystem(context))
-            
             .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
             .Add(new JumpCharacterSystem(context));

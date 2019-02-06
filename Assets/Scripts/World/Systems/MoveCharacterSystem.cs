@@ -33,10 +33,9 @@ public class MoveCharacterSystem : GameReactiveSystem
 
             if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
             {
-                Vector2 moveVector = new Vector2((movementEntity.moveCharacter.MoveDirection.normalized *
-                                                  entityToMove.movementSpeed.MovementSpeedValue *
-                                                  Time.deltaTime).x, 0f);
-                entityToMove.ReplacePosition(entityToMove.position.position + (Vector3) moveVector);
+                entityToMove.ReplaceCharacterVelocity(new Vector2(
+                    entityToMove.movementSpeed.MovementSpeedValue * movementEntity.moveCharacter.MoveDirection.normalized.x,
+                    entityToMove.hasCharacterVelocity ? entityToMove.characterVelocity.Velocity.y : 0f));
             }
         }
     }

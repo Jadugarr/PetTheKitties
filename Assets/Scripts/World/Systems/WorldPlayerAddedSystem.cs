@@ -37,6 +37,7 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
             playerView.Link(gameEntity);
             gameEntity.AddView(playerView);
             gameEntity.AddPosition(playerView.transform.position);
+            gameEntity.AddCharacterVelocity(Vector2.zero);
         }
     }
 }

@@ -45,7 +45,9 @@ public class JumpCharacterSystem : GameReactiveSystem
 
                     if (hit.collider.gameObject.tag.Equals(Tags.Ground))
                     {
-                        characterView.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, jumpingEntity.jumpForce.JumpForce);
+                        jumpingEntity.ReplaceCharacterVelocity(new Vector2(
+                            jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
+                            jumpingEntity.jumpForce.JumpForce));
                     }
                 }
             }

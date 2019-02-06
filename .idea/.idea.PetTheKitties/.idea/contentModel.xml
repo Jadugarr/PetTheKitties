@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Semo\.Rider2018.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Semo\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Semo\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Semo\.Rider2018.3\system\resharper-host\Local\Transient\ReSharperHost\v183\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\PetTheKitties" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -44,6 +44,7 @@
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterBattleStateComponent.cs" t="Include" />
               <e p="GameCharacterReachedGoalComponent.cs" t="Include" />
+              <e p="GameCharacterVelocityComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
               <e p="GameDefenseStatComponent.cs" t="Include" />
@@ -356,6 +357,15 @@
           </e>
           <e p="Utils" t="Include">
             <e p="BattleActionUtils.cs" t="Include" />
+          </e>
+          <e p="Velocity" t="Include">
+            <e p="Components" t="Include">
+              <e p="CharacterVelocityComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="RenderVelocitySystem.cs" t="Include" />
+              <e p="SyncVelocitySystem.cs" t="Include" />
+            </e>
           </e>
           <e p="View" t="Include">
             <e p="ViewComponent.cs" t="Include" />
