@@ -23,6 +23,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem
         playerEntity.isPlayer = true;
         playerEntity.AddMovementSpeed(5f);
         playerEntity.AddJumpForce(10f);
+        playerEntity.AddAcceleration(20f);
         
         //Create test kitty
         GameEntity kittyEntity = _context.CreateEntity();
@@ -30,6 +31,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem
         kittyEntity.isInteractable = true;
         kittyEntity.AddMovementSpeed(5f);
         kittyEntity.AddJumpForce(10f);
+        kittyEntity.AddAcceleration(20f);
         
         _context.SetNewSubstate(SubState.WorldNavigation);
     }

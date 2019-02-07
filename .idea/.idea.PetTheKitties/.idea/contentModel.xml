@@ -32,6 +32,7 @@
           <e p="Feature.cs" t="Include" />
           <e p="Game" t="Include">
             <e p="Components" t="Include">
+              <e p="GameAccelerationComponent.cs" t="Include" />
               <e p="GameActionFinishedComponent.cs" t="Include" />
               <e p="GameAttackComponent.cs" t="Include" />
               <e p="GameAttackInputComponent.cs" t="Include" />
@@ -360,6 +361,7 @@
           </e>
           <e p="Velocity" t="Include">
             <e p="Components" t="Include">
+              <e p="AccelerationComponent.cs" t="Include" />
               <e p="CharacterVelocityComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
