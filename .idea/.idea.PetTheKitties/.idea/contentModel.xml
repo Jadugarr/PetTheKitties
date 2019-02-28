@@ -56,6 +56,7 @@
               <e p="GameExecutionTimeComponent.cs" t="Include" />
               <e p="GameFollowCharacterComponent.cs" t="Include" />
               <e p="GameGameStateComponent.cs" t="Include" />
+              <e p="GameGoalReachedComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
               <e p="GameInputComponent.cs" t="Include" />
@@ -258,6 +259,7 @@
             </e>
             <e p="Components" t="Include">
               <e p="CharacterReachedGoalComponent.cs" t="Include" />
+              <e p="GoalReachedComponent.cs" t="Include" />
               <e p="KittyComponent.cs" t="Include" />
               <e p="PlayerInteractionComponent.cs" t="Include" />
             </e>

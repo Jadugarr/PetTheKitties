@@ -41,6 +41,7 @@ public class CharacterReachedGoalSystem : GameReactiveSystem, ICleanupSystem
                 if (characterEntity.hasFollowCharacter)
                 {
                     characterEntity.RemoveFollowCharacter();
+                    characterEntity.isGoalReached = true;
                 }
             }
         }

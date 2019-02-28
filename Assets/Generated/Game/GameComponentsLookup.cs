@@ -35,32 +35,33 @@ public static class GameComponentsLookup {
     public const int ExecutionTime = 24;
     public const int FollowCharacter = 25;
     public const int GameState = 26;
-    public const int Health = 27;
-    public const int Id = 28;
-    public const int Input = 29;
-    public const int InteractionTriggered = 30;
-    public const int JumpCharacter = 31;
-    public const int JumpForce = 32;
-    public const int JumpInputAvailable = 33;
-    public const int Kitty = 34;
-    public const int LoseCondition = 35;
-    public const int LoseConditionsFulfilled = 36;
-    public const int MoveCharacter = 37;
-    public const int MovementSpeed = 38;
-    public const int PauseInputAvailable = 39;
-    public const int Player = 40;
-    public const int Position = 41;
-    public const int RestartLevel = 42;
-    public const int SceneLoaded = 43;
-    public const int Speed = 44;
-    public const int SubState = 45;
-    public const int Target = 46;
-    public const int UnloadScene = 47;
-    public const int View = 48;
-    public const int WinCondition = 49;
-    public const int WinConditionsFulfilled = 50;
+    public const int GoalReached = 27;
+    public const int Health = 28;
+    public const int Id = 29;
+    public const int Input = 30;
+    public const int InteractionTriggered = 31;
+    public const int JumpCharacter = 32;
+    public const int JumpForce = 33;
+    public const int JumpInputAvailable = 34;
+    public const int Kitty = 35;
+    public const int LoseCondition = 36;
+    public const int LoseConditionsFulfilled = 37;
+    public const int MoveCharacter = 38;
+    public const int MovementSpeed = 39;
+    public const int PauseInputAvailable = 40;
+    public const int Player = 41;
+    public const int Position = 42;
+    public const int RestartLevel = 43;
+    public const int SceneLoaded = 44;
+    public const int Speed = 45;
+    public const int SubState = 46;
+    public const int Target = 47;
+    public const int UnloadScene = 48;
+    public const int View = 49;
+    public const int WinCondition = 50;
+    public const int WinConditionsFulfilled = 51;
 
-    public const int TotalComponents = 51;
+    public const int TotalComponents = 52;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -90,6 +91,7 @@ public static class GameComponentsLookup {
         "ExecutionTime",
         "FollowCharacter",
         "GameState",
+        "GoalReached",
         "Health",
         "Id",
         "Input",
@@ -144,6 +146,7 @@ public static class GameComponentsLookup {
         typeof(ExecutionTimeComponent),
         typeof(FollowCharacterComponent),
         typeof(GameStateComponent),
+        typeof(GoalReachedComponent),
         typeof(HealthComponent),
         typeof(IdComponent),
         typeof(InputComponent),

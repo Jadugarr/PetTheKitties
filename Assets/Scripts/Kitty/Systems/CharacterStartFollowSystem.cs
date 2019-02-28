@@ -37,7 +37,10 @@ public class CharacterStartFollowSystem : GameReactiveSystem
 
         if (playerEntity != null)
         {
-            _interactedEntity.ReplaceFollowCharacter(playerEntity.id.Id);
+            if (!_interactedEntity.isGoalReached)
+            {
+                _interactedEntity.ReplaceFollowCharacter(playerEntity.id.Id);
+            }
         }
     }
 }
