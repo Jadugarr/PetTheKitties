@@ -23,8 +23,12 @@ public class SyncVelocitySystem : GameExecuteSystem
         for (var i = 0; i < entities.Length; i++)
         {
             GameEntity gameEntity = entities[i];
-            Vector2 viewVelocity = gameEntity.view.View.GetComponent<Rigidbody2D>().velocity;
-            gameEntity.ReplaceCharacterVelocity(viewVelocity);
+            Rigidbody2D rigidbody2D = gameEntity.view.View.GetComponent<Rigidbody2D>();
+            if (rigidbody2D != null)
+            {
+                Vector2 viewVelocity = rigidbody2D.velocity;
+                gameEntity.ReplaceCharacterVelocity(viewVelocity);
+            }
         }
     }
 }
