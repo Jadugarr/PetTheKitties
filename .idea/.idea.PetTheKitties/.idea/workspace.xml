@@ -27,32 +27,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="462">
-              <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-              <folding>
-                <marker date="1551384728323" expanded="true" signature="59:1887" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="127:1885" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="236:292" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="326:1879" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="605:908" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="779:894" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="948:1766" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="1114:1752" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="1182:1480" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="1505:1734" ph="{...}" />
-                <marker date="1551384728323" expanded="true" signature="1783:1869" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/MoveCharacterSystem.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            <state relative-caret-position="213">
+              <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
               <folding>
                 <marker date="1551384637155" expanded="false" signature="6:67" ph="..." />
                 <marker date="1551384637155" expanded="true" signature="122:1980" ph="{...}" />
@@ -66,6 +44,22 @@
                 <marker date="1551384637155" expanded="true" signature="1106:1948" ph="{...}" />
                 <marker date="1551384637155" expanded="true" signature="1506:1632" ph="{...}" />
                 <marker date="1551384637155" expanded="true" signature="1657:1930" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+              <folding>
+                <marker date="1551385338242" expanded="true" signature="6:32" ph="..." />
+                <marker date="1551385338242" expanded="true" signature="69:368" ph="{...}" />
+                <marker date="1551385338242" expanded="true" signature="124:366" ph="{...}" />
+                <marker date="1551385338242" expanded="true" signature="186:360" ph="{...}" />
+                <marker date="1551385338242" expanded="true" signature="254:350" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -373,6 +367,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/Components/InteractionTriggeredComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExitFinalizeActionStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/TagsLayersEnumBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ActionTimeAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -407,7 +402,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/ProcessPetKittyInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/InteractionTriggerBehaviour.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Components/GroundedComponent.cs" />
@@ -458,6 +452,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Systems/ProcessInteractionInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/JumpCharacterSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs" />
       </list>
     </option>
   </component>
@@ -498,20 +493,6 @@
               <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
               <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
               <item name="Common" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Common" type="1045f7f1:UnityExplorerNode" />
-              <item name="Components" type="1045f7f1:UnityExplorerNode" />
-            </path>
-            <path>
-              <item name="Project" type="e068e287:UnityExplorerRootNode" />
-              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
-              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
-              <item name="Common" type="1045f7f1:UnityExplorerNode" />
-              <item name="Systems" type="1045f7f1:UnityExplorerNode" />
             </path>
             <path>
               <item name="Project" type="e068e287:UnityExplorerRootNode" />
@@ -597,9 +578,9 @@
       <window_info id="Image Layers" order="3" />
       <window_info id="Capture Tool" order="4" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info active="true" anchor="bottom" id="Find" order="1" sideWeight="0.49946696" visible="true" weight="0.30769232" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.30769232" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.26868907" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" visible="true" weight="0.26868907" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -628,17 +609,23 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs</url>
+          <line>9</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs" initialLine="9">
+            <startOffsets>
+              <option value="209" />
+            </startOffsets>
+            <endOffsets>
+              <option value="254" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/EnterPausedSubStateSystem.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="27" column="62" selection-start-line="27" selection-start-column="62" selection-end-line="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/ExitPausedSubStateSystem.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="644">
@@ -1361,8 +1348,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/MoveCharacterSystem.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+        <state relative-caret-position="213">
+          <caret line="35" column="38" lean-forward="true" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
           <folding>
             <marker date="1551384637155" expanded="false" signature="6:67" ph="..." />
             <marker date="1551384637155" expanded="true" signature="122:1980" ph="{...}" />
@@ -1376,6 +1363,20 @@
             <marker date="1551384637155" expanded="true" signature="1106:1948" ph="{...}" />
             <marker date="1551384637155" expanded="true" signature="1506:1632" ph="{...}" />
             <marker date="1551384637155" expanded="true" signature="1657:1930" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
+          <folding>
+            <marker date="1551385338242" expanded="true" signature="6:32" ph="..." />
+            <marker date="1551385338242" expanded="true" signature="69:368" ph="{...}" />
+            <marker date="1551385338242" expanded="true" signature="124:366" ph="{...}" />
+            <marker date="1551385338242" expanded="true" signature="186:360" ph="{...}" />
+            <marker date="1551385338242" expanded="true" signature="254:350" ph="{...}" />
           </folding>
         </state>
       </provider>
