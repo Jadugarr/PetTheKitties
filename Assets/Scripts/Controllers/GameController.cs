@@ -39,12 +39,23 @@ public class GameController : MonoBehaviour
         CreateUniversalSystems(pools.game);
         CreateEndFrameSystems(pools.game);
         CreateSystems(pools.game);
+        
+        ExecuteOneOffSystems(pools.game);
     }
 
     // add an id to every entity as it's created
     private void OnEntityCreated(IContext context, IEntity entity)
     {
         (entity as GameEntity).AddId(entity.creationIndex);
+    }
+
+    private void ExecuteOneOffSystems(GameContext context)
+    {
+        Systems oneOffSystems = new Feature("OneOffSystems")
+            .Add(new InitializeCameraSystem(context))
+            .Add(new InitializeGameStateSystem());
+        
+        oneOffSystems.Initialize();
     }
 
     private void CreateUniversalSystems(GameContext context)
@@ -54,7 +65,6 @@ public class GameController : MonoBehaviour
             .Add(new SyncVelocitySystem(context))
             //Promises
             .Add(new InitPromisesSystem())
-            .Add(new InitializeCameraSystem(context))
             //Input
             .Add(new InputSystem(context))
             .Add(new ProcessPauseInputSystem(context))
@@ -75,7 +85,6 @@ public class GameController : MonoBehaviour
             .Add(new CleanupUnloadSceneSystem(context))
             //Game State
             .Add(new ChangeGameStateInputMapSystem(context))
-            .Add(new InitializeGameStateSystem())
             //Sub State
             .Add(new ChangeSubStateInputMapSystem(context))
             .Add(new EnterPausedSubStateSystem(context))

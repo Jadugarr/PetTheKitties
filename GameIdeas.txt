@@ -6,9 +6,16 @@ Kitteh Game Ideas
 Game features:
 - pit falls
 - house to bring kitties back to
+- restart game
 - kitties move randomly while following the character
 - proper character movement system
+- kitties should avoid pitfalls
 
 Technical:
 - adressables
 - loading screens
+
+Polishing:
+- kitten follow mechanic
+- player movement
+- deal with warnings

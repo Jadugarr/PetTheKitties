@@ -1,5 +1,6 @@
 //This class is auto-generated, do not modify (TagsLayersEnumBuilder.cs)
 public abstract class Tags {
+	public const string DeathPlane = "DeathPlane";
 	public const string DynamicUILayer = "DynamicUILayer";
 	public const string EditorOnly = "EditorOnly";
 	public const string Enemy = "Enemy";

@@ -5,10 +5,14 @@ using Entitas.Extensions;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
-public class InitializeWorldStateSystem : GameInitializeSystem
+public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 {
+    private IGroup<GameEntity> _playerGroup;
+    private IGroup<GameEntity> _kittyGroup;
     public InitializeWorldStateSystem(GameContext context) : base(context)
     {
+        _playerGroup = context.GetGroup(GameMatcher.Player);
+        _kittyGroup = context.GetGroup(GameMatcher.Kitty);
     }
 
     protected override bool IsInValidState()
@@ -34,5 +38,18 @@ public class InitializeWorldStateSystem : GameInitializeSystem
         kittyEntity.AddAcceleration(20f);
         
         _context.SetNewSubstate(SubState.WorldNavigation);
+    }
+
+    public void TearDown()
+    {
+        foreach (GameEntity entity in _kittyGroup.GetEntities())
+        {
+            entity.Destroy();
+        }
+        
+        foreach (GameEntity entity in _playerGroup.GetEntities())
+        {
+            entity.Destroy();
+        }
     }
 }
