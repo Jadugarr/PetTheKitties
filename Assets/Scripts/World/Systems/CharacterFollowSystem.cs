@@ -5,7 +5,7 @@ namespace Entitas.World.Systems
 {
     public class CharacterFollowSystem : GameExecuteSystem
     {
-        private const float MaxDistanceToCharacter = 2f;
+        private const float MaxDistanceToCharacter = 5f;
 
         private IGroup<GameEntity> _followGroup;
 
@@ -25,16 +25,40 @@ namespace Entitas.World.Systems
             foreach (GameEntity followEntity in _followGroup.GetEntities())
             {
                 GameEntity entityToFollow = _context.GetEntityWithId(followEntity.followCharacter.EntityToFollowId);
-                if (entityToFollow != null)
-                {
-                    float currentDistance = Vector2.Distance(entityToFollow.view.View.transform.position,
-                        followEntity.view.View.transform.position);
+                float currentDistance = Vector2.Distance(entityToFollow.view.View.transform.position,
+                    followEntity.view.View.transform.position);
 
-                    if (currentDistance > MaxDistanceToCharacter)
+                if (currentDistance > MaxDistanceToCharacter)
+                {
+                    GameObject characterView = followEntity.view.View;
+
+                    if (characterView)
                     {
                         Vector2 moveDirection = entityToFollow.view.View.transform.position -
                                                 followEntity.view.View.transform.position;
-                        _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
+                        Vector3 extents = characterView.GetComponent<Collider2D>().bounds.extents;
+                        Vector2 raycastStartPos;
+
+                        if (moveDirection.x > 0f)
+                        {
+                            raycastStartPos = new Vector2(characterView.transform.position.x + extents.x,
+                                characterView.transform.position.y - extents.y - 0.01f);
+                        }
+                        else
+                        {
+                            raycastStartPos = new Vector2(characterView.transform.position.x - extents.x,
+                                characterView.transform.position.y - extents.y - 0.01f);
+                        }
+
+                        RaycastHit2D hit =
+                            Physics2D.Raycast(raycastStartPos
+                                , Vector2.down,
+                                0.01f);
+
+                        if (hit.collider != null && hit.collider.gameObject.tag.Equals(Tags.Ground))
+                        {
+                            _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
+                        }
 
                         if (moveDirection.y > 0.5f)
                         {
