@@ -9,7 +9,9 @@ public class RenderPositionSystem : GameReactiveSystem
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(Matcher<GameEntity>.AllOf(GameMatcher.Position, GameMatcher.View));
+        return context.CreateCollector(
+            new TriggerOnEvent<GameEntity>(Matcher<GameEntity>.AllOf(GameMatcher.Position, GameMatcher.View),
+                GroupEvent.Added));
     }
 
     protected override bool Filter(GameEntity entity)
@@ -26,8 +28,11 @@ public class RenderPositionSystem : GameReactiveSystem
     {
         foreach (GameEntity e in entities)
         {
-            PositionComponent pos = e.position;
-            e.view.View.transform.position = pos.position;
+            if (e.hasPosition)
+            {
+                PositionComponent pos = e.position;
+                e.view.View.transform.position = pos.position;
+            }
         }
     }
 }

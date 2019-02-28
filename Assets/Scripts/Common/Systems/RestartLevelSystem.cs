@@ -32,5 +32,7 @@ public class RestartLevelSystem : GameReactiveSystem
             activeSystem.TearDown();
             activeSystem.Initialize();
         }
+
+        _context.isRestartLevel = false;
     }
 }

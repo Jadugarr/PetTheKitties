@@ -104,7 +104,8 @@ public class GameController : MonoBehaviour
             .Add(new EnterFinalizeActionStateSystem(context))
             .Add(new ExitFinalizeActionStateSystem(context))
             .Add(new EnterWorldNavigationSubStateSystem(context))
-            .Add(new ExitWorldNavigationSubStateSystem(context));
+            .Add(new ExitWorldNavigationSubStateSystem(context))
+            .Add(new RestartLevelSystem(context));
 
         GameSystemService.AddActiveSystems(universalSystems);
     }

@@ -33,8 +33,10 @@ namespace Entitas.Kitty.Systems
                 {
                     GameEntity interactableEntity =
                         _context.GetEntityWithId(_context.playerInteraction.InteractableEntityId);
-                    
-                    _context.ReplaceInteractionTriggered(interactableEntity.id.Id);
+                    if (interactableEntity != null)
+                    {
+                        _context.ReplaceInteractionTriggered(interactableEntity.id.Id);
+                    }
                 }
             }
         }

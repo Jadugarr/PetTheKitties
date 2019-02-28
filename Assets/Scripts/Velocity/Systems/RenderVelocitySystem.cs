@@ -10,7 +10,8 @@ public class RenderVelocitySystem : GameReactiveSystem
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(Matcher<GameEntity>.AllOf(GameMatcher.CharacterVelocity, GameMatcher.View));
+        return context.CreateCollector(new TriggerOnEvent<GameEntity>(
+            Matcher<GameEntity>.AllOf(GameMatcher.CharacterVelocity, GameMatcher.View), GroupEvent.Added));
     }
 
     protected override bool Filter(GameEntity entity)
@@ -27,11 +28,14 @@ public class RenderVelocitySystem : GameReactiveSystem
     {
         foreach (GameEntity e in entities)
         {
-            Rigidbody2D rigidbody = e.view?.View.GetComponent<Rigidbody2D>();
-
-            if (rigidbody != null)
+            if (e.hasView)
             {
-                rigidbody.velocity = e.characterVelocity.Velocity;
+                Rigidbody2D rigidbody = e.view.View.GetComponent<Rigidbody2D>();
+
+                if (rigidbody != null)
+                {
+                    rigidbody.velocity = e.characterVelocity.Velocity;
+                }
             }
         }
     }

@@ -24,12 +24,16 @@ public class ActionTimeSystem : GameExecuteSystem
         foreach (GameEntity actionEntity in actionEntities)
         {
             GameEntity performingCharacter = _context.GetEntityWithId(actionEntity.battleAction.EntityId);
-            float newRemainingTime = actionEntity.executionTime.RemainingTime -
-                                     Time.deltaTime * BattleActionUtils.GetActionTimeStep(
-                                         actionEntity.battleAction.ActionType,
-                                         performingCharacter);
-            actionEntity.ReplaceExecutionTime(actionEntity.executionTime.TotalTime,
-                newRemainingTime);
+
+            if (performingCharacter != null)
+            {
+                float newRemainingTime = actionEntity.executionTime.RemainingTime -
+                                         Time.deltaTime * BattleActionUtils.GetActionTimeStep(
+                                             actionEntity.battleAction.ActionType,
+                                             performingCharacter);
+                actionEntity.ReplaceExecutionTime(actionEntity.executionTime.TotalTime,
+                    newRemainingTime);
+            }
         }
     }
 }

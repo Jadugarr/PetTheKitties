@@ -29,12 +29,15 @@ public class CharacterDirectionSystem : GameReactiveSystem
         foreach (GameEntity movementEntity in entities)
         {
             GameEntity characterToFlip = _context.GetEntityWithId(movementEntity.moveCharacter.EntityToMoveId);
-            GameObject characterView = characterToFlip.view?.View;
-
-            if (characterView != null)
+            if (characterToFlip != null)
             {
-                characterView.transform.localScale =
-                    new Vector3(movementEntity.moveCharacter.MoveDirection.x < 0f ? -1 : 1, 1, 1);
+                GameObject characterView = characterToFlip.view?.View;
+
+                if (characterView != null)
+                {
+                    characterView.transform.localScale =
+                        new Vector3(movementEntity.moveCharacter.MoveDirection.x < 0f ? -1 : 1, 1, 1);
+                }
             }
         }
     }

@@ -33,9 +33,12 @@ public class ExecuteDefenseActionSystem : GameReactiveSystem
         foreach (GameEntity gameEntity in entities)
         {
             GameEntity defendingCharacter = _context.GetEntityWithId(gameEntity.battleAction.EntityId);
-            defendingCharacter.isDefend = true;
+            if (defendingCharacter != null)
+            {
+                defendingCharacter.isDefend = true;
 
-            gameEntity.isActionFinished = true;
+                gameEntity.isActionFinished = true;
+            }
         }
     }
 }

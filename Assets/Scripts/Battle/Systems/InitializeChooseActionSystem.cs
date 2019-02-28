@@ -18,7 +18,8 @@ namespace Entitas.Battle.Systems
             GameEntity currentEntity = null;
             foreach (GameEntity choosingEntity in choosingEntities)
             {
-                if (choosingEntity.executionTime.RemainingTime <= 0f && choosingEntity.battleAction.ActionAtbType == ActionATBType.Waiting)
+                if (choosingEntity.executionTime.RemainingTime <= 0f &&
+                    choosingEntity.battleAction.ActionAtbType == ActionATBType.Waiting)
                 {
                     currentEntity = choosingEntity;
                     break;
@@ -28,17 +29,19 @@ namespace Entitas.Battle.Systems
             if (currentEntity != null)
             {
                 GameEntity characterEntity = context.GetEntityWithId(currentEntity.battleAction.EntityId);
-                
-                if (characterEntity.isPlayer)
+                if (characterEntity != null)
                 {
-                    UIService.ShowWidget(UiAssetTypes.ActionChooser,
-                        new ActionChooserProperties(currentEntity,
-                            characterEntity.battleActionChoices.BattleActionChoices.ToArray(), context));
-                }
-                else
-                {
-                    currentEntity.ReplaceBattleAction(currentEntity.battleAction.EntityId, ActionType.Defend,
-                        currentEntity.battleAction.ActionAtbType);
+                    if (characterEntity.isPlayer)
+                    {
+                        UIService.ShowWidget(UiAssetTypes.ActionChooser,
+                            new ActionChooserProperties(currentEntity,
+                                characterEntity.battleActionChoices.BattleActionChoices.ToArray(), context));
+                    }
+                    else
+                    {
+                        currentEntity.ReplaceBattleAction(currentEntity.battleAction.EntityId, ActionType.Defend,
+                            currentEntity.battleAction.ActionAtbType);
+                    }
                 }
             }
             else

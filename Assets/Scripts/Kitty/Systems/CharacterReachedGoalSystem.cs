@@ -34,11 +34,14 @@ public class CharacterReachedGoalSystem : GameReactiveSystem, ICleanupSystem
         {
             GameEntity characterEntity = _context.GetEntityWithId(reachedGoalEntity.characterReachedGoal.CharacterId);
 
-            characterEntity?.view.View.GetComponent<AudioSource>().Play();
-
-            if (characterEntity.hasFollowCharacter)
+            if (characterEntity != null)
             {
-                characterEntity.RemoveFollowCharacter();
+                characterEntity.view.View.GetComponent<AudioSource>().Play();
+
+                if (characterEntity.hasFollowCharacter)
+                {
+                    characterEntity.RemoveFollowCharacter();
+                }
             }
         }
     }

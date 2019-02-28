@@ -15,7 +15,7 @@ namespace Entitas.Test
 
         private void OnRestartClicked()
         {
-            
+            Contexts.sharedInstance.game.isRestartLevel = true;
         }
     }
 }

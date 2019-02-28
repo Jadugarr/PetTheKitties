@@ -25,18 +25,21 @@ namespace Entitas.World.Systems
             foreach (GameEntity followEntity in _followGroup.GetEntities())
             {
                 GameEntity entityToFollow = _context.GetEntityWithId(followEntity.followCharacter.EntityToFollowId);
-                float currentDistance = Vector2.Distance(entityToFollow.view.View.transform.position,
-                    followEntity.view.View.transform.position);
-
-                if (currentDistance > MaxDistanceToCharacter)
+                if (entityToFollow != null)
                 {
-                    Vector2 moveDirection = entityToFollow.view.View.transform.position -
-                                            followEntity.view.View.transform.position;
-                    _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
+                    float currentDistance = Vector2.Distance(entityToFollow.view.View.transform.position,
+                        followEntity.view.View.transform.position);
 
-                    if (moveDirection.y > 0.5f)
+                    if (currentDistance > MaxDistanceToCharacter)
                     {
-                        _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
+                        Vector2 moveDirection = entityToFollow.view.View.transform.position -
+                                                followEntity.view.View.transform.position;
+                        _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
+
+                        if (moveDirection.y > 0.5f)
+                        {
+                            _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
+                        }
                     }
                 }
             }

@@ -3,6 +3,8 @@ using Cinemachine;
 using Entitas;
 using Entitas.Extensions;
 using Entitas.Scripts.Common.Systems;
+using Entitas.Unity;
+using Entitas.VisualDebugging.Unity;
 using UnityEngine;
 
 public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
@@ -44,11 +46,21 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
     {
         foreach (GameEntity entity in _kittyGroup.GetEntities())
         {
+            if (entity.view != null)
+            {
+                entity.view.View.Unlink();
+                entity.view.View.DestroyGameObject();
+            }
             entity.Destroy();
         }
         
         foreach (GameEntity entity in _playerGroup.GetEntities())
         {
+            if (entity.view != null)
+            {
+                entity.view.View.Unlink();
+                entity.view.View.DestroyGameObject();
+            }
             entity.Destroy();
         }
     }

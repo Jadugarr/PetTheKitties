@@ -29,25 +29,28 @@ public class JumpCharacterSystem : GameReactiveSystem
         foreach (GameEntity jumpCharacterEntity in entities)
         {
             GameEntity jumpingEntity = _context.GetEntityWithId(jumpCharacterEntity.jumpCharacter.JumpEntityId);
-            GameObject characterView = jumpingEntity.view.View;
-
-            if (characterView)
+            if (jumpingEntity != null)
             {
-                float distanceToGround = characterView.GetComponent<Collider2D>().bounds.extents.y;
-                RaycastHit2D hit =
-                    Physics2D.Raycast(
-                        new Vector2(characterView.transform.position.x,
-                            characterView.transform.position.y - distanceToGround - 0.01f), Vector2.down, 0.01f);
+                GameObject characterView = jumpingEntity.view.View;
 
-                if (hit.collider != null)
+                if (characterView)
                 {
-                    Debug.Log("Tag of hit target: " + hit.collider.gameObject.tag);
+                    float distanceToGround = characterView.GetComponent<Collider2D>().bounds.extents.y;
+                    RaycastHit2D hit =
+                        Physics2D.Raycast(
+                            new Vector2(characterView.transform.position.x,
+                                characterView.transform.position.y - distanceToGround - 0.01f), Vector2.down, 0.01f);
 
-                    if (hit.collider.gameObject.tag.Equals(Tags.Ground))
+                    if (hit.collider != null)
                     {
-                        jumpingEntity.ReplaceCharacterVelocity(new Vector2(
-                            jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
-                            jumpingEntity.jumpForce.JumpForce));
+                        Debug.Log("Tag of hit target: " + hit.collider.gameObject.tag);
+
+                        if (hit.collider.gameObject.tag.Equals(Tags.Ground))
+                        {
+                            jumpingEntity.ReplaceCharacterVelocity(new Vector2(
+                                jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
+                                jumpingEntity.jumpForce.JumpForce));
+                        }
                     }
                 }
             }

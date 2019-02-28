@@ -19,7 +19,8 @@ namespace Entitas.Battle.Systems
             GameEntity currentEntity = null;
             foreach (GameEntity choosingEntity in choosingEntities)
             {
-                if (choosingEntity.executionTime.RemainingTime <= 0f && choosingEntity.battleAction.ActionAtbType == ActionATBType.Waiting)
+                if (choosingEntity.executionTime.RemainingTime <= 0f &&
+                    choosingEntity.battleAction.ActionAtbType == ActionATBType.Waiting)
                 {
                     currentEntity = choosingEntity;
                     break;
@@ -29,19 +30,23 @@ namespace Entitas.Battle.Systems
             if (currentEntity != null)
             {
                 GameEntity characterEntity = context.GetEntityWithId(currentEntity.battleAction.EntityId);
-                int[] possibleTargetIds =
-                    BattleActionUtils.GetTargetEntitiesByActionType(currentEntity.battleAction.ActionType,
-                        characterEntity, context);
 
-                if (possibleTargetIds.Length == 1 && possibleTargetIds[0] == characterEntity.id.Id)
+                if (characterEntity != null)
                 {
-                    currentEntity.AddTarget(characterEntity.id.Id);
-                }
-                else
-                {
-                    UIService.ShowWidget(UiAssetTypes.CharacterChooser,
-                        new CharacterChooserProperties(possibleTargetIds,
-                            context, currentEntity));
+                    int[] possibleTargetIds =
+                        BattleActionUtils.GetTargetEntitiesByActionType(currentEntity.battleAction.ActionType,
+                            characterEntity, context);
+
+                    if (possibleTargetIds.Length == 1 && possibleTargetIds[0] == characterEntity.id.Id)
+                    {
+                        currentEntity.AddTarget(characterEntity.id.Id);
+                    }
+                    else
+                    {
+                        UIService.ShowWidget(UiAssetTypes.CharacterChooser,
+                            new CharacterChooserProperties(possibleTargetIds,
+                                context, currentEntity));
+                    }
                 }
             }
             else

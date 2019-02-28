@@ -31,20 +31,23 @@ public class MoveCharacterSystem : GameReactiveSystem
             GameEntity movementEntity = entities[i];
             GameEntity entityToMove = _context.GetEntityWithId(movementEntity.moveCharacter.EntityToMoveId);
 
-            if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
+            if (entityToMove != null)
             {
-                float newVelocityX = entityToMove.characterVelocity.Velocity.x +
-                                     (entityToMove.acceleration.Acceleration *
-                                      movementEntity.moveCharacter.MoveDirection.normalized.x * Time.deltaTime);
-                if (Mathf.Abs(newVelocityX) < entityToMove.movementSpeed.MovementSpeedValue)
+                if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
-                    entityToMove.characterVelocity.Velocity.x = newVelocityX;
-                }
-                else
-                {
-                    entityToMove.characterVelocity.Velocity.x =
-                        entityToMove.movementSpeed.MovementSpeedValue *
-                        movementEntity.moveCharacter.MoveDirection.normalized.x;
+                    float newVelocityX = entityToMove.characterVelocity.Velocity.x +
+                                         (entityToMove.acceleration.Acceleration *
+                                          movementEntity.moveCharacter.MoveDirection.normalized.x * Time.deltaTime);
+                    if (Mathf.Abs(newVelocityX) < entityToMove.movementSpeed.MovementSpeedValue)
+                    {
+                        entityToMove.characterVelocity.Velocity.x = newVelocityX;
+                    }
+                    else
+                    {
+                        entityToMove.characterVelocity.Velocity.x =
+                            entityToMove.movementSpeed.MovementSpeedValue *
+                            movementEntity.moveCharacter.MoveDirection.normalized.x;
+                    }
                 }
             }
         }

@@ -37,16 +37,19 @@ public class ExecutePlayerAttackActionSystem : GameReactiveSystem
         {
             GameEntity attacker = _context.GetEntityWithId(gameEntity.battleAction.EntityId);
             GameEntity defender = _context.GetEntityWithId(gameEntity.target.TargetId);
-            
-            defender.ReplaceHealth(
-                defender.health.Health -
-                Math.Max(0,
-                    attacker.attack.AttackValue -
-                    defender.defenseStat.DefenseValue));
 
-            Debug.Log("Enemy attacked! Remaining health: " + defender.health.Health);
+            if (attacker != null && defender != null)
+            {
+                defender.ReplaceHealth(
+                    defender.health.Health -
+                    Math.Max(0,
+                        attacker.attack.AttackValue -
+                        defender.defenseStat.DefenseValue));
 
-            gameEntity.isActionFinished = true;
+                Debug.Log("Enemy attacked! Remaining health: " + defender.health.Health);
+
+                gameEntity.isActionFinished = true;
+            }
         }
     }
 }
