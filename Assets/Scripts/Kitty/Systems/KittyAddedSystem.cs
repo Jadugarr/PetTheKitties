@@ -26,12 +26,13 @@ public class KittyAddedSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        //TODO: Load player async (maybe with promise?)
         GameObject kittyObject = Resources.Load<GameObject>(WorldAssetTypes.WorldKitty);
-        Transform spawnPointTransform = GameObject.FindGameObjectWithTag(Tags.KittySpawnPoint).transform;
+        GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag(Tags.KittySpawnPoint);
 
-        foreach (GameEntity gameEntity in entities)
+        for (var i = 0; i < entities.Count; i++)
         {
+            GameEntity gameEntity = entities[i];
+            Transform spawnPointTransform = spawnPoints[i].transform;
             GameObject kittyView = GameObject.Instantiate(kittyObject, spawnPointTransform.position,
                 spawnPointTransform.rotation);
             kittyView.Link(gameEntity);

@@ -26,7 +26,8 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
     protected override void ExecuteSystem()
     {
         CreatePlayer();
-        CreateKittens();
+        CreateKitten();
+        CreateKitten();
         CreateWinLoseConditions();
 
         _context.SetNewSubstate(SubState.WorldNavigation);
@@ -43,7 +44,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         playerEntity.AddHealth(666);
     }
 
-    private void CreateKittens()
+    private void CreateKitten()
     {
         //Create test kitty
         GameEntity kittyEntity = _context.CreateEntity();
