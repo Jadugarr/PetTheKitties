@@ -6,7 +6,8 @@ public static class WinLoseConditionConfiguration
 {
     private static Dictionary<WinCondition, Type> winConditionSystemMap = new Dictionary<WinCondition, Type>
     {
-        {WinCondition.KillEnemies, typeof(CheckKillEnemiesConditionSystem)}
+        {WinCondition.KillEnemies, typeof(CheckKillEnemiesConditionSystem)},
+        {WinCondition.KittensReachedGoal, typeof(CheckKittensReachedGoalConditionSystem)}
     };
 
     private static Dictionary<LoseCondition, Type> loseConditionSystemMap = new Dictionary<LoseCondition, Type>

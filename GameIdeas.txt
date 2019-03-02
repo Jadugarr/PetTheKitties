@@ -4,6 +4,7 @@ Kitteh Game Ideas
 - dumplings
 
 Game features:
+- win/lose game 
 - house to bring kitties back to
 - kitties move randomly while following the character
 - kitties should avoid pitfalls

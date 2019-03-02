@@ -31,7 +31,7 @@ public class LoseConditionControllerSystem : GameReactiveSystem
 
     protected override bool IsInValidState()
     {
-        return _context.gameState.CurrentGameState == GameState.Battle;
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using Entitas;
 
-public class EnterBattleWonStateSystem : GameReactiveSystem
+public class EnterPlayerWonStateSystem : GameReactiveSystem
 {
-    public EnterBattleWonStateSystem(IContext<GameEntity> context) : base(context)
+    public EnterPlayerWonStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
 
@@ -19,8 +19,7 @@ public class EnterBattleWonStateSystem : GameReactiveSystem
 
     protected override bool IsInValidState()
     {
-        return _context.gameState.CurrentGameState == GameState.Battle &&
-               _context.subState.CurrentSubState == SubState.PlayerWon;
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

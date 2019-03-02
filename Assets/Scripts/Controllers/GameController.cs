@@ -91,7 +91,7 @@ public class GameController : MonoBehaviour
             .Add(new ExitPausedSubStateSystem(context))
             .Add(new EnterWaitingSubStateSystem(context))
             .Add(new ExitWaitingSubStateSystem(context))
-            .Add(new EnterBattleWonStateSystem(context))
+            .Add(new EnterPlayerWonStateSystem(context))
             .Add(new ExitBattleWonStateSystem(context))
             .Add(new EnterBattleLostStateSystem(context))
             .Add(new ExitBattleLostStateSystem(context))
@@ -218,7 +218,12 @@ public class GameController : MonoBehaviour
             .Add(new SetCameraFollowTargetSystem(context))
             .Add(new InitializeWorldStateSystem(context))
             .Add(new WorldPlayerAddedSystem(context))
-            .Add(new KittyAddedSystem(context));
+            .Add(new KittyAddedSystem(context))
+            //WinConditions
+            .Add(new InitializeAndTeardownWinConditionsSystem(context))
+            .Add(new InitializeAndTeardownLoseConditionsSystem(context))
+            .Add(new WinConditionControllerSystem(context))
+            .Add(new LoseConditionControllerSystem(context));
 
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 

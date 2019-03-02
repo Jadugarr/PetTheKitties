@@ -24,13 +24,25 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 
     protected override void ExecuteSystem()
     {
+        CreatePlayer();
+        CreateKittens();
+        CreateWinLoseConditions();
+        
+        _context.SetNewSubstate(SubState.WorldNavigation);
+    }
+
+    private void CreatePlayer()
+    {
         //Create player entity
         GameEntity playerEntity = _context.CreateEntity();
         playerEntity.isPlayer = true;
         playerEntity.AddMovementSpeed(5f);
         playerEntity.AddJumpForce(10f);
         playerEntity.AddAcceleration(20f);
-        
+    }
+
+    private void CreateKittens()
+    {
         //Create test kitty
         GameEntity kittyEntity = _context.CreateEntity();
         kittyEntity.isKitty = true;
@@ -38,8 +50,16 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         kittyEntity.AddMovementSpeed(5f);
         kittyEntity.AddJumpForce(10f);
         kittyEntity.AddAcceleration(20f);
-        
-        _context.SetNewSubstate(SubState.WorldNavigation);
+    }
+
+    private void CreateWinLoseConditions()
+    {
+        _context.CreateEntity()
+            .AddWinCondition(ConditionModifier.All,
+                new[] {new WinConditionState {IsFulfilled = false, WinCondition = WinCondition.KittensReachedGoal}});
+        _context.CreateEntity()
+            .AddLoseCondition(ConditionModifier.All,
+                new[] {new LoseConditionState {IsFulfilled = false, LoseCondition = LoseCondition.PlayerDead}});
     }
 
     public void TearDown()
@@ -63,5 +83,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
             }
             entity.Destroy();
         }
+        
+        _context.RemoveWinCondition();
     }
 }
