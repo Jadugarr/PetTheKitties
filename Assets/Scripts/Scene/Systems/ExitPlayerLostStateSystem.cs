@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class ExitBattleLostStateSystem : GameReactiveSystem
+public class ExitPlayerLostStateSystem : GameReactiveSystem
 {
-    public ExitBattleLostStateSystem(IContext<GameEntity> context) : base(context)
+    public ExitPlayerLostStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
 
@@ -20,7 +20,7 @@ public class ExitBattleLostStateSystem : GameReactiveSystem
 
     protected override bool IsInValidState()
     {
-        return _context.gameState.CurrentGameState == GameState.Battle;
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

@@ -32,13 +32,15 @@ public class ProcessWorldMoveInputSystem : GameReactiveSystem, ICleanupSystem
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
         GameEntity playerEntity = playerGroup.GetSingleEntity();
-
-        for (var i = 0; i < entities.Count; i++)
+        if (playerEntity != null)
         {
-            GameEntity gameEntity = entities[i];
+            for (var i = 0; i < entities.Count; i++)
+            {
+                GameEntity gameEntity = entities[i];
 
-            _context.CreateEntity()
-                .AddMoveCharacter(playerEntity.id.Id, new Vector2(gameEntity.input.InputValue, 0));
+                _context.CreateEntity()
+                    .AddMoveCharacter(playerEntity.id.Id, new Vector2(gameEntity.input.InputValue, 0));
+            }
         }
     }
 

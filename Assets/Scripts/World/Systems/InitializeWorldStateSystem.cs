@@ -89,5 +89,6 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         }
 
         _context.RemoveWinCondition();
+        _context.RemoveLoseCondition();
     }
 }

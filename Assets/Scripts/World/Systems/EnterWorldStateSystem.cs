@@ -36,6 +36,8 @@ public class EnterWorldStateSystem : GameReactiveSystem
 
     private void OnWorldSceneLoaded(IGroup<GameEntity> @group, GameEntity entity, int index, IComponent component)
     {
+        _sceneLoaded.OnEntityAdded -= OnWorldSceneLoaded;
+        
         if (!GameSystemService.HasSystemMapping(GameState.World))
         {
             Debug.LogError("World systems haven't been created yet!");

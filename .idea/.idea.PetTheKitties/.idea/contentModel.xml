@@ -304,10 +304,10 @@
               <e p="EnterPlayerLostStateSystem.cs" t="Include" />
               <e p="EnterPlayerWonStateSystem.cs" t="Include" />
               <e p="EnterWaitingSubStateSystem.cs" t="Include" />
-              <e p="ExitBattleLostStateSystem.cs" t="Include" />
               <e p="ExitBattleStateSystem.cs" t="Include" />
-              <e p="ExitBattleWonStateSystem.cs" t="Include" />
               <e p="ExitMainMenuStateSystem.cs" t="Include" />
+              <e p="ExitPlayerLostStateSystem.cs" t="Include" />
+              <e p="ExitPlayerWonStateSystem.cs" t="Include" />
               <e p="ExitWaitingSubStateSystem.cs" t="Include" />
               <e p="UnloadSceneSystem.cs" t="Include" />
             </e>
@@ -398,6 +398,7 @@
               <e p="EnterWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
+              <e p="ExitWorldStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
               <e p="JumpCharacterSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />

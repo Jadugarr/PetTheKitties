@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class ExitBattleWonStateSystem : GameReactiveSystem
+public class ExitPlayerWonStateSystem : GameReactiveSystem
 {
-    public ExitBattleWonStateSystem(IContext<GameEntity> context) : base(context)
+    public ExitPlayerWonStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
 
