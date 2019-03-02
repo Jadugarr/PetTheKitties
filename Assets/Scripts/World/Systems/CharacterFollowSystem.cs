@@ -5,7 +5,7 @@ namespace Entitas.World.Systems
 {
     public class CharacterFollowSystem : GameExecuteSystem
     {
-        private const float MaxDistanceToCharacter = 5f;
+        private const float MaxDistanceToCharacter = 2f;
 
         private IGroup<GameEntity> _followGroup;
 
@@ -53,7 +53,7 @@ namespace Entitas.World.Systems
                         RaycastHit2D hit =
                             Physics2D.Raycast(raycastStartPos
                                 , Vector2.down,
-                                0.01f);
+                                10f);
 
                         if (hit.collider != null && hit.collider.gameObject.tag.Equals(Tags.Ground))
                         {
