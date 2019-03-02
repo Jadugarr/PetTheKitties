@@ -4,7 +4,7 @@ namespace Entitas.Battle.Systems
     {
         public void Initialize()
         {
-            UIService.ShowWidget(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I won!"));
+            UIService.ShowWidget(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I lost!"));
         }
 
         public void TearDown()

@@ -3,9 +3,9 @@ using Entitas;
 using Entitas.Battle.Systems;
 using UnityEngine;
 
-public class EnterBattleLostStateSystem : GameReactiveSystem
+public class EnterPlayerLostStateSystem : GameReactiveSystem
 {
-    public EnterBattleLostStateSystem(IContext<GameEntity> context) : base(context)
+    public EnterPlayerLostStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
 
@@ -21,22 +21,12 @@ public class EnterBattleLostStateSystem : GameReactiveSystem
 
     protected override bool IsInValidState()
     {
-        return _context.gameState.CurrentGameState == GameState.Battle &&
-               _context.subState.CurrentSubState == SubState.PlayerLost;
+        return true;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (!GameSystemService.HasSubSystemMapping(SubState.PlayerLost))
-        {
-            CreatePlayerLostSystems();
-        }
-
         Systems playerLostSystems = GameSystemService.GetSubSystemMapping(SubState.PlayerLost);
         GameSystemService.AddActiveSystems(playerLostSystems);
-    }
-
-    private void CreatePlayerLostSystems()
-    {
     }
 }

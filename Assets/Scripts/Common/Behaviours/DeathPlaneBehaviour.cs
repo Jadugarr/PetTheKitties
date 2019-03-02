@@ -1,4 +1,5 @@
 using System;
+using Entitas.Unity;
 using UnityEngine;
 
 namespace Entitas.Common.Behaviours
@@ -9,7 +10,10 @@ namespace Entitas.Common.Behaviours
         {
             if (other.gameObject.tag.Equals(Tags.Player))
             {
-                Contexts.sharedInstance.game.isRestartLevel = true;
+                GameEntity playerEntity = (GameEntity)other.gameObject.GetEntityLink().entity;
+                playerEntity.ReplaceHealth(0);
+                
+//                Contexts.sharedInstance.game.isRestartLevel = true;
             }
         }
     }

@@ -93,7 +93,7 @@ public class GameController : MonoBehaviour
             .Add(new ExitWaitingSubStateSystem(context))
             .Add(new EnterPlayerWonStateSystem(context))
             .Add(new ExitBattleWonStateSystem(context))
-            .Add(new EnterBattleLostStateSystem(context))
+            .Add(new EnterPlayerLostStateSystem(context))
             .Add(new ExitBattleLostStateSystem(context))
             .Add(new EnterChooseActionStateSystem(context))
             .Add(new ExitChooseActionStateSystem(context))
@@ -219,6 +219,7 @@ public class GameController : MonoBehaviour
             .Add(new InitializeWorldStateSystem(context))
             .Add(new WorldPlayerAddedSystem(context))
             .Add(new KittyAddedSystem(context))
+            .Add(new CharacterDeathSystem(context))
             //WinConditions
             .Add(new InitializeAndTeardownWinConditionsSystem(context))
             .Add(new InitializeAndTeardownLoseConditionsSystem(context))

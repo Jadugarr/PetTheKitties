@@ -24,15 +24,6 @@ public class EnterPlayerWonStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (GameSystemService.GetSubSystemMapping(SubState.PlayerWon) == null)
-        {
-            CreatePlayerWonSystems();
-        }
-        
         GameSystemService.AddActiveSystems(GameSystemService.GetSubSystemMapping(SubState.PlayerWon));
-    }
-
-    private void CreatePlayerWonSystems()
-    {
     }
 }

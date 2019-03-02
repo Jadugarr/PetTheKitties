@@ -299,9 +299,9 @@
               <e p="ChangeSubStateInputMapSystem.cs" t="Include" />
               <e p="CleanupSceneLoadedSystem.cs" t="Include" />
               <e p="CleanupUnloadSceneSystem.cs" t="Include" />
-              <e p="EnterBattleLostStateSystem.cs" t="Include" />
               <e p="EnterBattleStateSystem.cs" t="Include" />
               <e p="EnterMainMenuStateSystem.cs" t="Include" />
+              <e p="EnterPlayerLostStateSystem.cs" t="Include" />
               <e p="EnterPlayerWonStateSystem.cs" t="Include" />
               <e p="EnterWaitingSubStateSystem.cs" t="Include" />
               <e p="ExitBattleLostStateSystem.cs" t="Include" />

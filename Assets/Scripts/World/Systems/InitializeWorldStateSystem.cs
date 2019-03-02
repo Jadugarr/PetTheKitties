@@ -11,6 +11,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 {
     private IGroup<GameEntity> _playerGroup;
     private IGroup<GameEntity> _kittyGroup;
+
     public InitializeWorldStateSystem(GameContext context) : base(context)
     {
         _playerGroup = context.GetGroup(GameMatcher.Player);
@@ -27,7 +28,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         CreatePlayer();
         CreateKittens();
         CreateWinLoseConditions();
-        
+
         _context.SetNewSubstate(SubState.WorldNavigation);
     }
 
@@ -39,6 +40,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         playerEntity.AddMovementSpeed(5f);
         playerEntity.AddJumpForce(10f);
         playerEntity.AddAcceleration(20f);
+        playerEntity.AddHealth(666);
     }
 
     private void CreateKittens()
@@ -71,9 +73,10 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
                 entity.view.View.Unlink();
                 entity.view.View.DestroyGameObject();
             }
+
             entity.Destroy();
         }
-        
+
         foreach (GameEntity entity in _playerGroup.GetEntities())
         {
             if (entity.view != null)
@@ -81,9 +84,10 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
                 entity.view.View.Unlink();
                 entity.view.View.DestroyGameObject();
             }
+
             entity.Destroy();
         }
-        
+
         _context.RemoveWinCondition();
     }
 }
