@@ -76,6 +76,7 @@
               <e p="GamePlayerInteractionComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
               <e p="GameRestartLevelComponent.cs" t="Include" />
+              <e p="GameScaredComponent.cs" t="Include" />
               <e p="GameSceneLoadedComponent.cs" t="Include" />
               <e p="GameSpeedComponent.cs" t="Include" />
               <e p="GameSubStateComponent.cs" t="Include" />
@@ -390,10 +391,12 @@
               <e p="JumpForceComponent.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />
+              <e p="ScaredComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="CharacterDirectionSystem.cs" t="Include" />
               <e p="CharacterFollowSystem.cs" t="Include" />
+              <e p="CharacterScaredSystem.cs" t="Include" />
               <e p="CheckKittensReachedGoalConditionSystem.cs" t="Include" />
               <e p="EnterWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />

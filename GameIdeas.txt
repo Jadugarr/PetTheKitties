@@ -16,3 +16,8 @@ Polishing:
 - kitten follow mechanic
 - player movement
 - deal with warnings
+
+bug fixes:
+- kittens get scared of other kittens while moving
+	- work with layers
+	- maybe check out collision matrix?
