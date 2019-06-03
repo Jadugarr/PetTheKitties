@@ -36,10 +36,10 @@ public class JumpCharacterSystem : GameReactiveSystem
                 if (characterView)
                 {
                     float distanceToGround = characterView.GetComponent<Collider2D>().bounds.extents.y;
-                    RaycastHit2D hit =
-                        Physics2D.Raycast(
-                            new Vector2(characterView.transform.position.x,
-                                characterView.transform.position.y - distanceToGround - 0.01f), Vector2.down, 0.01f);
+                    Vector2 rayStart = new Vector2(characterView.transform.position.x,
+                        characterView.transform.position.y - distanceToGround - 0.01f);
+                    Debug.DrawRay(rayStart, Vector2.down * 0.01f, Color.red, 3f);
+                    RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, 0.01f);
 
                     if (hit.collider != null)
                     {
