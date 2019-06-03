@@ -42,6 +42,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         playerEntity.AddJumpForce(10f);
         playerEntity.AddAcceleration(20f);
         playerEntity.AddHealth(666);
+        playerEntity.AddCharacterState(CharacterState.Idle);
     }
 
     private void CreateKitten()

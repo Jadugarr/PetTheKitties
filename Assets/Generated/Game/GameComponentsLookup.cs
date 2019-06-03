@@ -19,7 +19,7 @@ public static class GameComponentsLookup {
     public const int BattleImage = 8;
     public const int Camera = 9;
     public const int ChangeScene = 10;
-    public const int CharacterBattleState = 11;
+    public const int CharacterState = 11;
     public const int CharacterVelocity = 12;
     public const int CollisionTrigger = 13;
     public const int Defend = 14;
@@ -76,7 +76,7 @@ public static class GameComponentsLookup {
         "BattleImage",
         "Camera",
         "ChangeScene",
-        "CharacterBattleState",
+        "CharacterState",
         "CharacterVelocity",
         "CollisionTrigger",
         "Defend",
@@ -132,7 +132,7 @@ public static class GameComponentsLookup {
         typeof(BattleImageComponent),
         typeof(CameraComponent),
         typeof(ChangeSceneComponent),
-        typeof(CharacterBattleStateComponent),
+        typeof(CharacterStateComponent),
         typeof(CharacterVelocityComponent),
         typeof(CollisionTriggerComponent),
         typeof(DefendComponent),

@@ -43,8 +43,8 @@
               <e p="GameBattleImageComponent.cs" t="Include" />
               <e p="GameCameraComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
-              <e p="GameCharacterBattleStateComponent.cs" t="Include" />
               <e p="GameCharacterReachedGoalComponent.cs" t="Include" />
+              <e p="GameCharacterStateComponent.cs" t="Include" />
               <e p="GameCharacterVelocityComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
@@ -121,14 +121,14 @@
             <e p="TargetType.cs" t="Include" />
           </e>
           <e p="Battle" t="Include">
-            <e p="CharacterBattleState.cs" t="Include" />
+            <e p="CharacterState.cs" t="Include" />
             <e p="Components" t="Include">
               <e p="AttackComponent.cs" t="Include" />
               <e p="AttackInputComponent.cs" t="Include" />
               <e p="BattleComponent.cs" t="Include" />
               <e p="BattleEndComponent.cs" t="Include" />
               <e p="BattleImageComponent.cs" t="Include" />
-              <e p="CharacterBattleStateComponent.cs" t="Include" />
+              <e p="CharacterStateComponent.cs" t="Include" />
               <e p="DefendComponent.cs" t="Include" />
               <e p="DefenseStatComponent.cs" t="Include" />
               <e p="ExecutionTimeComponent.cs" t="Include" />
