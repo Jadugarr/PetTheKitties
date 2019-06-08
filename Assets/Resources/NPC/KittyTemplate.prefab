@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 50684805870135212}
   - component: {fileID: 61838659466084010}
   - component: {fileID: 3135739889824598634}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: KittyTemplate
   m_TagString: Kitty
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 1723242094908024244}
   - component: {fileID: 156713644184532199}
   - component: {fileID: 2774055137721679621}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpriteRenderer
   m_TagString: Untagged
   m_Icon: {fileID: 0}

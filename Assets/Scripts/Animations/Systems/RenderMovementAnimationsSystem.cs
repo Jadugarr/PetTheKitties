@@ -16,7 +16,7 @@ public class RenderMovementAnimationsSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return true;
+        return entity.hasCharacterAnimator && entity.hasCharacterVelocity;
     }
 
     protected override bool IsInValidState()

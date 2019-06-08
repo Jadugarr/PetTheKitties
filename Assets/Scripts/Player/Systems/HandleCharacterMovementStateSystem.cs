@@ -16,8 +16,8 @@ public class HandleCharacterMovementStateSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.characterState.State == CharacterState.Idle
-            || entity.characterState.State == CharacterState.Moving;
+        return entity.hasCharacterState && entity.hasCharacterVelocity && (entity.characterState.State == CharacterState.Idle
+            || entity.characterState.State == CharacterState.Moving);
     }
 
     protected override bool IsInValidState()
