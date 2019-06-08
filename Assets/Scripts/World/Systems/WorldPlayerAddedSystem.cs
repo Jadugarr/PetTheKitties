@@ -38,6 +38,11 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
             gameEntity.AddView(playerView);
             gameEntity.AddPosition(playerView.transform.position);
             gameEntity.AddCharacterVelocity(Vector2.zero);
+            Animator playerAnimator = playerView.GetComponentInChildren<Animator>();
+            if (playerAnimator)
+            {
+                gameEntity.AddCharacterAnimator(playerAnimator);
+            }
         }
     }
 }

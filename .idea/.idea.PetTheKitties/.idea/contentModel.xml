@@ -43,6 +43,7 @@
               <e p="GameBattleImageComponent.cs" t="Include" />
               <e p="GameCameraComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
+              <e p="GameCharacterAnimatorComponent.cs" t="Include" />
               <e p="GameCharacterReachedGoalComponent.cs" t="Include" />
               <e p="GameCharacterStateComponent.cs" t="Include" />
               <e p="GameCharacterVelocityComponent.cs" t="Include" />
@@ -119,6 +120,17 @@
               <e p="ReleaseDefenseActionSystem.cs" t="Include" />
             </e>
             <e p="TargetType.cs" t="Include" />
+          </e>
+          <e p="Animations" t="Include">
+            <e p="AnimationTriggerConstants.cs" t="Include" />
+            <e p="Components" t="Include">
+              <e p="CharacterAnimatorComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="RenderCharacterStateAnimationsSystem.cs" t="Include" />
+              <e p="RenderMovementAnimationsSystem.cs" t="Include" />
+              <e p="SyncMovementAnimationSystem.cs" t="Include" />
+            </e>
           </e>
           <e p="Battle" t="Include">
             <e p="CharacterState.cs" t="Include" />
@@ -279,6 +291,7 @@
             </e>
             <e p="InteractionTriggerBehaviour.cs" t="Include" />
             <e p="Systems" t="Include">
+              <e p="HandleCharacterMovementStateSystem.cs" t="Include" />
               <e p="ProcessInteractionInputSystem.cs" t="Include" />
             </e>
           </e>

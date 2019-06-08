@@ -19,50 +19,51 @@ public static class GameComponentsLookup {
     public const int BattleImage = 8;
     public const int Camera = 9;
     public const int ChangeScene = 10;
-    public const int CharacterState = 11;
-    public const int CharacterVelocity = 12;
-    public const int CollisionTrigger = 13;
-    public const int Defend = 14;
-    public const int DefenseStat = 15;
-    public const int Enemy = 16;
-    public const int EnemySpawnCooldown = 17;
-    public const int EnemySpawnInput = 18;
-    public const int InteractInputAvailable = 19;
-    public const int CharacterReachedGoal = 20;
-    public const int PlayerInteraction = 21;
-    public const int Interactable = 22;
-    public const int ExecuteAction = 23;
-    public const int ExecutionTime = 24;
-    public const int FollowCharacter = 25;
-    public const int GameState = 26;
-    public const int GoalReached = 27;
-    public const int Health = 28;
-    public const int Id = 29;
-    public const int Input = 30;
-    public const int InteractionTriggered = 31;
-    public const int JumpCharacter = 32;
-    public const int JumpForce = 33;
-    public const int JumpInputAvailable = 34;
-    public const int Kitty = 35;
-    public const int LoseCondition = 36;
-    public const int LoseConditionsFulfilled = 37;
-    public const int MoveCharacter = 38;
-    public const int MovementSpeed = 39;
-    public const int PauseInputAvailable = 40;
-    public const int Player = 41;
-    public const int Position = 42;
-    public const int RestartLevel = 43;
-    public const int Scared = 44;
-    public const int SceneLoaded = 45;
-    public const int Speed = 46;
-    public const int SubState = 47;
-    public const int Target = 48;
-    public const int UnloadScene = 49;
-    public const int View = 50;
-    public const int WinCondition = 51;
-    public const int WinConditionsFulfilled = 52;
+    public const int CharacterAnimator = 11;
+    public const int CharacterState = 12;
+    public const int CharacterVelocity = 13;
+    public const int CollisionTrigger = 14;
+    public const int Defend = 15;
+    public const int DefenseStat = 16;
+    public const int Enemy = 17;
+    public const int EnemySpawnCooldown = 18;
+    public const int EnemySpawnInput = 19;
+    public const int InteractInputAvailable = 20;
+    public const int CharacterReachedGoal = 21;
+    public const int PlayerInteraction = 22;
+    public const int Interactable = 23;
+    public const int ExecuteAction = 24;
+    public const int ExecutionTime = 25;
+    public const int FollowCharacter = 26;
+    public const int GameState = 27;
+    public const int GoalReached = 28;
+    public const int Health = 29;
+    public const int Id = 30;
+    public const int Input = 31;
+    public const int InteractionTriggered = 32;
+    public const int JumpCharacter = 33;
+    public const int JumpForce = 34;
+    public const int JumpInputAvailable = 35;
+    public const int Kitty = 36;
+    public const int LoseCondition = 37;
+    public const int LoseConditionsFulfilled = 38;
+    public const int MoveCharacter = 39;
+    public const int MovementSpeed = 40;
+    public const int PauseInputAvailable = 41;
+    public const int Player = 42;
+    public const int Position = 43;
+    public const int RestartLevel = 44;
+    public const int Scared = 45;
+    public const int SceneLoaded = 46;
+    public const int Speed = 47;
+    public const int SubState = 48;
+    public const int Target = 49;
+    public const int UnloadScene = 50;
+    public const int View = 51;
+    public const int WinCondition = 52;
+    public const int WinConditionsFulfilled = 53;
 
-    public const int TotalComponents = 53;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -76,6 +77,7 @@ public static class GameComponentsLookup {
         "BattleImage",
         "Camera",
         "ChangeScene",
+        "CharacterAnimator",
         "CharacterState",
         "CharacterVelocity",
         "CollisionTrigger",
@@ -132,6 +134,7 @@ public static class GameComponentsLookup {
         typeof(BattleImageComponent),
         typeof(CameraComponent),
         typeof(ChangeSceneComponent),
+        typeof(CharacterAnimatorComponent),
         typeof(CharacterStateComponent),
         typeof(CharacterVelocityComponent),
         typeof(CollisionTriggerComponent),

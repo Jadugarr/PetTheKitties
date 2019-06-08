@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Configurations;
 using Entitas.Actions.Systems;
+using Entitas.Animations.Systems;
 using Entitas.Battle.Systems;
 using Entitas.Camera.Systems;
 using Entitas.Input.Systems;
@@ -39,7 +40,7 @@ public class GameController : MonoBehaviour
         CreateUniversalSystems(pools.game);
         CreateEndFrameSystems(pools.game);
         CreateSystems(pools.game);
-        
+
         ExecuteOneOffSystems(pools.game);
     }
 
@@ -54,7 +55,7 @@ public class GameController : MonoBehaviour
         Systems oneOffSystems = new Feature("OneOffSystems")
             .Add(new InitializeCameraSystem(context))
             .Add(new InitializeGameStateSystem());
-        
+
         oneOffSystems.Initialize();
     }
 
@@ -63,6 +64,7 @@ public class GameController : MonoBehaviour
         Systems universalSystems = new Feature("UniversalSystems")
             .Add(new SyncPositionAndViewSystem(context))
             .Add(new SyncVelocitySystem(context))
+            .Add(new SyncMovementAnimationSystem(context))
             //Promises
             .Add(new InitPromisesSystem())
             //Input
@@ -117,7 +119,10 @@ public class GameController : MonoBehaviour
             //Position
             .Add(new RenderPositionSystem(context))
             //Velocity
-            .Add(new RenderVelocitySystem(context));
+            .Add(new RenderVelocitySystem(context))
+            //Animations
+            .Add(new RenderMovementAnimationsSystem(context))
+            .Add(new RenderCharacterStateAnimationsSystem(context));
     }
 
     private void InitConfigs()
@@ -239,7 +244,8 @@ public class GameController : MonoBehaviour
             .Add(new CharacterReachedGoalSystem(context))
             .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
-            .Add(new JumpCharacterSystem(context));
+            .Add(new JumpCharacterSystem(context))
+            .Add(new HandleCharacterMovementStateSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
