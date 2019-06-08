@@ -54,6 +54,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         kittyEntity.AddMovementSpeed(5f);
         kittyEntity.AddJumpForce(10f);
         kittyEntity.AddAcceleration(20f);
+        kittyEntity.AddCharacterState(CharacterState.Idle);
     }
 
     private void CreateWinLoseConditions()

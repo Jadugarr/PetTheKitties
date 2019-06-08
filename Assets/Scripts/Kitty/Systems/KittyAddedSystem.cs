@@ -39,6 +39,11 @@ public class KittyAddedSystem : GameReactiveSystem
             gameEntity.AddView(kittyView);
             gameEntity.AddPosition(kittyView.transform.position);
             gameEntity.AddCharacterVelocity(Vector2.zero);
+            Animator kittyAnimator = kittyView.GetComponentInChildren<Animator>();
+            if (kittyAnimator)
+            {
+                gameEntity.AddCharacterAnimator(kittyAnimator);
+            }
         }
     }
 }
