@@ -223,6 +223,7 @@ public class GameController : MonoBehaviour
         Systems worldSystems = new Feature("WorldSystems")
             .Add(new SetCameraFollowTargetSystem(context))
             .Add(new InitializeWorldStateSystem(context))
+            .Add(new SetCameraConfinerSystem(context))
             .Add(new WorldPlayerAddedSystem(context))
             .Add(new KittyAddedSystem(context))
             .Add(new CharacterDeathSystem(context))

@@ -194,6 +194,7 @@
             </e>
             <e p="Systems" t="Include">
               <e p="InitializeCameraSystem.cs" t="Include" />
+              <e p="SetCameraConfinerSystem.cs" t="Include" />
               <e p="SetCameraFollowTargetSystem.cs" t="Include" />
             </e>
           </e>

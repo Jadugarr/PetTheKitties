@@ -12,6 +12,7 @@ TagManager:
   - Kitty
   - Ground
   - DeathPlane
+  - CameraConfiner
   layers:
   - Default
   - TransparentFX
