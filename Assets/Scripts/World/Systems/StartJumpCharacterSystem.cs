@@ -29,25 +29,19 @@ public class StartJumpCharacterSystem : GameReactiveSystem
         foreach (GameEntity jumpCharacterEntity in entities)
         {
             GameEntity jumpingEntity = _context.GetEntityWithId(jumpCharacterEntity.jumpCharacter.JumpEntityId);
-            if (jumpingEntity != null && jumpingEntity.hasJumpState && jumpingEntity.jumpState.JumpState == JumpState.Grounded)
+            if (jumpingEntity != null && jumpingEntity.hasJumpState &&
+                jumpingEntity.jumpState.JumpState == JumpState.Grounded)
             {
                 GameObject characterView = jumpingEntity.view.View;
 
                 if (characterView)
                 {
-                    RaycastHit2D hit = GroundCheckUtil.CheckIfCharacterOnGround(characterView);
-
-                    if (hit.collider != null)
+                    if (GroundCheckUtil.CheckIfCharacterOnGround(characterView))
                     {
-                        Debug.Log("Tag of hit target: " + hit.collider.gameObject.tag);
-
-                        if (hit.collider.gameObject.tag.Equals(Tags.Ground))
-                        {
-                            jumpingEntity.ReplaceCharacterVelocity(new Vector2(
-                                jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
-                                jumpingEntity.jumpForce.JumpForce));
-                            jumpingEntity.ReplaceJumpState(JumpState.Jumping);
-                        }
+                        jumpingEntity.ReplaceCharacterVelocity(new Vector2(
+                            jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
+                            jumpingEntity.jumpForce.JumpForce));
+                        jumpingEntity.ReplaceJumpState(JumpState.Jumping);
                     }
                 }
             }

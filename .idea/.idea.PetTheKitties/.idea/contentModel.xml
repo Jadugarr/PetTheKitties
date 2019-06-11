@@ -420,6 +420,7 @@
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
               <e p="HandleFallingJumpStateSystem.cs" t="Include" />
+              <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessJumpInputSystem.cs" t="Include" />
