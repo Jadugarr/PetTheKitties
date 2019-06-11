@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class JumpCharacterSystem : GameReactiveSystem
+public class StartJumpCharacterSystem : GameReactiveSystem
 {
-    public JumpCharacterSystem(IContext<GameEntity> context) : base(context)
+    public StartJumpCharacterSystem(IContext<GameEntity> context) : base(context)
     {
     }
 
@@ -29,17 +29,13 @@ public class JumpCharacterSystem : GameReactiveSystem
         foreach (GameEntity jumpCharacterEntity in entities)
         {
             GameEntity jumpingEntity = _context.GetEntityWithId(jumpCharacterEntity.jumpCharacter.JumpEntityId);
-            if (jumpingEntity != null)
+            if (jumpingEntity != null && jumpingEntity.hasJumpState && jumpingEntity.jumpState.JumpState == JumpState.Grounded)
             {
                 GameObject characterView = jumpingEntity.view.View;
 
                 if (characterView)
                 {
-                    float distanceToGround = characterView.GetComponent<Collider2D>().bounds.extents.y;
-                    Vector2 rayStart = new Vector2(characterView.transform.position.x,
-                        characterView.transform.position.y - distanceToGround - 0.01f);
-                    Debug.DrawRay(rayStart, Vector2.down * 0.01f, Color.red, 3f);
-                    RaycastHit2D hit = Physics2D.Raycast(rayStart, Vector2.down, 0.01f);
+                    RaycastHit2D hit = GroundCheckUtil.CheckIfCharacterOnGround(characterView);
 
                     if (hit.collider != null)
                     {
@@ -50,6 +46,7 @@ public class JumpCharacterSystem : GameReactiveSystem
                             jumpingEntity.ReplaceCharacterVelocity(new Vector2(
                                 jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
                                 jumpingEntity.jumpForce.JumpForce));
+                            jumpingEntity.ReplaceJumpState(JumpState.Jumping);
                         }
                     }
                 }

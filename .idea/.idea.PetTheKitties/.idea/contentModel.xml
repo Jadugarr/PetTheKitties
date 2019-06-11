@@ -67,6 +67,7 @@
               <e p="GameJumpCharacterComponent.cs" t="Include" />
               <e p="GameJumpForceComponent.cs" t="Include" />
               <e p="GameJumpInputAvailableComponent.cs" t="Include" />
+              <e p="GameJumpStateComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
@@ -384,6 +385,7 @@
           </e>
           <e p="Utils" t="Include">
             <e p="BattleActionUtils.cs" t="Include" />
+            <e p="GroundCheckUtil.cs" t="Include" />
           </e>
           <e p="Velocity" t="Include">
             <e p="Components" t="Include">
@@ -403,6 +405,7 @@
               <e p="FollowCharacterComponent.cs" t="Include" />
               <e p="JumpCharacterSystem.cs" t="Include" />
               <e p="JumpForceComponent.cs" t="Include" />
+              <e p="JumpStateComponent.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />
@@ -416,11 +419,12 @@
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
+              <e p="HandleFallingJumpStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
-              <e p="JumpCharacterSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessJumpInputSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
+              <e p="StartJumpCharacterSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />

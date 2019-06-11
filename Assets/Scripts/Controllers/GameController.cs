@@ -245,7 +245,8 @@ public class GameController : MonoBehaviour
             .Add(new CharacterReachedGoalSystem(context))
             .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
-            .Add(new JumpCharacterSystem(context))
+            .Add(new StartJumpCharacterSystem(context))
+            .Add(new HandleFallingJumpStateSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
