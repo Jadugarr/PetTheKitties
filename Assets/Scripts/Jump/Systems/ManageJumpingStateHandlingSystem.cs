@@ -33,7 +33,8 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
         foreach (GameEntity jumpingEntity in _jumpingEntities)
         {
             if (jumpingEntity.hasJumpState && jumpingEntity.jumpState != null &&
-                jumpingEntity.jumpState.JumpState == JumpState.Jumping)
+                (jumpingEntity.jumpState.JumpState == JumpState.Jumping ||
+                 jumpingEntity.jumpState.JumpState == JumpState.JumpEnding))
             {
                 CreateJumpingStateSystems();
                 GameSystemService.AddActiveSystems(_jumpingStateSystems);
@@ -52,6 +53,8 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
         if (_jumpingStateSystems == null)
         {
             _jumpingStateSystems = new Feature("JumpingStateSystems")
+                .Add(new HandleJumpEndingStateSystem(_context))
+                .Add(new AdjustEndingJumpVelocitySystem(_context))
                 .Add(new HandleFallingJumpStateSystem(_context));
         }
     }

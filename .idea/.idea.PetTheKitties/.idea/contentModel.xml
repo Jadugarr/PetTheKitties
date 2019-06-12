@@ -275,8 +275,10 @@
               <e p="JumpStateComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
+              <e p="AdjustEndingJumpVelocitySystem.cs" t="Include" />
               <e p="HandleFallingJumpStateSystem.cs" t="Include" />
               <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
+              <e p="HandleJumpEndingStateSystem.cs" t="Include" />
               <e p="ManageFallingStateHandlingSystem.cs" t="Include" />
               <e p="ManageJumpingStateHandlingSystem.cs" t="Include" />
               <e p="ProcessJumpInputSystem.cs" t="Include" />

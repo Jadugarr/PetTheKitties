@@ -4,6 +4,7 @@ public enum JumpState
 {
     Grounded,
     Jumping,
+    JumpEnding,
     Falling
 }
 
