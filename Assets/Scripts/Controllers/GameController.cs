@@ -236,6 +236,8 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 
         Systems worldMovementSystems = new Feature("WorldMovementSystems")
+            .Add(new ManageJumpingStateHandlingSystem(context))
+            .Add(new ManageFallingStateHandlingSystem(context))
             .Add(new ProcessInteractionInputSystem(context))
             .Add(new CheckInteractInputAvailableSystem(context))
             .Add(new KittyInteractionSystem(context))
@@ -246,8 +248,6 @@ public class GameController : MonoBehaviour
             .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
             .Add(new StartJumpCharacterSystem(context))
-            .Add(new HandleFallingJumpStateSystem(context))
-            .Add(new HandleGroundedJumpStateSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);

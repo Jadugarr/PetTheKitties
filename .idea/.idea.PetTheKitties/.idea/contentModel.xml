@@ -422,6 +422,8 @@
               <e p="HandleFallingJumpStateSystem.cs" t="Include" />
               <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
+              <e p="ManageFallingStateHandlingSystem.cs" t="Include" />
+              <e p="ManageJumpingStateHandlingSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessJumpInputSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
