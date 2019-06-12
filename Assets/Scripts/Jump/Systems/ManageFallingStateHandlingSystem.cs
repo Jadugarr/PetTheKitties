@@ -41,8 +41,11 @@ public class ManageFallingStateHandlingSystem : GameReactiveSystem
                     return;
                 }
             }
-    
-            GameSystemService.RemoveActiveSystems(_fallingStateSystems);
+
+            if (_fallingStateSystems != null)
+            {
+                GameSystemService.RemoveActiveSystems(_fallingStateSystems);
+            }
         }
     
         private void CreateFallingStateSystems()

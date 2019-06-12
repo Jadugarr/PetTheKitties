@@ -268,6 +268,21 @@
               <e p="InputSystem.cs" t="Include" />
             </e>
           </e>
+          <e p="Jump" t="Include">
+            <e p="Components" t="Include">
+              <e p="JumpCharacterSystem.cs" t="Include" />
+              <e p="JumpForceComponent.cs" t="Include" />
+              <e p="JumpStateComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="HandleFallingJumpStateSystem.cs" t="Include" />
+              <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
+              <e p="ManageFallingStateHandlingSystem.cs" t="Include" />
+              <e p="ManageJumpingStateHandlingSystem.cs" t="Include" />
+              <e p="ProcessJumpInputSystem.cs" t="Include" />
+              <e p="StartJumpCharacterSystem.cs" t="Include" />
+            </e>
+          </e>
           <e p="Kitty" t="Include">
             <e p="Behaviours" t="Include">
               <e p="GoalTriggerBehaviour.cs" t="Include" />
@@ -403,9 +418,6 @@
           <e p="World" t="Include">
             <e p="Components" t="Include">
               <e p="FollowCharacterComponent.cs" t="Include" />
-              <e p="JumpCharacterSystem.cs" t="Include" />
-              <e p="JumpForceComponent.cs" t="Include" />
-              <e p="JumpStateComponent.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />
@@ -419,15 +431,9 @@
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
-              <e p="HandleFallingJumpStateSystem.cs" t="Include" />
-              <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
-              <e p="ManageFallingStateHandlingSystem.cs" t="Include" />
-              <e p="ManageJumpingStateHandlingSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
-              <e p="ProcessJumpInputSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
-              <e p="StartJumpCharacterSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />

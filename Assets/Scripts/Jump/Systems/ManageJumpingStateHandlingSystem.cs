@@ -41,7 +41,10 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
             }
         }
 
-        GameSystemService.RemoveActiveSystems(_jumpingStateSystems);
+        if (_jumpingStateSystems != null)
+        {
+            GameSystemService.RemoveActiveSystems(_jumpingStateSystems);
+        }
     }
 
     private void CreateJumpingStateSystems()
