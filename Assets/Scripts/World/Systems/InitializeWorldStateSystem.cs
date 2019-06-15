@@ -39,7 +39,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         GameEntity playerEntity = _context.CreateEntity();
         playerEntity.isPlayer = true;
         playerEntity.AddMovementSpeed(5f);
-        playerEntity.AddJumpForce(10f);
+        playerEntity.AddJumpForce(12f);
         playerEntity.AddAcceleration(20f);
         playerEntity.AddHealth(666);
         playerEntity.AddCharacterState(CharacterState.Idle);
@@ -53,7 +53,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         kittyEntity.isKitty = true;
         kittyEntity.isInteractable = true;
         kittyEntity.AddMovementSpeed(5f);
-        kittyEntity.AddJumpForce(10f);
+        kittyEntity.AddJumpForce(12f);
         kittyEntity.AddAcceleration(20f);
         kittyEntity.AddCharacterState(CharacterState.Idle);
         kittyEntity.AddJumpState(JumpState.Grounded);

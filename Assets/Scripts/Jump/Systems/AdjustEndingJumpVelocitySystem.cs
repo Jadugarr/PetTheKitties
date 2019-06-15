@@ -26,7 +26,7 @@ public class AdjustEndingJumpVelocitySystem : GameExecuteSystem
             {
                 gameEntity.ReplaceCharacterVelocity(
                     new Vector2(gameEntity.characterVelocity.Velocity.x,
-                        gameEntity.characterVelocity.Velocity.y - (30f * Time.deltaTime)));
+                        gameEntity.characterVelocity.Velocity.y - (50f * Time.deltaTime)));
             }
         }
     }
