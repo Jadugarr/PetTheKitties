@@ -1,9 +1,11 @@
 using System.Collections.Generic;
 using Entitas;
+using UnityEngine;
 
 public class ManageJumpingStateHandlingSystem : GameReactiveSystem
 {
-    private static Systems _jumpingStateSystems;
+    private static Systems jumpingStateSystems;
+    private bool areSystemsActive = false;
 
     private IGroup<GameEntity> _jumpingEntities;
 
@@ -36,23 +38,30 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
                 (jumpingEntity.jumpState.JumpState == JumpState.Jumping ||
                  jumpingEntity.jumpState.JumpState == JumpState.JumpEnding))
             {
-                CreateJumpingStateSystems();
-                GameSystemService.AddActiveSystems(_jumpingStateSystems);
+                if (!areSystemsActive)
+                {
+                    CreateJumpingStateSystems();
+                    Debug.Log("Add");
+                    GameSystemService.AddActiveSystems(jumpingStateSystems);
+                    areSystemsActive = true;
+                }
                 return;
             }
         }
 
-        if (_jumpingStateSystems != null)
+        if (jumpingStateSystems != null && areSystemsActive)
         {
-            GameSystemService.RemoveActiveSystems(_jumpingStateSystems);
+            Debug.Log("Remove");
+            GameSystemService.RemoveActiveSystems(jumpingStateSystems);
+            areSystemsActive = false;
         }
     }
 
     private void CreateJumpingStateSystems()
     {
-        if (_jumpingStateSystems == null)
+        if (jumpingStateSystems == null)
         {
-            _jumpingStateSystems = new Feature("JumpingStateSystems")
+            jumpingStateSystems = new Feature("JumpingStateSystems")
                 .Add(new HandleJumpEndingStateSystem(_context))
                 .Add(new AdjustEndingJumpVelocitySystem(_context))
                 .Add(new HandleFallingJumpStateSystem(_context));

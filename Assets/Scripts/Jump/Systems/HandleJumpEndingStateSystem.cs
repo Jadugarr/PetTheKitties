@@ -3,14 +3,14 @@ using Entitas.Scripts.Common.Systems;
 
 public class HandleJumpEndingStateSystem : GameExecuteSystem
 {
-    private IGroup<GameEntity> _jumpingCharacterGroup;
-    private IGroup<GameEntity> _inputEntities;
+    private readonly IGroup<GameEntity> jumpingCharacterGroup;
+    private readonly IGroup<GameEntity> jumpCommandEntities;
 
     public HandleJumpEndingStateSystem(GameContext context) : base(context)
     {
-        _jumpingCharacterGroup =
+        jumpingCharacterGroup =
             context.GetGroup(GameMatcher.AllOf(GameMatcher.JumpState, GameMatcher.CharacterVelocity));
-        _inputEntities = context.GetGroup(GameMatcher.Input);
+        jumpCommandEntities = context.GetGroup(GameMatcher.JumpCharacter);
     }
 
     protected override bool IsInValidState()
@@ -20,15 +20,15 @@ public class HandleJumpEndingStateSystem : GameExecuteSystem
 
     protected override void ExecuteSystem()
     {
-        foreach (GameEntity gameEntity in _jumpingCharacterGroup)
+        foreach (GameEntity gameEntity in jumpingCharacterGroup)
         {
             bool isHoldingJump = false;
             if (gameEntity.hasJumpState && gameEntity.jumpState != null &&
                 gameEntity.jumpState.JumpState == JumpState.Jumping)
             {
-                foreach (GameEntity inputEntity in _inputEntities)
+                foreach (GameEntity commandEntity in jumpCommandEntities)
                 {
-                    if (inputEntity.input.InputCommand == InputCommand.Jump)
+                    if (commandEntity.jumpCharacter.JumpEntityId == gameEntity.id.Id)
                     {
                         isHoldingJump = true;
                         break;
