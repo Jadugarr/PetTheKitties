@@ -16,7 +16,7 @@ public class HandleFallingJumpStateSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasJumpState && entity.jumpState != null && entity.jumpState.JumpState != JumpState.Falling;
+        return entity.hasCharacterState && entity.characterState != null && entity.characterState.State != CharacterState.Falling;
     }
 
     protected override bool IsInValidState()
@@ -31,7 +31,7 @@ public class HandleFallingJumpStateSystem : GameReactiveSystem
             if (gameEntity.hasCharacterVelocity && gameEntity.characterVelocity != null &&
                 gameEntity.characterVelocity.Velocity.y < 0f)
             {
-                gameEntity.ReplaceJumpState(JumpState.Falling);
+                gameEntity.ReplaceCharacterState(CharacterState.Falling);
             }
         }
     }

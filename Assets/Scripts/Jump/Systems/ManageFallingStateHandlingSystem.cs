@@ -10,12 +10,12 @@ public class ManageFallingStateHandlingSystem : GameReactiveSystem
     
         public ManageFallingStateHandlingSystem(IContext<GameEntity> context) : base(context)
         {
-            _fallingEntities = context.GetGroup(GameMatcher.JumpState);
+            _fallingEntities = context.GetGroup(GameMatcher.CharacterState);
         }
     
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.JumpState,
+            return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CharacterState,
                 GroupEvent.AddedOrRemoved));
         }
     
@@ -33,8 +33,8 @@ public class ManageFallingStateHandlingSystem : GameReactiveSystem
         {
             foreach (GameEntity jumpingEntity in _fallingEntities)
             {
-                if (jumpingEntity.hasJumpState && jumpingEntity.jumpState != null &&
-                    jumpingEntity.jumpState.JumpState == JumpState.Falling)
+                if (jumpingEntity.hasCharacterState && jumpingEntity.characterState != null &&
+                    jumpingEntity.characterState.State == CharacterState.Falling)
                 {
                     CreateFallingStateSystems();
                     GameSystemService.AddActiveSystems(_fallingStateSystems);

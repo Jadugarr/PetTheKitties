@@ -9,7 +9,7 @@ public class HandleJumpEndingStateSystem : GameExecuteSystem
     public HandleJumpEndingStateSystem(GameContext context) : base(context)
     {
         jumpingCharacterGroup =
-            context.GetGroup(GameMatcher.AllOf(GameMatcher.JumpState, GameMatcher.CharacterVelocity));
+            context.GetGroup(GameMatcher.AllOf(GameMatcher.CharacterState, GameMatcher.CharacterVelocity));
         jumpCommandEntities = context.GetGroup(GameMatcher.JumpCharacter);
     }
 
@@ -23,8 +23,8 @@ public class HandleJumpEndingStateSystem : GameExecuteSystem
         foreach (GameEntity gameEntity in jumpingCharacterGroup)
         {
             bool isHoldingJump = false;
-            if (gameEntity.hasJumpState && gameEntity.jumpState != null &&
-                gameEntity.jumpState.JumpState == JumpState.Jumping)
+            if (gameEntity.hasCharacterState && gameEntity.characterState != null &&
+                gameEntity.characterState.State == CharacterState.Jumping)
             {
                 foreach (GameEntity commandEntity in jumpCommandEntities)
                 {
@@ -37,7 +37,7 @@ public class HandleJumpEndingStateSystem : GameExecuteSystem
 
                 if (!isHoldingJump)
                 {
-                    gameEntity.ReplaceJumpState(JumpState.JumpEnding);
+                    gameEntity.ReplaceCharacterState(CharacterState.JumpEnding);
                 }
             }
         }

@@ -15,7 +15,7 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasJumpState && entity.jumpState != null && entity.jumpState.JumpState != JumpState.Grounded;
+        return entity.hasCharacterState && entity.characterState != null && entity.characterState.State != CharacterState.Idle;
     }
 
     protected override bool IsInValidState()
@@ -34,7 +34,7 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
                 {
                     if (GroundCheckUtil.CheckIfCharacterOnGround(gameEntity.view.View))
                     {
-                        gameEntity.ReplaceJumpState(JumpState.Grounded);
+                        gameEntity.ReplaceCharacterState(CharacterState.Idle);
                     }
                 }
             }

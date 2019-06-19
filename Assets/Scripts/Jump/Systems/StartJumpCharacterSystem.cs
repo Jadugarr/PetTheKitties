@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class StartJumpCharacterSystem : GameReactiveSystem
 {
+    private CharacterState[] validJumpStates = new[]
+        {CharacterState.Idle, CharacterState.Moving, CharacterState.MoveEnding};
+
     public StartJumpCharacterSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -29,8 +32,8 @@ public class StartJumpCharacterSystem : GameReactiveSystem
         foreach (GameEntity jumpCharacterEntity in entities)
         {
             GameEntity jumpingEntity = _context.GetEntityWithId(jumpCharacterEntity.jumpCharacter.JumpEntityId);
-            if (jumpingEntity != null && jumpingEntity.hasJumpState &&
-                jumpingEntity.jumpState.JumpState == JumpState.Grounded)
+            if (jumpingEntity != null && jumpingEntity.hasCharacterState &&
+                HasValidStateToJump(jumpingEntity.characterState.State))
             {
                 GameObject characterView = jumpingEntity.view.View;
 
@@ -41,10 +44,23 @@ public class StartJumpCharacterSystem : GameReactiveSystem
                         jumpingEntity.ReplaceCharacterVelocity(new Vector2(
                             jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
                             jumpingEntity.jumpForce.JumpForce));
-                        jumpingEntity.ReplaceJumpState(JumpState.Jumping);
+                        jumpingEntity.ReplaceCharacterState(CharacterState.Jumping);
                     }
                 }
             }
         }
+    }
+
+    private bool HasValidStateToJump(CharacterState currentState)
+    {
+        foreach (CharacterState jumpState in validJumpStates)
+        {
+            if (jumpState == currentState)
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

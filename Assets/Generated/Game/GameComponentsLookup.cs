@@ -161,7 +161,6 @@ public static class GameComponentsLookup {
         typeof(JumpCharacterComponent),
         typeof(JumpForceComponent),
         typeof(JumpInputAvailable),
-        typeof(JumpStateComponent),
         typeof(KittyComponent),
         typeof(LoseConditionComponent),
         typeof(LoseConditionsFulfilledComponent),

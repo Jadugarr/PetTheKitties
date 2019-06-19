@@ -9,7 +9,7 @@ public class AdjustEndingJumpVelocitySystem : GameExecuteSystem
     public AdjustEndingJumpVelocitySystem(GameContext context) : base(context)
     {
         _jumpingCharacterGroup =
-            context.GetGroup(GameMatcher.AllOf(GameMatcher.JumpState, GameMatcher.CharacterVelocity));
+            context.GetGroup(GameMatcher.AllOf(GameMatcher.CharacterState, GameMatcher.CharacterVelocity));
     }
 
     protected override bool IsInValidState()
@@ -21,8 +21,8 @@ public class AdjustEndingJumpVelocitySystem : GameExecuteSystem
     {
         foreach (GameEntity gameEntity in _jumpingCharacterGroup)
         {
-            if (gameEntity.hasJumpState && gameEntity.jumpState != null &&
-                gameEntity.jumpState.JumpState == JumpState.JumpEnding)
+            if (gameEntity.hasCharacterState && gameEntity.characterState != null &&
+                gameEntity.characterState.State == CharacterState.JumpEnding)
             {
                 gameEntity.ReplaceCharacterVelocity(
                     new Vector2(gameEntity.characterVelocity.Velocity.x,

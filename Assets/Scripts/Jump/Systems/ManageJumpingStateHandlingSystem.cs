@@ -11,12 +11,12 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
 
     public ManageJumpingStateHandlingSystem(IContext<GameEntity> context) : base(context)
     {
-        _jumpingEntities = context.GetGroup(GameMatcher.JumpState);
+        _jumpingEntities = context.GetGroup(GameMatcher.CharacterState);
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.JumpState,
+        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CharacterState,
             GroupEvent.AddedOrRemoved));
     }
 
@@ -34,9 +34,9 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
     {
         foreach (GameEntity jumpingEntity in _jumpingEntities)
         {
-            if (jumpingEntity.hasJumpState && jumpingEntity.jumpState != null &&
-                (jumpingEntity.jumpState.JumpState == JumpState.Jumping ||
-                 jumpingEntity.jumpState.JumpState == JumpState.JumpEnding))
+            if (jumpingEntity.hasCharacterState && jumpingEntity.characterState != null &&
+                (jumpingEntity.characterState.State == CharacterState.Jumping ||
+                 jumpingEntity.characterState.State == CharacterState.JumpEnding))
             {
                 if (!areSystemsActive)
                 {
