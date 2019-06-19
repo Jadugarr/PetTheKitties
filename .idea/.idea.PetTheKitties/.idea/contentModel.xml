@@ -300,6 +300,18 @@
               <e p="KittyInteractionSystem.cs" t="Include" />
             </e>
           </e>
+          <e p="Move" t="Include">
+            <e p="Components" t="Include">
+              <e p="MoveCharacterComponent.cs" t="Include" />
+              <e p="MovementSpeedComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="HandleCharacterMovementStateSystem.cs" t="Include" />
+              <e p="HandleMoveEndingStateSystem.cs" t="Include" />
+              <e p="MoveCharacterSystem.cs" t="Include" />
+              <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
+            </e>
+          </e>
           <e p="Player" t="Include">
             <e p="Components" t="Include">
               <e p="InteractableComponent.cs" t="Include" />
@@ -308,7 +320,6 @@
             </e>
             <e p="InteractionTriggerBehaviour.cs" t="Include" />
             <e p="Systems" t="Include">
-              <e p="HandleCharacterMovementStateSystem.cs" t="Include" />
               <e p="ProcessInteractionInputSystem.cs" t="Include" />
             </e>
           </e>
@@ -418,8 +429,6 @@
           <e p="World" t="Include">
             <e p="Components" t="Include">
               <e p="FollowCharacterComponent.cs" t="Include" />
-              <e p="MoveCharacterComponent.cs" t="Include" />
-              <e p="MovementSpeedComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
@@ -432,8 +441,6 @@
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
-              <e p="MoveCharacterSystem.cs" t="Include" />
-              <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />
