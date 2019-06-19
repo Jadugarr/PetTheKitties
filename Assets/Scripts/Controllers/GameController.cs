@@ -249,7 +249,8 @@ public class GameController : MonoBehaviour
             .Add(new MoveCharacterSystem(context))
             .Add(new StartJumpCharacterSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context))
-            .Add(new HandleMoveEndingStateSystem(context));
+            .Add(new HandleMoveEndingStateSystem(context))
+            .Add(new AdjustMoveEndingVelocitySystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
