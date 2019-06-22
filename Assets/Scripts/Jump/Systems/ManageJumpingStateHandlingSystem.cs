@@ -63,8 +63,7 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
         {
             jumpingStateSystems = new Feature("JumpingStateSystems")
                 .Add(new HandleJumpEndingStateSystem(_context))
-                .Add(new AdjustEndingJumpVelocitySystem(_context))
-                .Add(new HandleFallingJumpStateSystem(_context));
+                .Add(new AdjustEndingJumpVelocitySystem(_context));
         }
     }
 }

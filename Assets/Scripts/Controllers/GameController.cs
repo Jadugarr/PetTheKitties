@@ -121,7 +121,7 @@ public class GameController : MonoBehaviour
             //Velocity
             .Add(new RenderVelocitySystem(context))
             //Animations
-            .Add(new RenderMovementAnimationsSystem(context))
+            .Add(new RenderVelocityAnimationsSystem(context))
             .Add(new RenderCharacterStateAnimationsSystem(context));
     }
 
@@ -250,7 +250,8 @@ public class GameController : MonoBehaviour
             .Add(new StartJumpCharacterSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context))
             .Add(new HandleMoveEndingStateSystem(context))
-            .Add(new AdjustMoveEndingVelocitySystem(context));
+            .Add(new AdjustMoveEndingVelocitySystem(context))
+            .Add(new HandleFallingStateSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }

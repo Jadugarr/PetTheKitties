@@ -2,9 +2,9 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class RenderMovementAnimationsSystem : GameReactiveSystem
+public class RenderVelocityAnimationsSystem : GameReactiveSystem
 {
-    public RenderMovementAnimationsSystem(IContext<GameEntity> context) : base(context)
+    public RenderVelocityAnimationsSystem(IContext<GameEntity> context) : base(context)
     {
     }
 
@@ -30,6 +30,8 @@ public class RenderMovementAnimationsSystem : GameReactiveSystem
         {
             gameEntity.characterAnimator.Animator.SetFloat(AnimationTriggerConstants.VelocityX,
                 Mathf.Abs(gameEntity.characterVelocity.Velocity.x));
+            gameEntity.characterAnimator.Animator.SetFloat(AnimationTriggerConstants.VelocityY,
+                gameEntity.characterVelocity.Velocity.y);
         }
     }
 }

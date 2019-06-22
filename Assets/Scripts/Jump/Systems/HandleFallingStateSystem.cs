@@ -3,9 +3,9 @@ using Entitas;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
-public class HandleFallingJumpStateSystem : GameReactiveSystem
+public class HandleFallingStateSystem : GameReactiveSystem
 {
-    public HandleFallingJumpStateSystem(IContext<GameEntity> context) : base(context)
+    public HandleFallingStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
 

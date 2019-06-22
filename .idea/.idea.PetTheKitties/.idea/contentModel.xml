@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\Semo\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\Semo\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
+    <e p="C:\Users\ReneL\.Rider2018.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\ReneL\.Rider2018.3\system\resharper-host\Local\Transient\ReSharperHost\v183\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\PetTheKitties" t="IncludeRecursive">
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
@@ -128,7 +128,7 @@
             </e>
             <e p="Systems" t="Include">
               <e p="RenderCharacterStateAnimationsSystem.cs" t="Include" />
-              <e p="RenderMovementAnimationsSystem.cs" t="Include" />
+              <e p="RenderVelocityAnimationsSystem.cs" t="Include" />
               <e p="SyncMovementAnimationSystem.cs" t="Include" />
             </e>
           </e>
@@ -274,7 +274,7 @@
             </e>
             <e p="Systems" t="Include">
               <e p="AdjustEndingJumpVelocitySystem.cs" t="Include" />
-              <e p="HandleFallingJumpStateSystem.cs" t="Include" />
+              <e p="HandleFallingStateSystem.cs" t="Include" />
               <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
               <e p="HandleJumpEndingStateSystem.cs" t="Include" />
               <e p="ManageFallingStateHandlingSystem.cs" t="Include" />
@@ -473,10 +473,13 @@
           </e>
         </e>
       </e>
+      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
       <e p="PetTheKitties.sln" t="IncludeFlat" />
-      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Temp" t="ExcludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+      </e>
     </e>
   </component>
 </project>
