@@ -40,11 +40,17 @@ public class HandleCharacterMovementStateSystem : GameReactiveSystem
             {
                 gameEntity.ReplaceCharacterState(CharacterState.Idle);
             }
-            else if (velocityX > 0.05f && gameEntity.characterState.State == CharacterState.Idle
-                     || (gameEntity.characterState.State == CharacterState.MoveEnding &&
-                         HasMovementCommand(gameEntity.id.Id)))
+            else if (velocityX > 0.05f && (gameEntity.characterState.State == CharacterState.Idle ||
+                                           HasValidMovementState(gameEntity.characterState.State)))
             {
-                gameEntity.ReplaceCharacterState(CharacterState.Moving);
+                if (HasMovementCommand(gameEntity.id.Id))
+                {
+                    gameEntity.ReplaceCharacterState(CharacterState.Moving);
+                }
+                else
+                {
+                    gameEntity.ReplaceCharacterState(CharacterState.MoveEnding);
+                }
             }
         }
     }

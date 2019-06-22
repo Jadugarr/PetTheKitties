@@ -231,27 +231,26 @@ public class GameController : MonoBehaviour
             .Add(new InitializeAndTeardownWinConditionsSystem(context))
             .Add(new InitializeAndTeardownLoseConditionsSystem(context))
             .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context));
-
-        GameSystemService.AddSystemMapping(GameState.World, worldSystems);
-
-        Systems worldMovementSystems = new Feature("WorldMovementSystems")
+            .Add(new LoseConditionControllerSystem(context))
             .Add(new ManageJumpingStateHandlingSystem(context))
             .Add(new ManageFallingStateHandlingSystem(context))
-            .Add(new ProcessInteractionInputSystem(context))
-            .Add(new CheckInteractInputAvailableSystem(context))
-            .Add(new KittyInteractionSystem(context))
-            .Add(new CharacterStartFollowSystem(context))
             .Add(new CharacterFollowSystem(context))
             .Add(new CharacterScaredSystem(context))
             .Add(new CharacterReachedGoalSystem(context))
             .Add(new CharacterDirectionSystem(context))
-            .Add(new MoveCharacterSystem(context))
-            .Add(new StartJumpCharacterSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context))
-            .Add(new HandleMoveEndingStateSystem(context))
             .Add(new AdjustMoveEndingVelocitySystem(context))
             .Add(new HandleFallingStateSystem(context));
+
+        GameSystemService.AddSystemMapping(GameState.World, worldSystems);
+
+        Systems worldMovementSystems = new Feature("WorldMovementSystems")
+            .Add(new ProcessInteractionInputSystem(context))
+            .Add(new CheckInteractInputAvailableSystem(context))
+            .Add(new KittyInteractionSystem(context))
+            .Add(new CharacterStartFollowSystem(context))
+            .Add(new MoveCharacterSystem(context))
+            .Add(new StartJumpCharacterSystem(context));
 
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
