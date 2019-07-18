@@ -67,11 +67,16 @@ namespace Entitas.World.Systems
                                 followEntity.isScared = true;
                             }
 
-                            if (moveDirection.y > 0.5f)
+                            if (moveDirection.y > 0.5f || followEntity.characterState.State == CharacterState.Jumping)
                             {
                                 _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
                             }
                         }
+                    }
+
+                    if (followEntity.characterState.State == CharacterState.Jumping)
+                    {
+                        _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
                     }
                 }
             }
