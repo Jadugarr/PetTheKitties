@@ -44,27 +44,26 @@ public static class GameComponentsLookup {
     public const int JumpCharacter = 33;
     public const int JumpForce = 34;
     public const int JumpInputAvailable = 35;
-    public const int JumpState = 36;
-    public const int Kitty = 37;
-    public const int LoseCondition = 38;
-    public const int LoseConditionsFulfilled = 39;
-    public const int MoveCharacter = 40;
-    public const int MovementSpeed = 41;
-    public const int PauseInputAvailable = 42;
-    public const int Player = 43;
-    public const int Position = 44;
-    public const int RestartLevel = 45;
-    public const int Scared = 46;
-    public const int SceneLoaded = 47;
-    public const int Speed = 48;
-    public const int SubState = 49;
-    public const int Target = 50;
-    public const int UnloadScene = 51;
-    public const int View = 52;
-    public const int WinCondition = 53;
-    public const int WinConditionsFulfilled = 54;
+    public const int Kitty = 36;
+    public const int LoseCondition = 37;
+    public const int LoseConditionsFulfilled = 38;
+    public const int MoveCharacter = 39;
+    public const int MovementSpeed = 40;
+    public const int PauseInputAvailable = 41;
+    public const int Player = 42;
+    public const int Position = 43;
+    public const int RestartLevel = 44;
+    public const int Scared = 45;
+    public const int SceneLoaded = 46;
+    public const int Speed = 47;
+    public const int SubState = 48;
+    public const int Target = 49;
+    public const int UnloadScene = 50;
+    public const int View = 51;
+    public const int WinCondition = 52;
+    public const int WinConditionsFulfilled = 53;
 
-    public const int TotalComponents = 55;
+    public const int TotalComponents = 54;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -103,7 +102,6 @@ public static class GameComponentsLookup {
         "JumpCharacter",
         "JumpForce",
         "JumpInputAvailable",
-        "JumpState",
         "Kitty",
         "LoseCondition",
         "LoseConditionsFulfilled",

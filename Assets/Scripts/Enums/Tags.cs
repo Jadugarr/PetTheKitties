@@ -8,6 +8,7 @@ public abstract class Tags {
 	public const string Finish = "Finish";
 	public const string GameController = "GameController";
 	public const string Ground = "Ground";
+	public const string GroundCheck = "GroundCheck";
 	public const string Kitty = "Kitty";
 	public const string KittySpawnPoint = "KittySpawnPoint";
 	public const string MainCamera = "MainCamera";

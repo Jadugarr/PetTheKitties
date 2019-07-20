@@ -6,6 +6,7 @@ using Entitas.Scripts.Common.Systems;
 using Entitas.Unity;
 using Entitas.VisualDebugging.Unity;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 {

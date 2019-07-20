@@ -13,6 +13,7 @@ TagManager:
   - Ground
   - DeathPlane
   - CameraConfiner
+  - GroundCheck
   layers:
   - Default
   - TransparentFX
