@@ -39,7 +39,7 @@ public class HandleCharacterMovementStateSystem : GameReactiveSystem
             if (velocityX <= 0.05f && HasValidMovementState(gameEntity.characterState.State))
             {
                 gameEntity.ReplaceCharacterState(CharacterState.Idle);
-                gameEntity.ReplaceCharacterVelocity(new Vector2(0f, gameEntity.characterVelocity.Velocity.y));
+//                gameEntity.ReplaceCharacterVelocity(new Vector2(0f, gameEntity.characterVelocity.Velocity.y));
             }
             else if (velocityX > 0.05f && (gameEntity.characterState.State == CharacterState.Idle ||
                                            HasValidMovementState(gameEntity.characterState.State)))

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4832685527203734}
   - component: {fileID: 50684805870135212}
   - component: {fileID: 61838659466084010}
+  - component: {fileID: 8761489680058628823}
   - component: {fileID: 3135739889824598634}
   m_Layer: 10
   m_Name: KittyTemplate
@@ -62,7 +63,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1030088222483526}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -81,6 +82,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.3163908, y: 1.7827722}
   m_EdgeRadius: 0
+--- !u!70 &8761489680058628823
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030088222483526}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.33, y: 1.91}
+  m_Direction: 0
 --- !u!82 &3135739889824598634
 AudioSource:
   m_ObjectHideFlags: 0

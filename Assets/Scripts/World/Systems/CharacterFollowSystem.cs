@@ -38,34 +38,8 @@ namespace Entitas.World.Systems
                         {
                             Vector2 moveDirection = entityToFollow.view.View.transform.position -
                                                     followEntity.view.View.transform.position;
-                            Vector3 extents = characterView.GetComponent<Collider2D>().bounds.extents;
-                            Vector2 raycastStartPos;
 
-                            if (moveDirection.x > 0f)
-                            {
-                                raycastStartPos = new Vector2(characterView.transform.position.x + extents.x,
-                                    characterView.transform.position.y - extents.y - 0.01f);
-                            }
-                            else
-                            {
-                                raycastStartPos = new Vector2(characterView.transform.position.x - extents.x,
-                                    characterView.transform.position.y - extents.y - 0.01f);
-                            }
-
-                            RaycastHit2D hit =
-                                Physics2D.Raycast(raycastStartPos
-                                    , Vector2.down,
-                                    10f);
-
-                            if (hit.collider != null && hit.collider.gameObject.tag.Equals(Tags.Ground))
-                            {
-                                followEntity.isScared = false;
-                                _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
-                            }
-                            else
-                            {
-                                followEntity.isScared = true;
-                            }
+                            _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
 
                             if (moveDirection.y > 0.5f || followEntity.characterState.State == CharacterState.Jumping)
                             {
