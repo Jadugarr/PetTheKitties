@@ -9,9 +9,9 @@ public static class GroundCheckUtil
             Bounds characterBounds = characterView.GetComponent<Collider2D>().bounds;
             float distanceToGround = characterBounds.extents.y;
             Vector2 rayStart = new Vector2(characterView.transform.position.x,
-                characterView.transform.position.y - distanceToGround - 0.01f);
-            Debug.DrawRay(rayStart, Vector2.down * 0.01f, Color.red, 3f);
-            RaycastHit2D hit = Physics2D.BoxCast(rayStart, new Vector2(characterBounds.size.x - 0.1f, 0.01f), 0f,
+                characterView.transform.position.y - distanceToGround - 0.02f);
+            Debug.DrawRay(rayStart, Vector2.down * 0.02f, Color.red, 3f);
+            RaycastHit2D hit = Physics2D.BoxCast(rayStart, new Vector2(characterBounds.size.x - 0.1f, 0.02f), 0f,
                 Vector2.down);
             if (hit.collider != null)
             {
