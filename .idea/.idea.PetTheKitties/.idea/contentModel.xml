@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\ReneL\.Rider2019.1\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\ReneL\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
+    <e p="C:\Users\Semo\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Semo\.Rider2019.1\system\resharper-host\Local\Transient\ReSharperHost\v191\SolutionCaches\_PetTheKitties.1053141849.00" t="ExcludeRecursive" />
     <e p="D:\UnityProjects\PetTheKitties" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -376,6 +376,7 @@
           </e>
           <e p="Extensions" t="Include">
             <e p="GameContextExtensions.cs" t="Include" />
+            <e p="Vector2Extension.cs" t="Include" />
           </e>
           <e p="GameState" t="Include">
             <e p="GameStateComponent.cs" t="Include" />
