@@ -52,10 +52,8 @@ public static class GroundCheckUtil
         Bounds characterBounds = characterView.GetComponent<CapsuleCollider2D>().bounds;
         float distanceToGround = characterBounds.size.y / 2f;
 
-        Vector2 rayStart = new Vector2(characterView.transform.position.x,
-            characterView.transform.position.y - distanceToGround - 0.02f);
-        Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 2f,
-            characterView.transform.position.y - distanceToGround - 0.02f);
+        Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 3f,
+            characterView.transform.position.y - distanceToGround);
 
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
