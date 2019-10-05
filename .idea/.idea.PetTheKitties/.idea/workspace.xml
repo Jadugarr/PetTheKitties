@@ -230,15 +230,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/SyncVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputAxis.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Components/RaycastTestComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/ProcessRaycastInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/ProcessRaycastTestInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/InputConfiguration.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
       </list>
     </option>
   </component>

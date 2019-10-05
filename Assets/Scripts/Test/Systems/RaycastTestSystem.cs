@@ -28,6 +28,6 @@ public class RaycastTestSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        GroundCheckUtil.CheckIfCharacterOnGround(playerGroup.GetSingleEntity().view.View);
+        GroundCheckUtil.TestHitAngle(playerGroup.GetSingleEntity().view.View);
     }
 }
