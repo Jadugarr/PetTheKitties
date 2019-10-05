@@ -250,8 +250,11 @@ public class GameController : MonoBehaviour
             .Add(new KittyInteractionSystem(context))
             .Add(new CharacterStartFollowSystem(context))
             .Add(new MoveCharacterSystem(context))
-            .Add(new StartJumpCharacterSystem(context));
-
+            .Add(new StartJumpCharacterSystem(context))
+            // Some test systems
+            .Add(new ProcessRaycastTestInputSystem(context))
+            .Add(new RaycastTestSystem(context));
+        
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
 }

@@ -208,6 +208,7 @@
               <e p="GamePlayerComponent.cs" t="Include" />
               <e p="GamePlayerInteractionComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
+              <e p="GameRaycastTestComponent.cs" t="Include" />
               <e p="GameRestartLevelComponent.cs" t="Include" />
               <e p="GameScaredComponent.cs" t="Include" />
               <e p="GameSceneLoadedComponent.cs" t="Include" />
@@ -488,7 +489,14 @@
             </e>
           </e>
           <e p="Test" t="Include">
+            <e p="Components" t="Include">
+              <e p="RaycastTestComponent.cs" t="Include" />
+            </e>
             <e p="RestartSceneBehaviour.cs" t="Include" />
+            <e p="Systems" t="Include">
+              <e p="ProcessRaycastTestInputSystem.cs" t="Include" />
+              <e p="RaycastTestSystem.cs" t="Include" />
+            </e>
           </e>
           <e p="UI" t="Include">
             <e p="Layers" t="Include">

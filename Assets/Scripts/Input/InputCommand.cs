@@ -9,5 +9,6 @@
     Unpause,
     Move,
     Interact,
-    Jump
+    Jump,
+    RaycastTest
 }

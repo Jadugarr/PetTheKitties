@@ -52,7 +52,8 @@ public static class InputConfiguration
                     {InputAxis.Move, InputCommand.Move},
                     {InputAxis.Pause, InputCommand.Pause},
                     {InputAxis.Interact, InputCommand.Interact},
-                    {InputAxis.Jump, InputCommand.Jump}
+                    {InputAxis.Jump, InputCommand.Jump},
+                    {InputAxis.RaycastTest, InputCommand.RaycastTest}
                 }
             }
         };
