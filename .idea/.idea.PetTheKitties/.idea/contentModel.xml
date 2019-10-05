@@ -360,6 +360,7 @@
             <e p="CharacterConfiguration.cs" t="Include" />
             <e p="GameConfigurations.cs" t="Include" />
             <e p="InputConfiguration.cs" t="Include" />
+            <e p="MovementConstantsConfiguration.cs" t="Include" />
             <e p="SpawnConfiguration.cs" t="Include" />
             <e p="WinLoseConditionConfiguration.cs" t="Include" />
           </e>

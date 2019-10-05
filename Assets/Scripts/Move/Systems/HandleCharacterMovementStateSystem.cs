@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Configurations;
 using Entitas;
 using UnityEngine;
 
@@ -36,12 +37,11 @@ public class HandleCharacterMovementStateSystem : GameReactiveSystem
         {
             float velocityX = Mathf.Abs(gameEntity.characterVelocity.Velocity.x);
 
-            if (velocityX <= 0.05f && HasValidMovementState(gameEntity.characterState.State))
+            if (velocityX == 0f && HasValidMovementState(gameEntity.characterState.State))
             {
                 gameEntity.ReplaceCharacterState(CharacterState.Idle);
-//                gameEntity.ReplaceCharacterVelocity(new Vector2(0f, gameEntity.characterVelocity.Velocity.y));
             }
-            else if (velocityX > 0.05f && (gameEntity.characterState.State == CharacterState.Idle ||
+            else if (velocityX > GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX && (gameEntity.characterState.State == CharacterState.Idle ||
                                            HasValidMovementState(gameEntity.characterState.State)))
             {
                 if (HasMovementCommand(gameEntity.id.Id))

@@ -4,5 +4,6 @@
     {
         public static SpawnConfiguration SpawnConfiguration;
         public static CharacterConfiguration CharacterConfiguration;
+        public static MovementConstantsConfiguration MovementConstantsConfiguration;
     }
 }

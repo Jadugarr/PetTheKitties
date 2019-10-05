@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
 {
     [SerializeField] private SpawnConfiguration spawnConfiguration;
     [SerializeField] private CharacterConfiguration characterConfiguration;
+    [SerializeField] private MovementConstantsConfiguration movementConstantsConfiguration;
 
     private Systems endFrameSystems;
 
@@ -129,6 +130,7 @@ public class GameController : MonoBehaviour
     {
         GameConfigurations.SpawnConfiguration = spawnConfiguration;
         GameConfigurations.CharacterConfiguration = characterConfiguration;
+        GameConfigurations.MovementConstantsConfiguration = movementConstantsConfiguration;
     }
 
     // Update is called once per frame

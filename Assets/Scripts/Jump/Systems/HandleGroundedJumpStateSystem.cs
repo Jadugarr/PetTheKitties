@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Configurations;
 using Entitas;
 using UnityEngine;
 
@@ -29,7 +30,7 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
         foreach (GameEntity gameEntity in entities)
         {
             if (gameEntity.hasCharacterVelocity && gameEntity.characterVelocity != null &&
-                Mathf.Abs(gameEntity.characterVelocity.Velocity.y) < 0.05f)
+                Mathf.Abs(gameEntity.characterVelocity.Velocity.y) < GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
             {
                 if (gameEntity.hasView && gameEntity.view != null)
                 {

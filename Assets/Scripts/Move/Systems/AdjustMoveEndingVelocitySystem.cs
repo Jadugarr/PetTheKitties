@@ -1,3 +1,4 @@
+using Configurations;
 using Entitas;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
@@ -23,11 +24,18 @@ public class AdjustMoveEndingVelocitySystem : GameExecuteSystem
         {
             if (gameEntity.characterState.State == CharacterState.MoveEnding)
             {
-                int velocityDirectionFactor = gameEntity.characterVelocity.Velocity.x >= 0 ? 1 : -1;
+                if (Mathf.Abs(gameEntity.characterVelocity.Velocity.x) <= GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
+                {
+                    gameEntity.ReplaceCharacterVelocity(new Vector2(0f, gameEntity.characterVelocity.Velocity.y));
+                }
+                else
+                {
+                    int velocityDirectionFactor = gameEntity.characterVelocity.Velocity.x >= 0 ? 1 : -1;
 
-                gameEntity.ReplaceCharacterVelocity(new Vector2(
-                    (Mathf.Max(Mathf.Abs(gameEntity.characterVelocity.Velocity.x) - friction * Time.deltaTime, 0)) *
-                    velocityDirectionFactor, gameEntity.characterVelocity.Velocity.y));
+                    gameEntity.ReplaceCharacterVelocity(new Vector2(
+                        (Mathf.Max(Mathf.Abs(gameEntity.characterVelocity.Velocity.x) - friction * Time.deltaTime, 0)) *
+                        velocityDirectionFactor, gameEntity.characterVelocity.Velocity.y));
+                }
             }
         }
     }
