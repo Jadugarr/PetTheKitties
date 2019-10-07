@@ -53,7 +53,7 @@ public static class GroundCheckUtil
         float distanceToGround = characterBounds.size.y / 2f;
 
         Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 3f,
-            characterView.transform.position.y - distanceToGround);
+            characterView.transform.position.y - distanceToGround + 0.175f);// + distanceToGround);
 
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
@@ -62,12 +62,36 @@ public static class GroundCheckUtil
         Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
         if (testHit.collider != null)
         {
-            float hitAngle = Vector2.Angle(raycastDirectionForward, testHit.normal);
+            float hitAngle = Vector2.Angle(raycastDirectionForward, testHit.normal) - 135f;
+            Debug.Log("Hit normal: " + testHit.normal);
             // test movement vector adjustment
             Vector2 testMovementVector = new Vector2(5f, 0f);
             Vector2 rotatedVector = testMovementVector.Rotate(hitAngle);
-            Debug.DrawRay(new Vector2(characterView.transform.position.x, characterView.transform.position.y),
-                rotatedVector, Color.green, kDebugRayDuration);
+            Debug.DrawRay(rayStartForward, rotatedVector, Color.green, kDebugRayDuration);
+            Debug.Log("Raycast angle: " + hitAngle);
+        }
+    }
+
+    public static void TestHitAngleFromMouse()
+    {
+        Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log("Mouse position: " + mousePosition);
+
+        Vector2 rayStartForward = new Vector2(mousePosition.x, mousePosition.y);
+
+        Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
+
+        // angle test
+        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward);
+        Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
+        if (testHit.collider != null)
+        {
+            float hitAngle = Vector2.Angle(raycastDirectionForward, testHit.normal) - 135f;
+            Debug.Log("Hit normal: " + testHit.normal);
+            // test movement vector adjustment
+            Vector2 testMovementVector = new Vector2(5f, 0f);
+            Vector2 rotatedVector = testMovementVector.Rotate(hitAngle);
+            Debug.DrawRay(rayStartForward, rotatedVector, Color.green, kDebugRayDuration);
             Debug.Log("Raycast angle: " + hitAngle);
         }
     }

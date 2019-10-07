@@ -234,13 +234,13 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/ProcessRaycastInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/ProcessRaycastTestInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/InputConfiguration.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/MovementConstantsConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/AdjustMoveEndingVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
       </list>
     </option>
@@ -278,10 +278,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="12032">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="8728">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="12032" />
+      <option name="pid" value="8728" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -302,19 +302,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs</url>
-          <line>64</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" initialLine="64">
-            <startOffsets>
-              <option value="2699" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2771" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
