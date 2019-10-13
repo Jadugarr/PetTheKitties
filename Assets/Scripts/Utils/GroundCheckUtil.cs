@@ -47,18 +47,46 @@ public static class GroundCheckUtil
         return false;
     }
 
+    public static float GetMovementAngle(GameObject characterView, Vector2 movementDirection)
+    {
+        Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
+        float distanceToGround = characterBounds.size.y / 2f;
+        int direction = movementDirection.x < 0 ? -1 : 1;
+
+        Vector2 rayStartForward = new Vector2(characterView.transform.position.x + (characterBounds.size.x / 2f) * direction,
+            characterView.transform.position.y - distanceToGround + 0.2f);
+
+        Vector2 raycastDirectionForward = new Vector2(movementDirection.x, -Mathf.Abs(movementDirection.x)).normalized;
+
+        // angle test
+        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.3f, LayerMask.GetMask("Ground"));
+        Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
+        if (testHit.collider != null)
+        {
+            float hitAngle = Vector2.Angle(raycastDirectionForward, testHit.normal) - 135f;
+            Debug.Log("Hit normal: " + testHit.normal);
+            Vector2 rotatedVector = movementDirection.Rotate(hitAngle);
+            Debug.DrawRay(rayStartForward, rotatedVector, Color.green, kDebugRayDuration);
+            Debug.Log("Raycast angle: " + hitAngle);
+
+            return hitAngle;
+        }
+
+        return 0;
+    }
+
     public static void TestHitAngle(GameObject characterView)
     {
         Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
         float distanceToGround = characterBounds.size.y / 2f;
 
         Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 2f,
-            characterView.transform.position.y - distanceToGround);// + distanceToGround);
+            characterView.transform.position.y - distanceToGround + 0.2f);// + distanceToGround);
 
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
         // angle test
-        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward);
+        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.3f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
         if (testHit.collider != null)
         {
@@ -82,7 +110,7 @@ public static class GroundCheckUtil
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
         // angle test
-        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward);
+        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.2f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
         if (testHit.collider != null)
         {

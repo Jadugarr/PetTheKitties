@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Extensions;
 using UnityEngine;
 
 public class MoveCharacterSystem : GameReactiveSystem
@@ -35,19 +36,28 @@ public class MoveCharacterSystem : GameReactiveSystem
             {
                 if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
+                    float angleToRotate = GroundCheckUtil.GetMovementAngle(entityToMove.view.View,
+                        movementEntity.moveCharacter.MoveDirection);
+                    
                     float newVelocityX = entityToMove.characterVelocity.Velocity.x +
                                          (entityToMove.acceleration.Acceleration *
                                           movementEntity.moveCharacter.MoveDirection.normalized.x * Time.deltaTime);
+                    Vector2 velocityVector = new Vector2();
+                    
                     if (Mathf.Abs(newVelocityX) < entityToMove.movementSpeed.MovementSpeedValue)
                     {
-                        entityToMove.characterVelocity.Velocity.x = newVelocityX;
+                        velocityVector.x = newVelocityX;
                     }
                     else
                     {
-                        entityToMove.characterVelocity.Velocity.x =
+                        velocityVector.x =
                             entityToMove.movementSpeed.MovementSpeedValue *
                             movementEntity.moveCharacter.MoveDirection.normalized.x;
                     }
+
+                    velocityVector = velocityVector.Rotate(angleToRotate);
+                    entityToMove.characterVelocity.Velocity.x = velocityVector.x;
+                    entityToMove.characterVelocity.Velocity.y = velocityVector.y;
                 }
             }
         }
