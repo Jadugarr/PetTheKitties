@@ -9,7 +9,7 @@ public static class GroundCheckUtil
     {
         if (characterView)
         {
-            Bounds characterBounds = characterView.GetComponent<CapsuleCollider2D>().bounds;
+            Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
             float distanceToGround = characterBounds.size.y / 2f;
 
 
@@ -49,7 +49,7 @@ public static class GroundCheckUtil
 
     public static void TestHitAngle(GameObject characterView)
     {
-        Bounds characterBounds = characterView.GetComponent<CapsuleCollider2D>().bounds;
+        Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
         float distanceToGround = characterBounds.size.y / 2f;
 
         Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 3f,
