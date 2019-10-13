@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 605888862}
   - component: {fileID: 605888864}
   - component: {fileID: 605888863}
-  m_Layer: 31
+  m_Layer: 11
   m_Name: DeathPlane
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -533,7 +533,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1064794037}
   - component: {fileID: 1064794038}
-  m_Layer: 31
+  m_Layer: 11
   m_Name: DeathPlaneCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -687,6 +687,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 169009829212841218, guid: 55b3abed6a91095438390a21aa399fb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 261655198722983523, guid: 55b3abed6a91095438390a21aa399fb6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -751,6 +756,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LevelContent
+      objectReference: {fileID: 0}
+    - target: {fileID: 8434892339335984824, guid: 55b3abed6a91095438390a21aa399fb6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7020808103189851238, guid: 55b3abed6a91095438390a21aa399fb6,
         type: 3}
@@ -6191,7 +6201,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1806658350}
   - component: {fileID: 1806658351}
-  m_Layer: 31
+  m_Layer: 11
   m_Name: DeathPlaneCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6248,7 +6258,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2129166622}
   - component: {fileID: 2129166623}
-  m_Layer: 31
+  m_Layer: 11
   m_Name: DeathPlaneCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}

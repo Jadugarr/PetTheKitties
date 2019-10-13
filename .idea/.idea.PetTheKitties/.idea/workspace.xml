@@ -302,19 +302,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs</url>
-          <line>9</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" initialLine="9">
-            <startOffsets>
-              <option value="221" />
-            </startOffsets>
-            <endOffsets>
-              <option value="239" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

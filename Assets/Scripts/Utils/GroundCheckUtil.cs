@@ -32,7 +32,7 @@ public static class GroundCheckUtil
 
 
             RaycastHit2D hit = Physics2D.BoxCast(rayStart, new Vector2(characterBounds.size.x - 0.1f, 0.02f), 0f,
-                raycastDirection);
+                raycastDirection, 0.2f, LayerMask.GetMask("Ground"));
             if (hit.collider != null)
             {
                 Debug.Log("Tag of hit target: " + hit.collider.gameObject.tag);
@@ -52,8 +52,8 @@ public static class GroundCheckUtil
         Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
         float distanceToGround = characterBounds.size.y / 2f;
 
-        Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 3f,
-            characterView.transform.position.y - distanceToGround + 0.175f);// + distanceToGround);
+        Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 2f,
+            characterView.transform.position.y - distanceToGround);// + distanceToGround);
 
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
