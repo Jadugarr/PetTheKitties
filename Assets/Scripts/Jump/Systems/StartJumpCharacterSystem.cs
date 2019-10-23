@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.World;
 using UnityEngine;
 
 public class StartJumpCharacterSystem : GameReactiveSystem
@@ -37,15 +38,13 @@ public class StartJumpCharacterSystem : GameReactiveSystem
             {
                 GameObject characterView = jumpingEntity.view.View;
 
-                if (characterView)
+                if (characterView && jumpingEntity.hasCharacterGroundState &&
+                    jumpingEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
                 {
-                    if (GroundCheckUtil.CheckIfCharacterOnGround(characterView))
-                    {
-                        jumpingEntity.ReplaceCharacterVelocity(new Vector2(
-                            jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
-                            jumpingEntity.jumpForce.JumpForce));
-                        jumpingEntity.ReplaceCharacterState(CharacterState.Jumping);
-                    }
+                    jumpingEntity.ReplaceCharacterVelocity(new Vector2(
+                        jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
+                        jumpingEntity.jumpForce.JumpForce));
+                    jumpingEntity.ReplaceCharacterState(CharacterState.Jumping);
                 }
             }
         }

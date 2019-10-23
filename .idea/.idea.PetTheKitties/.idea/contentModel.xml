@@ -176,6 +176,7 @@
               <e p="GameCameraComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterAnimatorComponent.cs" t="Include" />
+              <e p="GameCharacterGroundStateComponent.cs" t="Include" />
               <e p="GameCharacterReachedGoalComponent.cs" t="Include" />
               <e p="GameCharacterStateComponent.cs" t="Include" />
               <e p="GameCharacterVelocityComponent.cs" t="Include" />
@@ -571,7 +572,9 @@
             <e p="ViewComponent.cs" t="Include" />
           </e>
           <e p="World" t="Include">
+            <e p="CharacterGroundState.cs" t="Include" />
             <e p="Components" t="Include">
+              <e p="CharacterGroundStateComponent.cs" t="Include" />
               <e p="FollowCharacterComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />
             </e>
@@ -579,6 +582,7 @@
               <e p="CharacterDirectionSystem.cs" t="Include" />
               <e p="CharacterFollowSystem.cs" t="Include" />
               <e p="CharacterScaredSystem.cs" t="Include" />
+              <e p="CheckCharacterGroundStateSystem.cs" t="Include" />
               <e p="CheckKittensReachedGoalConditionSystem.cs" t="Include" />
               <e p="EnterWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />

@@ -5,6 +5,7 @@ using Entitas.Extensions;
 using Entitas.Scripts.Common.Systems;
 using Entitas.Unity;
 using Entitas.VisualDebugging.Unity;
+using Entitas.World;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -45,6 +46,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         playerEntity.AddHealth(666);
         playerEntity.AddCharacterState(CharacterState.Idle);
         playerEntity.AddCurrentMovementSpeed(0f);
+        playerEntity.AddCharacterGroundState(CharacterGroundState.Undefined);
     }
 
     private void CreateKitten()
@@ -58,6 +60,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         kittyEntity.AddAcceleration(20f);
         kittyEntity.AddCharacterState(CharacterState.Idle);
         kittyEntity.AddCurrentMovementSpeed(0f);
+        kittyEntity.AddCharacterGroundState(CharacterGroundState.Undefined);
     }
 
     private void CreateWinLoseConditions()

@@ -223,6 +223,7 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
 
         Systems worldSystems = new Feature("WorldSystems")
+            .Add(new CheckCharacterGroundStateSystem(context))
             .Add(new SetCameraFollowTargetSystem(context))
             .Add(new InitializeWorldStateSystem(context))
             .Add(new SetCameraConfinerSystem(context))
