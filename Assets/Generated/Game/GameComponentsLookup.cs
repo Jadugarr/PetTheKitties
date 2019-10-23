@@ -23,48 +23,49 @@ public static class GameComponentsLookup {
     public const int CharacterState = 12;
     public const int CharacterVelocity = 13;
     public const int CollisionTrigger = 14;
-    public const int Defend = 15;
-    public const int DefenseStat = 16;
-    public const int Enemy = 17;
-    public const int EnemySpawnCooldown = 18;
-    public const int EnemySpawnInput = 19;
-    public const int InteractInputAvailable = 20;
-    public const int CharacterReachedGoal = 21;
-    public const int PlayerInteraction = 22;
-    public const int Interactable = 23;
-    public const int ExecuteAction = 24;
-    public const int ExecutionTime = 25;
-    public const int FollowCharacter = 26;
-    public const int GameState = 27;
-    public const int GoalReached = 28;
-    public const int Health = 29;
-    public const int Id = 30;
-    public const int Input = 31;
-    public const int InteractionTriggered = 32;
-    public const int JumpCharacter = 33;
-    public const int JumpForce = 34;
-    public const int JumpInputAvailable = 35;
-    public const int Kitty = 36;
-    public const int LoseCondition = 37;
-    public const int LoseConditionsFulfilled = 38;
-    public const int MoveCharacter = 39;
-    public const int MovementSpeed = 40;
-    public const int PauseInputAvailable = 41;
-    public const int Player = 42;
-    public const int Position = 43;
-    public const int RaycastTest = 44;
-    public const int RestartLevel = 45;
-    public const int Scared = 46;
-    public const int SceneLoaded = 47;
-    public const int Speed = 48;
-    public const int SubState = 49;
-    public const int Target = 50;
-    public const int UnloadScene = 51;
-    public const int View = 52;
-    public const int WinCondition = 53;
-    public const int WinConditionsFulfilled = 54;
+    public const int CurrentMovementSpeed = 15;
+    public const int Defend = 16;
+    public const int DefenseStat = 17;
+    public const int Enemy = 18;
+    public const int EnemySpawnCooldown = 19;
+    public const int EnemySpawnInput = 20;
+    public const int InteractInputAvailable = 21;
+    public const int CharacterReachedGoal = 22;
+    public const int PlayerInteraction = 23;
+    public const int Interactable = 24;
+    public const int ExecuteAction = 25;
+    public const int ExecutionTime = 26;
+    public const int FollowCharacter = 27;
+    public const int GameState = 28;
+    public const int GoalReached = 29;
+    public const int Health = 30;
+    public const int Id = 31;
+    public const int Input = 32;
+    public const int InteractionTriggered = 33;
+    public const int JumpCharacter = 34;
+    public const int JumpForce = 35;
+    public const int JumpInputAvailable = 36;
+    public const int Kitty = 37;
+    public const int LoseCondition = 38;
+    public const int LoseConditionsFulfilled = 39;
+    public const int MoveCharacter = 40;
+    public const int MovementSpeed = 41;
+    public const int PauseInputAvailable = 42;
+    public const int Player = 43;
+    public const int Position = 44;
+    public const int RaycastTest = 45;
+    public const int RestartLevel = 46;
+    public const int Scared = 47;
+    public const int SceneLoaded = 48;
+    public const int Speed = 49;
+    public const int SubState = 50;
+    public const int Target = 51;
+    public const int UnloadScene = 52;
+    public const int View = 53;
+    public const int WinCondition = 54;
+    public const int WinConditionsFulfilled = 55;
 
-    public const int TotalComponents = 55;
+    public const int TotalComponents = 56;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -82,6 +83,7 @@ public static class GameComponentsLookup {
         "CharacterState",
         "CharacterVelocity",
         "CollisionTrigger",
+        "CurrentMovementSpeed",
         "Defend",
         "DefenseStat",
         "Enemy",
@@ -140,6 +142,7 @@ public static class GameComponentsLookup {
         typeof(CharacterStateComponent),
         typeof(CharacterVelocityComponent),
         typeof(CollisionTriggerComponent),
+        typeof(CurrentMovementSpeedComponent),
         typeof(DefendComponent),
         typeof(DefenseStatComponent),
         typeof(EnemyComponent),

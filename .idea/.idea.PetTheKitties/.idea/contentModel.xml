@@ -180,6 +180,7 @@
               <e p="GameCharacterStateComponent.cs" t="Include" />
               <e p="GameCharacterVelocityComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
+              <e p="GameCurrentMovementSpeedComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
               <e p="GameDefenseStatComponent.cs" t="Include" />
               <e p="GameEnemyComponent.cs" t="Include" />
@@ -437,6 +438,7 @@
           </e>
           <e p="Move" t="Include">
             <e p="Components" t="Include">
+              <e p="CurrentMovementSpeedComponent.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />
             </e>
