@@ -36,11 +36,15 @@ public class MoveCharacterSystem : GameReactiveSystem
             {
                 if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
+                    Bounds characterBounds = entityToMove.view.View.GetComponent<BoxCollider2D>().bounds;
+                    Vector2 groundNormalAheadOfCharacter = GroundCheckUtil.GetGroundNormalAheadOfCharacter(new Vector2(
+                        entityToMove.view.View.transform.position.x + (characterBounds.size.x / 2f) + 0.1f,
+                        entityToMove.view.View.transform.position.y));
                     float angleToRotate = 0f;
                     if (entityToMove.characterGroundState.GroundNormal != Vector2.zero)
                     {
                         angleToRotate = GroundCheckUtil.GetMovementAngle(movementEntity.moveCharacter.MoveDirection,
-                            entityToMove.characterGroundState.GroundNormal);
+                            groundNormalAheadOfCharacter);
                     }
 
                     float newVelocityX = entityToMove.characterVelocity.Velocity.x +
@@ -63,6 +67,7 @@ public class MoveCharacterSystem : GameReactiveSystem
                     {
                         velocityVector = velocityVector.Rotate(angleToRotate);
                     }
+
                     entityToMove.characterVelocity.Velocity.x = velocityVector.x;
                     entityToMove.characterVelocity.Velocity.y = velocityVector.y;
                 }

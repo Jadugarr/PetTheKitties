@@ -36,6 +36,20 @@ public static class GroundCheckUtil
         return false;
     }
 
+    public static Vector2 GetGroundNormalAheadOfCharacter(Vector2 startPoint)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(startPoint, Vector2.down, 1f,
+            LayerMask.GetMask("Ground"));
+        Debug.DrawRay(startPoint, Vector2.down, Color.green, 1f);
+
+        if (hit.collider != null)
+        {
+            return hit.normal;
+        }
+        
+        return Vector2.zero;
+    }
+
     public static float GetMovementAngle(Vector2 movementDirection, Vector2 hitNormal)
     {
         if (hitNormal != Vector2.zero)
@@ -53,12 +67,13 @@ public static class GroundCheckUtil
         float distanceToGround = characterBounds.size.y / 2f;
 
         Vector2 rayStartForward = new Vector2(characterView.transform.position.x + characterBounds.size.x / 2f,
-            characterView.transform.position.y - distanceToGround + 0.2f);// + distanceToGround);
+            characterView.transform.position.y - distanceToGround + 0.2f); // + distanceToGround);
 
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
         // angle test
-        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.3f, LayerMask.GetMask("Ground"));
+        RaycastHit2D testHit =
+            Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.3f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
         if (testHit.collider != null)
         {
@@ -82,7 +97,8 @@ public static class GroundCheckUtil
         Vector2 raycastDirectionForward = new Vector2(0.5f, -0.5f).normalized;
 
         // angle test
-        RaycastHit2D testHit = Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.2f, LayerMask.GetMask("Ground"));
+        RaycastHit2D testHit =
+            Physics2D.Raycast(rayStartForward, raycastDirectionForward, 0.2f, LayerMask.GetMask("Ground"));
         Debug.DrawRay(rayStartForward, raycastDirectionForward, Color.red, kDebugRayDuration);
         if (testHit.collider != null)
         {
