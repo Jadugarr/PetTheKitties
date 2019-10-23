@@ -36,14 +36,18 @@ public class MoveCharacterSystem : GameReactiveSystem
             {
                 if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
-                    float angleToRotate = GroundCheckUtil.GetMovementAngle(entityToMove.view.View,
-                        movementEntity.moveCharacter.MoveDirection);
-                    
+                    float angleToRotate = 0f;
+                    if (entityToMove.characterGroundState.GroundNormal != Vector2.zero)
+                    {
+                        angleToRotate = GroundCheckUtil.GetMovementAngle(movementEntity.moveCharacter.MoveDirection,
+                            entityToMove.characterGroundState.GroundNormal);
+                    }
+
                     float newVelocityX = entityToMove.characterVelocity.Velocity.x +
                                          (entityToMove.acceleration.Acceleration *
                                           movementEntity.moveCharacter.MoveDirection.normalized.x * Time.deltaTime);
                     Vector2 velocityVector = new Vector2();
-                    
+
                     if (Mathf.Abs(newVelocityX) < entityToMove.movementSpeed.MovementSpeedValue)
                     {
                         velocityVector.x = newVelocityX;
@@ -55,7 +59,10 @@ public class MoveCharacterSystem : GameReactiveSystem
                             movementEntity.moveCharacter.MoveDirection.normalized.x;
                     }
 
-                    velocityVector = velocityVector.Rotate(angleToRotate);
+                    if (angleToRotate != 0)
+                    {
+                        velocityVector = velocityVector.Rotate(angleToRotate);
+                    }
                     entityToMove.characterVelocity.Velocity.x = velocityVector.x;
                     entityToMove.characterVelocity.Velocity.y = velocityVector.y;
                 }

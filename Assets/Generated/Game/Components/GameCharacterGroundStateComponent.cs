@@ -11,17 +11,19 @@ public partial class GameEntity {
     public CharacterGroundStateComponent characterGroundState { get { return (CharacterGroundStateComponent)GetComponent(GameComponentsLookup.CharacterGroundState); } }
     public bool hasCharacterGroundState { get { return HasComponent(GameComponentsLookup.CharacterGroundState); } }
 
-    public void AddCharacterGroundState(Entitas.World.CharacterGroundState newCharacterGroundState) {
+    public void AddCharacterGroundState(Entitas.World.CharacterGroundState newCharacterGroundState, UnityEngine.Vector2 newGroundNormal) {
         var index = GameComponentsLookup.CharacterGroundState;
         var component = (CharacterGroundStateComponent)CreateComponent(index, typeof(CharacterGroundStateComponent));
         component.CharacterGroundState = newCharacterGroundState;
+        component.GroundNormal = newGroundNormal;
         AddComponent(index, component);
     }
 
-    public void ReplaceCharacterGroundState(Entitas.World.CharacterGroundState newCharacterGroundState) {
+    public void ReplaceCharacterGroundState(Entitas.World.CharacterGroundState newCharacterGroundState, UnityEngine.Vector2 newGroundNormal) {
         var index = GameComponentsLookup.CharacterGroundState;
         var component = (CharacterGroundStateComponent)CreateComponent(index, typeof(CharacterGroundStateComponent));
         component.CharacterGroundState = newCharacterGroundState;
+        component.GroundNormal = newGroundNormal;
         ReplaceComponent(index, component);
     }
 

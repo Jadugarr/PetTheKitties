@@ -1,6 +1,7 @@
 using Entitas;
 using Entitas.Scripts.Common.Systems;
 using Entitas.World;
+using UnityEngine;
 
 public class CheckCharacterGroundStateSystem : GameExecuteSystem
 {
@@ -20,13 +21,13 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
     {
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
-            if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity.view.View))
+            if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity.view.View, out Vector2 hitNormal))
             {
-                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnGround);
+                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnGround, hitNormal);
             }
             else
             {
-                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne);
+                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, hitNormal);
             }
         }
     }

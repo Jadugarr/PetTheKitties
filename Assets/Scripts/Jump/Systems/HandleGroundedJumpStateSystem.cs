@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Configurations;
 using Entitas;
+using Entitas.World;
 using UnityEngine;
 
 public class HandleGroundedJumpStateSystem : GameReactiveSystem
@@ -30,14 +31,13 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
         foreach (GameEntity gameEntity in entities)
         {
             if (gameEntity.hasCharacterVelocity && gameEntity.characterVelocity != null &&
-                Mathf.Abs(gameEntity.characterVelocity.Velocity.y) < GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
+                Mathf.Abs(gameEntity.characterVelocity.Velocity.y) <
+                GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
             {
-                if (gameEntity.hasView && gameEntity.view != null)
+                if (gameEntity.hasView && gameEntity.view != null && gameEntity.hasCharacterGroundState &&
+                    gameEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
                 {
-                    if (GroundCheckUtil.CheckIfCharacterOnGround(gameEntity.view.View))
-                    {
-                        gameEntity.ReplaceCharacterState(CharacterState.Idle);
-                    }
+                    gameEntity.ReplaceCharacterState(CharacterState.Idle);
                 }
             }
         }
