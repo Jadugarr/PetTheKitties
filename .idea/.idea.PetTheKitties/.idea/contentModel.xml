@@ -589,6 +589,7 @@
               <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
+              <e p="SetGravityScaleSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />

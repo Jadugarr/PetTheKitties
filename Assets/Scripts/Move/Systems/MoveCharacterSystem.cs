@@ -36,40 +36,13 @@ public class MoveCharacterSystem : GameReactiveSystem
             {
                 if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
-                    Bounds characterBounds = entityToMove.view.View.GetComponent<BoxCollider2D>().bounds;
-                    Vector2 groundNormalAheadOfCharacter = GroundCheckUtil.GetGroundNormalAheadOfCharacter(new Vector2(
-                        entityToMove.view.View.transform.position.x + (characterBounds.size.x / 2f) + 0.1f,
-                        entityToMove.view.View.transform.position.y));
-                    float angleToRotate = 0f;
-                    if (entityToMove.characterGroundState.GroundNormal != Vector2.zero)
-                    {
-                        angleToRotate = GroundCheckUtil.GetMovementAngle(movementEntity.moveCharacter.MoveDirection,
-                            groundNormalAheadOfCharacter);
-                    }
-
-                    float newVelocityX = entityToMove.characterVelocity.Velocity.x +
-                                         (entityToMove.acceleration.Acceleration *
-                                          movementEntity.moveCharacter.MoveDirection.normalized.x * Time.deltaTime);
-                    Vector2 velocityVector = new Vector2();
-
-                    if (Mathf.Abs(newVelocityX) < entityToMove.movementSpeed.MovementSpeedValue)
-                    {
-                        velocityVector.x = newVelocityX;
-                    }
-                    else
-                    {
-                        velocityVector.x =
-                            entityToMove.movementSpeed.MovementSpeedValue *
-                            movementEntity.moveCharacter.MoveDirection.normalized.x;
-                    }
-
-                    if (angleToRotate != 0)
-                    {
-                        velocityVector = velocityVector.Rotate(angleToRotate);
-                    }
-
-                    entityToMove.characterVelocity.Velocity.x = velocityVector.x;
-                    entityToMove.characterVelocity.Velocity.y = velocityVector.y;
+                    float newMovementSpeed = Mathf.Clamp(entityToMove.currentMovementSpeed.CurrentMovementSpeed +
+                                                         (entityToMove.acceleration.Acceleration *
+                                                          movementEntity.moveCharacter.MoveDirection.normalized.x *
+                                                          Time.deltaTime),
+                        -entityToMove.movementSpeed.MovementSpeedValue, entityToMove.movementSpeed.MovementSpeedValue);
+                    
+                    entityToMove.ReplaceCurrentMovementSpeed(newMovementSpeed);
                 }
             }
         }

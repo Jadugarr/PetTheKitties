@@ -36,7 +36,7 @@ public static class GroundCheckUtil
         return false;
     }
 
-    public static Vector2 GetGroundNormalAheadOfCharacter(Vector2 startPoint)
+    public static Vector2 GetGroundNormalAtPoint(Vector2 startPoint)
     {
         RaycastHit2D hit = Physics2D.Raycast(startPoint, Vector2.down, 1f,
             LayerMask.GetMask("Ground"));

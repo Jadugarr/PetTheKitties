@@ -224,6 +224,7 @@ public class GameController : MonoBehaviour
 
         Systems worldSystems = new Feature("WorldSystems")
             .Add(new CheckCharacterGroundStateSystem(context))
+            .Add(new SetGravityScaleSystem(context))
             .Add(new SetCameraFollowTargetSystem(context))
             .Add(new InitializeWorldStateSystem(context))
             .Add(new SetCameraConfinerSystem(context))
@@ -239,11 +240,7 @@ public class GameController : MonoBehaviour
             .Add(new ManageFallingStateHandlingSystem(context))
             .Add(new CharacterFollowSystem(context))
             .Add(new CharacterScaredSystem(context))
-            .Add(new CharacterReachedGoalSystem(context))
-            .Add(new CharacterDirectionSystem(context))
-            .Add(new HandleCharacterMovementStateSystem(context))
-            .Add(new AdjustMoveEndingVelocitySystem(context))
-            .Add(new HandleFallingStateSystem(context));
+            .Add(new CharacterReachedGoalSystem(context));
 
         GameSystemService.AddSystemMapping(GameState.World, worldSystems);
 
@@ -252,7 +249,11 @@ public class GameController : MonoBehaviour
             .Add(new CheckInteractInputAvailableSystem(context))
             .Add(new KittyInteractionSystem(context))
             .Add(new CharacterStartFollowSystem(context))
+            .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
+            .Add(new HandleCharacterMovementStateSystem(context))
+            .Add(new AdjustMoveEndingVelocitySystem(context))
+            .Add(new HandleFallingStateSystem(context))
             .Add(new StartJumpCharacterSystem(context))
             // Some test systems
             .Add(new ProcessRaycastTestInputSystem(context))
