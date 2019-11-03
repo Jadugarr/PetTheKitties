@@ -24,17 +24,22 @@ public class AdjustMoveEndingVelocitySystem : GameExecuteSystem
         {
             if (gameEntity.characterState.State == CharacterState.MoveEnding)
             {
-                if (Mathf.Abs(gameEntity.characterVelocity.Velocity.x) <= GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
+                if (Mathf.Abs(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed) <=
+                    GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
                 {
-                    gameEntity.ReplaceCharacterVelocity(new Vector2(0f, gameEntity.characterVelocity.Velocity.y));
+                    gameEntity.ReplaceCurrentMovementSpeed(0f,
+                        gameEntity.currentMovementSpeed.CurrentVerticalMovementSpeed);
                 }
                 else
                 {
-                    int velocityDirectionFactor = gameEntity.characterVelocity.Velocity.x >= 0 ? 1 : -1;
+                    int velocityDirectionFactor =
+                        gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed >= 0 ? 1 : -1;
 
-                    gameEntity.ReplaceCharacterVelocity(new Vector2(
-                        (Mathf.Max(Mathf.Abs(gameEntity.characterVelocity.Velocity.x) - friction * Time.deltaTime, 0)) *
-                        velocityDirectionFactor, gameEntity.characterVelocity.Velocity.y));
+                    gameEntity.ReplaceCurrentMovementSpeed(
+                        (Mathf.Max(
+                            Mathf.Abs(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed) -
+                            friction * Time.deltaTime, 0)) *
+                        velocityDirectionFactor, gameEntity.currentMovementSpeed.CurrentVerticalMovementSpeed);
                 }
             }
         }

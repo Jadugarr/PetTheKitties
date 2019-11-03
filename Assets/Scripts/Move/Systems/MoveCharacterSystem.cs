@@ -36,13 +36,15 @@ public class MoveCharacterSystem : GameReactiveSystem
             {
                 if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
-                    float newMovementSpeed = Mathf.Clamp(entityToMove.currentMovementSpeed.CurrentMovementSpeed +
-                                                         (entityToMove.acceleration.Acceleration *
-                                                          movementEntity.moveCharacter.MoveDirection.normalized.x *
-                                                          Time.deltaTime),
+                    float newMovementSpeed = Mathf.Clamp(
+                        entityToMove.currentMovementSpeed.CurrentHorizontalMovementSpeed +
+                        (entityToMove.acceleration.Acceleration *
+                         movementEntity.moveCharacter.MoveDirection.normalized.x *
+                         Time.deltaTime),
                         -entityToMove.movementSpeed.MovementSpeedValue, entityToMove.movementSpeed.MovementSpeedValue);
-                    
-                    entityToMove.ReplaceCurrentMovementSpeed(newMovementSpeed);
+
+                    entityToMove.ReplaceCurrentMovementSpeed(newMovementSpeed,
+                        entityToMove.currentMovementSpeed.CurrentVerticalMovementSpeed);
                 }
             }
         }

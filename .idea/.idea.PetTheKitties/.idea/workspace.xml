@@ -37,6 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterScaredSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UiAssetTypes.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/TagsLayersEnumBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterDirectionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldNavigationSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,7 +47,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoseConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/Systems/RenderVelocityAnimationsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameFollowCharacterComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/Systems/SyncMovementAnimationSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittensReachedGoalConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Layers/OverlayUiLayer.cs" root0="FORCE_HIGHLIGHTING" />
@@ -73,6 +76,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePlayerInteractionComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseTargetStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/WinConditionControllerSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ATBItem/ATBItemWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ActionChosenSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExecuteActionsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameWinConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -88,6 +92,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ProcessBattleCancelInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownWinConditionsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/BattleResultText/BattleResultWidget.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/TransformMovementSpeedToVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckKillEnemiesConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownLoseConditionsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/LoseConditionControllerSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -105,12 +110,15 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseTargetSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CharacterDeathSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionsFulfilledComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ProcessJumpInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/CharacterStateComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/SpeedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/MoveCharacterSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -124,6 +132,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test/RestartSceneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test/Systems/ProcessRaycastTestInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Test/Components/RaycastTestComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/Systems/InitializeCameraSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/Systems/SetCameraFollowTargetSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -153,9 +162,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/GameInitializeSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/ExitPausedSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/CharacterGravitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Components/CollisionTriggerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Components/RestartLevelComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/CharacterReachedGoalSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/CharacterStartFollowSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/KittyAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -177,6 +188,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameAttackInputComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/GameSceneConstants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerWonStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/CleanupSceneLoadedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Actions/Systems/ExecuteChooseActionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerLostStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -199,13 +212,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ManageJumpingStateHandlingSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Components/s.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ss.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/MaintainJumpVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Components/JumpStateComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleFallingJumpStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs" />
@@ -221,11 +229,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleMoveEndingStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/Components/GroundCheckComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/LevelColliderComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleFallingStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/RenderVelocitySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/SyncVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputAxis.cs" />
@@ -235,20 +240,28 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/InputConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/MovementConstantsConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/AdjustMoveEndingVelocitySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/ProcessWorldMoveInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/CurrentMovementSpeedComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/CharacterGroundState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/CharacterGroundStateComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/CurrentMovementSpeedComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/MoveCharacterSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleFallingStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/AdjustMoveEndingVelocitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterScaredSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/SyncVelocitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/RenderVelocitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/CharacterGravitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/TransformMovementSpeedToVelocitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
       </list>
     </option>
@@ -292,10 +305,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10956">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10620">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10956" />
+      <option name="pid" value="10620" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>

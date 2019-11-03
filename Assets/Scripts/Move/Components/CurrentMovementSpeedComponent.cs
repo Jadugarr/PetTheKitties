@@ -3,5 +3,6 @@ using Entitas;
 [Game]
 public class CurrentMovementSpeedComponent : IComponent
 {
-    public float CurrentMovementSpeed;
+    public float CurrentHorizontalMovementSpeed;
+    public float CurrentVerticalMovementSpeed;
 }

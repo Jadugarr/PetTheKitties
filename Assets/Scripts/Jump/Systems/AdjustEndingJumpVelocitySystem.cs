@@ -24,9 +24,8 @@ public class AdjustEndingJumpVelocitySystem : GameExecuteSystem
             if (gameEntity.hasCharacterState && gameEntity.characterState != null &&
                 gameEntity.characterState.State == CharacterState.JumpEnding)
             {
-                gameEntity.ReplaceCharacterVelocity(
-                    new Vector2(gameEntity.characterVelocity.Velocity.x,
-                        gameEntity.characterVelocity.Velocity.y - (50f * Time.deltaTime)));
+                gameEntity.ReplaceCurrentMovementSpeed(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed,
+                    gameEntity.currentMovementSpeed.CurrentVerticalMovementSpeed - (50f * Time.deltaTime));
             }
         }
     }

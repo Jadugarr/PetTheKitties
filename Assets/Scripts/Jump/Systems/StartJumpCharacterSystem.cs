@@ -41,9 +41,9 @@ public class StartJumpCharacterSystem : GameReactiveSystem
                 if (characterView && jumpingEntity.hasCharacterGroundState &&
                     jumpingEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
                 {
-                    jumpingEntity.ReplaceCharacterVelocity(new Vector2(
-                        jumpingEntity.hasCharacterVelocity ? jumpingEntity.characterVelocity.Velocity.x : 0f,
-                        jumpingEntity.jumpForce.JumpForce));
+                    jumpingEntity.ReplaceCurrentMovementSpeed(
+                        jumpingEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed,
+                        jumpingEntity.jumpForce.JumpForce);
                     jumpingEntity.ReplaceCharacterState(CharacterState.Jumping);
                 }
             }

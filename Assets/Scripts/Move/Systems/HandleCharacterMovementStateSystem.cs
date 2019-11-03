@@ -35,7 +35,7 @@ public class HandleCharacterMovementStateSystem : GameReactiveSystem
     {
         foreach (GameEntity gameEntity in entities)
         {
-            float velocityX = Mathf.Abs(gameEntity.characterVelocity.Velocity.x);
+            float velocityX = Mathf.Abs(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed);
 
             if (velocityX == 0f && HasValidMovementState(gameEntity.characterState.State))
             {

@@ -448,6 +448,7 @@
               <e p="HandleCharacterMovementStateSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />
+              <e p="TransformMovementSpeedToVelocitySystem.cs" t="Include" />
             </e>
           </e>
           <e p="Player" t="Include">
@@ -564,6 +565,7 @@
               <e p="CharacterVelocityComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
+              <e p="CharacterGravitySystem.cs" t="Include" />
               <e p="RenderVelocitySystem.cs" t="Include" />
               <e p="SyncVelocitySystem.cs" t="Include" />
             </e>
@@ -579,6 +581,7 @@
               <e p="ScaredComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
+              <e p="AdjustCharacterMovementToSlopeSystem.cs" t="Include" />
               <e p="CharacterDirectionSystem.cs" t="Include" />
               <e p="CharacterFollowSystem.cs" t="Include" />
               <e p="CharacterScaredSystem.cs" t="Include" />

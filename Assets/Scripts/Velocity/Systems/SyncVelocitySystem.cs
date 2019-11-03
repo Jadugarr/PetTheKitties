@@ -28,6 +28,8 @@ public class SyncVelocitySystem : GameExecuteSystem
             {
                 Vector2 viewVelocity = rigidbody2D.velocity;
                 gameEntity.ReplaceCharacterVelocity(viewVelocity);
+                gameEntity.ReplaceCurrentMovementSpeed(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed,
+                    viewVelocity.y);
             }
         }
     }

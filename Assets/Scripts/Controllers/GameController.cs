@@ -117,9 +117,12 @@ public class GameController : MonoBehaviour
     private void CreateEndFrameSystems(GameContext context)
     {
         endFrameSystems = new Feature("EndFrameSystems")
+            // Gravity
+            .Add(new CharacterGravitySystem(context))
             //Position
             .Add(new RenderPositionSystem(context))
             //Velocity
+            .Add(new TransformMovementSpeedToVelocitySystem(context))
             .Add(new RenderVelocitySystem(context))
             //Animations
             .Add(new RenderVelocityAnimationsSystem(context))
@@ -224,6 +227,7 @@ public class GameController : MonoBehaviour
 
         Systems worldSystems = new Feature("WorldSystems")
             .Add(new CheckCharacterGroundStateSystem(context))
+//            .Add(new AdjustCharacterMovementToSlopeSystem(context))
             .Add(new SetGravityScaleSystem(context))
             .Add(new SetCameraFollowTargetSystem(context))
             .Add(new InitializeWorldStateSystem(context))
@@ -236,8 +240,6 @@ public class GameController : MonoBehaviour
             .Add(new InitializeAndTeardownLoseConditionsSystem(context))
             .Add(new WinConditionControllerSystem(context))
             .Add(new LoseConditionControllerSystem(context))
-            .Add(new ManageJumpingStateHandlingSystem(context))
-            .Add(new ManageFallingStateHandlingSystem(context))
             .Add(new CharacterFollowSystem(context))
             .Add(new CharacterScaredSystem(context))
             .Add(new CharacterReachedGoalSystem(context));
@@ -252,13 +254,15 @@ public class GameController : MonoBehaviour
             .Add(new CharacterDirectionSystem(context))
             .Add(new MoveCharacterSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context))
+            .Add(new ManageJumpingStateHandlingSystem(context))
+            .Add(new ManageFallingStateHandlingSystem(context))
             .Add(new AdjustMoveEndingVelocitySystem(context))
             .Add(new HandleFallingStateSystem(context))
             .Add(new StartJumpCharacterSystem(context))
             // Some test systems
             .Add(new ProcessRaycastTestInputSystem(context))
             .Add(new RaycastTestSystem(context));
-        
+
         GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
 }

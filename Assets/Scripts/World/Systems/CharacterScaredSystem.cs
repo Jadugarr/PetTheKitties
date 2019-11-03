@@ -29,7 +29,7 @@ public class CharacterScaredSystem : GameReactiveSystem
         {
             if (entity.hasCharacterVelocity)
             {
-                entity.characterVelocity.Velocity.x = 0f;
+                entity.ReplaceCurrentMovementSpeed(0f, entity.currentMovementSpeed.CurrentVerticalMovementSpeed);
             }
         }
     }
