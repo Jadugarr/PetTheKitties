@@ -24,7 +24,7 @@ public class AdjustMoveEndingVelocitySystem : GameExecuteSystem
         {
             if (gameEntity.characterState.State == CharacterState.MoveEnding)
             {
-                if (Mathf.Abs(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed) <=
+                if (Mathf.Abs(gameEntity.currentMovementSpeed.CurrentMovementSpeed) <=
                     GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
                 {
                     gameEntity.ReplaceCurrentMovementSpeed(0f);
@@ -32,11 +32,11 @@ public class AdjustMoveEndingVelocitySystem : GameExecuteSystem
                 else
                 {
                     int velocityDirectionFactor =
-                        gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed >= 0 ? 1 : -1;
+                        gameEntity.currentMovementSpeed.CurrentMovementSpeed >= 0 ? 1 : -1;
 
                     gameEntity.ReplaceCurrentMovementSpeed(
                         (Mathf.Max(
-                            Mathf.Abs(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed) -
+                            Mathf.Abs(gameEntity.currentMovementSpeed.CurrentMovementSpeed) -
                             friction * Time.deltaTime, 0)) *
                         velocityDirectionFactor);
                 }

@@ -11,17 +11,17 @@ public partial class GameEntity {
     public CurrentMovementSpeedComponent currentMovementSpeed { get { return (CurrentMovementSpeedComponent)GetComponent(GameComponentsLookup.CurrentMovementSpeed); } }
     public bool hasCurrentMovementSpeed { get { return HasComponent(GameComponentsLookup.CurrentMovementSpeed); } }
 
-    public void AddCurrentMovementSpeed(float newCurrentHorizontalMovementSpeed, float newCurrentVerticalMovementSpeed) {
+    public void AddCurrentMovementSpeed(float newCurrentMovementSpeed) {
         var index = GameComponentsLookup.CurrentMovementSpeed;
         var component = (CurrentMovementSpeedComponent)CreateComponent(index, typeof(CurrentMovementSpeedComponent));
-        component.CurrentHorizontalMovementSpeed = newCurrentHorizontalMovementSpeed;
+        component.CurrentMovementSpeed = newCurrentMovementSpeed;
         AddComponent(index, component);
     }
 
-    public void ReplaceCurrentMovementSpeed(float newCurrentHorizontalMovementSpeed) {
+    public void ReplaceCurrentMovementSpeed(float newCurrentMovementSpeed) {
         var index = GameComponentsLookup.CurrentMovementSpeed;
         var component = (CurrentMovementSpeedComponent)CreateComponent(index, typeof(CurrentMovementSpeedComponent));
-        component.CurrentHorizontalMovementSpeed = newCurrentHorizontalMovementSpeed;
+        component.CurrentMovementSpeed = newCurrentMovementSpeed;
         ReplaceComponent(index, component);
     }
 

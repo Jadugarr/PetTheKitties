@@ -21,7 +21,7 @@ public class ConvertMovementSpeedToVelocitySystem : GameExecuteSystem
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
             characterEntity.ReplaceCharacterVelocity(new Vector2(
-                characterEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed,
+                characterEntity.currentMovementSpeed.CurrentMovementSpeed,
                 characterEntity.characterVelocity.Velocity.y));
         }
     }

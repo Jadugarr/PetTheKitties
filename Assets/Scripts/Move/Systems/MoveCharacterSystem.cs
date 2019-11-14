@@ -37,7 +37,7 @@ public class MoveCharacterSystem : GameReactiveSystem
                 if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
                 {
                     float newMovementSpeed = Mathf.Clamp(
-                        entityToMove.currentMovementSpeed.CurrentHorizontalMovementSpeed +
+                        entityToMove.currentMovementSpeed.CurrentMovementSpeed +
                         (entityToMove.acceleration.Acceleration *
                          movementEntity.moveCharacter.MoveDirection.normalized.x *
                          Time.deltaTime),
