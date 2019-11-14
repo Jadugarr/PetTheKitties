@@ -43,8 +43,7 @@ public class MoveCharacterSystem : GameReactiveSystem
                          Time.deltaTime),
                         -entityToMove.movementSpeed.MovementSpeedValue, entityToMove.movementSpeed.MovementSpeedValue);
 
-                    entityToMove.ReplaceCurrentMovementSpeed(newMovementSpeed,
-                        entityToMove.currentMovementSpeed.CurrentVerticalMovementSpeed);
+                    entityToMove.ReplaceCurrentMovementSpeed(newMovementSpeed);
                 }
             }
         }

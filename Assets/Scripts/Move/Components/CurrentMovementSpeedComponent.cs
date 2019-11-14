@@ -4,5 +4,4 @@ using Entitas;
 public class CurrentMovementSpeedComponent : IComponent
 {
     public float CurrentHorizontalMovementSpeed;
-    public float CurrentVerticalMovementSpeed;
 }

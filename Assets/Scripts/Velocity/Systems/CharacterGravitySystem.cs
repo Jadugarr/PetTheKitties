@@ -26,8 +26,8 @@ public class CharacterGravitySystem : GameExecuteSystem
         {
             if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne)
             {
-                gameEntity.ReplaceCurrentMovementSpeed(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed,
-                    gameEntity.currentMovementSpeed.CurrentVerticalMovementSpeed - gravityFactor * Time.deltaTime);
+                gameEntity.ReplaceCharacterVelocity(new Vector2(gameEntity.characterVelocity.Velocity.x,
+                    gameEntity.characterVelocity.Velocity.y - gravityFactor * Time.deltaTime));
             }
         }
     }

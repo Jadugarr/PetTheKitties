@@ -122,7 +122,6 @@ public class GameController : MonoBehaviour
             //Position
             .Add(new RenderPositionSystem(context))
             //Velocity
-            .Add(new TransformMovementSpeedToVelocitySystem(context))
             .Add(new RenderVelocitySystem(context))
             //Animations
             .Add(new RenderVelocityAnimationsSystem(context))
@@ -259,6 +258,7 @@ public class GameController : MonoBehaviour
             .Add(new AdjustMoveEndingVelocitySystem(context))
             .Add(new HandleFallingStateSystem(context))
             .Add(new StartJumpCharacterSystem(context))
+            .Add(new ConvertMovementSpeedToVelocitySystem(context))
             // Some test systems
             .Add(new ProcessRaycastTestInputSystem(context))
             .Add(new RaycastTestSystem(context));

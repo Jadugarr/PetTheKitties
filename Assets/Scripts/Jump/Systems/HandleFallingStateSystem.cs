@@ -28,8 +28,8 @@ public class HandleFallingStateSystem : GameReactiveSystem
     {
         foreach (GameEntity gameEntity in entities)
         {
-            if (gameEntity.hasCurrentMovementSpeed && gameEntity.currentMovementSpeed != null &&
-                gameEntity.currentMovementSpeed.CurrentVerticalMovementSpeed < -0.1f)
+            if (gameEntity.hasCharacterVelocity && gameEntity.characterVelocity != null &&
+                gameEntity.characterVelocity.Velocity.y < -0.1f)
             {
                 gameEntity.ReplaceCharacterState(CharacterState.Falling);
             }
