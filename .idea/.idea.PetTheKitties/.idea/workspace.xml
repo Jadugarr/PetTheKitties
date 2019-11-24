@@ -236,11 +236,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/ProcessWorldMoveInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/CharacterGroundState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/CharacterGroundStateComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/RenderVelocitySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/TransformMovementSpeedToVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCurrentMovementSpeedComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
@@ -257,14 +255,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/CurrentMovementSpeedComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
       </list>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="240" />
-    <option name="y" value="130" />
-    <option name="width" value="1440" />
-    <option name="height" value="780" />
   </component>
   <component name="ProjectId" id="1RhWfJmYiox9e0SPBquNCqEeP2z" />
   <component name="ProjectLevelVcsManager">
@@ -299,10 +293,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10620">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="7536">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10620" />
+      <option name="pid" value="7536" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -336,6 +330,19 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs</url>
+          <line>29</line>
+          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" initialLine="29">
+            <startOffsets>
+              <option value="1237" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1261" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

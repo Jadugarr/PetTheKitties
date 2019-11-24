@@ -10,14 +10,28 @@ public static class GroundCheckUtil
         if (characterView)
         {
             Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
-            float distanceToGround = characterBounds.size.y / 2f;
+            float characterRotation = characterView.transform.eulerAngles.z;
 
-            Vector2 rayStart = new Vector2(characterView.transform.position.x,
-                characterView.transform.position.y - distanceToGround - 0.02f);
+            Vector2 rayStart = new Vector2(characterBounds.min.x + characterBounds.size.x / 2,
+                characterBounds.min.y - 0.02f);
 
-            Debug.DrawRay(rayStart, Vector2.down, Color.red, kDebugRayDuration);
+            Debug.DrawRay(rayStart, Vector2.down.Rotate(characterRotation), Color.red, kDebugRayDuration);
             Vector2 raycastDirection = Vector2.down;
 
+            //////////////////// TESTING
+            
+            
+            BoxCollider2D collider = characterView.GetComponent<BoxCollider2D>();
+            RaycastHit2D[] castResults = new RaycastHit2D[1];
+            ContactFilter2D contactFilter2D = new ContactFilter2D();
+            contactFilter2D.SetLayerMask(LayerMask.GetMask("Ground"));
+            if (collider.Cast(Vector2.down.Rotate(characterRotation), contactFilter2D, castResults, 0.2f) > 0)
+            {
+                Debug.Log("Hit ground");
+            }
+            
+            //////////////////// TESTING END
+            
             RaycastHit2D hit = Physics2D.BoxCast(rayStart, new Vector2(characterBounds.size.x - 0.1f, 0.02f), 0f,
                 raycastDirection, 0.2f, LayerMask.GetMask("Ground"));
             if (hit.collider != null)
@@ -46,7 +60,7 @@ public static class GroundCheckUtil
         {
             return hit.normal;
         }
-        
+
         return Vector2.zero;
     }
 
