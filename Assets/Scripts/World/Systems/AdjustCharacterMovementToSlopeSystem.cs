@@ -34,11 +34,11 @@ public class AdjustCharacterMovementToSlopeSystem : GameReactiveSystem
         {
             if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlope)
             {
-//                float signedAngleAhead =
-//                    Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
-//                Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentHorizontalMovementSpeed,
-//                    gameEntity.currentMovementSpeed.CurrentVerticalMovementSpeed).Rotate(signedAngleAhead);
-//                gameEntity.ReplaceCurrentMovementSpeed(newVelocity.x, newVelocity.y);
+                float signedAngleAhead =
+                    Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
+                Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,
+                    0).Rotate(signedAngleAhead);
+                gameEntity.ReplaceCharacterVelocity(newVelocity);
             }
         }
     }

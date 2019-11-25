@@ -445,7 +445,7 @@
             </e>
             <e p="Systems" t="Include">
               <e p="AdjustMoveEndingVelocitySystem.cs" t="Include" />
-              <e p="ConvertMovementSpeedToVelocitySystem.cs" t="Include" />
+              <e p="CharacterOnGroundMovementVelocitySystem.cs" t="Include" />
               <e p="HandleCharacterMovementStateSystem.cs" t="Include" />
               <e p="MoveCharacterSystem.cs" t="Include" />
               <e p="ProcessWorldMoveInputSystem.cs" t="Include" />

@@ -258,7 +258,8 @@ public class GameController : MonoBehaviour
             .Add(new AdjustMoveEndingVelocitySystem(context))
             .Add(new HandleFallingStateSystem(context))
             .Add(new StartJumpCharacterSystem(context))
-            .Add(new ConvertMovementSpeedToVelocitySystem(context))
+            .Add(new AdjustCharacterMovementToSlopeSystem(context))
+            .Add(new CharacterOnGroundMovementVelocitySystem(context))
             // Some test systems
             .Add(new ProcessRaycastTestInputSystem(context))
             .Add(new RaycastTestSystem(context));

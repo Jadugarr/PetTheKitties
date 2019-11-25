@@ -37,7 +37,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/MovementConstantsConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePlayerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/ConvertMovementSpeedToVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/CharacterOnGroundMovementVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Layers/OverlayUiLayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/WinCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseTargetStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -206,7 +206,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleFallingJumpStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/CharacterState.cs" />
@@ -249,14 +248,15 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/CharacterGravitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/SyncVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterScaredSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/ConvertMovementSpeedToVelocitySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/CurrentMovementSpeedComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/CharacterOnGroundMovementVelocitySystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
       </list>
     </option>
   </component>
@@ -330,19 +330,6 @@
           <properties exception="System.Threading.ThreadAbortException" displayValue="System.Threading.ThreadAbortException" />
           <option name="timeStamp" value="1" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs</url>
-          <line>29</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" initialLine="29">
-            <startOffsets>
-              <option value="1237" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1261" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
