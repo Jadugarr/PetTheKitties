@@ -3,11 +3,11 @@ using Entitas.Scripts.Common.Systems;
 using Entitas.World;
 using UnityEngine;
 
-public class CharacterOnGroundMovementVelocitySystem : GameExecuteSystem
+public class CharacterAirborneMovementVelocitySystem : GameExecuteSystem
 {
     private IGroup<GameEntity> characterGroup;
 
-    public CharacterOnGroundMovementVelocitySystem(GameContext context) : base(context)
+    public CharacterAirborneMovementVelocitySystem(GameContext context) : base(context)
     {
         characterGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.MovementSpeed, GameMatcher.CharacterVelocity));
     }
@@ -21,12 +21,13 @@ public class CharacterOnGroundMovementVelocitySystem : GameExecuteSystem
     {
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
-            if (characterEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnGround &&
-                characterEntity.characterState.State != CharacterState.Jumping)
+            Debug.Log("Current CharacterGroundState: " + characterEntity.characterGroundState.CharacterGroundState);
+            
+            if (characterEntity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne)
             {
                 characterEntity.ReplaceCharacterVelocity(new Vector2(
                     characterEntity.currentMovementSpeed.CurrentMovementSpeed,
-                    0));
+                    characterEntity.characterVelocity.Velocity.y));
             }
         }
     }

@@ -56,6 +56,10 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                     characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, hitNormal);
                 }
             }
+            else
+            {
+                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero);
+            }
         }
     }
 }
