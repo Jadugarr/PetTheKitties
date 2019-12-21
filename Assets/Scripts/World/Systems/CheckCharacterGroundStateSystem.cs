@@ -47,7 +47,7 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                     characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnSlope,
                         groundNormalAheadOfCharacter);
                 }
-                else if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity.view.View, out Vector2 hitNormal))
+                else if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity.view.View.GetComponent<BoxCollider2D>(), out Vector2 hitNormal))
                 {
                     characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnGround, hitNormal);
                 }

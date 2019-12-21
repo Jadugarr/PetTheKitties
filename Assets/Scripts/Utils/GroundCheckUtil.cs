@@ -5,44 +5,25 @@ public static class GroundCheckUtil
 {
     private const float kDebugRayDuration = 1f;
 
-    public static bool CheckIfCharacterOnGround(GameObject characterView, out Vector2 hitNormal)
+    public static bool CheckIfCharacterOnGround(BoxCollider2D characterCollider2D, out Vector2 hitNormal)
     {
-        if (characterView)
+        if (characterCollider2D)
         {
-            Bounds characterBounds = characterView.GetComponent<BoxCollider2D>().bounds;
-            float characterRotation = characterView.transform.eulerAngles.z;
+            Bounds characterBounds = characterCollider2D.bounds;
 
             Vector2 rayStart = new Vector2(characterBounds.min.x + characterBounds.size.x / 2,
                 characterBounds.min.y - 0.02f);
 
-            Debug.DrawRay(rayStart, Vector2.down.Rotate(characterRotation), Color.red, kDebugRayDuration);
-            Vector2 raycastDirection = Vector2.down;
-
-            //////////////////// TESTING
+            Debug.DrawRay(rayStart, Vector2.down, Color.red, kDebugRayDuration);
             
-            
-            BoxCollider2D collider = characterView.GetComponent<BoxCollider2D>();
             RaycastHit2D[] castResults = new RaycastHit2D[1];
             ContactFilter2D contactFilter2D = new ContactFilter2D();
             contactFilter2D.SetLayerMask(LayerMask.GetMask("Ground"));
-            if (collider.Cast(Vector2.down.Rotate(characterRotation), contactFilter2D, castResults, 0.2f) > 0)
+            if (characterCollider2D.Cast(Vector2.down, contactFilter2D, castResults, 0.01f) > 0)
             {
                 Debug.Log("Hit ground");
-            }
-            
-            //////////////////// TESTING END
-            
-            RaycastHit2D hit = Physics2D.BoxCast(rayStart, new Vector2(characterBounds.size.x - 0.1f, 0.02f), 0f,
-                raycastDirection, 0.01f, LayerMask.GetMask("Ground"));
-            if (hit.collider != null)
-            {
-                hitNormal = hit.normal;
-                Debug.Log("Tag of hit target: " + hit.collider.gameObject.tag);
-
-                if (hit.collider.gameObject.tag.Equals(Tags.Ground))
-                {
-                    return true;
-                }
+                hitNormal = castResults[0].normal;
+                return true;
             }
         }
 
