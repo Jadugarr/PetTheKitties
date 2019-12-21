@@ -6,7 +6,6 @@ using UnityEngine;
 public class CheckCharacterGroundStateSystem : GameExecuteSystem
 {
     private IGroup<GameEntity> characterGroup;
-    private readonly Vector2 flatGroundNormal = new Vector2(0, 1);
 
     public CheckCharacterGroundStateSystem(GameContext context) : base(context)
     {
@@ -25,27 +24,12 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
         {
             if (characterEntity.characterState.State != CharacterState.Jumping)
             {
-                Bounds characterBounds = characterEntity.view.View.GetComponent<BoxCollider2D>().bounds;
-                var position = characterEntity.view.View.transform.position;
-                Vector2 groundNormalAheadOfCharacter =
-                    GroundCheckUtil.GetGroundNormalAtPoint(new Vector2(
-                        position.x + (characterBounds.size.x / 2f) + 0.1f,
-                        position.y));
-                Vector2 groundNormalBehindCharacter = GroundCheckUtil.GetGroundNormalAtPoint(new Vector2(
-                    position.x - (characterBounds.size.x / 2f) - 0.1f,
-                    position.y));
+                BoxCollider2D characterCollider = characterEntity.view.View.GetComponent<BoxCollider2D>();
 
-                float signedAngleAhead = Mathf.Abs(Vector2.SignedAngle(groundNormalAheadOfCharacter, flatGroundNormal));
-                float signedAngleBehind = Mathf.Abs(Vector2.SignedAngle(groundNormalBehindCharacter, flatGroundNormal));
-
-                Debug.Log("Signed angle ahead: " + signedAngleAhead);
-                Debug.Log("Signed angle behind: " + signedAngleBehind);
-
-                if (groundNormalBehindCharacter != Vector2.zero && signedAngleBehind >= 0.01f ||
-                    groundNormalAheadOfCharacter != Vector2.zero && signedAngleAhead >= 0.01f)
+                if (GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal))
                 {
                     characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnSlope,
-                        groundNormalAheadOfCharacter);
+                        slopeNormal);
                 }
                 else if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity.view.View.GetComponent<BoxCollider2D>(), out Vector2 hitNormal))
                 {
