@@ -33,7 +33,7 @@ public static class GroundCheckUtil
             //////////////////// TESTING END
             
             RaycastHit2D hit = Physics2D.BoxCast(rayStart, new Vector2(characterBounds.size.x - 0.1f, 0.02f), 0f,
-                raycastDirection, 0.2f, LayerMask.GetMask("Ground"));
+                raycastDirection, 0.01f, LayerMask.GetMask("Ground"));
             if (hit.collider != null)
             {
                 hitNormal = hit.normal;
