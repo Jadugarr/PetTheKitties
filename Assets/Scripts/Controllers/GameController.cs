@@ -226,6 +226,7 @@ public class GameController : MonoBehaviour
 
         Systems worldSystems = new Feature("WorldSystems")
             .Add(new CheckCharacterGroundStateSystem(context))
+            .Add(new CharacterOnGroundSystem(context))
 //            .Add(new AdjustCharacterMovementToSlopeSystem(context))
             .Add(new SetGravityScaleSystem(context))
             .Add(new SetCameraFollowTargetSystem(context))

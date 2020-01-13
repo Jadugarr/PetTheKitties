@@ -6,7 +6,7 @@ public static class GroundCheckUtil
     private const float kDebugRayDuration = 1f;
     private static readonly Vector2 flatGroundNormal = new Vector2(0, 1);
 
-    public static bool CheckIfCharacterOnGround(BoxCollider2D characterCollider2D, out Vector2 hitNormal)
+    public static bool CheckIfCharacterOnGround(BoxCollider2D characterCollider2D, out Vector2 hitNormal, out float distanceToGround)
     {
         if (characterCollider2D)
         {
@@ -23,11 +23,13 @@ public static class GroundCheckUtil
             {
                 Debug.Log("Hit ground");
                 hitNormal = castResults[0].normal;
+                distanceToGround = castResults[0].distance;
                 return true;
             }
         }
 
         hitNormal = Vector2.zero;
+        distanceToGround = 0;
         return false;
     }
 

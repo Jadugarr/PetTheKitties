@@ -7,6 +7,13 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
 {
     private IGroup<GameEntity> characterGroup;
 
+    private struct CharacterGroundStateData
+    {
+        public CharacterGroundState CharacterGroundState;
+        public Vector2 GroundNormal;
+        public float DistanceToGround;
+    }
+
     public CheckCharacterGroundStateSystem(GameContext context) : base(context)
     {
         characterGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.CharacterGroundState,
@@ -22,27 +29,49 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
     {
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
+            CharacterGroundStateData characterGroundStateData;
             if (characterEntity.characterState.State != CharacterState.Jumping)
             {
                 BoxCollider2D characterCollider = characterEntity.view.View.GetComponent<BoxCollider2D>();
 
                 if (GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal))
                 {
-                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnSlope,
-                        slopeNormal);
+                    characterGroundStateData.GroundNormal = slopeNormal;
+                    characterGroundStateData.CharacterGroundState = CharacterGroundState.OnSlope;
+                    characterGroundStateData.DistanceToGround = 0;
+//                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnSlope,
+//                        slopeNormal, 0);
                 }
-                else if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity.view.View.GetComponent<BoxCollider2D>(), out Vector2 hitNormal))
+                else if (GroundCheckUtil.CheckIfCharacterOnGround(
+                    characterEntity.view.View.GetComponent<BoxCollider2D>(), out Vector2 hitNormal,
+                    out float distanceToGround))
                 {
-                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnGround, hitNormal);
+                    characterGroundStateData.GroundNormal = hitNormal;
+                    characterGroundStateData.CharacterGroundState = CharacterGroundState.OnGround;
+                    characterGroundStateData.DistanceToGround = distanceToGround;
+//                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnGround, hitNormal, distanceToGround);
                 }
                 else
                 {
-                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, hitNormal);
+                    characterGroundStateData.GroundNormal = hitNormal;
+                    characterGroundStateData.CharacterGroundState = CharacterGroundState.Airborne;
+                    characterGroundStateData.DistanceToGround = 0;
+//                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, hitNormal, 0);
                 }
             }
             else
             {
-                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero);
+                characterGroundStateData.GroundNormal = Vector2.zero;
+                characterGroundStateData.CharacterGroundState = CharacterGroundState.Airborne;
+                characterGroundStateData.DistanceToGround = 0;
+//                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero, 0);
+            }
+
+            if (characterGroundStateData.CharacterGroundState !=
+                characterEntity.characterGroundState.CharacterGroundState)
+            {
+                characterEntity.ReplaceCharacterGroundState(characterGroundStateData.CharacterGroundState,
+                    characterGroundStateData.GroundNormal, characterGroundStateData.DistanceToGround);
             }
         }
     }
