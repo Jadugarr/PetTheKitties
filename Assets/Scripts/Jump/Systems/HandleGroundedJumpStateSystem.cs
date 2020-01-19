@@ -31,8 +31,9 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
         foreach (GameEntity gameEntity in entities)
         {
             if (gameEntity.hasCharacterVelocity && gameEntity.characterVelocity != null &&
-                Mathf.Abs(gameEntity.characterVelocity.Velocity.y) <
-                GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX)
+                (gameEntity.characterVelocity.Velocity.y > 0f ||
+                 Mathf.Abs(gameEntity.characterVelocity.Velocity.y) <
+                 GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX))
             {
                 if (gameEntity.hasView && gameEntity.view != null && gameEntity.hasCharacterGroundState &&
                     gameEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
