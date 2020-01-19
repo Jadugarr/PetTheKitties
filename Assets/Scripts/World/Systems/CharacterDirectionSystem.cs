@@ -10,7 +10,7 @@ public class CharacterDirectionSystem : GameReactiveSystem
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(GameMatcher.MoveCharacter);
+        return context.CreateCollector(GameMatcher.AllOf(GameMatcher.CharacterDirection, GameMatcher.View));
     }
 
     protected override bool Filter(GameEntity entity)
@@ -26,18 +26,16 @@ public class CharacterDirectionSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        foreach (GameEntity movementEntity in entities)
+        foreach (GameEntity directionEntity in entities)
         {
-            GameEntity characterToFlip = _context.GetEntityWithId(movementEntity.moveCharacter.EntityToMoveId);
-            if (characterToFlip != null)
-            {
-                GameObject characterView = characterToFlip.view?.View;
+            GameObject characterView = directionEntity.view?.View;
 
-                if (characterView != null)
-                {
-                    characterView.transform.localScale =
-                        new Vector3(movementEntity.moveCharacter.MoveDirection.x < 0f ? -1 : 1, 1, 1);
-                }
+            if (characterView != null)
+            {
+                characterView.transform.localScale =
+                    new Vector3(
+                        directionEntity.characterDirection.CharacterDirection == CharacterDirection.Backward ? -1 : 1,
+                        1, 1);
             }
         }
     }

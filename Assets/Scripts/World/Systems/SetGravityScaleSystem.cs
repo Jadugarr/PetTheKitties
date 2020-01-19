@@ -29,7 +29,7 @@ public class SetGravityScaleSystem : GameReactiveSystem
     {
         foreach (GameEntity gameEntity in entities)
         {
-            if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlope)
+            if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead)
             {
                 gameEntity.view.View.GetComponent<Rigidbody2D>().gravityScale = 0f;
             }

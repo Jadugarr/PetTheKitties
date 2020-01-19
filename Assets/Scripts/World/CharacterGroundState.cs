@@ -4,7 +4,8 @@ namespace Entitas.World
     {
         Undefined = 0,
         OnGround = 10,
-        OnSlope = 20,
+        OnSlopeAhead = 20,
+        OnSlopeBehind = 21,
         Airborne = 30
     }
 }

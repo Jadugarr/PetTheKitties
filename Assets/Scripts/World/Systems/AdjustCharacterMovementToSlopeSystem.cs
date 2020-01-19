@@ -24,7 +24,7 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
     {
         foreach (GameEntity gameEntity in characterGroup.GetEntities())
         {
-            if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlope)
+            if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead)
             {
                 float signedAngleAhead =
                     Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));

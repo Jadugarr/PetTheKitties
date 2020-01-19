@@ -176,6 +176,7 @@
               <e p="GameCameraComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterAnimatorComponent.cs" t="Include" />
+              <e p="GameCharacterDirectionComponent.cs" t="Include" />
               <e p="GameCharacterGroundStateComponent.cs" t="Include" />
               <e p="GameCharacterReachedGoalComponent.cs" t="Include" />
               <e p="GameCharacterStateComponent.cs" t="Include" />
@@ -439,6 +440,7 @@
           </e>
           <e p="Move" t="Include">
             <e p="Components" t="Include">
+              <e p="CharacterDirectionComponent.cs" t="Include" />
               <e p="CurrentMovementSpeedComponent.cs" t="Include" />
               <e p="MoveCharacterComponent.cs" t="Include" />
               <e p="MovementSpeedComponent.cs" t="Include" />

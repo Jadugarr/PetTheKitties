@@ -89,6 +89,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ProcessJumpInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/AttackInputComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Components/CharacterDirectionComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/MoveCharacterSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/ProcessWorldMoveInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -211,8 +212,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/CharacterState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/HandleMoveEndingStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Systems/HandleCharacterMovementStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/Systems/NewSurfaceShader1.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/ExecuteSystem1.cs" />
@@ -225,7 +224,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/LevelColliderComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/InputAxis.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Components/RaycastTestComponent.cs" />
@@ -235,9 +233,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/MovementConstantsConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Test/Systems/RaycastTestSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/ProcessWorldMoveInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/CharacterGroundState.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/HandleCharacterMovementStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/RenderVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/TransformMovementSpeedToVelocitySystem.cs" />
@@ -254,14 +249,20 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/CharacterOnGroundMovementVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/CharacterAirborneMovementVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/CharacterGroundStateComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterOnGroundSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/CharacterGroundState.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/CharacterDirectionComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/ProcessWorldMoveInputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterDirectionSystem.cs" />
       </list>
     </option>
   </component>

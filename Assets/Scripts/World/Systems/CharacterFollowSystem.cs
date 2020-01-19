@@ -40,6 +40,9 @@ namespace Entitas.World.Systems
                                                     followEntity.view.View.transform.position;
 
                             _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
+                            followEntity.ReplaceCharacterDirection(moveDirection.x < 0
+                                ? CharacterDirection.Backward
+                                : CharacterDirection.Forward);
 
                             if (moveDirection.y > 0.5f || followEntity.characterState.State == CharacterState.Jumping)
                             {

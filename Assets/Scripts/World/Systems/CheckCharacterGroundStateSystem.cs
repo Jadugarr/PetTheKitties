@@ -37,7 +37,7 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                 if (GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal))
                 {
                     characterGroundStateData.GroundNormal = slopeNormal;
-                    characterGroundStateData.CharacterGroundState = CharacterGroundState.OnSlope;
+                    characterGroundStateData.CharacterGroundState = CharacterGroundState.OnSlopeAhead;
                     characterGroundStateData.DistanceToGround = 0;
                 }
                 else if (GroundCheckUtil.CheckIfCharacterOnGround(
