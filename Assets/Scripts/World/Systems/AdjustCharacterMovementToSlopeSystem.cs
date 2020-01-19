@@ -1,36 +1,28 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Extensions;
+using Entitas.Scripts.Common.Systems;
 using Entitas.World;
 using UnityEngine;
 
-public class AdjustCharacterMovementToSlopeSystem : GameReactiveSystem
+public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
 {
     private readonly Vector2 flatGroundNormal = new Vector2(0, 1);
+    private IGroup<GameEntity> characterGroup;
 
-    public AdjustCharacterMovementToSlopeSystem(IContext<GameEntity> context) : base(context)
+    public AdjustCharacterMovementToSlopeSystem(GameContext context) : base(context)
     {
-    }
-
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CharacterGroundState,
-            GroupEvent.Added));
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return true;
+        characterGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.MovementSpeed, GameMatcher.CharacterVelocity));
     }
 
     protected override bool IsInValidState()
     {
         return true;
     }
-
-    protected override void ExecuteSystem(List<GameEntity> entities)
+    
+    protected override void ExecuteSystem()
     {
-        foreach (GameEntity gameEntity in entities)
+        foreach (GameEntity gameEntity in characterGroup.GetEntities())
         {
             if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlope)
             {
