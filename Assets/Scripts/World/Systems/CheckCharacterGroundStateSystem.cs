@@ -39,8 +39,6 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                     characterGroundStateData.GroundNormal = slopeNormal;
                     characterGroundStateData.CharacterGroundState = CharacterGroundState.OnSlope;
                     characterGroundStateData.DistanceToGround = 0;
-//                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnSlope,
-//                        slopeNormal, 0);
                 }
                 else if (GroundCheckUtil.CheckIfCharacterOnGround(
                     characterEntity.view.View.GetComponent<BoxCollider2D>(), out Vector2 hitNormal,
@@ -49,14 +47,12 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                     characterGroundStateData.GroundNormal = hitNormal;
                     characterGroundStateData.CharacterGroundState = CharacterGroundState.OnGround;
                     characterGroundStateData.DistanceToGround = distanceToGround;
-//                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.OnGround, hitNormal, distanceToGround);
                 }
                 else
                 {
                     characterGroundStateData.GroundNormal = hitNormal;
                     characterGroundStateData.CharacterGroundState = CharacterGroundState.Airborne;
                     characterGroundStateData.DistanceToGround = 0;
-//                    characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, hitNormal, 0);
                 }
             }
             else
@@ -64,7 +60,6 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                 characterGroundStateData.GroundNormal = Vector2.zero;
                 characterGroundStateData.CharacterGroundState = CharacterGroundState.Airborne;
                 characterGroundStateData.DistanceToGround = 0;
-//                characterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero, 0);
             }
 
             if (characterGroundStateData.CharacterGroundState !=

@@ -14,12 +14,12 @@ public static class GroundCheckUtil
 
             Vector2 rayStart = new Vector2(characterBounds.min.x + characterBounds.size.x / 2, characterBounds.min.y);
 
-            Debug.DrawRay(rayStart, Vector2.down * 0.01f, Color.red, kDebugRayDuration);
+            Debug.DrawRay(rayStart, Vector2.down * 0.02f, Color.red, kDebugRayDuration);
 
             RaycastHit2D[] castResults = new RaycastHit2D[1];
             ContactFilter2D contactFilter2D = new ContactFilter2D();
             contactFilter2D.SetLayerMask(LayerMask.GetMask(Tags.Ground));
-            if (characterCollider2D.Cast(Vector2.down, contactFilter2D, castResults, 0.01f) > 0)
+            if (characterCollider2D.Cast(Vector2.down, contactFilter2D, castResults, 0.02f) > 0)
             {
                 Debug.Log("Hit ground");
                 hitNormal = castResults[0].normal;

@@ -45,6 +45,7 @@ public class StartJumpCharacterSystem : GameReactiveSystem
                         jumpingEntity.characterVelocity.Velocity.x,
                         jumpingEntity.jumpForce.JumpForce));
                     jumpingEntity.ReplaceCharacterState(CharacterState.Jumping);
+                    jumpingEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero, 0);
                 }
             }
         }
