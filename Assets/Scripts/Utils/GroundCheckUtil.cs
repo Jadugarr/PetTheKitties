@@ -1,6 +1,13 @@
 using Entitas.Extensions;
 using UnityEngine;
 
+public enum CharacterSlopeState
+{
+    None = 0,
+    SlopeAhead = 1,
+    SlopeBehind = -1
+}
+
 public static class GroundCheckUtil
 {
     private const float kDebugRayDuration = 1f;
@@ -33,7 +40,7 @@ public static class GroundCheckUtil
         return false;
     }
 
-    public static bool CheckIfCharacterOnSlope(BoxCollider2D characterCollider2D, out Vector2 hitNormal)
+    public static CharacterSlopeState CheckIfCharacterOnSlope(BoxCollider2D characterCollider2D, out Vector2 hitNormal)
     {
         if (characterCollider2D != null)
         {
@@ -53,7 +60,7 @@ public static class GroundCheckUtil
             if (IsSlope(hit))
             {
                 hitNormal = hit.normal;
-                return true;
+                return CharacterSlopeState.SlopeAhead;
             }
 
             // Check ahead and down
@@ -62,7 +69,7 @@ public static class GroundCheckUtil
             if (IsSlope(hit))
             {
                 hitNormal = hit.normal;
-                return true;
+                return CharacterSlopeState.SlopeAhead;
             }
 
             // Check back
@@ -71,7 +78,7 @@ public static class GroundCheckUtil
             if (IsSlope(hit))
             {
                 hitNormal = hit.normal;
-                return true;
+                return CharacterSlopeState.SlopeBehind;
             }
 
             // Check back and down
@@ -80,12 +87,12 @@ public static class GroundCheckUtil
             if (IsSlope(hit))
             {
                 hitNormal = hit.normal;
-                return true;
+                return CharacterSlopeState.SlopeBehind;
             }
         }
 
         hitNormal = Vector2.zero;
-        return false;
+        return CharacterSlopeState.None;
     }
 
     public static Vector2 GetGroundNormalAtPoint(Vector2 startPoint)

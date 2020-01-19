@@ -17,7 +17,7 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
     public CheckCharacterGroundStateSystem(GameContext context) : base(context)
     {
         characterGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.CharacterGroundState,
-            GameMatcher.CharacterState, GameMatcher.View));
+            GameMatcher.CharacterState, GameMatcher.View, GameMatcher.CharacterDirection));
     }
 
     protected override bool IsInValidState()
@@ -33,11 +33,32 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
             if (characterEntity.characterState.State != CharacterState.Jumping)
             {
                 BoxCollider2D characterCollider = characterEntity.view.View.GetComponent<BoxCollider2D>();
-
-                if (GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal))
+                CharacterSlopeState characterSlopeState =
+                    GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal);
+                if (characterSlopeState != CharacterSlopeState.None
+                    && ((slopeNormal.x < 0f && characterEntity.characterDirection.CharacterDirection >= 0)
+                        || (slopeNormal.x >= 0f && characterEntity.characterDirection.CharacterDirection < 0)))
                 {
                     characterGroundStateData.GroundNormal = slopeNormal;
-                    characterGroundStateData.CharacterGroundState = CharacterGroundState.OnSlopeAhead;
+                    if (characterSlopeState == CharacterSlopeState.SlopeAhead)
+                    {
+                        characterGroundStateData.CharacterGroundState =
+                            characterEntity.characterDirection.CharacterDirection == CharacterDirection.Forward
+                                ? CharacterGroundState.OnSlopeAhead
+                                : CharacterGroundState.OnSlopeBehind;
+                    }
+                    else if (characterSlopeState == CharacterSlopeState.SlopeBehind)
+                    {
+                        characterGroundStateData.CharacterGroundState =
+                            characterEntity.characterDirection.CharacterDirection == CharacterDirection.Forward
+                                ? CharacterGroundState.OnSlopeBehind
+                                : CharacterGroundState.OnSlopeAhead;
+                    }
+                    else
+                    {
+                        characterGroundStateData.CharacterGroundState = CharacterGroundState.OnSlopeAhead;
+                    }
+
                     characterGroundStateData.DistanceToGround = 0;
                 }
                 else if (GroundCheckUtil.CheckIfCharacterOnGround(
