@@ -45,16 +45,17 @@ public static class GroundCheckUtil
         if (characterCollider2D != null)
         {
             Bounds characterBounds = characterCollider2D.bounds;
-            Vector2 forwardCastPointOfOrigin = new Vector2(characterBounds.max.x, characterBounds.min.y);
+            Vector2 forwardCastPointOfOrigin = new Vector2(characterBounds.max.x, characterBounds.min.y + 0.01f);
+            Vector2 backwardCastPointOfOrigin = new Vector2(characterBounds.min.x, characterBounds.min.y + 0.01f);
 
-            Debug.DrawRay(forwardCastPointOfOrigin, Vector2.down * 0.03f, Color.green, kDebugRayDuration);
-            Debug.DrawRay(forwardCastPointOfOrigin, Vector2.right * 0.03f, Color.green, kDebugRayDuration);
+            Debug.DrawRay(forwardCastPointOfOrigin, Vector2.down * 0.04f, Color.green, kDebugRayDuration);
+            Debug.DrawRay(forwardCastPointOfOrigin, Vector2.right * 0.04f, Color.green, kDebugRayDuration);
 
-            Debug.DrawRay(characterBounds.min, Vector2.down * 0.03f, Color.green, kDebugRayDuration);
-            Debug.DrawRay(characterBounds.min, Vector2.left * 0.03f, Color.green, kDebugRayDuration);
+            Debug.DrawRay(backwardCastPointOfOrigin, Vector2.down * 0.04f, Color.green, kDebugRayDuration);
+            Debug.DrawRay(backwardCastPointOfOrigin, Vector2.left * 0.04f, Color.green, kDebugRayDuration);
 
             // Check ahead
-            RaycastHit2D hit = Physics2D.Raycast(forwardCastPointOfOrigin, Vector2.right, 0.03f,
+            RaycastHit2D hit = Physics2D.Raycast(forwardCastPointOfOrigin, Vector2.right, 0.04f,
                 LayerMask.GetMask(Tags.Ground));
 
             if (IsSlope(hit))
@@ -64,7 +65,7 @@ public static class GroundCheckUtil
             }
 
             // Check ahead and down
-            hit = Physics2D.Raycast(forwardCastPointOfOrigin, Vector2.down, 0.03f,
+            hit = Physics2D.Raycast(forwardCastPointOfOrigin, Vector2.down, 0.04f,
                 LayerMask.GetMask(Tags.Ground));
             if (IsSlope(hit))
             {
@@ -73,7 +74,7 @@ public static class GroundCheckUtil
             }
 
             // Check back
-            hit = Physics2D.Raycast(characterBounds.min, Vector2.left, 0.03f,
+            hit = Physics2D.Raycast(backwardCastPointOfOrigin, Vector2.left, 0.04f,
                 LayerMask.GetMask(Tags.Ground));
             if (IsSlope(hit))
             {
@@ -82,7 +83,7 @@ public static class GroundCheckUtil
             }
 
             // Check back and down
-            hit = Physics2D.Raycast(characterBounds.min, Vector2.down, 0.03f,
+            hit = Physics2D.Raycast(backwardCastPointOfOrigin, Vector2.down, 0.04f,
                 LayerMask.GetMask(Tags.Ground));
             if (IsSlope(hit))
             {

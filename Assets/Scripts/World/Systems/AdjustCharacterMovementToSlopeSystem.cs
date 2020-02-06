@@ -29,9 +29,13 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
             {
                 float signedAngleAhead =
                     Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
-                Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,
-                    0).Rotate(signedAngleAhead * (int) gameEntity.characterDirection.CharacterDirection);
-                gameEntity.ReplaceCharacterVelocity(newVelocity);
+                Debug.Log("Signed angle ahead: " + signedAngleAhead);
+                if (signedAngleAhead <= 46)
+                {
+                    Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,
+                        0).Rotate(signedAngleAhead * (int) gameEntity.characterDirection.CharacterDirection);
+                    gameEntity.ReplaceCharacterVelocity(newVelocity);
+                }
             }
         }
     }
