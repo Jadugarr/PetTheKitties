@@ -2,9 +2,9 @@ using Entitas;
 
 public enum CharacterDirection
 {
-    None,
-    Forward,
-    Backward
+    None = 0,
+    Forward = 1,
+    Backward = -1
 }
 
 [Game]

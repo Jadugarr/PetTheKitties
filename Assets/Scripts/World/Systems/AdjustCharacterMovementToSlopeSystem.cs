@@ -12,14 +12,15 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
 
     public AdjustCharacterMovementToSlopeSystem(GameContext context) : base(context)
     {
-        characterGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.MovementSpeed, GameMatcher.CharacterVelocity));
+        characterGroup = context.GetGroup(GameMatcher.AllOf(GameMatcher.MovementSpeed, GameMatcher.CharacterVelocity,
+            GameMatcher.CharacterDirection));
     }
 
     protected override bool IsInValidState()
     {
         return true;
     }
-    
+
     protected override void ExecuteSystem()
     {
         foreach (GameEntity gameEntity in characterGroup.GetEntities())
@@ -29,7 +30,7 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
                 float signedAngleAhead =
                     Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
                 Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,
-                    0).Rotate(signedAngleAhead);
+                    0).Rotate(signedAngleAhead * (int) gameEntity.characterDirection.CharacterDirection);
                 gameEntity.ReplaceCharacterVelocity(newVelocity);
             }
         }
