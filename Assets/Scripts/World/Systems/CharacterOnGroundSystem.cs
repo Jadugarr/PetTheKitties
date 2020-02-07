@@ -19,8 +19,7 @@ public class CharacterOnGroundSystem : GameReactiveSystem
     {
         return entity.hasCharacterGroundState && entity.hasPosition &&
                (entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnGround
-                || entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead
-                || entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeBehind);
+                || entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead);
     }
 
     protected override bool IsInValidState()

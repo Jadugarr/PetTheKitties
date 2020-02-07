@@ -36,8 +36,8 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                 CharacterSlopeState characterSlopeState =
                     GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal);
                 if (characterSlopeState != CharacterSlopeState.None
-                    && ((slopeNormal.x < 0f && characterEntity.characterDirection.CharacterDirection >= 0)
-                        || (slopeNormal.x >= 0f && characterEntity.characterDirection.CharacterDirection < 0)))
+                    && ((slopeNormal.x < 0f && characterSlopeState == CharacterSlopeState.SlopeAhead)
+                        || (slopeNormal.x >= 0f && characterSlopeState == CharacterSlopeState.SlopeBehind)))
                 {
                     characterGroundStateData.GroundNormal = slopeNormal;
                     if (characterSlopeState == CharacterSlopeState.SlopeAhead)

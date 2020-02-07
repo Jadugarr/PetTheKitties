@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Scripts.Common.Systems;
+using Entitas.World;
 using UnityEngine;
 
 public class HandleFallingStateSystem : GameReactiveSystem
@@ -16,7 +17,8 @@ public class HandleFallingStateSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasCharacterState && entity.characterState != null && entity.characterState.State != CharacterState.Falling;
+        return entity.hasCharacterState && entity.characterState != null && entity.characterState.State != CharacterState.Falling
+            && entity.hasCharacterGroundState && entity.characterGroundState != null && entity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne;
     }
 
     protected override bool IsInValidState()

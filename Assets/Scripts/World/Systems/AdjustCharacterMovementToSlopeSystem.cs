@@ -37,6 +37,18 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
                     gameEntity.ReplaceCharacterVelocity(newVelocity);
                 }
             }
+            else if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeBehind)
+            {
+                float signedAngleBehind =
+                    Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
+                Debug.Log("Signed angle ahead: " + signedAngleBehind);
+                if (signedAngleBehind <= 46)
+                {
+                    Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,
+                        0).Rotate(signedAngleBehind * ((int)gameEntity.characterDirection.CharacterDirection * -1));
+                    gameEntity.ReplaceCharacterVelocity(newVelocity);
+                }
+            }
         }
     }
 }
