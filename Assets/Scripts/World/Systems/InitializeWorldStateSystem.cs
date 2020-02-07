@@ -57,7 +57,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         kittyEntity.isKitty = true;
         kittyEntity.isInteractable = true;
         kittyEntity.AddMovementSpeed(5f);
-        kittyEntity.AddJumpForce(12f);
+        kittyEntity.AddJumpForce(15f);
         kittyEntity.AddAcceleration(20f);
         kittyEntity.AddCharacterState(CharacterState.Idle);
         kittyEntity.AddCurrentMovementSpeed(0f);
