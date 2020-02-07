@@ -225,6 +225,7 @@ public class GameController : MonoBehaviour
         GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
 
         Systems worldSystems = new Feature("WorldSystems")
+            .Add(new ProcessInteractionInputSystem(context))
             .Add(new CheckCharacterGroundStateSystem(context))
             .Add(new CharacterOnGroundSystem(context))
 //            .Add(new AdjustCharacterMovementToSlopeSystem(context))
@@ -235,23 +236,13 @@ public class GameController : MonoBehaviour
             .Add(new WorldPlayerAddedSystem(context))
             .Add(new KittyAddedSystem(context))
             .Add(new CharacterDeathSystem(context))
-            //WinConditions
-            .Add(new InitializeAndTeardownWinConditionsSystem(context))
-            .Add(new InitializeAndTeardownLoseConditionsSystem(context))
-            .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context))
-            .Add(new CharacterFollowSystem(context))
-            .Add(new CharacterScaredSystem(context))
-            .Add(new CharacterReachedGoalSystem(context));
-
-        GameSystemService.AddSystemMapping(GameState.World, worldSystems);
-
-        Systems worldMovementSystems = new Feature("WorldMovementSystems")
-            .Add(new ProcessInteractionInputSystem(context))
             .Add(new CheckInteractInputAvailableSystem(context))
             .Add(new KittyInteractionSystem(context))
             .Add(new CharacterStartFollowSystem(context))
             .Add(new CharacterDirectionSystem(context))
+            .Add(new CharacterFollowSystem(context))
+            .Add(new CharacterScaredSystem(context))
+            .Add(new CharacterReachedGoalSystem(context))
             .Add(new MoveCharacterSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context))
             .Add(new ManageJumpingStateHandlingSystem(context))
@@ -262,6 +253,15 @@ public class GameController : MonoBehaviour
             .Add(new AdjustCharacterMovementToSlopeSystem(context))
             .Add(new CharacterOnGroundMovementVelocitySystem(context))
             .Add(new CharacterAirborneMovementVelocitySystem(context))
+            //WinConditions
+            .Add(new InitializeAndTeardownWinConditionsSystem(context))
+            .Add(new InitializeAndTeardownLoseConditionsSystem(context))
+            .Add(new WinConditionControllerSystem(context))
+            .Add(new LoseConditionControllerSystem(context));
+
+        GameSystemService.AddSystemMapping(GameState.World, worldSystems);
+
+        Systems worldMovementSystems = new Feature("WorldMovementSystems")
             // Some test systems
             .Add(new ProcessRaycastTestInputSystem(context))
             .Add(new RaycastTestSystem(context));
