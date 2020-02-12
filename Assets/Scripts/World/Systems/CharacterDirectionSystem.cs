@@ -15,7 +15,7 @@ public class CharacterDirectionSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return true;
+        return entity.hasView && entity.view != null;
     }
 
     protected override bool IsInValidState()

@@ -250,8 +250,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/CharacterGroundStateComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/ProcessWorldMoveInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterDirectionSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/CharacterDirectionComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/CharacterGroundState.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
@@ -260,9 +258,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleFallingStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterDirectionSystem.cs" />
       </list>
     </option>
   </component>
@@ -299,10 +299,10 @@
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10208">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="2140">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10208" />
+      <option name="pid" value="2140" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>

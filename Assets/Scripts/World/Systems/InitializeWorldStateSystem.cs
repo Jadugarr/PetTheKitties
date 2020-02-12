@@ -28,8 +28,11 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
     protected override void ExecuteSystem()
     {
         CreatePlayer();
-        CreateKitten();
-        CreateKitten();
+        int spawnPointAmount = GameObject.FindGameObjectsWithTag(Tags.KittySpawnPoint).Length;
+        for (int i = 0; i < spawnPointAmount; i++)
+        {
+            CreateKitten();
+        }
         CreateWinLoseConditions();
 
         _context.SetNewSubstate(SubState.WorldNavigation);

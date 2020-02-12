@@ -18,7 +18,7 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.hasCharacterState && entity.characterState != null &&
-               entity.characterState.State != CharacterState.Idle;
+               entity.characterState.State == CharacterState.Falling;
     }
 
     protected override bool IsInValidState()
