@@ -136,7 +136,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         List<Systems> activeSystems = GameSystemService.GetActiveSystems();
 

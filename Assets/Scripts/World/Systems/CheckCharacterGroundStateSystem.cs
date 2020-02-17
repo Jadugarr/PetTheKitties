@@ -30,7 +30,9 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
             CharacterGroundStateData characterGroundStateData;
-            if (characterEntity.characterState.State != CharacterState.Jumping)
+            if (characterEntity.characterState.State != CharacterState.Jumping 
+                && characterEntity.characterState.State != CharacterState.JumpEnding
+                && characterEntity.characterState.State != CharacterState.JumpStart)
             {
                 BoxCollider2D characterCollider = characterEntity.view.View.GetComponent<BoxCollider2D>();
                 CharacterSlopeState characterSlopeState =
