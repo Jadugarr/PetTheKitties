@@ -136,7 +136,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         List<Systems> activeSystems = GameSystemService.GetActiveSystems();
 
@@ -144,14 +144,16 @@ public class GameController : MonoBehaviour
         {
             activeSystem.Execute();
         }
+    }
 
+    private void LateUpdate()
+    {
+        List<Systems> activeSystems = GameSystemService.GetActiveSystems();
         endFrameSystems.Execute();
-
         foreach (Systems activeSystem in activeSystems)
         {
             activeSystem.Cleanup();
         }
-
         GameSystemService.RefreshActiveSystems();
     }
 
