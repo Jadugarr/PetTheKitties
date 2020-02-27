@@ -16,7 +16,7 @@ public class RenderVelocitySystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return true;
+        return entity.hasRigidbody && entity.rigidbody.Rigidbody != null;
     }
 
     protected override bool IsInValidState()
@@ -28,15 +28,7 @@ public class RenderVelocitySystem : GameReactiveSystem
     {
         foreach (GameEntity e in entities)
         {
-            if (e.hasView)
-            {
-                Rigidbody2D rigidbody = e.view.View.GetComponent<Rigidbody2D>();
-
-                if (rigidbody != null)
-                {
-                    rigidbody.velocity = e.characterVelocity.Velocity;
-                }
-            }
+            e.rigidbody.Rigidbody.velocity = e.characterVelocity.Velocity;
         }
     }
 }

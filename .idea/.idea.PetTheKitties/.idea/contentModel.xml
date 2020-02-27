@@ -213,6 +213,7 @@
               <e p="GamePositionComponent.cs" t="Include" />
               <e p="GameRaycastTestComponent.cs" t="Include" />
               <e p="GameRestartLevelComponent.cs" t="Include" />
+              <e p="GameRigidbodyComponent.cs" t="Include" />
               <e p="GameScaredComponent.cs" t="Include" />
               <e p="GameSceneLoadedComponent.cs" t="Include" />
               <e p="GameSpeedComponent.cs" t="Include" />
@@ -574,6 +575,7 @@
             </e>
           </e>
           <e p="View" t="Include">
+            <e p="RigidbodyComponent.cs" t="Include" />
             <e p="ViewComponent.cs" t="Include" />
           </e>
           <e p="World" t="Include">

@@ -17,7 +17,7 @@ public class SetGravityScaleSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.hasView && entity.hasCharacterGroundState;
+        return entity.hasView && entity.hasCharacterGroundState && entity.hasRigidbody;
     }
 
     protected override bool IsInValidState()
@@ -32,11 +32,11 @@ public class SetGravityScaleSystem : GameReactiveSystem
             if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead
                 || gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeBehind)
             {
-                gameEntity.view.View.GetComponent<Rigidbody2D>().gravityScale = 0f;
+                gameEntity.rigidbody.Rigidbody.gravityScale = 0f;
             }
             else
             {
-                gameEntity.view.View.GetComponent<Rigidbody2D>().gravityScale = 1f;
+                gameEntity.rigidbody.Rigidbody.gravityScale = 1f;
             }
         }
     }

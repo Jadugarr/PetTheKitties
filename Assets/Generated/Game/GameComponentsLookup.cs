@@ -57,17 +57,18 @@ public static class GameComponentsLookup {
     public const int Position = 46;
     public const int RaycastTest = 47;
     public const int RestartLevel = 48;
-    public const int Scared = 49;
-    public const int SceneLoaded = 50;
-    public const int Speed = 51;
-    public const int SubState = 52;
-    public const int Target = 53;
-    public const int UnloadScene = 54;
-    public const int View = 55;
-    public const int WinCondition = 56;
-    public const int WinConditionsFulfilled = 57;
+    public const int Rigidbody = 49;
+    public const int Scared = 50;
+    public const int SceneLoaded = 51;
+    public const int Speed = 52;
+    public const int SubState = 53;
+    public const int Target = 54;
+    public const int UnloadScene = 55;
+    public const int View = 56;
+    public const int WinCondition = 57;
+    public const int WinConditionsFulfilled = 58;
 
-    public const int TotalComponents = 58;
+    public const int TotalComponents = 59;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -119,6 +120,7 @@ public static class GameComponentsLookup {
         "Position",
         "RaycastTest",
         "RestartLevel",
+        "Rigidbody",
         "Scared",
         "SceneLoaded",
         "Speed",
@@ -180,6 +182,7 @@ public static class GameComponentsLookup {
         typeof(PositionComponent),
         typeof(RaycastTestComponent),
         typeof(RestartLevelComponent),
+        typeof(RigidbodyComponent),
         typeof(ScaredComponent),
         typeof(SceneLoadedComponent),
         typeof(SpeedComponent),

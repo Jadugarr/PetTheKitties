@@ -43,6 +43,12 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
             {
                 gameEntity.AddCharacterAnimator(playerAnimator);
             }
+
+            Rigidbody2D rigidbody2D = playerView.GetComponent<Rigidbody2D>();
+            if (rigidbody2D)
+            {
+                gameEntity.AddRigidbody(rigidbody2D);
+            }
         }
     }
 }

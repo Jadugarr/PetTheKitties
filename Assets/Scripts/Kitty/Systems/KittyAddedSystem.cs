@@ -44,6 +44,12 @@ public class KittyAddedSystem : GameReactiveSystem
             {
                 gameEntity.AddCharacterAnimator(kittyAnimator);
             }
+
+            Rigidbody2D rigidbody2D = kittyView.GetComponent<Rigidbody2D>();
+            if (rigidbody2D)
+            {
+                gameEntity.AddRigidbody(rigidbody2D);
+            }
         }
     }
 }
