@@ -39,7 +39,7 @@ namespace Entitas.World.Systems
                             Vector2 moveDirection = entityToFollow.view.View.transform.position -
                                                     followEntity.view.View.transform.position;
 
-                            _context.CreateEntity().AddMoveCharacter(followEntity.id.Id, moveDirection);
+                            followEntity.ReplaceMoveCharacter(followEntity.id.Id, moveDirection);
                             followEntity.ReplaceCharacterDirection(moveDirection.x < 0
                                 ? CharacterDirection.Backward
                                 : CharacterDirection.Forward);

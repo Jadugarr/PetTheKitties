@@ -3,15 +3,13 @@ using Entitas;
 using Entitas.Extensions;
 using UnityEngine;
 
-public class ProcessWorldMoveInputSystem : GameReactiveSystem, ICleanupSystem
+public class ProcessWorldMoveInputSystem : GameReactiveSystem
 {
     private IGroup<GameEntity> playerGroup;
-    private IGroup<GameEntity> moveCharacterGroup;
 
     public ProcessWorldMoveInputSystem(IContext<GameEntity> context) : base(context)
     {
         playerGroup = _context.GetGroup(GameMatcher.Player);
-        moveCharacterGroup = _context.GetGroup(GameMatcher.MoveCharacter);
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -38,20 +36,13 @@ public class ProcessWorldMoveInputSystem : GameReactiveSystem, ICleanupSystem
             {
                 GameEntity gameEntity = entities[i];
                 float inputValue = gameEntity.input.InputValue;
-                _context.CreateEntity()
-                    .AddMoveCharacter(playerEntity.id.Id, new Vector2(inputValue, 0));
+                // _context.CreateEntity()
+                //     .AddMoveCharacter(playerEntity.id.Id, new Vector2(inputValue, 0));
+                playerEntity.ReplaceMoveCharacter(playerEntity.id.Id, new Vector2(inputValue, 0));
                 playerEntity.ReplaceCharacterDirection(inputValue < 0
                     ? CharacterDirection.Backward
                     : CharacterDirection.Forward);
             }
-        }
-    }
-
-    public void Cleanup()
-    {
-        foreach (GameEntity gameEntity in moveCharacterGroup.GetEntities())
-        {
-            gameEntity.Destroy();
         }
     }
 }
