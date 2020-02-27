@@ -1,25 +1,19 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Scripts.Common.Systems;
 using Entitas.World;
 using UnityEngine;
 
-public class StartJumpCharacterSystem : GameReactiveSystem
+public class StartJumpCharacterSystem : GameExecuteSystem
 {
     private CharacterState[] validJumpStates = new[]
         {CharacterState.Idle, CharacterState.Moving, CharacterState.MoveEnding};
 
-    public StartJumpCharacterSystem(IContext<GameEntity> context) : base(context)
-    {
-    }
+    private readonly IGroup<GameEntity> jumpGroup;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    public StartJumpCharacterSystem(GameContext context) : base(context)
     {
-        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.JumpCharacter, GroupEvent.Added));
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return true;
+        jumpGroup = context.GetGroup(GameMatcher.JumpCharacter);
     }
 
     protected override bool IsInValidState()
@@ -28,26 +22,24 @@ public class StartJumpCharacterSystem : GameReactiveSystem
                _context.subState.CurrentSubState == SubState.WorldNavigation;
     }
 
-    protected override void ExecuteSystem(List<GameEntity> entities)
+    protected override void ExecuteSystem()
     {
-        foreach (GameEntity jumpCharacterEntity in entities)
+        foreach (GameEntity jumpCharacterEntity in jumpGroup.GetEntities())
         {
-            GameEntity jumpingEntity = _context.GetEntityWithId(jumpCharacterEntity.jumpCharacter.JumpEntityId);
-            if (jumpingEntity != null && jumpingEntity.hasCharacterState &&
-                HasValidStateToJump(jumpingEntity.characterState.State))
+            if (jumpCharacterEntity.hasCharacterState
+                && HasValidStateToJump(jumpCharacterEntity.characterState.State)
+                && jumpCharacterEntity.hasView
+                && jumpCharacterEntity.hasCharacterGroundState
+                && jumpCharacterEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
             {
-                GameObject characterView = jumpingEntity.view.View;
-
-                if (characterView && jumpingEntity.hasCharacterGroundState &&
-                    jumpingEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
-                {
-                    jumpingEntity.ReplaceCharacterVelocity(new Vector2(
-                        jumpingEntity.characterVelocity.Velocity.x,
-                        jumpingEntity.jumpForce.JumpForce));
-                    jumpingEntity.ReplaceCharacterState(CharacterState.Jumping);
-                    jumpingEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero, 0);
-                }
+                jumpCharacterEntity.ReplaceCharacterVelocity(new Vector2(
+                    jumpCharacterEntity.characterVelocity.Velocity.x,
+                    jumpCharacterEntity.jumpForce.JumpForce));
+                jumpCharacterEntity.ReplaceCharacterState(CharacterState.Jumping);
+                jumpCharacterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero, 0);
             }
+            
+            jumpCharacterEntity.RemoveJumpCharacter();
         }
     }
 

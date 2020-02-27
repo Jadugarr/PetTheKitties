@@ -3,15 +3,13 @@ using UnityEngine;
 
 namespace Entitas.World.Systems
 {
-    public class ProcessJumpInputSystem : GameReactiveSystem, ICleanupSystem
+    public class ProcessJumpInputSystem : GameReactiveSystem
     {
         private IGroup<GameEntity> _playerGroup;
-        private IGroup<GameEntity> _jumpGroup;
 
         public ProcessJumpInputSystem(IContext<GameEntity> context) : base(context)
         {
             _playerGroup = _context.GetGroup(GameMatcher.Player);
-            _jumpGroup = _context.GetGroup(GameMatcher.JumpCharacter);
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -34,18 +32,7 @@ namespace Entitas.World.Systems
         {
             GameEntity playerEntity = _playerGroup.GetSingleEntity();
 
-            if (playerEntity != null)
-            {
-                _context.CreateEntity().AddJumpCharacter(playerEntity.id.Id);
-            }
-        }
-
-        public void Cleanup()
-        {
-            foreach (GameEntity entity in _jumpGroup.GetEntities())
-            {
-                entity.Destroy();
-            }
+            playerEntity?.ReplaceJumpCharacter(playerEntity.id.Id);
         }
     }
 }

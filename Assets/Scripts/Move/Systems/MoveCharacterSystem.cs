@@ -30,23 +30,15 @@ public class MoveCharacterSystem : GameReactiveSystem
         for (var i = 0; i < entities.Count; i++)
         {
             GameEntity movementEntity = entities[i];
-            // GameEntity entityToMove = _context.GetEntityWithId(movementEntity.moveCharacter.EntityToMoveId);
-            //
-            // if (entityToMove != null)
-            // {
-            //     if (entityToMove.hasPosition && entityToMove.hasMovementSpeed)
-            //     {
-                    float newMovementSpeed = Mathf.Clamp(
-                        movementEntity.currentMovementSpeed.CurrentMovementSpeed +
-                        (movementEntity.acceleration.Acceleration *
-                         movementEntity.moveCharacter.MoveDirection.normalized.x *
-                         Time.deltaTime),
-                        -movementEntity.movementSpeed.MovementSpeedValue, movementEntity.movementSpeed.MovementSpeedValue);
+            float newMovementSpeed = Mathf.Clamp(
+                movementEntity.currentMovementSpeed.CurrentMovementSpeed +
+                (movementEntity.acceleration.Acceleration *
+                 movementEntity.moveCharacter.MoveDirection.normalized.x *
+                 Time.deltaTime),
+                -movementEntity.movementSpeed.MovementSpeedValue, movementEntity.movementSpeed.MovementSpeedValue);
 
-                    movementEntity.ReplaceCurrentMovementSpeed(newMovementSpeed);
-                    movementEntity.RemoveMoveCharacter();
-                // }
-            // }
+            movementEntity.ReplaceCurrentMovementSpeed(newMovementSpeed);
+            movementEntity.RemoveMoveCharacter();
         }
     }
 }

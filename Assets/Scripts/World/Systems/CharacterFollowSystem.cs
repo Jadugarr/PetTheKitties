@@ -46,14 +46,14 @@ namespace Entitas.World.Systems
 
                             if (moveDirection.y > 0.5f || followEntity.characterState.State == CharacterState.Jumping)
                             {
-                                _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
+                                followEntity.ReplaceJumpCharacter(followEntity.id.Id);
                             }
                         }
                     }
 
                     if (followEntity.characterState.State == CharacterState.Jumping)
                     {
-                        _context.CreateEntity().AddJumpCharacter(followEntity.id.Id);
+                        followEntity.ReplaceJumpCharacter(followEntity.id.Id);
                     }
                 }
             }
