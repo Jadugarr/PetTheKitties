@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class EnterWorldNavigationSubStateSystem : GameReactiveSystem
@@ -26,6 +27,21 @@ public class EnterWorldNavigationSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        GameSystemService.AddActiveSystems(GameSystemService.GetSubSystemMapping(SubState.WorldNavigation));
+        if (!GameSystemService.HasSystemMapping(GameSystemType.WorldNavigation))
+        {
+            CreateWorldNavigationSystems();
+        }
+        
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldNavigation));
+    }
+
+    private void CreateWorldNavigationSystems()
+    {
+        Systems worldMovementSystems = new Feature("WorldMovementSystems")
+            // Some test systems
+            .Add(new ProcessRaycastTestInputSystem(_context))
+            .Add(new RaycastTestSystem(_context));
+        
+        GameSystemService.AddSystemMapping(GameSystemType.WorldNavigation, worldMovementSystems);
     }
 }

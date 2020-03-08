@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class ExitChooseActionStateSystem : GameReactiveSystem
@@ -25,9 +26,9 @@ public class ExitChooseActionStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (GameSystemService.HasSubSystemMapping(SubState.ChooseAction))
+        if (GameSystemService.HasSystemMapping(GameSystemType.ChooseAction))
         {
-            GameSystemService.RemoveActiveSystems(GameSystemService.GetSubSystemMapping(SubState.ChooseAction));
+            GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.ChooseAction));
         }
 
         UIService.HideWidget(UiAssetTypes.ActionChooser);

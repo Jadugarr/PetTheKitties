@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Battle.Systems;
+using Entitas.Common;
 using UnityEngine;
 
 public class EnterPlayerLostStateSystem : GameReactiveSystem
@@ -26,7 +27,20 @@ public class EnterPlayerLostStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Systems playerLostSystems = GameSystemService.GetSubSystemMapping(SubState.PlayerLost);
+        if (!GameSystemService.HasSystemMapping(GameSystemType.PlayerLost))
+        {
+            CreatePlayerLostSystems();
+        }
+        
+        Systems playerLostSystems = GameSystemService.GetSystemMapping(GameSystemType.PlayerLost);
         GameSystemService.AddActiveSystems(playerLostSystems);
+    }
+
+    private void CreatePlayerLostSystems()
+    {
+        Systems playerLostSystems = new Feature("PlayerLostSystems")
+            .Add(new DisplayBattleLostSystem());
+        
+        GameSystemService.AddSystemMapping(GameSystemType.PlayerLost, playerLostSystems);
     }
 }

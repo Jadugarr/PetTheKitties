@@ -1,5 +1,9 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
+using Entitas.Input.Systems;
+using Entitas.Kitty.Systems;
+using Entitas.World.Systems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -38,11 +42,51 @@ public class EnterWorldStateSystem : GameReactiveSystem
     {
         _sceneLoaded.OnEntityAdded -= OnWorldSceneLoaded;
         
-        if (!GameSystemService.HasSystemMapping(GameState.World))
+        if (!GameSystemService.HasSystemMapping(GameSystemType.World))
         {
-            Debug.LogError("World systems haven't been created yet!");
+            CreateWorldSystems();
         }
 
-        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameState.World));
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.World));
+    }
+
+    private void CreateWorldSystems()
+    {
+        Systems worldSystems = new Feature("WorldSystems")
+            .Add(new ProcessInteractionInputSystem(_context))
+            .Add(new CheckCharacterGroundStateSystem(_context))
+            .Add(new CharacterOnGroundSystem(_context))
+//            .Add(new AdjustCharacterMovementToSlopeSystem(_context))
+            .Add(new SetGravityScaleSystem(_context))
+            .Add(new SetCameraFollowTargetSystem(_context))
+            .Add(new InitializeWorldStateSystem(_context))
+            .Add(new SetCameraConfinerSystem(_context))
+            .Add(new WorldPlayerAddedSystem(_context))
+            .Add(new KittyAddedSystem(_context))
+            .Add(new CharacterDeathSystem(_context))
+            .Add(new CheckInteractInputAvailableSystem(_context))
+            .Add(new KittyInteractionSystem(_context))
+            .Add(new CharacterStartFollowSystem(_context))
+            .Add(new CharacterDirectionSystem(_context))
+            .Add(new CharacterFollowSystem(_context))
+            .Add(new CharacterScaredSystem(_context))
+            .Add(new CharacterReachedGoalSystem(_context))
+            .Add(new MoveCharacterSystem(_context))
+            .Add(new HandleCharacterMovementStateSystem(_context))
+            .Add(new ManageJumpingStateHandlingSystem(_context))
+            .Add(new ManageFallingStateHandlingSystem(_context))
+            .Add(new AdjustMoveEndingVelocitySystem(_context))
+            .Add(new HandleFallingStateSystem(_context))
+            .Add(new StartJumpCharacterSystem(_context))
+            .Add(new AdjustCharacterMovementToSlopeSystem(_context))
+            .Add(new CharacterOnGroundMovementVelocitySystem(_context))
+            .Add(new CharacterAirborneMovementVelocitySystem(_context))
+            //WinConditions
+            .Add(new InitializeAndTeardownWinConditionsSystem(_context))
+            .Add(new InitializeAndTeardownLoseConditionsSystem(_context))
+            .Add(new WinConditionControllerSystem(_context))
+            .Add(new LoseConditionControllerSystem(_context));
+        
+        GameSystemService.AddSystemMapping(GameSystemType.World, worldSystems);
     }
 }

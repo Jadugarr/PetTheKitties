@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine.SceneManagement;
 
 public class EnterMainMenuStateSystem : GameReactiveSystem
@@ -38,17 +39,21 @@ public class EnterMainMenuStateSystem : GameReactiveSystem
     {
         sceneLoadedGroup.OnEntityAdded -= OnMainMenuSceneLoaded;
 
-        if (!GameSystemService.HasSystemMapping(GameState.MainMenu))
+        if (!GameSystemService.HasSystemMapping(GameSystemType.MainMenu))
         {
             CreateMainMenuSystems();
         }
 
-        Systems mainMenuSystems = GameSystemService.GetSystemMapping(GameState.MainMenu);
+        Systems mainMenuSystems = GameSystemService.GetSystemMapping(GameSystemType.MainMenu);
 
         GameSystemService.AddActiveSystems(mainMenuSystems);
     }
 
     private void CreateMainMenuSystems()
     {
+        Systems mainMenuSystems = new Feature("MainMenuSystems");
+        mainMenuSystems.Add(new InitializeMainMenuSystem());
+        
+        GameSystemService.AddSystemMapping(GameSystemType.MainMenu, mainMenuSystems);
     }
 }

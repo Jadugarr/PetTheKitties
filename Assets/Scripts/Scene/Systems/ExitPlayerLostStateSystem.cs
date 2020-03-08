@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class ExitPlayerLostStateSystem : GameReactiveSystem
@@ -25,7 +26,7 @@ public class ExitPlayerLostStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Systems playerLostSystems = GameSystemService.GetSubSystemMapping(SubState.PlayerLost);
+        Systems playerLostSystems = GameSystemService.GetSystemMapping(GameSystemType.PlayerLost);
         GameSystemService.RemoveActiveSystems(playerLostSystems);
     }
 }

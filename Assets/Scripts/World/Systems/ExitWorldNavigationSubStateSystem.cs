@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class ExitWorldNavigationSubStateSystem : GameReactiveSystem
@@ -25,6 +26,6 @@ public class ExitWorldNavigationSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        GameSystemService.RemoveActiveSystems(GameSystemService.GetSubSystemMapping(SubState.WorldNavigation));
+        GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldNavigation));
     }
 }

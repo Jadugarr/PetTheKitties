@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 
 public class ExitChooseTargetStateSystem : GameReactiveSystem
 {
@@ -24,9 +25,9 @@ public class ExitChooseTargetStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (GameSystemService.HasSubSystemMapping(SubState.ChooseTarget))
+        if (GameSystemService.HasSystemMapping(GameSystemType.ChooseTarget))
         {
-            GameSystemService.RemoveActiveSystems(GameSystemService.GetSubSystemMapping(SubState.ChooseTarget));
+            GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.ChooseTarget));
         }
     }
 }

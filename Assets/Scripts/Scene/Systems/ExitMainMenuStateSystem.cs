@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 
 public class ExitMainMenuStateSystem : GameReactiveSystem
 {
@@ -24,7 +25,7 @@ public class ExitMainMenuStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Systems mainMenuSystems = GameSystemService.GetSystemMapping(GameState.MainMenu);
+        Systems mainMenuSystems = GameSystemService.GetSystemMapping(GameSystemType.MainMenu);
         if (mainMenuSystems != null)
         {
             GameSystemService.RemoveActiveSystems(mainMenuSystems);

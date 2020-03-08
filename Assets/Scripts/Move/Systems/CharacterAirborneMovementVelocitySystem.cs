@@ -21,7 +21,6 @@ public class CharacterAirborneMovementVelocitySystem : GameExecuteSystem
     {
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
-            Debug.Log("Current CharacterGroundState: " + characterEntity.characterGroundState.CharacterGroundState);
             
             if (characterEntity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne)
             {

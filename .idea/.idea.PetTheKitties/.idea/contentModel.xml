@@ -346,6 +346,7 @@
             </e>
             <e p="GameState.cs" t="Include" />
             <e p="GameSystemService.cs" t="Include" />
+            <e p="GameSystemType.cs" t="Include" />
             <e p="SubState.cs" t="Include" />
             <e p="Systems" t="Include">
               <e p="ChangeGameStateInputMapSystem.cs" t="Include" />

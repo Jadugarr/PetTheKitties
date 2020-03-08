@@ -40,7 +40,6 @@ public class GameController : MonoBehaviour
 
         CreateUniversalSystems(pools.game);
         CreateEndFrameSystems(pools.game);
-        CreateSystems(pools.game);
 
         ExecuteOneOffSystems(pools.game);
     }
@@ -155,119 +154,5 @@ public class GameController : MonoBehaviour
             activeSystem.Cleanup();
         }
         GameSystemService.RefreshActiveSystems();
-    }
-
-    private void CreateSystems(GameContext context)
-    {
-        Systems executeActionSystems = new Feature("ExecuteActionSystems")
-            //Actions
-            .Add(new InitializeExecuteActionSystem(context))
-            .Add(new ExecutePlayerAttackActionSystem(context))
-            .Add(new ExecuteDefenseActionSystem(context))
-            .Add(new ReleaseDefenseActionSystem(context))
-            .Add(new ActionFinishedSystem(context));
-
-        GameSystemService.AddSubSystemMapping(SubState.ExecuteAction, executeActionSystems);
-
-        Systems battleSystems = new Feature("BattleStateSystems")
-            .Add(new InitializeBattleSystem(context))
-            .Add(new InitializeATBSystem(context))
-            //Battle
-            .Add(new CharacterDeathSystem(context))
-            .Add(new TeardownCharacterSystem(context))
-            .Add(new TeardownBattleSystem(context))
-            //WinConditions
-            .Add(new InitializeAndTeardownWinConditionsSystem(context))
-            .Add(new InitializeAndTeardownLoseConditionsSystem(context))
-            .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context));
-
-
-        GameSystemService.AddSystemMapping(GameState.Battle, battleSystems);
-
-        Systems waitStateSystems = new Feature("WaitingSubStateSystems")
-            .Add(new ActionTimeSystem(context))
-            //Actions
-            .Add(new ExecuteChooseActionSystem(context))
-            .Add(new ExecuteActionsSystem(context));
-
-        GameSystemService.AddSubSystemMapping(SubState.Waiting, waitStateSystems);
-
-        Systems mainMenuSystems = new Feature("MainMenuSystems");
-        mainMenuSystems.Add(new InitializeMainMenuSystem());
-
-        GameSystemService.AddSystemMapping(GameState.MainMenu, mainMenuSystems);
-
-        Systems finalizeActionSystems = new Feature("finalizeActionSystems")
-            .Add(new AddActionTimeSystem(context))
-            .Add(new ActionTimeAddedSystem(context));
-
-        GameSystemService.AddSubSystemMapping(SubState.FinalizeAction, finalizeActionSystems);
-
-        Systems playerLostSystems = new Feature("PlayerLostSystems")
-            .Add(new DisplayBattleLostSystem());
-
-        GameSystemService.AddSubSystemMapping(SubState.PlayerLost, playerLostSystems);
-
-        Systems playerWonSystems = new Feature("PlayerWonSystems")
-            .Add(new DisplayBattleWonSystem());
-
-        GameSystemService.AddSubSystemMapping(SubState.PlayerWon, playerWonSystems);
-
-        Systems chooseTargetSystems = new Feature("ChooseTargetSystems")
-            .Add(new InitializeChooseTargetSystem(context))
-            .Add(new ActionTargetChosenSystem(context));
-
-        GameSystemService.AddSubSystemMapping(SubState.ChooseTarget, chooseTargetSystems);
-
-        Systems chooseActionSystems = new Feature("ChooseActionSystems")
-            .Add(new InitializeChooseActionSystem(context))
-            .Add(new ActionChosenSystem(context));
-
-        GameSystemService.AddSubSystemMapping(SubState.ChooseAction, chooseActionSystems);
-
-        Systems worldSystems = new Feature("WorldSystems")
-            .Add(new ProcessInteractionInputSystem(context))
-            .Add(new CheckCharacterGroundStateSystem(context))
-            .Add(new CharacterOnGroundSystem(context))
-//            .Add(new AdjustCharacterMovementToSlopeSystem(context))
-            .Add(new SetGravityScaleSystem(context))
-            .Add(new SetCameraFollowTargetSystem(context))
-            .Add(new InitializeWorldStateSystem(context))
-            .Add(new SetCameraConfinerSystem(context))
-            .Add(new WorldPlayerAddedSystem(context))
-            .Add(new KittyAddedSystem(context))
-            .Add(new CharacterDeathSystem(context))
-            .Add(new CheckInteractInputAvailableSystem(context))
-            .Add(new KittyInteractionSystem(context))
-            .Add(new CharacterStartFollowSystem(context))
-            .Add(new CharacterDirectionSystem(context))
-            .Add(new CharacterFollowSystem(context))
-            .Add(new CharacterScaredSystem(context))
-            .Add(new CharacterReachedGoalSystem(context))
-            .Add(new MoveCharacterSystem(context))
-            .Add(new HandleCharacterMovementStateSystem(context))
-            .Add(new ManageJumpingStateHandlingSystem(context))
-            .Add(new ManageFallingStateHandlingSystem(context))
-            .Add(new AdjustMoveEndingVelocitySystem(context))
-            .Add(new HandleFallingStateSystem(context))
-            .Add(new StartJumpCharacterSystem(context))
-            .Add(new AdjustCharacterMovementToSlopeSystem(context))
-            .Add(new CharacterOnGroundMovementVelocitySystem(context))
-            .Add(new CharacterAirborneMovementVelocitySystem(context))
-            //WinConditions
-            .Add(new InitializeAndTeardownWinConditionsSystem(context))
-            .Add(new InitializeAndTeardownLoseConditionsSystem(context))
-            .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context));
-
-        GameSystemService.AddSystemMapping(GameState.World, worldSystems);
-
-        Systems worldMovementSystems = new Feature("WorldMovementSystems")
-            // Some test systems
-            .Add(new ProcessRaycastTestInputSystem(context))
-            .Add(new RaycastTestSystem(context));
-
-        GameSystemService.AddSubSystemMapping(SubState.WorldNavigation, worldMovementSystems);
     }
 }

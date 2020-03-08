@@ -4,6 +4,8 @@ using Entitas.Battle.Systems;
 
 public class EnterChooseTargetStateSystem : GameReactiveSystem
 {
+    private Systems chooseTargetSystems = null;
+
     public EnterChooseTargetStateSystem(IContext<GameEntity> context) : base(context)
     {
     }
@@ -26,15 +28,18 @@ public class EnterChooseTargetStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (!GameSystemService.HasSubSystemMapping(SubState.ChooseTarget))
+        if (chooseTargetSystems == null)
         {
             CreateChooseTargetSystems();
         }
 
-        GameSystemService.AddActiveSystems(GameSystemService.GetSubSystemMapping(SubState.ChooseTarget));
+        GameSystemService.AddActiveSystems(chooseTargetSystems);
     }
 
     private void CreateChooseTargetSystems()
     {
+        chooseTargetSystems = new Feature("ChooseTargetSystems")
+            .Add(new InitializeChooseTargetSystem(_context))
+            .Add(new ActionTargetChosenSystem(_context));
     }
 }

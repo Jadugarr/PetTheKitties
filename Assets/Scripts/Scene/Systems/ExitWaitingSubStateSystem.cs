@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 
 public class ExitWaitingSubStateSystem : GameReactiveSystem
 {
@@ -24,7 +25,7 @@ public class ExitWaitingSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Systems waitSystems = GameSystemService.GetSubSystemMapping(SubState.Waiting);
+        Systems waitSystems = GameSystemService.GetSystemMapping(GameSystemType.Wait);
         if (waitSystems != null)
         {
             GameSystemService.RemoveActiveSystems(waitSystems);

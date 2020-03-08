@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Battle.Systems;
+using Entitas.Common;
 using Entitas.Extensions;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -42,14 +43,31 @@ public class EnterBattleStateSystem : GameReactiveSystem
     {
         sceneLoadedGroup.OnEntityAdded -= OnBattleSceneLoaded;
 
-        if (!GameSystemService.HasSystemMapping(GameState.Battle))
+        if (!GameSystemService.HasSystemMapping(GameSystemType.Battle))
         {
-            Debug.LogError("Didn't create battle state systems yet!");
-            return;
+            CreateBattleSystems();
         }
 
-        Systems battleSystems = GameSystemService.GetSystemMapping(GameState.Battle);
+        Systems battleSystems = GameSystemService.GetSystemMapping(GameSystemType.Battle);
         GameSystemService.AddActiveSystems(battleSystems);
         _context.SetNewSubstate(SubState.Waiting);
+    }
+
+    private void CreateBattleSystems()
+    {
+        Systems battleSystems = new Feature("BattleStateSystems")
+            .Add(new InitializeBattleSystem(_context))
+            .Add(new InitializeATBSystem(_context))
+            //Battle
+            .Add(new CharacterDeathSystem(_context))
+            .Add(new TeardownCharacterSystem(_context))
+            .Add(new TeardownBattleSystem(_context))
+            //WinConditions
+            .Add(new InitializeAndTeardownWinConditionsSystem(_context))
+            .Add(new InitializeAndTeardownLoseConditionsSystem(_context))
+            .Add(new WinConditionControllerSystem(_context))
+            .Add(new LoseConditionControllerSystem(_context));
+        
+        GameSystemService.AddSystemMapping(GameSystemType.Battle, battleSystems);
     }
 }

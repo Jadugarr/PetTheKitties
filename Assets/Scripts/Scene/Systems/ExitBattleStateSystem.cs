@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using Entitas.Extensions;
 using Entitas.Unity;
 
@@ -34,7 +35,7 @@ public class ExitBattleStateSystem : GameReactiveSystem
             entity.view.View.Unlink();
         }
         
-        Systems battleSystems = GameSystemService.GetSystemMapping(GameState.Battle);
+        Systems battleSystems = GameSystemService.GetSystemMapping(GameSystemType.Battle);
         if (battleSystems != null)
         {
             GameSystemService.RemoveActiveSystems(battleSystems);

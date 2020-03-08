@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class ExitPlayerWonStateSystem : GameReactiveSystem
@@ -25,7 +26,7 @@ public class ExitPlayerWonStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Systems playerWonSystems = GameSystemService.GetSubSystemMapping(SubState.PlayerWon);
+        Systems playerWonSystems = GameSystemService.GetSystemMapping(GameSystemType.PlayerWon);
         if (playerWonSystems != null)
         {
             GameSystemService.RemoveActiveSystems(playerWonSystems);

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Battle.Systems;
+using Entitas.Common;
 
 public class EnterFinalizeActionStateSystem : GameReactiveSystem
 {
@@ -26,16 +27,21 @@ public class EnterFinalizeActionStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (!GameSystemService.HasSubSystemMapping(SubState.FinalizeAction))
+        if (!GameSystemService.HasSystemMapping(GameSystemType.FinalizeAction))
         {
             CreateFinalizeActionSystems();
         }
 
-        GameSystemService.AddActiveSystems(GameSystemService.GetSubSystemMapping(SubState.FinalizeAction));
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.FinalizeAction));
     }
 
     private void CreateFinalizeActionSystems()
     {
+        Systems finalizeActionSystems = new Feature("finalizeActionSystems")
+            .Add(new AddActionTimeSystem(_context))
+            .Add(new ActionTimeAddedSystem(_context));
+        
+        GameSystemService.AddSystemMapping(GameSystemType.FinalizeAction, finalizeActionSystems);
     }
 }
 
@@ -62,9 +68,9 @@ public class ExitFinalizeActionStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (GameSystemService.HasSubSystemMapping(SubState.FinalizeAction))
+        if (GameSystemService.HasSystemMapping(GameSystemType.FinalizeAction))
         {
-            GameSystemService.RemoveActiveSystems(GameSystemService.GetSubSystemMapping(SubState.FinalizeAction));
+            GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.FinalizeAction));
         }
     }
 }

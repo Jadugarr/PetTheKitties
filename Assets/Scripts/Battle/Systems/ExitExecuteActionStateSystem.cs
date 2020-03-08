@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class ExitExecuteActionStateSystem : GameReactiveSystem
@@ -25,9 +26,9 @@ public class ExitExecuteActionStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (GameSystemService.HasSubSystemMapping(SubState.ExecuteAction))
+        if (GameSystemService.HasSystemMapping(GameSystemType.ExecuteAction))
         {
-            GameSystemService.RemoveActiveSystems(GameSystemService.GetSubSystemMapping(SubState.ExecuteAction));
+            GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.ExecuteAction));
         }
     }
 }

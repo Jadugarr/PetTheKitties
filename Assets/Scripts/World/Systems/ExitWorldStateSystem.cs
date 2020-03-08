@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 using UnityEngine;
 
 public class ExitWorldStateSystem : GameReactiveSystem
@@ -26,6 +27,6 @@ public class ExitWorldStateSystem : GameReactiveSystem
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
         _context.CreateEntity().AddUnloadScene(GameSceneConstants.WorldScene);
-        GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameState.World));
+        GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.World));
     }
 }

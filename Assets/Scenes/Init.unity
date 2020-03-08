@@ -96,6 +96,7 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
+    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -307,7 +308,6 @@ GameObject:
   m_Component:
   - component: {fileID: 729716733}
   - component: {fileID: 729716732}
-  - component: {fileID: 729716731}
   - component: {fileID: 729716730}
   - component: {fileID: 729716729}
   - component: {fileID: 729716734}
@@ -329,14 +329,6 @@ AudioListener:
   m_GameObject: {fileID: 729716728}
   m_Enabled: 1
 --- !u!124 &729716730
-Behaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 729716728}
-  m_Enabled: 1
---- !u!92 &729716731
 Behaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -395,7 +387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729716728}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07017605, y: 6.970479, z: -0.6171875}
+  m_LocalPosition: {x: 0, y: 6.970479, z: -0.6171875}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1374329787}

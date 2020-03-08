@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Battle.Systems;
+using Entitas.Common;
 using UnityEngine;
 
 public class EnterChooseActionStateSystem : GameReactiveSystem
@@ -27,15 +28,20 @@ public class EnterChooseActionStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (!GameSystemService.HasSubSystemMapping(SubState.ChooseAction))
+        if (!GameSystemService.HasSystemMapping(GameSystemType.ChooseAction))
         {
             CreateChooseActionSystems();
         }
 
-        GameSystemService.AddActiveSystems(GameSystemService.GetSubSystemMapping(SubState.ChooseAction));
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.ChooseAction));
     }
 
     private void CreateChooseActionSystems()
     {
+        Systems chooseActionSystems = new Feature("ChooseActionSystems")
+            .Add(new InitializeChooseActionSystem(_context))
+            .Add(new ActionChosenSystem(_context));
+        
+        GameSystemService.AddSystemMapping(GameSystemType.ChooseAction, chooseActionSystems);
     }
 }

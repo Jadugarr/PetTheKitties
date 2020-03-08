@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Common;
 
 public class EnterPlayerWonStateSystem : GameReactiveSystem
 {
@@ -24,6 +25,19 @@ public class EnterPlayerWonStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        GameSystemService.AddActiveSystems(GameSystemService.GetSubSystemMapping(SubState.PlayerWon));
+        if (!GameSystemService.HasSystemMapping(GameSystemType.PlayerWon))
+        {
+            CreatePlayerWonSystems();
+        }
+
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.PlayerWon));
+    }
+
+    private void CreatePlayerWonSystems()
+    {
+        Systems playerWonSystems = new Feature("PlayerWonSystems")
+            .Add(new DisplayBattleWonSystem());
+
+        GameSystemService.AddSystemMapping(GameSystemType.PlayerWon, playerWonSystems);
     }
 }
