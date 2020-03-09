@@ -56,7 +56,6 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new ProcessInteractionInputSystem(_context))
             .Add(new CheckCharacterGroundStateSystem(_context))
             .Add(new CharacterOnGroundSystem(_context))
-//            .Add(new AdjustCharacterMovementToSlopeSystem(_context))
             .Add(new SetGravityScaleSystem(_context))
             .Add(new SetCameraFollowTargetSystem(_context))
             .Add(new InitializeWorldStateSystem(_context))

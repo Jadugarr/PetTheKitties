@@ -249,7 +249,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/CharacterAirborneMovementVelocitySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseTargetStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemService.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseTargetStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExecuteActionStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitExecuteActionStateSystem.cs" />
@@ -263,15 +262,16 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerLostStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerWonStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerWonStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseActionStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemType.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldNavigationSubStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitWaitingSubStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseActionStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemService.cs" />
       </list>
     </option>
   </component>
@@ -400,10 +400,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="627" y="252" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1582825177164" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583673806186">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1583776513058">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1583673806186" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1583776513058" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

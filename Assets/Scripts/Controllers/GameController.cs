@@ -21,8 +21,6 @@ public class GameController : MonoBehaviour
     [SerializeField] private CharacterConfiguration characterConfiguration;
     [SerializeField] private MovementConstantsConfiguration movementConstantsConfiguration;
 
-    private Systems endFrameSystems;
-
     private void Awake()
     {
         Contexts contexts = Contexts.sharedInstance;
@@ -115,7 +113,7 @@ public class GameController : MonoBehaviour
 
     private void CreateEndFrameSystems(GameContext context)
     {
-        endFrameSystems = new Feature("EndFrameSystems")
+        Systems endFrameSystems = new Feature("EndFrameSystems")
             // Gravity
             .Add(new CharacterGravitySystem(context))
             //Position
@@ -125,6 +123,8 @@ public class GameController : MonoBehaviour
             //Animations
             .Add(new RenderVelocityAnimationsSystem(context))
             .Add(new RenderCharacterStateAnimationsSystem(context));
+        
+        GameSystemService.AddActiveSystems(endFrameSystems, SystemsUpdateType.LateUpdate);
     }
 
     private void InitConfigs()
@@ -145,11 +145,37 @@ public class GameController : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        List<Systems> fixedUpdateSystems = GameSystemService.GetActiveFixedUpdateSystems();
+
+        foreach (Systems fixedUpdateSystem in fixedUpdateSystems)
+        {
+            fixedUpdateSystem.Execute();
+        }
+    }
+
     private void LateUpdate()
     {
+        List<Systems> lateUpdateSystems = GameSystemService.GetActiveLateUpdateSystems();
+        foreach (Systems lateUpdateSystem in lateUpdateSystems)
+        {
+            lateUpdateSystem.Execute();
+        }
+        
         List<Systems> activeSystems = GameSystemService.GetActiveSystems();
-        endFrameSystems.Execute();
+        List<Systems> fixedUpdateSystems = GameSystemService.GetActiveFixedUpdateSystems();
         foreach (Systems activeSystem in activeSystems)
+        {
+            activeSystem.Cleanup();
+        }
+        
+        foreach (Systems activeSystem in fixedUpdateSystems)
+        {
+            activeSystem.Cleanup();
+        }
+        
+        foreach (Systems activeSystem in lateUpdateSystems)
         {
             activeSystem.Cleanup();
         }

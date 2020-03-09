@@ -4,6 +4,13 @@ using Entitas.Common;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
+public enum SystemsUpdateType
+{
+    Update,
+    FixedUpdate,
+    LateUpdate
+}
+
 public static class GameSystemService
 {
     private static List<Systems> activeUpdateSystems = new List<Systems>();
@@ -18,16 +25,16 @@ public static class GameSystemService
 
     private static Dictionary<GameSystemType, Systems> systemTypeMap = new Dictionary<GameSystemType, Systems>();
 
-    public static void AddActiveSystems(Systems systems)
+    private static void AddActiveSystems(Systems systems, ref List<Systems> listToAddTo)
     {
-        if (systemsToAddToUpdate == null)
+        if (listToAddTo == null)
         {
-            systemsToAddToUpdate = new List<Systems>();
+            listToAddTo = new List<Systems>();
         }
 
-        if (!systemsToAddToUpdate.Contains(systems))
+        if (!listToAddTo.Contains(systems))
         {
-            systemsToAddToUpdate.Add(systems);
+            listToAddTo.Add(systems);
         }
         else
         {
@@ -35,19 +42,38 @@ public static class GameSystemService
         }
     }
 
-    public static void RemoveActiveSystems(Systems systems)
+    public static void AddActiveSystems(Systems systems, SystemsUpdateType systemsUpdateType = SystemsUpdateType.Update)
     {
-        if (systemsToRemoveFromUpdate == null)
+        switch (systemsUpdateType)
         {
-            systemsToRemoveFromUpdate = new List<Systems>();
+            case SystemsUpdateType.Update:
+                AddActiveSystems(systems, ref systemsToAddToUpdate);
+                break;
+            case SystemsUpdateType.FixedUpdate:
+                AddActiveSystems(systems, ref systemsToAddToFixedUpdate);
+                break;
+            case SystemsUpdateType.LateUpdate:
+                AddActiveSystems(systems, ref systemsToAddToLateUpdate);
+                break;
+            default:
+                Debug.LogError("Could not add active systems, because of an unknown type: " + systemsUpdateType);
+                break;
+        }
+    }
+
+    private static void RemoveActiveSystems(Systems systems, ref List<Systems> listToRemoveSystemsFrom)
+    {
+        if (listToRemoveSystemsFrom == null)
+        {
+            listToRemoveSystemsFrom = new List<Systems>();
         }
 
-        if (!systemsToRemoveFromUpdate.Contains(systems))
+        if (!listToRemoveSystemsFrom.Contains(systems))
         {
             systems.ClearReactiveSystems();
             systems.DeactivateReactiveSystems();
             systems.TearDown();
-            systemsToRemoveFromUpdate.Add(systems);
+            listToRemoveSystemsFrom.Add(systems);
         }
         else
         {
@@ -55,50 +81,83 @@ public static class GameSystemService
         }
     }
 
-    public static void RefreshActiveSystems()
+    public static void RemoveActiveSystems(Systems systems, SystemsUpdateType systemsUpdateType = SystemsUpdateType.Update)
     {
-        HandleSystemsToAdd();
-        HandleSystemsToRemove();
+        switch (systemsUpdateType)
+        {
+            case SystemsUpdateType.Update:
+                RemoveActiveSystems(systems, ref systemsToRemoveFromUpdate);
+                break;
+            case SystemsUpdateType.FixedUpdate:
+                RemoveActiveSystems(systems, ref systemsToRemoveFromFixedUpdate);
+                break;
+            case SystemsUpdateType.LateUpdate:
+                RemoveActiveSystems(systems, ref systemsToRemoveFromLateUpdate);
+                break;
+            default:
+                Debug.LogError("Could not remove active systems, because of an unknown type: " + systemsUpdateType);
+                break;
+        }
     }
 
-    private static void HandleSystemsToAdd()
+    public static void RefreshActiveSystems()
     {
-        if (systemsToAddToUpdate != null && systemsToAddToUpdate.Count > 0)
+        HandleSystemsToAdd(ref systemsToAddToUpdate, ref activeUpdateSystems);
+        HandleSystemsToAdd(ref systemsToAddToFixedUpdate, ref activeFixedUpdateSystems);
+        HandleSystemsToAdd(ref systemsToAddToLateUpdate, ref activeLateUpdateSystems);
+        HandleSystemsToRemove(ref systemsToRemoveFromUpdate, ref activeUpdateSystems);
+        HandleSystemsToRemove(ref systemsToRemoveFromFixedUpdate, ref activeFixedUpdateSystems);
+        HandleSystemsToRemove(ref systemsToRemoveFromLateUpdate, ref activeLateUpdateSystems);
+    }
+
+    private static void HandleSystemsToAdd(ref List<Systems> listOfSystemsToAdd, ref List<Systems> listToAddTo)
+    {
+        if (listOfSystemsToAdd != null && listOfSystemsToAdd.Count > 0)
         {
-            Systems[] currentList = new Systems[systemsToAddToUpdate.Count];
-            systemsToAddToUpdate.CopyTo(currentList);
+            Systems[] currentList = new Systems[listOfSystemsToAdd.Count];
+            listOfSystemsToAdd.CopyTo(currentList);
             foreach (Systems systems in currentList)
             {
                 systems.ActivateReactiveSystems();
                 systems.Initialize();
-                activeUpdateSystems.Add(systems);
-                systemsToAddToUpdate.Remove(systems);
+                listToAddTo.Add(systems);
+                listOfSystemsToAdd.Remove(systems);
             }
 
-            if (systemsToAddToUpdate.Count > 0)
+            if (listOfSystemsToAdd.Count > 0)
             {
-                HandleSystemsToAdd();
+                HandleSystemsToAdd(ref listOfSystemsToAdd, ref listToAddTo);
             }
         }
     }
 
-    private static void HandleSystemsToRemove()
+    private static void HandleSystemsToRemove(ref List<Systems> listOfSystemsToRemove, ref List<Systems> listToRemoveFrom)
     {
-        if (systemsToRemoveFromUpdate != null)
+        if (listOfSystemsToRemove != null)
         {
-            foreach (Systems systems in systemsToRemoveFromUpdate)
+            foreach (Systems systems in listOfSystemsToRemove)
             {
-                activeUpdateSystems.Remove(systems);
+                listToRemoveFrom.Remove(systems);
             }
 
-            systemsToRemoveFromUpdate.Clear();
-            systemsToRemoveFromUpdate = null;
+            listOfSystemsToRemove.Clear();
+            listOfSystemsToRemove = null;
         }
     }
 
     public static List<Systems> GetActiveSystems()
     {
         return activeUpdateSystems;
+    }
+
+    public static List<Systems> GetActiveFixedUpdateSystems()
+    {
+        return activeFixedUpdateSystems;
+    }
+
+    public static List<Systems> GetActiveLateUpdateSystems()
+    {
+        return activeLateUpdateSystems;
     }
 
     public static void AddSystemMapping(GameSystemType systemType, Systems systems)
