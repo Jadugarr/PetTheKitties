@@ -113,18 +113,9 @@ public class GameController : MonoBehaviour
 
     private void CreateEndFrameSystems(GameContext context)
     {
-        Systems endFrameSystems = new Feature("EndFrameSystems")
-            // Gravity
-            .Add(new CharacterGravitySystem(context))
-            //Position
-            .Add(new RenderPositionSystem(context))
-            //Velocity
-            .Add(new RenderVelocitySystem(context))
-            //Animations
-            .Add(new RenderVelocityAnimationsSystem(context))
-            .Add(new RenderCharacterStateAnimationsSystem(context));
-        
-        GameSystemService.AddActiveSystems(endFrameSystems, SystemsUpdateType.LateUpdate);
+        // Systems endFrameSystems = new Feature("EndFrameSystems");
+        //
+        // GameSystemService.AddActiveSystems(endFrameSystems, SystemsUpdateType.LateUpdate);
     }
 
     private void InitConfigs()

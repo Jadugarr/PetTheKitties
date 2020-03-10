@@ -12,6 +12,7 @@ namespace Entitas.Common
         PlayerWon,
         ChooseAction,
         World,
+        WorldFixedUpdate,
         WorldNavigation
     }
 }

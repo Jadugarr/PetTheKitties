@@ -48,15 +48,15 @@ public class EnterWorldStateSystem : GameReactiveSystem
         }
 
         GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.World));
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldFixedUpdate), SystemsUpdateType.FixedUpdate);
     }
 
     private void CreateWorldSystems()
     {
-        Systems worldSystems = new Feature("WorldSystems")
-            .Add(new ProcessInteractionInputSystem(_context))
+        Systems worldSystems = new Feature("WorldSystemsUpdate")
             .Add(new CheckCharacterGroundStateSystem(_context))
+            .Add(new ProcessInteractionInputSystem(_context))
             .Add(new CharacterOnGroundSystem(_context))
-            .Add(new SetGravityScaleSystem(_context))
             .Add(new SetCameraFollowTargetSystem(_context))
             .Add(new InitializeWorldStateSystem(_context))
             .Add(new SetCameraConfinerSystem(_context))
@@ -70,22 +70,35 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new CharacterFollowSystem(_context))
             .Add(new CharacterScaredSystem(_context))
             .Add(new CharacterReachedGoalSystem(_context))
-            .Add(new MoveCharacterSystem(_context))
             .Add(new HandleCharacterMovementStateSystem(_context))
             .Add(new ManageJumpingStateHandlingSystem(_context))
             .Add(new ManageFallingStateHandlingSystem(_context))
-            .Add(new AdjustMoveEndingVelocitySystem(_context))
             .Add(new HandleFallingStateSystem(_context))
-            .Add(new StartJumpCharacterSystem(_context))
-            .Add(new AdjustCharacterMovementToSlopeSystem(_context))
-            .Add(new CharacterOnGroundMovementVelocitySystem(_context))
-            .Add(new CharacterAirborneMovementVelocitySystem(_context))
             //WinConditions
             .Add(new InitializeAndTeardownWinConditionsSystem(_context))
             .Add(new InitializeAndTeardownLoseConditionsSystem(_context))
             .Add(new WinConditionControllerSystem(_context))
             .Add(new LoseConditionControllerSystem(_context));
         
+        Systems worldSystemsFixedUpdate = new Feature("WorldSystemsFixedUpdate")
+            .Add(new SetGravityScaleSystem(_context))
+            .Add(new MoveCharacterSystem(_context))
+            .Add(new AdjustMoveEndingVelocitySystem(_context))
+            .Add(new StartJumpCharacterSystem(_context))
+            .Add(new AdjustCharacterMovementToSlopeSystem(_context))
+            .Add(new CharacterOnGroundMovementVelocitySystem(_context))
+            .Add(new CharacterAirborneMovementVelocitySystem(_context))
+            // Gravity
+            .Add(new CharacterGravitySystem(_context))
+            //Position
+            .Add(new RenderPositionSystem(_context))
+            //Velocity
+            .Add(new RenderVelocitySystem(_context))
+            //Animations
+            .Add(new RenderVelocityAnimationsSystem(_context))
+            .Add(new RenderCharacterStateAnimationsSystem(_context));
+        
         GameSystemService.AddSystemMapping(GameSystemType.World, worldSystems);
+        GameSystemService.AddSystemMapping(GameSystemType.WorldFixedUpdate, worldSystemsFixedUpdate);
     }
 }

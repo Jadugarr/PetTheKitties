@@ -30,6 +30,7 @@ public class RenderCharacterStateAnimationsSystem : GameReactiveSystem
         {
             gameEntity.characterAnimator.Animator.SetInteger(AnimationTriggerConstants.CharacterState,
                 (int) gameEntity.characterState.State);
+            Debug.Log("Set animation state: " + gameEntity.characterState.State);
         }
     }
 }
