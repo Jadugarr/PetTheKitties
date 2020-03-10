@@ -28,7 +28,6 @@ public class CheckKillEnemiesConditionSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Debug.Log("All enemies are dead!");
         WinConditionComponent winConditions = _context.winCondition;
 
         for (var i = 0; i < winConditions.WinConditions.Length; i++)

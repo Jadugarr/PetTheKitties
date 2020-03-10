@@ -46,8 +46,6 @@ public class ExecutePlayerAttackActionSystem : GameReactiveSystem
                         attacker.attack.AttackValue -
                         defender.defenseStat.DefenseValue));
 
-                Debug.Log("Enemy attacked! Remaining health: " + defender.health.Health);
-
                 gameEntity.isActionFinished = true;
             }
         }

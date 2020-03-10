@@ -28,7 +28,6 @@ public class CheckPlayerDeadConditionSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Debug.Log("All player characters are dead!");
         LoseConditionComponent loseConditions = _context.loseCondition;
 
         for (var i = 0; i < loseConditions.LoseConditions.Length; i++)

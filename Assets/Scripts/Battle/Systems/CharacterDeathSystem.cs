@@ -43,8 +43,6 @@ public class CharacterDeathSystem : GameReactiveSystem
             GameObject.Destroy(gameEntity.view.View);
 
             gameEntity.Destroy();
-
-            Debug.Log("Enemy died!");
         }
     }
 }

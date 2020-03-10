@@ -41,8 +41,6 @@ public class CheckKittensReachedGoalConditionSystem : GameReactiveSystem
 
         if (conditionFulfilled)
         {
-            Debug.Log("Kittens reached goal!");
-
             WinConditionComponent winConditions = _context.winCondition;
 
             for (var i = 0; i < winConditions.WinConditions.Length; i++)

@@ -23,7 +23,7 @@ public abstract class GameReactiveSystem : ReactiveSystem<GameEntity>
         }
         else
         {
-            Debug.Log("Tried executing system in wrong state: " + this);
+            Debug.LogWarning("Tried executing system in wrong state: " + this);
         }
     }
 

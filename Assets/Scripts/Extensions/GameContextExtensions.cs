@@ -12,7 +12,6 @@ namespace Entitas.Extensions
                 return;
             }
             context.ReplaceSubState(context.subState.CurrentSubState, newSubstate);
-            Debug.Log("Set new substate: " + newSubstate);
         }
 
         public static void SetNewGamestate(this GameContext context, GameState newGameState)
@@ -22,7 +21,6 @@ namespace Entitas.Extensions
                 return;
             }
             context.ReplaceGameState(context.gameState.CurrentGameState, newGameState);
-            Debug.Log("Set new gamestate: " + newGameState);
         }
     }
 #pragma warning restore 618

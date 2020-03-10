@@ -41,7 +41,6 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
                 if (!areSystemsActive)
                 {
                     CreateJumpingStateSystems();
-                    Debug.Log("Add");
                     GameSystemService.AddActiveSystems(jumpingStateSystems);
                     areSystemsActive = true;
                 }
@@ -51,7 +50,6 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
 
         if (jumpingStateSystems != null && areSystemsActive)
         {
-            Debug.Log("Remove");
             GameSystemService.RemoveActiveSystems(jumpingStateSystems);
             areSystemsActive = false;
         }

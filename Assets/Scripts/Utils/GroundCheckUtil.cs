@@ -28,7 +28,6 @@ public static class GroundCheckUtil
             contactFilter2D.SetLayerMask(LayerMask.GetMask(Tags.Ground));
             if (characterCollider2D.Cast(Vector2.down, contactFilter2D, castResults, 0.07f) > 0)
             {
-                Debug.Log("Hit ground");
                 hitNormal = castResults[0].normal;
                 distanceToGround = castResults[0].distance;
                 return true;
@@ -138,19 +137,16 @@ public static class GroundCheckUtil
         if (testHit.collider != null)
         {
             float hitAngle = Vector2.Angle(raycastDirectionForward, testHit.normal) - 135f;
-            Debug.Log("Hit normal: " + testHit.normal);
             // test movement vector adjustment
             Vector2 testMovementVector = new Vector2(5f, 0f);
             Vector2 rotatedVector = testMovementVector.Rotate(hitAngle);
             Debug.DrawRay(rayStartForward, rotatedVector, Color.green, kDebugRayDuration);
-            Debug.Log("Raycast angle: " + hitAngle);
         }
     }
 
     public static void TestHitAngleFromMouse()
     {
         Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log("Mouse position: " + mousePosition);
 
         Vector2 rayStartForward = new Vector2(mousePosition.x, mousePosition.y);
 
@@ -163,12 +159,10 @@ public static class GroundCheckUtil
         if (testHit.collider != null)
         {
             float hitAngle = Vector2.Angle(raycastDirectionForward, testHit.normal) - 135f;
-            Debug.Log("Hit normal: " + testHit.normal);
             // test movement vector adjustment
             Vector2 testMovementVector = new Vector2(5f, 0f);
             Vector2 rotatedVector = testMovementVector.Rotate(hitAngle);
             Debug.DrawRay(rayStartForward, rotatedVector, Color.green, kDebugRayDuration);
-            Debug.Log("Raycast angle: " + hitAngle);
         }
     }
 

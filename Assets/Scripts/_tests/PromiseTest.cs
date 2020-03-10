@@ -44,7 +44,6 @@ public class PromiseTest : MonoBehaviour
     private void IncreaseValue()
     {
         controlValue++;
-        Debug.Log("Current value: " + controlValue);
     }
 
     private IEnumerator Coroutine()
