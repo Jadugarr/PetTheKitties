@@ -60,9 +60,6 @@ public class GameController : MonoBehaviour
     private void CreateUniversalSystems(GameContext context)
     {
         Systems universalSystems = new Feature("UniversalSystems")
-            .Add(new SyncPositionAndViewSystem(context))
-            .Add(new SyncVelocitySystem(context))
-            .Add(new SyncMovementAnimationSystem(context))
             //Promises
             .Add(new InitPromisesSystem())
             //Input
@@ -107,8 +104,14 @@ public class GameController : MonoBehaviour
             .Add(new EnterWorldNavigationSubStateSystem(context))
             .Add(new ExitWorldNavigationSubStateSystem(context))
             .Add(new RestartLevelSystem(context));
+        
+        Systems universalFixedUpdateSystems = new Feature("UniversalFixedUpdateSystems")
+            .Add(new SyncPositionAndViewSystem(context))
+            .Add(new SyncVelocitySystem(context))
+            .Add(new SyncMovementAnimationSystem(context));
 
         GameSystemService.AddActiveSystems(universalSystems);
+        GameSystemService.AddActiveSystems(universalFixedUpdateSystems, SystemsUpdateType.FixedUpdate);
     }
 
     private void CreateEndFrameSystems(GameContext context)

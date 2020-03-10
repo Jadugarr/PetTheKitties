@@ -54,7 +54,6 @@ public class EnterWorldStateSystem : GameReactiveSystem
     private void CreateWorldSystems()
     {
         Systems worldSystems = new Feature("WorldSystemsUpdate")
-            .Add(new CheckCharacterGroundStateSystem(_context))
             .Add(new ProcessInteractionInputSystem(_context))
             .Add(new CharacterOnGroundSystem(_context))
             .Add(new SetCameraFollowTargetSystem(_context))
@@ -81,6 +80,7 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new LoseConditionControllerSystem(_context));
         
         Systems worldSystemsFixedUpdate = new Feature("WorldSystemsFixedUpdate")
+            .Add(new CheckCharacterGroundStateSystem(_context))
             .Add(new SetGravityScaleSystem(_context))
             .Add(new MoveCharacterSystem(_context))
             .Add(new AdjustMoveEndingVelocitySystem(_context))
