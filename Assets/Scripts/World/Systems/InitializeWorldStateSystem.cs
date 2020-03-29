@@ -51,6 +51,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         playerEntity.AddCurrentMovementSpeed(0f);
         playerEntity.AddCharacterGroundState(CharacterGroundState.Undefined, Vector2.zero, 0);
         playerEntity.AddCharacterDirection(CharacterDirection.None);
+        playerEntity.AddStepSize(0.5f);
     }
 
     private void CreateKitten()
@@ -66,6 +67,7 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         kittyEntity.AddCurrentMovementSpeed(0f);
         kittyEntity.AddCharacterGroundState(CharacterGroundState.Undefined, Vector2.zero, 0);
         kittyEntity.AddCharacterDirection(CharacterDirection.None);
+        kittyEntity.AddStepSize(0.3f);
     }
 
     private void CreateWinLoseConditions()

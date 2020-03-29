@@ -30,13 +30,12 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
             CharacterGroundStateData characterGroundStateData;
-            if (characterEntity.characterState.State != CharacterState.Jumping 
+            if (characterEntity.characterState.State != CharacterState.Jumping
                 && characterEntity.characterState.State != CharacterState.JumpEnding
                 && characterEntity.characterState.State != CharacterState.JumpStart)
             {
-                BoxCollider2D characterCollider = characterEntity.view.View.GetComponent<BoxCollider2D>();
                 CharacterSlopeState characterSlopeState =
-                    GroundCheckUtil.CheckIfCharacterOnSlope(characterCollider, out Vector2 slopeNormal);
+                    GroundCheckUtil.CheckIfCharacterOnSlope(characterEntity, out Vector2 slopeNormal);
                 if (characterSlopeState != CharacterSlopeState.None
                     && ((slopeNormal.x < 0f && characterSlopeState == CharacterSlopeState.SlopeAhead)
                         || (slopeNormal.x >= 0f && characterSlopeState == CharacterSlopeState.SlopeBehind)))
@@ -63,8 +62,7 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
 
                     characterGroundStateData.DistanceToGround = 0;
                 }
-                else if (GroundCheckUtil.CheckIfCharacterOnGround(
-                    characterEntity.view.View.GetComponent<BoxCollider2D>(), out Vector2 hitNormal,
+                else if (GroundCheckUtil.CheckIfCharacterOnGround(characterEntity, out Vector2 hitNormal,
                     out float distanceToGround))
                 {
                     characterGroundStateData.GroundNormal = hitNormal;
@@ -85,12 +83,12 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                 characterGroundStateData.DistanceToGround = 0;
             }
 
-            if (characterGroundStateData.CharacterGroundState !=
-                characterEntity.characterGroundState.CharacterGroundState)
-            {
+            // if (characterGroundStateData.CharacterGroundState !=
+            //     characterEntity.characterGroundState.CharacterGroundState)
+            // {
                 characterEntity.ReplaceCharacterGroundState(characterGroundStateData.CharacterGroundState,
                     characterGroundStateData.GroundNormal, characterGroundStateData.DistanceToGround);
-            }
+            // }
         }
     }
 }

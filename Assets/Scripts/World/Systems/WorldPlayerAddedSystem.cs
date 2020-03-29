@@ -49,6 +49,12 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
             {
                 gameEntity.AddRigidbody(rigidbody2D);
             }
+
+            BoxCollider2D collider = playerView.GetComponent<BoxCollider2D>();
+            if (collider)
+            {
+                gameEntity.AddCollider(collider);
+            }
         }
     }
 }

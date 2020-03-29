@@ -105,10 +105,7 @@ public class GameController : MonoBehaviour
             .Add(new ExitWorldNavigationSubStateSystem(context))
             .Add(new RestartLevelSystem(context));
         
-        Systems universalFixedUpdateSystems = new Feature("UniversalFixedUpdateSystems")
-            .Add(new SyncPositionAndViewSystem(context))
-            .Add(new SyncVelocitySystem(context))
-            .Add(new SyncMovementAnimationSystem(context));
+        Systems universalFixedUpdateSystems = new Feature("UniversalFixedUpdateSystems");
 
         GameSystemService.AddActiveSystems(universalSystems);
         GameSystemService.AddActiveSystems(universalFixedUpdateSystems, SystemsUpdateType.FixedUpdate);

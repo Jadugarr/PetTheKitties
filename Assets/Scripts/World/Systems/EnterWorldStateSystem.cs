@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using Entitas;
+using Entitas.Animations.Systems;
 using Entitas.Common;
 using Entitas.Input.Systems;
 using Entitas.Kitty.Systems;
+using Entitas.Position;
 using Entitas.World.Systems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -55,7 +57,6 @@ public class EnterWorldStateSystem : GameReactiveSystem
     {
         Systems worldSystems = new Feature("WorldSystemsUpdate")
             .Add(new ProcessInteractionInputSystem(_context))
-            .Add(new CharacterOnGroundSystem(_context))
             .Add(new SetCameraFollowTargetSystem(_context))
             .Add(new InitializeWorldStateSystem(_context))
             .Add(new SetCameraConfinerSystem(_context))
@@ -80,7 +81,11 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new LoseConditionControllerSystem(_context));
         
         Systems worldSystemsFixedUpdate = new Feature("WorldSystemsFixedUpdate")
+            .Add(new SyncPositionAndViewSystem(_context))
+            .Add(new SyncVelocitySystem(_context))
+            .Add(new SyncMovementAnimationSystem(_context))
             .Add(new CheckCharacterGroundStateSystem(_context))
+            .Add(new CharacterOnGroundSystem(_context))
             .Add(new SetGravityScaleSystem(_context))
             .Add(new MoveCharacterSystem(_context))
             .Add(new AdjustMoveEndingVelocitySystem(_context))
