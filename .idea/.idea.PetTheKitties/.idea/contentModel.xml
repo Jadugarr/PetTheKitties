@@ -168,6 +168,7 @@
               <e p="GameActionFinishedComponent.cs" t="Include" />
               <e p="GameAttackComponent.cs" t="Include" />
               <e p="GameAttackInputComponent.cs" t="Include" />
+              <e p="GameBackgroundComponent.cs" t="Include" />
               <e p="GameBattleActionChoicesComponent.cs" t="Include" />
               <e p="GameBattleActionComponent.cs" t="Include" />
               <e p="GameBattleComponent.cs" t="Include" />
@@ -586,6 +587,7 @@
           <e p="World" t="Include">
             <e p="CharacterGroundState.cs" t="Include" />
             <e p="Components" t="Include">
+              <e p="BackgroundComponent.cs" t="Include" />
               <e p="CharacterGroundStateComponent.cs" t="Include" />
               <e p="FollowCharacterComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />

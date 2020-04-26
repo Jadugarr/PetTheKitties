@@ -12,71 +12,73 @@ public static class GameComponentsLookup {
     public const int ActionFinished = 1;
     public const int Attack = 2;
     public const int AttackInput = 3;
-    public const int BattleActionChoices = 4;
-    public const int BattleAction = 5;
-    public const int Battle = 6;
-    public const int BattleEnd = 7;
-    public const int BattleImage = 8;
-    public const int Camera = 9;
-    public const int ChangeScene = 10;
-    public const int CharacterAnimator = 11;
-    public const int CharacterDirection = 12;
-    public const int CharacterGroundState = 13;
-    public const int CharacterState = 14;
-    public const int CharacterVelocity = 15;
-    public const int Collider = 16;
-    public const int CollisionTrigger = 17;
-    public const int CurrentMovementSpeed = 18;
-    public const int Defend = 19;
-    public const int DefenseStat = 20;
-    public const int Enemy = 21;
-    public const int EnemySpawnCooldown = 22;
-    public const int EnemySpawnInput = 23;
-    public const int InteractInputAvailable = 24;
-    public const int CharacterReachedGoal = 25;
-    public const int PlayerInteraction = 26;
-    public const int Interactable = 27;
-    public const int ExecuteAction = 28;
-    public const int ExecutionTime = 29;
-    public const int FollowCharacter = 30;
-    public const int GameState = 31;
-    public const int GoalReached = 32;
-    public const int Health = 33;
-    public const int Id = 34;
-    public const int Input = 35;
-    public const int InteractionTriggered = 36;
-    public const int JumpCharacter = 37;
-    public const int JumpForce = 38;
-    public const int JumpInputAvailable = 39;
-    public const int Kitty = 40;
-    public const int LoseCondition = 41;
-    public const int LoseConditionsFulfilled = 42;
-    public const int MoveCharacter = 43;
-    public const int MovementSpeed = 44;
-    public const int PauseInputAvailable = 45;
-    public const int Player = 46;
-    public const int Position = 47;
-    public const int RaycastTest = 48;
-    public const int RestartLevel = 49;
-    public const int Rigidbody = 50;
-    public const int Scared = 51;
-    public const int SceneLoaded = 52;
-    public const int Speed = 53;
-    public const int StepSize = 54;
-    public const int SubState = 55;
-    public const int Target = 56;
-    public const int UnloadScene = 57;
-    public const int View = 58;
-    public const int WinCondition = 59;
-    public const int WinConditionsFulfilled = 60;
+    public const int Background = 4;
+    public const int BattleActionChoices = 5;
+    public const int BattleAction = 6;
+    public const int Battle = 7;
+    public const int BattleEnd = 8;
+    public const int BattleImage = 9;
+    public const int Camera = 10;
+    public const int ChangeScene = 11;
+    public const int CharacterAnimator = 12;
+    public const int CharacterDirection = 13;
+    public const int CharacterGroundState = 14;
+    public const int CharacterState = 15;
+    public const int CharacterVelocity = 16;
+    public const int Collider = 17;
+    public const int CollisionTrigger = 18;
+    public const int CurrentMovementSpeed = 19;
+    public const int Defend = 20;
+    public const int DefenseStat = 21;
+    public const int Enemy = 22;
+    public const int EnemySpawnCooldown = 23;
+    public const int EnemySpawnInput = 24;
+    public const int InteractInputAvailable = 25;
+    public const int CharacterReachedGoal = 26;
+    public const int PlayerInteraction = 27;
+    public const int Interactable = 28;
+    public const int ExecuteAction = 29;
+    public const int ExecutionTime = 30;
+    public const int FollowCharacter = 31;
+    public const int GameState = 32;
+    public const int GoalReached = 33;
+    public const int Health = 34;
+    public const int Id = 35;
+    public const int Input = 36;
+    public const int InteractionTriggered = 37;
+    public const int JumpCharacter = 38;
+    public const int JumpForce = 39;
+    public const int JumpInputAvailable = 40;
+    public const int Kitty = 41;
+    public const int LoseCondition = 42;
+    public const int LoseConditionsFulfilled = 43;
+    public const int MoveCharacter = 44;
+    public const int MovementSpeed = 45;
+    public const int PauseInputAvailable = 46;
+    public const int Player = 47;
+    public const int Position = 48;
+    public const int RaycastTest = 49;
+    public const int RestartLevel = 50;
+    public const int Rigidbody = 51;
+    public const int Scared = 52;
+    public const int SceneLoaded = 53;
+    public const int Speed = 54;
+    public const int StepSize = 55;
+    public const int SubState = 56;
+    public const int Target = 57;
+    public const int UnloadScene = 58;
+    public const int View = 59;
+    public const int WinCondition = 60;
+    public const int WinConditionsFulfilled = 61;
 
-    public const int TotalComponents = 61;
+    public const int TotalComponents = 62;
 
     public static readonly string[] componentNames = {
         "Acceleration",
         "ActionFinished",
         "Attack",
         "AttackInput",
+        "Background",
         "BattleActionChoices",
         "BattleAction",
         "Battle",
@@ -141,6 +143,7 @@ public static class GameComponentsLookup {
         typeof(ActionFinishedComponent),
         typeof(AttackComponent),
         typeof(AttackInputComponent),
+        typeof(BackgroundComponent),
         typeof(BattleActionChoicesComponent),
         typeof(BattleActionComponent),
         typeof(BattleComponent),

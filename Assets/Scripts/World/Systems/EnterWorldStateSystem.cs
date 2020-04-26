@@ -102,7 +102,6 @@ public class EnterWorldStateSystem : GameReactiveSystem
             //Animations
             .Add(new RenderVelocityAnimationsSystem(_context))
             .Add(new RenderCharacterStateAnimationsSystem(_context));
-        
         GameSystemService.AddSystemMapping(GameSystemType.World, worldSystems);
         GameSystemService.AddSystemMapping(GameSystemType.WorldFixedUpdate, worldSystemsFixedUpdate);
     }
