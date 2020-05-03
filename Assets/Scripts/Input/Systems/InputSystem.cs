@@ -29,7 +29,7 @@ public class InputSystem : GameExecuteSystem, ICleanupSystem
         {
             foreach (string currentAxis in InputAxis.AxisList)
             {
-                float axisValue = Input.GetAxis(currentAxis);
+                float axisValue = Input.GetAxisRaw(currentAxis);
 
                 if (axisValue != 0)
                 {
