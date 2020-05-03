@@ -4,6 +4,6 @@ public class InitializeMainMenuSystem : IInitializeSystem
 {
     public void Initialize()
     {
-        UIService.ShowWidget(UiAssetTypes.MainMenu, new MainMenuProperties());
+        UIService.ShowWidget<AWidget>(UiAssetTypes.MainMenu, new MainMenuProperties());
     }
 }

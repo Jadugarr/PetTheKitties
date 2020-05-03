@@ -10,4 +10,5 @@
     public const string BattleResultText = "UI/Battle/Texts/BattleResultText";
     public const string CharacterChooserItem = "UI/Battle/ItemChoosers/CharacterChooserItem";
     public const string PauseOverlay = "UI/Common/PauseOverlay";
+    public const string KittyAmountDisplay = "UI/Common/KittyAmountDisplay";
 }

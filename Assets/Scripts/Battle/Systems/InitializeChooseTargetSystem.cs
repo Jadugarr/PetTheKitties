@@ -43,7 +43,7 @@ namespace Entitas.Battle.Systems
                     }
                     else
                     {
-                        UIService.ShowWidget(UiAssetTypes.CharacterChooser,
+                        UIService.ShowWidget<AWidget>(UiAssetTypes.CharacterChooser,
                             new CharacterChooserProperties(possibleTargetIds,
                                 context, currentEntity));
                     }

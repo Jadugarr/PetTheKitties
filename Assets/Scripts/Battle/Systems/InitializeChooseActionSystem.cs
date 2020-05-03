@@ -33,7 +33,7 @@ namespace Entitas.Battle.Systems
                 {
                     if (characterEntity.isPlayer)
                     {
-                        UIService.ShowWidget(UiAssetTypes.ActionChooser,
+                        UIService.ShowWidget<AWidget>(UiAssetTypes.ActionChooser,
                             new ActionChooserProperties(currentEntity,
                                 characterEntity.battleActionChoices.BattleActionChoices.ToArray(), context));
                     }

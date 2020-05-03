@@ -4,7 +4,7 @@ public class DisplayBattleWonSystem : IInitializeSystem, ITearDownSystem
 {
     public void Initialize()
     {
-        UIService.ShowWidget(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I won!"));
+        UIService.ShowWidget<AWidget>(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I won!"));
     }
 
     public void TearDown()

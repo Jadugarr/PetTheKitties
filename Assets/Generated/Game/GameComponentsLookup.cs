@@ -49,29 +49,32 @@ public static class GameComponentsLookup {
     public const int JumpCharacter = 38;
     public const int JumpForce = 39;
     public const int JumpInputAvailable = 40;
-    public const int Kitty = 41;
-    public const int LoseCondition = 42;
-    public const int LoseConditionsFulfilled = 43;
-    public const int MoveCharacter = 44;
-    public const int MovementSpeed = 45;
-    public const int PauseInputAvailable = 46;
-    public const int Player = 47;
-    public const int Position = 48;
-    public const int RaycastTest = 49;
-    public const int RestartLevel = 50;
-    public const int Rigidbody = 51;
-    public const int Scared = 52;
-    public const int SceneLoaded = 53;
-    public const int Speed = 54;
-    public const int StepSize = 55;
-    public const int SubState = 56;
-    public const int Target = 57;
-    public const int UnloadScene = 58;
-    public const int View = 59;
-    public const int WinCondition = 60;
-    public const int WinConditionsFulfilled = 61;
+    public const int KittyAmountDisplay = 41;
+    public const int Kitty = 42;
+    public const int LoseCondition = 43;
+    public const int LoseConditionsFulfilled = 44;
+    public const int MoveCharacter = 45;
+    public const int MovementSpeed = 46;
+    public const int PauseInputAvailable = 47;
+    public const int Player = 48;
+    public const int Position = 49;
+    public const int RaycastTest = 50;
+    public const int RestartLevel = 51;
+    public const int Rigidbody = 52;
+    public const int SavedKittyAmount = 53;
+    public const int Scared = 54;
+    public const int SceneLoaded = 55;
+    public const int Speed = 56;
+    public const int StepSize = 57;
+    public const int SubState = 58;
+    public const int Target = 59;
+    public const int TotalKittyAmount = 60;
+    public const int UnloadScene = 61;
+    public const int View = 62;
+    public const int WinCondition = 63;
+    public const int WinConditionsFulfilled = 64;
 
-    public const int TotalComponents = 62;
+    public const int TotalComponents = 65;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -115,6 +118,7 @@ public static class GameComponentsLookup {
         "JumpCharacter",
         "JumpForce",
         "JumpInputAvailable",
+        "KittyAmountDisplay",
         "Kitty",
         "LoseCondition",
         "LoseConditionsFulfilled",
@@ -126,12 +130,14 @@ public static class GameComponentsLookup {
         "RaycastTest",
         "RestartLevel",
         "Rigidbody",
+        "SavedKittyAmount",
         "Scared",
         "SceneLoaded",
         "Speed",
         "StepSize",
         "SubState",
         "Target",
+        "TotalKittyAmount",
         "UnloadScene",
         "View",
         "WinCondition",
@@ -180,6 +186,7 @@ public static class GameComponentsLookup {
         typeof(JumpCharacterComponent),
         typeof(JumpForceComponent),
         typeof(JumpInputAvailable),
+        typeof(KittyAmountDisplayComponent),
         typeof(KittyComponent),
         typeof(LoseConditionComponent),
         typeof(LoseConditionsFulfilledComponent),
@@ -191,12 +198,14 @@ public static class GameComponentsLookup {
         typeof(RaycastTestComponent),
         typeof(RestartLevelComponent),
         typeof(RigidbodyComponent),
+        typeof(SavedKittyAmountComponent),
         typeof(ScaredComponent),
         typeof(SceneLoadedComponent),
         typeof(SpeedComponent),
         typeof(StepSizeComponent),
         typeof(SubStateComponent),
         typeof(TargetComponent),
+        typeof(TotalKittyAmountComponent),
         typeof(UnloadSceneComponent),
         typeof(ViewComponent),
         typeof(WinConditionComponent),

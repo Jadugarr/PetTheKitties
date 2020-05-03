@@ -34,11 +34,13 @@ public static class UIService
         }
     }
 
-    public static void ShowWidget(string widgetName, IWidgetProperties properties)
+    public static T ShowWidget<T>(string widgetName, IWidgetProperties properties) where T : AWidget
     {
         if (activeWidgets.ContainsKey(widgetName))
         {
-            activeWidgets[widgetName].ApplyProperties(properties);
+            AWidget returnWidget = activeWidgets[widgetName];
+            returnWidget.ApplyProperties(properties);
+            return (T) returnWidget;
         }
         else if (inactiveWidgetPool.ContainsKey(widgetName))
         {
@@ -47,11 +49,11 @@ public static class UIService
             widget.Show();
             activeWidgets.Add(widgetName, widget);
             inactiveWidgetPool.Remove(widgetName);
+            return (T) widget;
         }
         else
         {
-            GameObject asset = GetAsset(widgetName);
-            AWidget assetWidget = asset.GetComponent<AWidget>();
+            AWidget assetWidget = GetAsset(widgetName).GetComponent<AWidget>();
             GameObject parentLayer;
             if (assetWidget.GetComponentType() == UiComponentType.Static)
             {
@@ -68,13 +70,14 @@ public static class UIService
             else
             {
                 Debug.LogError("Layer has not been defined for Widget: " + assetWidget.name);
-                return;
+                return null;
             }
 
-            AWidget newWidget = GameObject.Instantiate(asset, parentLayer.transform).GetComponent<AWidget>();
+            AWidget newWidget = GameObject.Instantiate(assetWidget, parentLayer.transform);
             newWidget.Open();
             newWidget.ApplyProperties(properties);
             activeWidgets.Add(widgetName, newWidget);
+            return (T) newWidget;
         }
     }
 

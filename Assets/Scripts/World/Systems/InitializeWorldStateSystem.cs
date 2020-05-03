@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Cinemachine;
 using Entitas;
 using Entitas.Extensions;
 using Entitas.Scripts.Common.Systems;
@@ -7,12 +5,14 @@ using Entitas.Unity;
 using Entitas.VisualDebugging.Unity;
 using Entitas.World;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 {
     private IGroup<GameEntity> _playerGroup;
     private IGroup<GameEntity> _kittyGroup;
+    private GameEntity kittyAmountDisplayEntity;
+    private GameEntity totalKittyAmountEntity;
+    private GameEntity savedKittyAmountEntity;
 
     public InitializeWorldStateSystem(GameContext context) : base(context)
     {
@@ -34,6 +34,13 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
             CreateKitten();
         }
         CreateWinLoseConditions();
+        CreateUiElements();
+        
+        totalKittyAmountEntity = _context.CreateEntity();
+        totalKittyAmountEntity.AddTotalKittyAmount(spawnPointAmount);
+
+        savedKittyAmountEntity = _context.CreateEntity();
+        savedKittyAmountEntity.AddSavedKittyAmount(0);
 
         _context.SetNewSubstate(SubState.WorldNavigation);
     }
@@ -80,6 +87,15 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
                 new[] {new LoseConditionState {IsFulfilled = false, LoseCondition = LoseCondition.PlayerDead}});
     }
 
+    private void CreateUiElements()
+    {
+        ValueDisplayWidget valueDisplayWidget =
+            UIService.ShowWidget<ValueDisplayWidget>(UiAssetTypes.KittyAmountDisplay, null);
+        kittyAmountDisplayEntity = _context.CreateEntity();
+        kittyAmountDisplayEntity.AddKittyAmountDisplay(valueDisplayWidget);
+        valueDisplayWidget.gameObject.Link(kittyAmountDisplayEntity);
+    }
+
     public void TearDown()
     {
         foreach (GameEntity entity in _kittyGroup.GetEntities())
@@ -103,6 +119,13 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 
             entity.Destroy();
         }
+        
+        UIService.HideWidget(UiAssetTypes.KittyAmountDisplay);
+        kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget.gameObject.Unlink();
+        kittyAmountDisplayEntity.Destroy();
+        
+        totalKittyAmountEntity.Destroy();
+        savedKittyAmountEntity.Destroy();
 
         _context.RemoveWinCondition();
         _context.RemoveLoseCondition();
