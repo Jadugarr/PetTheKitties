@@ -74,6 +74,8 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new ManageJumpingStateHandlingSystem(_context))
             .Add(new ManageFallingStateHandlingSystem(_context))
             .Add(new HandleFallingStateSystem(_context))
+            .Add(new UpdateKittyAmountDisplaySystem(_context))
+            .Add(new KittySavedSystem(_context))
             //WinConditions
             .Add(new InitializeAndTeardownWinConditionsSystem(_context))
             .Add(new InitializeAndTeardownLoseConditionsSystem(_context))

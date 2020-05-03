@@ -26,4 +26,14 @@ public class ValueDisplayWidget : AWidget
     {
         return UiComponentType.Static;
     }
+
+    public void SetImage(Sprite imageToSet)
+    {
+        valueImage.sprite = imageToSet;
+    }
+
+    public void SetValueText(string valueTextToSet)
+    {
+        valueText.text = valueTextToSet;
+    }
 }

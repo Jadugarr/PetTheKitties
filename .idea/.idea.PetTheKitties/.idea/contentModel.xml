@@ -446,6 +446,7 @@
               <e p="CharacterStartFollowSystem.cs" t="Include" />
               <e p="KittyAddedSystem.cs" t="Include" />
               <e p="KittyInteractionSystem.cs" t="Include" />
+              <e p="KittySavedSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Move" t="Include">
@@ -528,6 +529,7 @@
             </e>
             <e p="Systems" t="Include">
               <e p="InitializeMainMenuSystem.cs" t="Include" />
+              <e p="UpdateKittyAmountDisplaySystem.cs" t="Include" />
             </e>
             <e p="UiAssetTypes.cs" t="Include" />
             <e p="UiComponentType.cs" t="Include" />
