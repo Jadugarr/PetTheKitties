@@ -43,19 +43,29 @@ public class EnterWorldStateSystem : GameReactiveSystem
     private void OnWorldSceneLoaded(IGroup<GameEntity> @group, GameEntity entity, int index, IComponent component)
     {
         _sceneLoaded.OnEntityAdded -= OnWorldSceneLoaded;
-        
+
         if (!GameSystemService.HasSystemMapping(GameSystemType.World))
         {
             CreateWorldSystems();
         }
 
         GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.World));
-        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldFixedUpdate), SystemsUpdateType.FixedUpdate);
+        GameSystemService.AddActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldFixedUpdate),
+            SystemsUpdateType.FixedUpdate);
     }
 
     private void CreateWorldSystems()
     {
         Systems worldSystems = new Feature("WorldSystemsUpdate")
+            //Input
+            .Add(new ProcessPauseInputSystem(_context))
+            .Add(new ProcessUnpauseInputSystem(_context))
+            .Add(new CheckPauseInputAvailabilitySystem(_context))
+            .Add(new ProcessWorldMoveInputSystem(_context))
+            .Add(new ProcessJumpInputSystem(_context))
+            .Add(new CheckJumpInputAvailableSystem(_context))
+            .Add(new CountTimeSinceLastJumpInputSystem(_context))
+            .Add(new ResetTimeSinceLastJumpInputSystem(_context))
             .Add(new ProcessInteractionInputSystem(_context))
             .Add(new SetCameraFollowTargetSystem(_context))
             .Add(new InitializeWorldStateSystem(_context))
@@ -81,7 +91,7 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new InitializeAndTeardownLoseConditionsSystem(_context))
             .Add(new WinConditionControllerSystem(_context))
             .Add(new LoseConditionControllerSystem(_context));
-        
+
         Systems worldSystemsFixedUpdate = new Feature("WorldSystemsFixedUpdate")
             .Add(new SyncPositionAndViewSystem(_context))
             .Add(new SyncVelocitySystem(_context))

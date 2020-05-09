@@ -64,12 +64,6 @@ public class GameController : MonoBehaviour
             .Add(new InitPromisesSystem())
             //Input
             .Add(new InputSystem(context))
-            .Add(new ProcessPauseInputSystem(context))
-            .Add(new ProcessUnpauseInputSystem(context))
-            .Add(new CheckPauseInputAvailabilitySystem(context))
-            .Add(new ProcessWorldMoveInputSystem(context))
-            .Add(new ProcessJumpInputSystem(context))
-            .Add(new CheckJumpInputAvailableSystem(context))
             //Scene
             .Add(new EnterBattleStateSystem(context))
             .Add(new ExitBattleStateSystem(context))

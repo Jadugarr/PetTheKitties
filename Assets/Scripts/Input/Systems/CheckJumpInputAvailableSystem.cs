@@ -1,21 +1,10 @@
-using System.Collections.Generic;
-using Entitas;
-using UnityEngine;
+using Configurations;
+using Entitas.Scripts.Common.Systems;
 
-public class CheckJumpInputAvailableSystem : GameReactiveSystem
+public class CheckJumpInputAvailableSystem : GameExecuteSystem
 {
-    public CheckJumpInputAvailableSystem(IContext<GameEntity> context) : base(context)
+    public CheckJumpInputAvailableSystem(GameContext context) : base(context)
     {
-    }
-
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.Input);
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return true;
     }
 
     protected override bool IsInValidState()
@@ -23,13 +12,8 @@ public class CheckJumpInputAvailableSystem : GameReactiveSystem
         return true;
     }
 
-    protected override void ExecuteSystem(List<GameEntity> entities)
+    protected override void ExecuteSystem()
     {
-        for (int i = 0; i < entities.Count; i++)
-        {
-            GameEntity currentInput = entities[i];
-
-            _context.isJumpInputAvailable = currentInput.input.InputCommand != InputCommand.Jump;
-        }
+        _context.isJumpInputAvailable = !_context.hasTimeSinceLastJumpInput || _context.timeSinceLastJumpInput.Value >  GameConfigurations.MovementConstantsConfiguration.TimeUntilJumpInputAvailable;
     }
 }

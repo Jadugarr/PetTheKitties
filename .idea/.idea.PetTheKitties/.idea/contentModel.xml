@@ -224,6 +224,7 @@
               <e p="GameStepSizeComponent.cs" t="Include" />
               <e p="GameSubStateComponent.cs" t="Include" />
               <e p="GameTargetComponent.cs" t="Include" />
+              <e p="GameTimeSinceLastJumpInputComponent.cs" t="Include" />
               <e p="GameTotalKittyAmountComponent.cs" t="Include" />
               <e p="GameUnloadSceneComponent.cs" t="Include" />
               <e p="GameViewComponent.cs" t="Include" />
@@ -403,6 +404,7 @@
               <e p="InteractInputAvailableComponent.cs" t="Include" />
               <e p="JumpInputAvailable.cs" t="Include" />
               <e p="PauseInputAvailableComponent.cs" t="Include" />
+              <e p="TimeSinceLastJumpInputComponent.cs" t="Include" />
             </e>
             <e p="InputAxis.cs" t="Include" />
             <e p="InputCommand.cs" t="Include" />
@@ -410,7 +412,9 @@
               <e p="CheckInteractInputAvailableSystem.cs" t="Include" />
               <e p="CheckJumpInputAvailableSystem.cs" t="Include" />
               <e p="CheckPauseInputAvailabilitySystem.cs" t="Include" />
+              <e p="CountTimeSinceLastJumpInputSystem.cs" t="Include" />
               <e p="InputSystem.cs" t="Include" />
+              <e p="ResetTimeSinceLastJumpInputSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Jump" t="Include">
