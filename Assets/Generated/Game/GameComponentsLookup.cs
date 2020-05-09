@@ -69,13 +69,14 @@ public static class GameComponentsLookup {
     public const int SubState = 58;
     public const int Target = 59;
     public const int TimeSinceLastJumpInput = 60;
-    public const int TotalKittyAmount = 61;
-    public const int UnloadScene = 62;
-    public const int View = 63;
-    public const int WinCondition = 64;
-    public const int WinConditionsFulfilled = 65;
+    public const int TimeSinceLastPauseInput = 61;
+    public const int TotalKittyAmount = 62;
+    public const int UnloadScene = 63;
+    public const int View = 64;
+    public const int WinCondition = 65;
+    public const int WinConditionsFulfilled = 66;
 
-    public const int TotalComponents = 66;
+    public const int TotalComponents = 67;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -139,6 +140,7 @@ public static class GameComponentsLookup {
         "SubState",
         "Target",
         "TimeSinceLastJumpInput",
+        "TimeSinceLastPauseInput",
         "TotalKittyAmount",
         "UnloadScene",
         "View",
@@ -208,6 +210,7 @@ public static class GameComponentsLookup {
         typeof(SubStateComponent),
         typeof(TargetComponent),
         typeof(TimeSinceLastJumpInputComponent),
+        typeof(TimeSinceLastPauseInputComponent),
         typeof(TotalKittyAmountComponent),
         typeof(UnloadSceneComponent),
         typeof(ViewComponent),

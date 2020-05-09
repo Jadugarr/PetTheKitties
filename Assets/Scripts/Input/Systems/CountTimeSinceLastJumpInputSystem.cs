@@ -15,6 +15,6 @@ public class CountTimeSinceLastJumpInputSystem : GameExecuteSystem
     protected override void ExecuteSystem()
     {
         float timeSinceLastJumpInput = _context.hasTimeSinceLastJumpInput ? _context.timeSinceLastJumpInput.Value : 0f;
-        _context.ReplaceTimeSinceLastJumpInput(timeSinceLastJumpInput + Time.deltaTime);
+        _context.ReplaceTimeSinceLastJumpInput(timeSinceLastJumpInput + Time.unscaledDeltaTime);
     }
 }

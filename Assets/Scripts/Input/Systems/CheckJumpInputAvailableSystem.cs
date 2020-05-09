@@ -1,7 +1,8 @@
 using Configurations;
+using Entitas;
 using Entitas.Scripts.Common.Systems;
 
-public class CheckJumpInputAvailableSystem : GameExecuteSystem
+public class CheckJumpInputAvailableSystem : GameExecuteSystem, IInitializeSystem
 {
     public CheckJumpInputAvailableSystem(GameContext context) : base(context)
     {
@@ -10,6 +11,11 @@ public class CheckJumpInputAvailableSystem : GameExecuteSystem
     protected override bool IsInValidState()
     {
         return true;
+    }
+
+    public void Initialize()
+    {
+        _context.isJumpInputAvailable = true;
     }
 
     protected override void ExecuteSystem()

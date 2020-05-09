@@ -1,21 +1,11 @@
-using System.Collections.Generic;
+using Configurations;
 using Entitas;
-using UnityEngine;
+using Entitas.Scripts.Common.Systems;
 
-public class CheckPauseInputAvailabilitySystem : GameReactiveSystem, IInitializeSystem
+public class CheckPauseInputAvailabilitySystem : GameExecuteSystem, IInitializeSystem
 {
-    public CheckPauseInputAvailabilitySystem(IContext<GameEntity> context) : base(context)
+    public CheckPauseInputAvailabilitySystem(GameContext context) : base(context)
     {
-    }
-
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
-    {
-        return context.CreateCollector(GameMatcher.Input);
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return true;
     }
 
     protected override bool IsInValidState()
@@ -23,27 +13,15 @@ public class CheckPauseInputAvailabilitySystem : GameReactiveSystem, IInitialize
         return true;
     }
 
+    protected override void ExecuteSystem()
+    {
+        _context.isPauseInputAvailable = !_context.hasTimeSinceLastPauseInput ||
+                                         _context.timeSinceLastPauseInput.Value > GameConfigurations
+                                             .MovementConstantsConfiguration.TimeUntilPauseInputAvailable;
+    }
+
     public void Initialize()
     {
         _context.isPauseInputAvailable = true;
-    }
-
-    protected override void ExecuteSystem(List<GameEntity> entities)
-    {
-        for (int i = 0; i < entities.Count; i++)
-        {
-            GameEntity currentInput = entities[i];
-
-            if (_context.isPauseInputAvailable && (currentInput.input.InputCommand == InputCommand.Pause ||
-                                                   currentInput.input.InputCommand == InputCommand.Unpause))
-            {
-                _context.isPauseInputAvailable = false;
-            }
-            else if (!_context.isPauseInputAvailable && (currentInput.input.InputCommand != InputCommand.Pause &&
-                                                         currentInput.input.InputCommand != InputCommand.Unpause))
-            {
-                _context.isPauseInputAvailable = true;
-            }
-        }
     }
 }
