@@ -28,5 +28,6 @@ public class ExitWorldStateSystem : GameReactiveSystem
     {
         _context.CreateEntity().AddUnloadScene(GameSceneConstants.WorldScene);
         GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.World));
+        GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldFixedUpdate), SystemsUpdateType.FixedUpdate);
     }
 }
