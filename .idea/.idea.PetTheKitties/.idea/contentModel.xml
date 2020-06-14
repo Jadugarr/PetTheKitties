@@ -370,6 +370,7 @@
             </e>
           </e>
           <e p="Configurations" t="Include">
+            <e p="AssetReferenceConfiguration.cs" t="Include" />
             <e p="CharacterConfiguration.cs" t="Include" />
             <e p="GameConfigurations.cs" t="Include" />
             <e p="InputConfiguration.cs" t="Include" />

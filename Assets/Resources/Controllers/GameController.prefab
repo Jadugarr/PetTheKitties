@@ -48,3 +48,5 @@ MonoBehaviour:
     type: 2}
   movementConstantsConfiguration: {fileID: 11400000, guid: 35dea1335121921459f325f273cb654b,
     type: 2}
+  assetReferenceConfiguration: {fileID: 11400000, guid: f82ab48159349774589c9a232c847b47,
+    type: 2}

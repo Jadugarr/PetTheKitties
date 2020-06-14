@@ -1,7 +1,9 @@
 using System.Collections.Generic;
+using Configurations;
 using Entitas;
 using Entitas.Unity;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class WorldPlayerAddedSystem : GameReactiveSystem
 {
@@ -26,35 +28,37 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        //TODO: Load player async (maybe with promise?)
-        GameObject playerObject = Resources.Load<GameObject>(WorldAssetTypes.WorldPlayer);
+        AssetReference playerReference = GameConfigurations.AssetReferenceConfiguration.WorldPlayerReference;
         Transform playerSpawnPointTransform = GameObject.FindGameObjectWithTag(Tags.PlayerSpawnPoint).transform;
 
         foreach (GameEntity gameEntity in entities)
         {
-            GameObject playerView = GameObject.Instantiate(playerObject, playerSpawnPointTransform.position,
-                playerSpawnPointTransform.rotation);
-            playerView.Link(gameEntity);
-            gameEntity.AddView(playerView);
-            gameEntity.AddPosition(playerView.transform.position);
-            gameEntity.AddCharacterVelocity(Vector2.zero);
-            Animator playerAnimator = playerView.GetComponentInChildren<Animator>();
-            if (playerAnimator)
+            Addressables.InstantiateAsync(playerReference, playerSpawnPointTransform.position,
+                playerSpawnPointTransform.rotation).Completed += handle =>
             {
-                gameEntity.AddCharacterAnimator(playerAnimator);
-            }
+                GameObject playerView = handle.Result;
+                playerView.Link(gameEntity);
+                gameEntity.AddView(playerView);
+                gameEntity.AddPosition(playerView.transform.position);
+                gameEntity.AddCharacterVelocity(Vector2.zero);
+                Animator playerAnimator = playerView.GetComponentInChildren<Animator>();
+                if (playerAnimator)
+                {
+                    gameEntity.AddCharacterAnimator(playerAnimator);
+                }
 
-            Rigidbody2D rigidbody2D = playerView.GetComponent<Rigidbody2D>();
-            if (rigidbody2D)
-            {
-                gameEntity.AddRigidbody(rigidbody2D);
-            }
+                Rigidbody2D rigidbody2D = playerView.GetComponent<Rigidbody2D>();
+                if (rigidbody2D)
+                {
+                    gameEntity.AddRigidbody(rigidbody2D);
+                }
 
-            BoxCollider2D collider = playerView.GetComponent<BoxCollider2D>();
-            if (collider)
-            {
-                gameEntity.AddCollider(collider);
-            }
+                BoxCollider2D collider = playerView.GetComponent<BoxCollider2D>();
+                if (collider)
+                {
+                    gameEntity.AddCollider(collider);
+                }
+            };
         }
     }
 }

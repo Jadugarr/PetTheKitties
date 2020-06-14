@@ -1,7 +1,10 @@
 using System.Collections.Generic;
+using Configurations;
 using Entitas;
 using Entitas.Unity;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
 public class KittyAddedSystem : GameReactiveSystem
 {
@@ -26,36 +29,39 @@ public class KittyAddedSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        GameObject kittyObject = Resources.Load<GameObject>(WorldAssetTypes.WorldKitty);
+        AssetReference kittyReference = GameConfigurations.AssetReferenceConfiguration.KittyReference;
         GameObject[] spawnPoints = GameObject.FindGameObjectsWithTag(Tags.KittySpawnPoint);
 
         for (var i = 0; i < entities.Count; i++)
         {
             GameEntity gameEntity = entities[i];
             Transform spawnPointTransform = spawnPoints[i].transform;
-            GameObject kittyView = GameObject.Instantiate(kittyObject, spawnPointTransform.position,
-                spawnPointTransform.rotation);
-            kittyView.Link(gameEntity);
-            gameEntity.AddView(kittyView);
-            gameEntity.AddPosition(kittyView.transform.position);
-            gameEntity.AddCharacterVelocity(Vector2.zero);
-            Animator kittyAnimator = kittyView.GetComponentInChildren<Animator>();
-            if (kittyAnimator)
+            Addressables.InstantiateAsync(kittyReference, spawnPointTransform.position,
+                spawnPointTransform.rotation).Completed += handle =>
             {
-                gameEntity.AddCharacterAnimator(kittyAnimator);
-            }
+                GameObject kittyView = handle.Result;
+                kittyView.Link(gameEntity);
+                gameEntity.AddView(kittyView);
+                gameEntity.AddPosition(kittyView.transform.position);
+                gameEntity.AddCharacterVelocity(Vector2.zero);
+                Animator kittyAnimator = kittyView.GetComponentInChildren<Animator>();
+                if (kittyAnimator)
+                {
+                    gameEntity.AddCharacterAnimator(kittyAnimator);
+                }
 
-            Rigidbody2D rigidbody2D = kittyView.GetComponent<Rigidbody2D>();
-            if (rigidbody2D)
-            {
-                gameEntity.AddRigidbody(rigidbody2D);
-            }
+                Rigidbody2D rigidbody2D = kittyView.GetComponent<Rigidbody2D>();
+                if (rigidbody2D)
+                {
+                    gameEntity.AddRigidbody(rigidbody2D);
+                }
 
-            BoxCollider2D collider = kittyView.GetComponent<BoxCollider2D>();
-            if (collider)
-            {
-                gameEntity.AddCollider(collider);
-            }
+                BoxCollider2D collider = kittyView.GetComponent<BoxCollider2D>();
+                if (collider)
+                {
+                    gameEntity.AddCollider(collider);
+                }
+            };
         }
     }
 }

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_GroupName: Default Local Group
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 6a2d86d1b6a962f47ae923322f16599e
+  m_SerializeEntries:
+  - m_GUID: 3f0542ea3a84a784081f02fb0cf75fdd
+    m_Address: WorldPlayer
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 87384f3b9016aa44186364c2a9270c1a
+    m_Address: KittyTemplate
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
+      type: 3}
+    m_TargetAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
+      type: 3}
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 391054feb7332e540a1cd1cfa41114dc, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: c9e0145cb72dbe04c914850a3ffae653, type: 2}
+    - {fileID: 11400000, guid: 34c95ca3a057d0a439fb3701c2703cdf, type: 2}

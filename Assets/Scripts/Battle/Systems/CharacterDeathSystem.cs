@@ -2,6 +2,7 @@
 using Entitas;
 using Entitas.Unity;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class CharacterDeathSystem : GameReactiveSystem
 {
@@ -40,7 +41,7 @@ public class CharacterDeathSystem : GameReactiveSystem
             }
             
             gameEntity.view.View.Unlink();
-            GameObject.Destroy(gameEntity.view.View);
+            Addressables.ReleaseInstance(gameEntity.view.View);
 
             gameEntity.Destroy();
         }

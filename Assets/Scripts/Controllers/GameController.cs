@@ -20,6 +20,7 @@ public class GameController : MonoBehaviour
     [SerializeField] private SpawnConfiguration spawnConfiguration;
     [SerializeField] private CharacterConfiguration characterConfiguration;
     [SerializeField] private MovementConstantsConfiguration movementConstantsConfiguration;
+    [SerializeField] private AssetReferenceConfiguration assetReferenceConfiguration;
 
     private void Awake()
     {
@@ -117,6 +118,7 @@ public class GameController : MonoBehaviour
         GameConfigurations.SpawnConfiguration = spawnConfiguration;
         GameConfigurations.CharacterConfiguration = characterConfiguration;
         GameConfigurations.MovementConstantsConfiguration = movementConstantsConfiguration;
+        GameConfigurations.AssetReferenceConfiguration = assetReferenceConfiguration;
     }
 
     // Update is called once per frame
