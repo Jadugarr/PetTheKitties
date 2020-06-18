@@ -21,8 +21,7 @@ public class MoveCharacterSystem : GameReactiveSystem
 
     protected override bool IsInValidState()
     {
-        return _context.gameState.CurrentGameState == GameState.World &&
-               _context.subState.CurrentSubState == SubState.WorldNavigation;
+        return _context.gameState.CurrentGameState == GameState.World;
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)
