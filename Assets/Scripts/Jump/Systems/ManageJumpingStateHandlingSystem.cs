@@ -41,7 +41,7 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
                 if (!areSystemsActive)
                 {
                     CreateJumpingStateSystems();
-                    GameSystemService.AddActiveSystems(jumpingStateSystems, SystemsUpdateType.FixedUpdate);
+                    GameSystemService.AddActiveSystems(jumpingStateSystems);
                     areSystemsActive = true;
                 }
                 return;
@@ -50,7 +50,7 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
 
         if (jumpingStateSystems != null && areSystemsActive)
         {
-            GameSystemService.RemoveActiveSystems(jumpingStateSystems, SystemsUpdateType.FixedUpdate);
+            GameSystemService.RemoveActiveSystems(jumpingStateSystems);
             areSystemsActive = false;
         }
     }
@@ -60,8 +60,7 @@ public class ManageJumpingStateHandlingSystem : GameReactiveSystem
         if (jumpingStateSystems == null)
         {
             jumpingStateSystems = new Feature("JumpingStateSystems")
-                .Add(new HandleJumpEndingStateSystem(_context))
-                .Add(new AdjustEndingJumpVelocitySystem(_context));
+                .Add(new HandleJumpEndingStateSystem(_context));
         }
     }
 }

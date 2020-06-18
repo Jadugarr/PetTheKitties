@@ -26,19 +26,7 @@ public class HandleJumpEndingStateSystem : GameExecuteSystem
                 && gameEntity.characterState.State == CharacterState.Jumping
                 && !gameEntity.hasJumpCharacter)
             {
-                // foreach (GameEntity commandEntity in jumpCommandEntities)
-                // {
-                //     if (commandEntity.jumpCharacter.JumpEntityId == gameEntity.id.Id)
-                //     {
-                //         isHoldingJump = true;
-                //         break;
-                //     }
-                // }
-                //
-                // if (!isHoldingJump)
-                // {
                 gameEntity.ReplaceCharacterState(CharacterState.JumpEnding);
-                // }
             }
         }
     }

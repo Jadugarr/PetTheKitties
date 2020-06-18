@@ -105,6 +105,7 @@ public class EnterWorldStateSystem : GameReactiveSystem
             .Add(new AdjustMoveEndingVelocitySystem(_context))
             .Add(new StartJumpCharacterSystem(_context))
             .Add(new AdjustCharacterMovementToSlopeSystem(_context))
+            .Add(new AdjustEndingJumpVelocitySystem(_context))
             .Add(new CharacterOnGroundMovementVelocitySystem(_context))
             .Add(new CharacterAirborneMovementVelocitySystem(_context))
             // Gravity
