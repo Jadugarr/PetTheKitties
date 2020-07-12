@@ -11,7 +11,7 @@ public enum SystemsUpdateType
     LateUpdate
 }
 
-public static class GameSystemService
+/*public static class GameSystemService
 {
     private static List<Systems> activeUpdateSystems = new List<Systems>();
     private static List<Systems> activeFixedUpdateSystems = new List<Systems>();
@@ -191,4 +191,4 @@ public static class GameSystemService
     {
         return systemTypeMap.ContainsKey(systemType);
     }
-}
+}*/

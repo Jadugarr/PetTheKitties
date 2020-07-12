@@ -42,32 +42,6 @@ public class EnterBattleStateSystem : GameReactiveSystem
     private void OnBattleSceneLoaded(IGroup<GameEntity> @group, GameEntity entity, int index, IComponent component)
     {
         sceneLoadedGroup.OnEntityAdded -= OnBattleSceneLoaded;
-
-        if (!GameSystemService.HasSystemMapping(GameSystemType.Battle))
-        {
-            CreateBattleSystems();
-        }
-
-        Systems battleSystems = GameSystemService.GetSystemMapping(GameSystemType.Battle);
-        GameSystemService.AddActiveSystems(battleSystems);
         _context.SetNewSubstate(SubState.Waiting);
-    }
-
-    private void CreateBattleSystems()
-    {
-        Systems battleSystems = new Feature("BattleStateSystems")
-            .Add(new InitializeBattleSystem(_context))
-            .Add(new InitializeATBSystem(_context))
-            //Battle
-            .Add(new CharacterDeathSystem(_context))
-            .Add(new TeardownCharacterSystem(_context))
-            .Add(new TeardownBattleSystem(_context))
-            //WinConditions
-            .Add(new InitializeAndTeardownWinConditionsSystem(_context))
-            .Add(new InitializeAndTeardownLoseConditionsSystem(_context))
-            .Add(new WinConditionControllerSystem(_context))
-            .Add(new LoseConditionControllerSystem(_context));
-        
-        GameSystemService.AddSystemMapping(GameSystemType.Battle, battleSystems);
     }
 }

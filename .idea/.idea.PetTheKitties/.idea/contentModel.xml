@@ -312,16 +312,8 @@
               <e p="CheckPlayerDeadConditionSystem.cs" t="Include" />
               <e p="DisplayBattleLostSystem.cs" t="Include" />
               <e p="DisplayBattleWonSystem.cs" t="Include" />
-              <e p="EnterChooseActionStateSystem.cs" t="Include" />
-              <e p="EnterChooseTargetStateSystem.cs" t="Include" />
-              <e p="EnterExecuteActionStateSystem.cs" t="Include" />
-              <e p="EnterExitFinalizeActionStateSystem.cs" t="Include" />
               <e p="ExecuteActionsSystem.cs" t="Include" />
               <e p="ExitChooseActionStateSystem.cs" t="Include" />
-              <e p="ExitChooseTargetStateSystem.cs" t="Include" />
-              <e p="ExitExecuteActionStateSystem.cs" t="Include" />
-              <e p="InitializeAndTeardownLoseConditionsSystem.cs" t="Include" />
-              <e p="InitializeAndTeardownWinConditionsSystem.cs" t="Include" />
               <e p="InitializeATBSystem.cs" t="Include" />
               <e p="InitializeBattleSystem.cs" t="Include" />
               <e p="InitializeChooseActionSystem.cs" t="Include" />
@@ -376,7 +368,6 @@
             <e p="InputConfiguration.cs" t="Include" />
             <e p="MovementConstantsConfiguration.cs" t="Include" />
             <e p="SpawnConfiguration.cs" t="Include" />
-            <e p="WinLoseConditionConfiguration.cs" t="Include" />
           </e>
           <e p="Controllers" t="Include">
             <e p="GameController.cs" t="Include" />
@@ -432,8 +423,6 @@
               <e p="HandleFallingStateSystem.cs" t="Include" />
               <e p="HandleGroundedJumpStateSystem.cs" t="Include" />
               <e p="HandleJumpEndingStateSystem.cs" t="Include" />
-              <e p="ManageFallingStateHandlingSystem.cs" t="Include" />
-              <e p="ManageJumpingStateHandlingSystem.cs" t="Include" />
               <e p="ProcessJumpInputSystem.cs" t="Include" />
               <e p="StartJumpCharacterSystem.cs" t="Include" />
             </e>
@@ -506,14 +495,8 @@
               <e p="CleanupUnloadSceneSystem.cs" t="Include" />
               <e p="EnterBattleStateSystem.cs" t="Include" />
               <e p="EnterMainMenuStateSystem.cs" t="Include" />
-              <e p="EnterPlayerLostStateSystem.cs" t="Include" />
-              <e p="EnterPlayerWonStateSystem.cs" t="Include" />
-              <e p="EnterWaitingSubStateSystem.cs" t="Include" />
               <e p="ExitBattleStateSystem.cs" t="Include" />
               <e p="ExitMainMenuStateSystem.cs" t="Include" />
-              <e p="ExitPlayerLostStateSystem.cs" t="Include" />
-              <e p="ExitPlayerWonStateSystem.cs" t="Include" />
-              <e p="ExitWaitingSubStateSystem.cs" t="Include" />
               <e p="UnloadSceneSystem.cs" t="Include" />
             </e>
           </e>
@@ -622,9 +605,7 @@
               <e p="CharacterScaredSystem.cs" t="Include" />
               <e p="CheckCharacterGroundStateSystem.cs" t="Include" />
               <e p="CheckKittensReachedGoalConditionSystem.cs" t="Include" />
-              <e p="EnterWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
-              <e p="ExitWorldNavigationSubStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
               <e p="InitializeWorldStateSystem.cs" t="Include" />
               <e p="SetGravityScaleSystem.cs" t="Include" />

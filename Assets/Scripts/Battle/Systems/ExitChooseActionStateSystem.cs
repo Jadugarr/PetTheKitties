@@ -26,11 +26,6 @@ public class ExitChooseActionStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (GameSystemService.HasSystemMapping(GameSystemType.ChooseAction))
-        {
-            GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.ChooseAction));
-        }
-
         UIService.HideWidget(UiAssetTypes.ActionChooser);
     }
 }

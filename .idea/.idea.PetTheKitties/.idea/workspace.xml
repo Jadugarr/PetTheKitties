@@ -20,12 +20,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d000e499-4345-43d9-8ecf-6364769f742b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Logs/Packages-Update.log" beforeDir="false" afterPath="$PROJECT_DIR$/Logs/Packages-Update.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseActionStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseActionStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseTargetStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseTargetStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExecuteActionStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExecuteActionStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExitFinalizeActionStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExitFinalizeActionStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseTargetStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseTargetStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitExecuteActionStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitExecuteActionStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownLoseConditionsSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownLoseConditionsSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownWinConditionsSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownWinConditionsSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configurations/WinLoseConditionConfiguration.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configurations/WinLoseConditionConfiguration.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageJumpingStateHandlingSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageJumpingStateHandlingSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterBattleStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterBattleStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterMainMenuStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterMainMenuStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerLostStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerLostStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerWonStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerWonStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterWaitingSubStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterWaitingSubStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerLostStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerLostStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerWonStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerWonStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitWaitingSubStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitWaitingSubStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldNavigationSubStateSystem.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldNavigationSubStateSystem.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,13 +85,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Components/FollowCharacterComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Components/ScaredComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/2d-extras/Assets/Tilemap/Tiles/Rule Override Tile/Scripts/RuleOverrideTile.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldNavigationSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/2d-extras/Assets/Tilemap/Tiles/Rule Override Tile/Scripts/Editor/PopulateRuleOverrideTileWizard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterScaredSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittensReachedGoalConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -64,24 +106,19 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Components/SceneLoadedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Systems/UpdateKittyAmountDisplaySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ChangeSceneSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitWaitingSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterWaitingSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ChangeSubStateInputMapSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerLostStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/SavedKittyAmountComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/UnloadSceneSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterBattleStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerWonStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Systems/ResetTimeSinceLastJumpInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2DB13BA0-D523-4322-8AA9-892C408FB49A/bd/80c54866/Input.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterMainMenuStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitPlayerLostStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/CleanupSceneLoadedSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerWonStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/GameSceneConstants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../EntitasExamples/2dRoguelike/Assets/Scripts/GameController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/GoalReachedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/KittyComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/PlayerInteractionComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -126,25 +163,25 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameAttackInputComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/CharacterAirborneMovementVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Move/Systems/AdjustMoveEndingVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFFF7C0B-1952-412C-B811-8DDDD204A124/fd/f8cb9102/ReactiveSystem`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/GameExecuteSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Components/JumpCharacterSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoseConditionsFulfilledComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ProcessJumpInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/StartJumpCharacterSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleGroundedJumpStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFFF7C0B-1952-412C-B811-8DDDD204A124/2a/3e5d5388/IContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePauseInputAvailableComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePlayerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageJumpingStateHandlingSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameRigidbodyComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleFallingStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/MovementConstantsConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/CharacterConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/SpawnConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/WinLoseConditionConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/InputConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/CharacterChooser/CharacterChooserItemWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/UIController.cs" root0="FORCE_HIGHLIGHTING" />
@@ -162,6 +199,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameKittyAmountDisplayComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Animations/AnimationTriggerConstants.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ActionChooser/ActionChooserWidget.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFFF7C0B-1952-412C-B811-8DDDD204A124/70/db2d7399/IEntity.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ReturnButton/ReturnToMainMenuBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/PauseOverlay/PauseOverlayWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/MainMenu/MainMenuBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
@@ -216,7 +254,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Behaviours/DeathPlaneBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/ExitPausedSubStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/GameInitializeSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Systems/ResetTimeSinceLastPauseInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/ProcessPauseInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/ChangeGameStateInputMapSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -225,8 +262,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Contexts.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Feature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/InitPromisesSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/GameReactiveSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/GameExecuteSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Systems/ProcessUnpauseInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/DesperateDevs/Compile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/SubState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -241,6 +276,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Feature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Camera/Systems/SetCameraConfinerSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/AttackInputComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/LoseConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Components/TimeSinceLastPauseInputComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/SpeedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -255,7 +291,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseTargetSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/Promises/PromiseFactory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeATBSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExitFinalizeActionStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleLostSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeBattleSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMPro.cginc" root0="FORCE_HIGHLIGHTING" />
@@ -263,29 +298,24 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_Bitmap-Mobile.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseActionStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseTargetStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Mobile Overlay.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExecuteActionStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/LoseConditionControllerSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownLoseConditionsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckKillEnemiesConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Shaders/TMP_SDF-Surface-Mobile.shader" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownWinConditionsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ProcessBattleCancelInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ActionTargetChosenSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ActionTimeAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleWonSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitExecuteActionStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/TeardownCharacterSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExecuteActionsSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/TeardownBattleSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ActionChosenSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/WinConditionControllerSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/2d-extras/Assets/Tilemap/Tiles/Rule Tile/Scripts/Editor/RuleTileEditor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseTargetStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/LoseCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/WinCondition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/ConditionModifier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/2d-extras/Assets/Tilemap/Tiles/Random Tile/Scripts/RandomTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/2d-extras/Assets/Tilemap/Tiles/Terrain Tile/Scripts/TerrainTile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/CharacterState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -293,26 +323,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittensReachedGoalConditionSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Components/StepSizeComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/View/ColliderComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterOnGroundSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Components/BackgroundComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/InputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UiAssetTypes.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseTargetSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleLostSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleWonSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeATBSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeBattleSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameKittyAmountDisplayComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Components/KittyAmountDisplayComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/Common/ValueDisplayWidget.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Components/SavedKittyAmountComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/KittySavedSystem.cs" />
@@ -330,20 +340,40 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/CountTimeSinceLastJumpInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/ProcessUnpauseInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/ResetTimeSinceLastPauseInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/KittyAddedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CharacterDeathSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/MoveCharacterSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ProcessJumpInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageJumpingStateHandlingSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/InputSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.ChooseAction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.Universal.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseActionStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterChooseTargetStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExitFinalizeActionStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeAndTeardownLoseConditionsSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/EnterExecuteActionStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageFallingStateHandlingSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ManageJumpingStateHandlingSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerLostStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterPlayerWonStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterMainMenuStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterWaitingSubStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterBattleStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
       </list>
     </option>
   </component>
@@ -378,10 +408,10 @@
       <option name="pid" />
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="1316">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="1316" />
       <method v="2" />
     </configuration>
     <list>
@@ -407,119 +437,106 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1877" height="222" key="GridCell.Tab.0.bottom" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.0.bottom" timestamp="1594553382389">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
+    <state width="1877" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553382389" />
     <state width="1877" height="375" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
-    <state width="1877" height="222" key="GridCell.Tab.0.center" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.0.center" timestamp="1594553382389">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534877" />
+    <state width="1877" height="222" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553382389" />
     <state width="1877" height="375" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
-    <state width="1877" height="222" key="GridCell.Tab.0.left" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.0.left" timestamp="1594553382389">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534877" />
+    <state width="1877" height="222" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553382389" />
     <state width="1877" height="375" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
-    <state width="1877" height="222" key="GridCell.Tab.0.right" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.0.right" timestamp="1594553382389">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534877" />
+    <state width="1877" height="222" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553382389" />
     <state width="1877" height="375" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
-    <state width="1877" height="222" key="GridCell.Tab.1.bottom" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.1.bottom" timestamp="1594553392540">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
+    <state width="1877" height="222" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553392540" />
     <state width="1877" height="375" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
-    <state width="1877" height="222" key="GridCell.Tab.1.center" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.1.center" timestamp="1594553392540">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
+    <state width="1877" height="222" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553392540" />
     <state width="1877" height="375" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
-    <state width="1877" height="222" key="GridCell.Tab.1.left" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.1.left" timestamp="1594553392540">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
+    <state width="1877" height="222" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553392540" />
     <state width="1877" height="375" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
-    <state width="1877" height="222" key="GridCell.Tab.1.right" timestamp="1592506243898">
+    <state width="1877" height="222" key="GridCell.Tab.1.right" timestamp="1594553392540">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
+    <state width="1877" height="222" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553392540" />
     <state width="1877" height="375" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135331" />
     <state width="1877" height="222" key="GridCell.Tab.2.bottom" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.2.bottom/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.2.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.2.center" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.2.center/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.2.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.2.left" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.2.left/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.2.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.2.right" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.2.right/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.2.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.3.bottom" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.3.bottom/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.3.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.3.center" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.3.center/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.3.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.3.left" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.3.left/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.3.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state width="1877" height="222" key="GridCell.Tab.3.right" timestamp="1592506243898">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="222" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592506243898" />
-    <state width="1877" height="307" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.6.1920.1040@0.0.1920.1040" timestamp="1584346534878" />
     <state width="1877" height="375" key="GridCell.Tab.3.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
     <state x="-1126" y="235" key="RiderGenerateDialog" timestamp="1589021284040">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="235" key="RiderGenerateDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1589021284040" />
+    <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594552758228">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594552758228" />
     <state x="-1436" y="250" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1592501558789">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1436" y="250" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592501558789" />
-    <state x="-1217" y="160" width="666" height="536" key="find.popup" timestamp="1592505663419">
+    <state x="-1217" y="160" width="666" height="536" key="find.popup" timestamp="1594539715038">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1217" y="160" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592505663419" />
-    <state x="703" y="160" width="666" height="536" key="find.popup/1920.-6.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1585480227177" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1592581880945">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1217" y="160" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594539715038" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594551670811">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1592505632071" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594551670811" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.-6.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586436158060" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592581880945" />
   </component>

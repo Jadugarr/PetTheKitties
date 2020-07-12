@@ -1,6 +1,5 @@
 using Entitas;
 using System;
-using System.Collections.Generic;
 using Configurations;
 using Entitas.Actions.Systems;
 using Entitas.Animations.Systems;
@@ -8,7 +7,6 @@ using Entitas.Battle.Systems;
 using Entitas.Camera.Systems;
 using Entitas.Input.Systems;
 using Entitas.Kitty.Systems;
-using Entitas.Player;
 using Entitas.Position;
 using Entitas.Scripts.Common.Systems;
 using Entitas.World.Systems;
@@ -22,8 +20,16 @@ public class GameController : MonoBehaviour
     [SerializeField] private MovementConstantsConfiguration movementConstantsConfiguration;
     [SerializeField] private AssetReferenceConfiguration assetReferenceConfiguration;
 
+    private Systems updateSystems;
+    private Systems fixedUpdateSystems;
+    private Systems lateUpdateSystems;
+
     private void Awake()
     {
+        updateSystems = new Feature("UpdateSystems");
+        fixedUpdateSystems = new Feature("FixedUpdateSystems");
+        lateUpdateSystems = new Feature("LateUpdateSystems");
+        
         Contexts contexts = Contexts.sharedInstance;
         foreach (var context in contexts.allContexts)
         {
@@ -37,10 +43,12 @@ public class GameController : MonoBehaviour
         InitConfigs();
         Contexts pools = Contexts.sharedInstance;
 
-        CreateUniversalSystems(pools.game);
-        CreateEndFrameSystems(pools.game);
+        CreateSystems(pools.game);
 
         ExecuteOneOffSystems(pools.game);
+        updateSystems.Initialize();
+        fixedUpdateSystems.Initialize();
+        lateUpdateSystems.Initialize();
     }
 
     // add an id to every entity as it's created
@@ -58,9 +66,11 @@ public class GameController : MonoBehaviour
         oneOffSystems.Initialize();
     }
 
-    private void CreateUniversalSystems(GameContext context)
+    private void CreateSystems(GameContext context)
     {
-        Systems universalSystems = new Feature("UniversalSystems")
+        #region BaseSystems
+
+        updateSystems
             //Promises
             .Add(new InitPromisesSystem())
             //Input
@@ -82,35 +92,196 @@ public class GameController : MonoBehaviour
             .Add(new ChangeSubStateInputMapSystem(context))
             .Add(new EnterPausedSubStateSystem(context))
             .Add(new ExitPausedSubStateSystem(context))
-            .Add(new EnterWaitingSubStateSystem(context))
-            .Add(new ExitWaitingSubStateSystem(context))
-            .Add(new EnterPlayerWonStateSystem(context))
-            .Add(new ExitPlayerWonStateSystem(context))
-            .Add(new EnterPlayerLostStateSystem(context))
-            .Add(new ExitPlayerLostStateSystem(context))
-            .Add(new EnterChooseActionStateSystem(context))
             .Add(new ExitChooseActionStateSystem(context))
-            .Add(new EnterChooseTargetStateSystem(context))
-            .Add(new ExitChooseTargetStateSystem(context))
-            .Add(new EnterExecuteActionStateSystem(context))
-            .Add(new ExitExecuteActionStateSystem(context))
-            .Add(new EnterFinalizeActionStateSystem(context))
-            .Add(new ExitFinalizeActionStateSystem(context))
-            .Add(new EnterWorldNavigationSubStateSystem(context))
-            .Add(new ExitWorldNavigationSubStateSystem(context))
             .Add(new RestartLevelSystem(context));
-        
-        Systems universalFixedUpdateSystems = new Feature("UniversalFixedUpdateSystems");
 
-        GameSystemService.AddActiveSystems(universalSystems);
-        GameSystemService.AddActiveSystems(universalFixedUpdateSystems, SystemsUpdateType.FixedUpdate);
-    }
+        #endregion
 
-    private void CreateEndFrameSystems(GameContext context)
-    {
-        // Systems endFrameSystems = new Feature("EndFrameSystems");
-        //
-        // GameSystemService.AddActiveSystems(endFrameSystems, SystemsUpdateType.LateUpdate);
+        #region ChooseActionStateSystems
+
+        updateSystems
+            .Add(new InitializeChooseActionSystem(context))
+            .Add(new ActionChosenSystem(context));
+
+        #endregion
+
+        #region ChooseTargetSystems
+
+        updateSystems
+            .Add(new InitializeChooseTargetSystem(context))
+            .Add(new ActionTargetChosenSystem(context));
+
+        #endregion
+
+        #region FinalizeActionSystems
+
+        updateSystems
+            .Add(new AddActionTimeSystem(context))
+            .Add(new ActionTimeAddedSystem(context));
+
+        #endregion
+
+        #region ExecuteActionSystems
+
+        updateSystems
+            //Actions
+            .Add(new InitializeExecuteActionSystem(context))
+            .Add(new ExecutePlayerAttackActionSystem(context))
+            .Add(new ExecuteDefenseActionSystem(context))
+            .Add(new ReleaseDefenseActionSystem(context))
+            .Add(new ActionFinishedSystem(context));
+
+        #endregion
+
+        #region WinConditionSystems
+
+        updateSystems
+            .Add(new CheckKillEnemiesConditionSystem(context))
+            .Add(new CheckKittensReachedGoalConditionSystem(context));
+
+        #endregion
+
+        #region LoseConditionSystems
+
+        updateSystems
+            .Add(new CheckPlayerDeadConditionSystem(context));
+
+        #endregion
+
+        #region FallingStateSystems
+
+        updateSystems
+            .Add(new HandleGroundedJumpStateSystem(context));
+
+        #endregion
+
+        #region JumpingStateSystems
+
+        updateSystems
+            .Add(new HandleJumpEndingStateSystem(context));
+
+        #endregion
+
+        #region BattleLostSystems
+
+        updateSystems
+            .Add(new DisplayBattleLostSystem());
+
+        #endregion
+
+        #region BattleWonSystems
+
+        updateSystems
+            .Add(new DisplayBattleWonSystem());
+
+        #endregion
+
+        #region MainMenuSystems
+
+        updateSystems
+            .Add(new InitializeMainMenuSystem());
+
+        #endregion
+
+        #region WaitingStateSystems
+
+        updateSystems
+            .Add(new ActionTimeSystem(context))
+            //Actions
+            .Add(new ExecuteChooseActionSystem(context))
+            .Add(new ExecuteActionsSystem(context));
+
+        #endregion
+
+        #region BattleStateSystems
+
+        updateSystems
+            .Add(new InitializeBattleSystem(context))
+            .Add(new InitializeATBSystem(context))
+            //Battle
+            .Add(new CharacterDeathSystem(context))
+            .Add(new TeardownCharacterSystem(context))
+            .Add(new TeardownBattleSystem(context))
+            //WinConditions
+            .Add(new WinConditionControllerSystem(context))
+            .Add(new LoseConditionControllerSystem(context));
+
+        #endregion
+
+        #region TestSystems
+
+        updateSystems
+            // Some test systems
+            .Add(new ProcessRaycastTestInputSystem(context))
+            .Add(new RaycastTestSystem(context));
+
+        #endregion
+
+        #region WorldUpdateSystems
+
+        updateSystems
+            //Input
+            .Add(new ProcessPauseInputSystem(context))
+            .Add(new ProcessUnpauseInputSystem(context))
+            .Add(new ProcessWorldMoveInputSystem(context))
+            .Add(new ProcessJumpInputSystem(context))
+            .Add(new CountTimeSinceLastJumpInputSystem(context))
+            .Add(new ResetTimeSinceLastJumpInputSystem(context))
+            .Add(new CheckJumpInputAvailableSystem(context))
+            .Add(new CountTimeSinceLastPauseInputSystem(context))
+            .Add(new ResetTimeSinceLastPauseInputSystem(context))
+            .Add(new CheckPauseInputAvailabilitySystem(context))
+            .Add(new ProcessInteractionInputSystem(context))
+            .Add(new SetCameraFollowTargetSystem(context))
+            .Add(new InitializeWorldStateSystem(context))
+            .Add(new SetCameraConfinerSystem(context))
+            .Add(new WorldPlayerAddedSystem(context))
+            .Add(new KittyAddedSystem(context))
+            .Add(new CharacterDeathSystem(context))
+            .Add(new CheckInteractInputAvailableSystem(context))
+            .Add(new KittyInteractionSystem(context))
+            .Add(new CharacterStartFollowSystem(context))
+            .Add(new CharacterDirectionSystem(context))
+            .Add(new CharacterFollowSystem(context))
+            .Add(new CharacterScaredSystem(context))
+            .Add(new CharacterReachedGoalSystem(context))
+            .Add(new HandleCharacterMovementStateSystem(context))
+            .Add(new HandleFallingStateSystem(context))
+            .Add(new UpdateKittyAmountDisplaySystem(context))
+            .Add(new KittySavedSystem(context))
+            //WinConditions
+            .Add(new WinConditionControllerSystem(context))
+            .Add(new LoseConditionControllerSystem(context));
+
+        #endregion
+
+        #region WorldFixedUpdateSystems
+
+        fixedUpdateSystems
+            .Add(new SyncPositionAndViewSystem(context))
+            .Add(new SyncVelocitySystem(context))
+            .Add(new SyncMovementAnimationSystem(context))
+            .Add(new CheckCharacterGroundStateSystem(context))
+            .Add(new CharacterOnGroundSystem(context))
+            .Add(new SetGravityScaleSystem(context))
+            .Add(new MoveCharacterSystem(context))
+            .Add(new AdjustMoveEndingVelocitySystem(context))
+            .Add(new StartJumpCharacterSystem(context))
+            .Add(new AdjustCharacterMovementToSlopeSystem(context))
+            .Add(new AdjustEndingJumpVelocitySystem(context))
+            .Add(new CharacterOnGroundMovementVelocitySystem(context))
+            .Add(new CharacterAirborneMovementVelocitySystem(context))
+            // Gravity
+            .Add(new CharacterGravitySystem(context))
+            //Position
+            .Add(new RenderPositionSystem(context))
+            //Velocity
+            .Add(new RenderVelocitySystem(context))
+            //Animations
+            .Add(new RenderVelocityAnimationsSystem(context))
+            .Add(new RenderCharacterStateAnimationsSystem(context));
+
+        #endregion
     }
 
     private void InitConfigs()
@@ -124,48 +295,19 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        List<Systems> activeSystems = GameSystemService.GetActiveSystems();
-
-        foreach (Systems activeSystem in activeSystems)
-        {
-            activeSystem.Execute();
-        }
+        updateSystems.Execute();
     }
 
     private void FixedUpdate()
     {
-        List<Systems> fixedUpdateSystems = GameSystemService.GetActiveFixedUpdateSystems();
-
-        foreach (Systems fixedUpdateSystem in fixedUpdateSystems)
-        {
-            fixedUpdateSystem.Execute();
-        }
+        fixedUpdateSystems.Execute();
     }
 
     private void LateUpdate()
     {
-        List<Systems> lateUpdateSystems = GameSystemService.GetActiveLateUpdateSystems();
-        foreach (Systems lateUpdateSystem in lateUpdateSystems)
-        {
-            lateUpdateSystem.Execute();
-        }
-        
-        List<Systems> activeSystems = GameSystemService.GetActiveSystems();
-        List<Systems> fixedUpdateSystems = GameSystemService.GetActiveFixedUpdateSystems();
-        foreach (Systems activeSystem in activeSystems)
-        {
-            activeSystem.Cleanup();
-        }
-        
-        foreach (Systems activeSystem in fixedUpdateSystems)
-        {
-            activeSystem.Cleanup();
-        }
-        
-        foreach (Systems activeSystem in lateUpdateSystems)
-        {
-            activeSystem.Cleanup();
-        }
-        GameSystemService.RefreshActiveSystems();
+        lateUpdateSystems.Execute();
+        updateSystems.Cleanup();
+        fixedUpdateSystems.Cleanup();
+        lateUpdateSystems.Cleanup();
     }
 }

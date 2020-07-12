@@ -27,7 +27,5 @@ public class ExitWorldStateSystem : GameReactiveSystem
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
         _context.CreateEntity().AddUnloadScene(GameSceneConstants.WorldScene);
-        GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.World));
-        GameSystemService.RemoveActiveSystems(GameSystemService.GetSystemMapping(GameSystemType.WorldFixedUpdate), SystemsUpdateType.FixedUpdate);
     }
 }

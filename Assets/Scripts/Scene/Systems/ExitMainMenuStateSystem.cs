@@ -25,12 +25,6 @@ public class ExitMainMenuStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Systems mainMenuSystems = GameSystemService.GetSystemMapping(GameSystemType.MainMenu);
-        if (mainMenuSystems != null)
-        {
-            GameSystemService.RemoveActiveSystems(mainMenuSystems);
-        }
-
         UIService.HideWidget(UiAssetTypes.MainMenu);
         GameEntity unloadScenEntity = _context.CreateEntity();
         unloadScenEntity.AddUnloadScene(GameSceneConstants.MainMenuScene);

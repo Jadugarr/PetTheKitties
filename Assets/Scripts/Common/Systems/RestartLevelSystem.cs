@@ -25,7 +25,7 @@ public class RestartLevelSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        List<Systems> activeSystems = GameSystemService.GetActiveSystems();
+        /*List<Systems> activeSystems = GameSystemService.GetActiveSystems();
 
         foreach (Systems activeSystem in activeSystems)
         {
@@ -33,6 +33,6 @@ public class RestartLevelSystem : GameReactiveSystem
             activeSystem.Initialize();
         }
 
-        _context.isRestartLevel = false;
+        _context.isRestartLevel = false;*/
     }
 }
