@@ -26,10 +26,6 @@ public partial class GameEntity {
         var component = (CharacterVelocityComponent)CreateComponent(index, typeof(CharacterVelocityComponent));
         component.Velocity = newVelocity;
         ReplaceComponent(index, component);
-        if (isPlayer)
-        {
-            Debug.Log($"NEW_VELOCITY: {newVelocity.y}");
-        }
     }
 
     public void RemoveCharacterVelocity() {
