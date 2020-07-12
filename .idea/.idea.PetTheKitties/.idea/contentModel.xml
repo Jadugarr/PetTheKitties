@@ -185,6 +185,7 @@
               <e p="GameColliderComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
               <e p="GameCurrentMovementSpeedComponent.cs" t="Include" />
+              <e p="GameCurrentSceneComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
               <e p="GameDefenseStatComponent.cs" t="Include" />
               <e p="GameEnemyComponent.cs" t="Include" />
@@ -483,6 +484,7 @@
           <e p="Scene" t="Include">
             <e p="Components" t="Include">
               <e p="ChangeSceneComponent.cs" t="Include" />
+              <e p="CurrentSceneComponent.cs" t="Include" />
               <e p="SceneLoadedComponent.cs" t="Include" />
               <e p="UnloadSceneComponent.cs" t="Include" />
             </e>
@@ -497,6 +499,7 @@
               <e p="EnterMainMenuStateSystem.cs" t="Include" />
               <e p="ExitBattleStateSystem.cs" t="Include" />
               <e p="ExitMainMenuStateSystem.cs" t="Include" />
+              <e p="InitializeSceneSystem.cs" t="Include" />
               <e p="UnloadSceneSystem.cs" t="Include" />
             </e>
           </e>
@@ -607,9 +610,9 @@
               <e p="CheckKittensReachedGoalConditionSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
-              <e p="InitializeWorldStateSystem.cs" t="Include" />
               <e p="SetGravityScaleSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
+              <e p="WorldSceneLoadedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />
           </e>

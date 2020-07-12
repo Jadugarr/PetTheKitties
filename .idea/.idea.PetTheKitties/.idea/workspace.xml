@@ -20,9 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d000e499-4345-43d9-8ecf-6364769f742b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Components/CurrentSceneComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Components/CurrentSceneComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/InitializeSceneSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/InitializeSceneSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AddressableAssetSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +49,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Externals/2d-extras/Assets/Tilemap/Tiles/Rule Override Tile/Scripts/Editor/PopulateRuleOverrideTileWizard.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterScaredSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/SetGravityScaleSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/AdjustCharacterMovementToSlopeSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittensReachedGoalConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,6 +92,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/CharacterStartFollowSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/CharacterReachedGoalSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameCurrentSceneComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Components/PauseInputAvailableComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Components/JumpInputAvailable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Components/InputComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -129,6 +138,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFFF7C0B-1952-412C-B811-8DDDD204A124/2a/3e5d5388/IContext.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePauseInputAvailableComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePlayerComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/InitializeSceneSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameRigidbodyComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" root0="FORCE_HIGHLIGHTING" />
@@ -169,6 +179,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/RenderVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AddressableAssetsData/DataBuilders/BuildScriptPackedMode.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameFollowCharacterComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Components/CurrentSceneComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameJumpInputAvailableComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Position/RenderPositionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Position/PositionComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -279,11 +290,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/Common/ValueDisplayWidget.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Components/SavedKittyAmountComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/KittySavedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Components/TotalKittyAmountComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Systems/UpdateKittyAmountDisplaySystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/TimeSinceLastJumpInputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/MovementConstantsConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/Components/TimeSinceLastPauseInputComponent.cs" />
@@ -329,7 +335,12 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Components/CurrentSceneComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCurrentSceneComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/InitializeSceneSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/InitializeWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs" />
       </list>
     </option>
   </component>
@@ -473,10 +484,10 @@
     </state>
     <state width="1877" height="222" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594553587420" />
     <state width="1877" height="375" key="GridCell.Tab.3.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
-    <state x="-1126" y="235" key="RiderGenerateDialog" timestamp="1589021284040">
+    <state x="-1126" y="235" key="RiderGenerateDialog" timestamp="1594576390829">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1126" y="235" key="RiderGenerateDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1589021284040" />
+    <state x="-1126" y="235" key="RiderGenerateDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594576390829" />
     <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594552758228">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -489,10 +500,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1217" y="160" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594572457172" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594573274225">
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1594576304246">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594573274225" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1594576304246" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.-6.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586436158060" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592581880945" />
   </component>

@@ -28,55 +28,56 @@ public static class GameComponentsLookup {
     public const int Collider = 17;
     public const int CollisionTrigger = 18;
     public const int CurrentMovementSpeed = 19;
-    public const int Defend = 20;
-    public const int DefenseStat = 21;
-    public const int Enemy = 22;
-    public const int EnemySpawnCooldown = 23;
-    public const int EnemySpawnInput = 24;
-    public const int InteractInputAvailable = 25;
-    public const int CharacterReachedGoal = 26;
-    public const int PlayerInteraction = 27;
-    public const int Interactable = 28;
-    public const int ExecuteAction = 29;
-    public const int ExecutionTime = 30;
-    public const int FollowCharacter = 31;
-    public const int GameState = 32;
-    public const int GoalReached = 33;
-    public const int Health = 34;
-    public const int Id = 35;
-    public const int Input = 36;
-    public const int InteractionTriggered = 37;
-    public const int JumpCharacter = 38;
-    public const int JumpForce = 39;
-    public const int JumpInputAvailable = 40;
-    public const int KittyAmountDisplay = 41;
-    public const int Kitty = 42;
-    public const int LoseCondition = 43;
-    public const int LoseConditionsFulfilled = 44;
-    public const int MoveCharacter = 45;
-    public const int MovementSpeed = 46;
-    public const int PauseInputAvailable = 47;
-    public const int Player = 48;
-    public const int Position = 49;
-    public const int RaycastTest = 50;
-    public const int RestartLevel = 51;
-    public const int Rigidbody = 52;
-    public const int SavedKittyAmount = 53;
-    public const int Scared = 54;
-    public const int SceneLoaded = 55;
-    public const int Speed = 56;
-    public const int StepSize = 57;
-    public const int SubState = 58;
-    public const int Target = 59;
-    public const int TimeSinceLastJumpInput = 60;
-    public const int TimeSinceLastPauseInput = 61;
-    public const int TotalKittyAmount = 62;
-    public const int UnloadScene = 63;
-    public const int View = 64;
-    public const int WinCondition = 65;
-    public const int WinConditionsFulfilled = 66;
+    public const int CurrentScene = 20;
+    public const int Defend = 21;
+    public const int DefenseStat = 22;
+    public const int Enemy = 23;
+    public const int EnemySpawnCooldown = 24;
+    public const int EnemySpawnInput = 25;
+    public const int InteractInputAvailable = 26;
+    public const int CharacterReachedGoal = 27;
+    public const int PlayerInteraction = 28;
+    public const int Interactable = 29;
+    public const int ExecuteAction = 30;
+    public const int ExecutionTime = 31;
+    public const int FollowCharacter = 32;
+    public const int GameState = 33;
+    public const int GoalReached = 34;
+    public const int Health = 35;
+    public const int Id = 36;
+    public const int Input = 37;
+    public const int InteractionTriggered = 38;
+    public const int JumpCharacter = 39;
+    public const int JumpForce = 40;
+    public const int JumpInputAvailable = 41;
+    public const int KittyAmountDisplay = 42;
+    public const int Kitty = 43;
+    public const int LoseCondition = 44;
+    public const int LoseConditionsFulfilled = 45;
+    public const int MoveCharacter = 46;
+    public const int MovementSpeed = 47;
+    public const int PauseInputAvailable = 48;
+    public const int Player = 49;
+    public const int Position = 50;
+    public const int RaycastTest = 51;
+    public const int RestartLevel = 52;
+    public const int Rigidbody = 53;
+    public const int SavedKittyAmount = 54;
+    public const int Scared = 55;
+    public const int SceneLoaded = 56;
+    public const int Speed = 57;
+    public const int StepSize = 58;
+    public const int SubState = 59;
+    public const int Target = 60;
+    public const int TimeSinceLastJumpInput = 61;
+    public const int TimeSinceLastPauseInput = 62;
+    public const int TotalKittyAmount = 63;
+    public const int UnloadScene = 64;
+    public const int View = 65;
+    public const int WinCondition = 66;
+    public const int WinConditionsFulfilled = 67;
 
-    public const int TotalComponents = 67;
+    public const int TotalComponents = 68;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -99,6 +100,7 @@ public static class GameComponentsLookup {
         "Collider",
         "CollisionTrigger",
         "CurrentMovementSpeed",
+        "CurrentScene",
         "Defend",
         "DefenseStat",
         "Enemy",
@@ -169,6 +171,7 @@ public static class GameComponentsLookup {
         typeof(ColliderComponent),
         typeof(CollisionTriggerComponent),
         typeof(CurrentMovementSpeedComponent),
+        typeof(CurrentSceneComponent),
         typeof(DefendComponent),
         typeof(DefenseStatComponent),
         typeof(EnemyComponent),

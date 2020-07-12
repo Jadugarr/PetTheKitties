@@ -11,6 +11,7 @@ using Entitas.Position;
 using Entitas.Scripts.Common.Systems;
 using Entitas.World.Systems;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class GameController : MonoBehaviour
@@ -35,6 +36,13 @@ public class GameController : MonoBehaviour
         {
             context.OnEntityCreated += OnEntityCreated;
         }
+        
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene loadedScene, LoadSceneMode sceneMode)
+    {
+        Contexts.sharedInstance.game.ReplaceCurrentScene(loadedScene.name);
     }
 
     // Use this for initialization
@@ -61,7 +69,8 @@ public class GameController : MonoBehaviour
     {
         Systems oneOffSystems = new Feature("OneOffSystems")
             .Add(new InitializeCameraSystem(context))
-            .Add(new InitializeGameStateSystem());
+            .Add(new InitializeGameStateSystem())
+            .Add(new InitializeSceneSystem());
 
         oneOffSystems.Initialize();
     }
@@ -233,7 +242,7 @@ public class GameController : MonoBehaviour
             .Add(new CheckPauseInputAvailabilitySystem(context))
             .Add(new ProcessInteractionInputSystem(context))
             .Add(new SetCameraFollowTargetSystem(context))
-            .Add(new InitializeWorldStateSystem(context))
+            .Add(new WorldSceneLoadedSystem(context))
             .Add(new SetCameraConfinerSystem(context))
             .Add(new WorldPlayerAddedSystem(context))
             .Add(new KittyAddedSystem(context))

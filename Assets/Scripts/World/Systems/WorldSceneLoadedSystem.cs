@@ -1,12 +1,12 @@
+using System.Collections.Generic;
 using Entitas;
 using Entitas.Extensions;
-using Entitas.Scripts.Common.Systems;
 using Entitas.Unity;
 using Entitas.VisualDebugging.Unity;
 using Entitas.World;
 using UnityEngine;
 
-public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
+public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
 {
     private IGroup<GameEntity> _playerGroup;
     private IGroup<GameEntity> _kittyGroup;
@@ -14,18 +14,23 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
     private GameEntity totalKittyAmountEntity;
     private GameEntity savedKittyAmountEntity;
 
-    public InitializeWorldStateSystem(GameContext context) : base(context)
+    public WorldSceneLoadedSystem(GameContext context) : base(context)
     {
         _playerGroup = context.GetGroup(GameMatcher.Player);
         _kittyGroup = context.GetGroup(GameMatcher.Kitty);
     }
 
-    protected override bool IsInValidState()
+    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return _context.gameState.CurrentGameState == GameState.World;
+        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CurrentScene, GroupEvent.Added));
     }
 
-    protected override void ExecuteSystem()
+    protected override bool Filter(GameEntity entity)
+    {
+        return entity.currentScene.Value == GameSceneConstants.WorldScene;
+    }
+
+    protected override void ExecuteSystem(List<GameEntity> entities)
     {
         CreatePlayer();
         int spawnPointAmount = GameObject.FindGameObjectsWithTag(Tags.KittySpawnPoint).Length;
@@ -33,9 +38,10 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         {
             CreateKitten();
         }
+
         CreateWinLoseConditions();
         CreateUiElements();
-        
+
         totalKittyAmountEntity = _context.CreateEntity();
         totalKittyAmountEntity.AddTotalKittyAmount(spawnPointAmount);
 
@@ -43,6 +49,11 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
         savedKittyAmountEntity.AddSavedKittyAmount(0);
 
         _context.SetNewSubstate(SubState.WorldNavigation);
+    }
+
+    protected override bool IsInValidState()
+    {
+        return true;
     }
 
     private void CreatePlayer()
@@ -119,11 +130,11 @@ public class InitializeWorldStateSystem : GameInitializeSystem, ITearDownSystem
 
             entity.Destroy();
         }
-        
+
         UIService.HideWidget(UiAssetTypes.KittyAmountDisplay);
         kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget.gameObject.Unlink();
         kittyAmountDisplayEntity.Destroy();
-        
+
         totalKittyAmountEntity.Destroy();
         savedKittyAmountEntity.Destroy();
 

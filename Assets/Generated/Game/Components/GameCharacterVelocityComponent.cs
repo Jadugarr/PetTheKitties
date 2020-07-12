@@ -6,9 +6,6 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
-using UnityEngine;
-
 public partial class GameEntity {
 
     public CharacterVelocityComponent characterVelocity { get { return (CharacterVelocityComponent)GetComponent(GameComponentsLookup.CharacterVelocity); } }
