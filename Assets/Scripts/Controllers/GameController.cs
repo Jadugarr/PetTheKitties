@@ -76,8 +76,8 @@ public class GameController : MonoBehaviour
             //Input
             .Add(new InputSystem(context))
             //Scene
-            .Add(new EnterBattleStateSystem(context))
-            .Add(new ExitBattleStateSystem(context))
+            /*.Add(new EnterBattleStateSystem(context))
+            .Add(new ExitBattleStateSystem(context))*/
             .Add(new EnterMainMenuStateSystem(context))
             .Add(new ExitMainMenuStateSystem(context))
             .Add(new EnterWorldStateSystem(context))
@@ -99,37 +99,37 @@ public class GameController : MonoBehaviour
 
         #region ChooseActionStateSystems
 
-        updateSystems
+        /*updateSystems
             .Add(new InitializeChooseActionSystem(context))
-            .Add(new ActionChosenSystem(context));
+            .Add(new ActionChosenSystem(context));*/
 
         #endregion
 
         #region ChooseTargetSystems
 
-        updateSystems
+        /*updateSystems
             .Add(new InitializeChooseTargetSystem(context))
-            .Add(new ActionTargetChosenSystem(context));
+            .Add(new ActionTargetChosenSystem(context));*/
 
         #endregion
 
         #region FinalizeActionSystems
 
-        updateSystems
+        /*updateSystems
             .Add(new AddActionTimeSystem(context))
-            .Add(new ActionTimeAddedSystem(context));
+            .Add(new ActionTimeAddedSystem(context));*/
 
         #endregion
 
         #region ExecuteActionSystems
 
-        updateSystems
+        /*updateSystems
             //Actions
             .Add(new InitializeExecuteActionSystem(context))
             .Add(new ExecutePlayerAttackActionSystem(context))
             .Add(new ExecuteDefenseActionSystem(context))
             .Add(new ReleaseDefenseActionSystem(context))
-            .Add(new ActionFinishedSystem(context));
+            .Add(new ActionFinishedSystem(context));*/
 
         #endregion
 
@@ -164,15 +164,15 @@ public class GameController : MonoBehaviour
 
         #region BattleLostSystems
 
-        updateSystems
-            .Add(new DisplayBattleLostSystem());
+        /*updateSystems
+            .Add(new DisplayBattleLostSystem());*/
 
         #endregion
 
         #region BattleWonSystems
 
-        updateSystems
-            .Add(new DisplayBattleWonSystem());
+        /*updateSystems
+            .Add(new DisplayBattleWonSystem());*/
 
         #endregion
 
@@ -185,17 +185,17 @@ public class GameController : MonoBehaviour
 
         #region WaitingStateSystems
 
-        updateSystems
+        /*updateSystems
             .Add(new ActionTimeSystem(context))
             //Actions
             .Add(new ExecuteChooseActionSystem(context))
-            .Add(new ExecuteActionsSystem(context));
+            .Add(new ExecuteActionsSystem(context));*/
 
         #endregion
 
         #region BattleStateSystems
 
-        updateSystems
+        /*updateSystems
             .Add(new InitializeBattleSystem(context))
             .Add(new InitializeATBSystem(context))
             //Battle
@@ -204,7 +204,7 @@ public class GameController : MonoBehaviour
             .Add(new TeardownBattleSystem(context))
             //WinConditions
             .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context));
+            .Add(new LoseConditionControllerSystem(context));*/
 
         #endregion
 
