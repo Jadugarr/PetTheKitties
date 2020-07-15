@@ -175,6 +175,7 @@
               <e p="GameBattleEndComponent.cs" t="Include" />
               <e p="GameBattleImageComponent.cs" t="Include" />
               <e p="GameCameraComponent.cs" t="Include" />
+              <e p="GameCameraConfinerComponent.cs" t="Include" />
               <e p="GameChangeSceneComponent.cs" t="Include" />
               <e p="GameCharacterAnimatorComponent.cs" t="Include" />
               <e p="GameCharacterDirectionComponent.cs" t="Include" />
@@ -329,6 +330,7 @@
           <e p="Camera" t="Include">
             <e p="Components" t="Include">
               <e p="CameraComponent.cs" t="Include" />
+              <e p="CameraConfinerComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="InitializeCameraSystem.cs" t="Include" />

@@ -41,6 +41,7 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
 
         CreateWinLoseConditions();
         CreateUiElements();
+        AddCameraConfinerEntity();
 
         totalKittyAmountEntity = _context.CreateEntity();
         totalKittyAmountEntity.AddTotalKittyAmount(spawnPointAmount);
@@ -107,6 +108,17 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
         valueDisplayWidget.gameObject.Link(kittyAmountDisplayEntity);
     }
 
+    private void AddCameraConfinerEntity()
+    {
+        Collider2D cameraCollider =
+            GameObject.FindGameObjectWithTag(Tags.CameraConfiner)?.GetComponent<Collider2D>();
+
+        if (cameraCollider != null)
+        {
+            _context.ReplaceCameraConfiner(cameraCollider);
+        }
+    }
+
     public void TearDown()
     {
         foreach (GameEntity entity in _kittyGroup.GetEntities())
@@ -140,5 +152,6 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
 
         _context.RemoveWinCondition();
         _context.RemoveLoseCondition();
+        _context.RemoveCameraConfiner();
     }
 }

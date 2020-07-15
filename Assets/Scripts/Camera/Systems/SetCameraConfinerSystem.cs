@@ -1,13 +1,22 @@
 using System.Collections.Generic;
 using Cinemachine;
 using Entitas;
-using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 
-public class SetCameraConfinerSystem : GameInitializeSystem
+public class SetCameraConfinerSystem : GameReactiveSystem
 {
     public SetCameraConfinerSystem(GameContext context) : base(context)
     {
+    }
+
+    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    {
+        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CameraConfiner, GroupEvent.Added));
+    }
+
+    protected override bool Filter(GameEntity entity)
+    {
+        return entity.cameraConfiner.Value != null;
     }
 
     protected override bool IsInValidState()
@@ -15,19 +24,15 @@ public class SetCameraConfinerSystem : GameInitializeSystem
         return true;
     }
 
-    protected override void ExecuteSystem()
+    protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        if (_context.camera != null)
+        if (entities.Count != 1)
         {
-            Collider2D cameraCollider =
-                GameObject.FindGameObjectWithTag(Tags.CameraConfiner)?.GetComponent<Collider2D>();
-
-            if (cameraCollider)
-            {
-                CinemachineConfiner cameraConfiner = _context.camera.Camera.GetComponent<CinemachineConfiner>();
-                cameraConfiner.m_BoundingShape2D = cameraCollider;
-            }
-            
+            Debug.LogWarning($"Not the right of camera confiner components available: {entities.Count}");
+            return;
         }
+        
+        CinemachineConfiner cameraConfiner = _context.camera.Camera.GetComponent<CinemachineConfiner>();
+        cameraConfiner.m_BoundingShape2D = entities[0].cameraConfiner.Value;
     }
 }

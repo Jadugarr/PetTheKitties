@@ -19,65 +19,66 @@ public static class GameComponentsLookup {
     public const int BattleEnd = 8;
     public const int BattleImage = 9;
     public const int Camera = 10;
-    public const int ChangeScene = 11;
-    public const int CharacterAnimator = 12;
-    public const int CharacterDirection = 13;
-    public const int CharacterGroundState = 14;
-    public const int CharacterState = 15;
-    public const int CharacterVelocity = 16;
-    public const int Collider = 17;
-    public const int CollisionTrigger = 18;
-    public const int CurrentMovementSpeed = 19;
-    public const int CurrentScene = 20;
-    public const int Defend = 21;
-    public const int DefenseStat = 22;
-    public const int Enemy = 23;
-    public const int EnemySpawnCooldown = 24;
-    public const int EnemySpawnInput = 25;
-    public const int InteractInputAvailable = 26;
-    public const int CharacterReachedGoal = 27;
-    public const int PlayerInteraction = 28;
-    public const int Interactable = 29;
-    public const int ExecuteAction = 30;
-    public const int ExecutionTime = 31;
-    public const int FollowCharacter = 32;
-    public const int GameState = 33;
-    public const int GoalReached = 34;
-    public const int Health = 35;
-    public const int Id = 36;
-    public const int Input = 37;
-    public const int InteractionTriggered = 38;
-    public const int JumpCharacter = 39;
-    public const int JumpForce = 40;
-    public const int JumpInputAvailable = 41;
-    public const int KittyAmountDisplay = 42;
-    public const int Kitty = 43;
-    public const int LoseCondition = 44;
-    public const int LoseConditionsFulfilled = 45;
-    public const int MoveCharacter = 46;
-    public const int MovementSpeed = 47;
-    public const int PauseInputAvailable = 48;
-    public const int Player = 49;
-    public const int Position = 50;
-    public const int RaycastTest = 51;
-    public const int RestartLevel = 52;
-    public const int Rigidbody = 53;
-    public const int SavedKittyAmount = 54;
-    public const int Scared = 55;
-    public const int SceneLoaded = 56;
-    public const int Speed = 57;
-    public const int StepSize = 58;
-    public const int SubState = 59;
-    public const int Target = 60;
-    public const int TimeSinceLastJumpInput = 61;
-    public const int TimeSinceLastPauseInput = 62;
-    public const int TotalKittyAmount = 63;
-    public const int UnloadScene = 64;
-    public const int View = 65;
-    public const int WinCondition = 66;
-    public const int WinConditionsFulfilled = 67;
+    public const int CameraConfiner = 11;
+    public const int ChangeScene = 12;
+    public const int CharacterAnimator = 13;
+    public const int CharacterDirection = 14;
+    public const int CharacterGroundState = 15;
+    public const int CharacterState = 16;
+    public const int CharacterVelocity = 17;
+    public const int Collider = 18;
+    public const int CollisionTrigger = 19;
+    public const int CurrentMovementSpeed = 20;
+    public const int CurrentScene = 21;
+    public const int Defend = 22;
+    public const int DefenseStat = 23;
+    public const int Enemy = 24;
+    public const int EnemySpawnCooldown = 25;
+    public const int EnemySpawnInput = 26;
+    public const int InteractInputAvailable = 27;
+    public const int CharacterReachedGoal = 28;
+    public const int PlayerInteraction = 29;
+    public const int Interactable = 30;
+    public const int ExecuteAction = 31;
+    public const int ExecutionTime = 32;
+    public const int FollowCharacter = 33;
+    public const int GameState = 34;
+    public const int GoalReached = 35;
+    public const int Health = 36;
+    public const int Id = 37;
+    public const int Input = 38;
+    public const int InteractionTriggered = 39;
+    public const int JumpCharacter = 40;
+    public const int JumpForce = 41;
+    public const int JumpInputAvailable = 42;
+    public const int KittyAmountDisplay = 43;
+    public const int Kitty = 44;
+    public const int LoseCondition = 45;
+    public const int LoseConditionsFulfilled = 46;
+    public const int MoveCharacter = 47;
+    public const int MovementSpeed = 48;
+    public const int PauseInputAvailable = 49;
+    public const int Player = 50;
+    public const int Position = 51;
+    public const int RaycastTest = 52;
+    public const int RestartLevel = 53;
+    public const int Rigidbody = 54;
+    public const int SavedKittyAmount = 55;
+    public const int Scared = 56;
+    public const int SceneLoaded = 57;
+    public const int Speed = 58;
+    public const int StepSize = 59;
+    public const int SubState = 60;
+    public const int Target = 61;
+    public const int TimeSinceLastJumpInput = 62;
+    public const int TimeSinceLastPauseInput = 63;
+    public const int TotalKittyAmount = 64;
+    public const int UnloadScene = 65;
+    public const int View = 66;
+    public const int WinCondition = 67;
+    public const int WinConditionsFulfilled = 68;
 
-    public const int TotalComponents = 68;
+    public const int TotalComponents = 69;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -91,6 +92,7 @@ public static class GameComponentsLookup {
         "BattleEnd",
         "BattleImage",
         "Camera",
+        "CameraConfiner",
         "ChangeScene",
         "CharacterAnimator",
         "CharacterDirection",
@@ -162,6 +164,7 @@ public static class GameComponentsLookup {
         typeof(BattleEndComponent),
         typeof(BattleImageComponent),
         typeof(CameraComponent),
+        typeof(CameraConfinerComponent),
         typeof(ChangeSceneComponent),
         typeof(CharacterAnimatorComponent),
         typeof(CharacterDirectionComponent),
