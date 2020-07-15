@@ -164,13 +164,6 @@ public class GameController : MonoBehaviour
 
         #endregion
 
-        #region JumpingStateSystems
-
-        updateSystems
-            .Add(new HandleJumpEndingStateSystem(context));
-
-        #endregion
-
         #region BattleLostSystems
 
         /*updateSystems
@@ -254,6 +247,7 @@ public class GameController : MonoBehaviour
             .Add(new CharacterFollowSystem(context))
             .Add(new CharacterScaredSystem(context))
             .Add(new CharacterReachedGoalSystem(context))
+            .Add(new HandleJumpEndingStateSystem(context))
             .Add(new HandleCharacterMovementStateSystem(context))
             .Add(new HandleFallingStateSystem(context))
             .Add(new UpdateKittyAmountDisplaySystem(context))
