@@ -611,7 +611,9 @@
               <e p="CheckCharacterGroundStateSystem.cs" t="Include" />
               <e p="CheckKittensReachedGoalConditionSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
+              <e p="ExitPlayerWonStateSystem.cs" t="Include" />
               <e p="ExitWorldStateSystem.cs" t="Include" />
+              <e p="PlayerWonSystem.cs" t="Include" />
               <e p="SetGravityScaleSystem.cs" t="Include" />
               <e p="WorldPlayerAddedSystem.cs" t="Include" />
               <e p="WorldSceneLoadedSystem.cs" t="Include" />

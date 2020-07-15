@@ -30,13 +30,13 @@ public class GameController : MonoBehaviour
         updateSystems = new Feature("UpdateSystems");
         fixedUpdateSystems = new Feature("FixedUpdateSystems");
         lateUpdateSystems = new Feature("LateUpdateSystems");
-        
+
         Contexts contexts = Contexts.sharedInstance;
         foreach (var context in contexts.allContexts)
         {
             context.OnEntityCreated += OnEntityCreated;
         }
-        
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -254,7 +254,9 @@ public class GameController : MonoBehaviour
             .Add(new KittySavedSystem(context))
             //WinConditions
             .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context));
+            .Add(new LoseConditionControllerSystem(context))
+            .Add(new PlayerWonSystem(context))
+            .Add(new ExitPlayerWonStateSystem(context));
 
         #endregion
 
