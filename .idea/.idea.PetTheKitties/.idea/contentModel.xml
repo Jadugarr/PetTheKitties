@@ -373,6 +373,7 @@
             <e p="SpawnConfiguration.cs" t="Include" />
           </e>
           <e p="Controllers" t="Include">
+            <e p="AGameController.cs" t="Include" />
             <e p="GameController.cs" t="Include" />
             <e p="UIController.cs" t="Include" />
           </e>
@@ -619,6 +620,7 @@
               <e p="WorldSceneLoadedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />
+            <e p="WorldController.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

@@ -1,10 +1,9 @@
 using Entitas;
 using System;
 using Configurations;
-using Entitas.Actions.Systems;
 using Entitas.Animations.Systems;
-using Entitas.Battle.Systems;
 using Entitas.Camera.Systems;
+using Entitas.Controllers;
 using Entitas.Input.Systems;
 using Entitas.Kitty.Systems;
 using Entitas.Position;
@@ -14,72 +13,28 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [Serializable]
-public class GameController : MonoBehaviour
+public class GameController : AGameController
 {
     [SerializeField] private SpawnConfiguration spawnConfiguration;
     [SerializeField] private CharacterConfiguration characterConfiguration;
     [SerializeField] private MovementConstantsConfiguration movementConstantsConfiguration;
     [SerializeField] private AssetReferenceConfiguration assetReferenceConfiguration;
 
-    private Systems updateSystems;
-    private Systems fixedUpdateSystems;
-    private Systems lateUpdateSystems;
-
-    private void Awake()
+    protected override IContext GetContext()
     {
-        updateSystems = new Feature("UpdateSystems");
-        fixedUpdateSystems = new Feature("FixedUpdateSystems");
-        lateUpdateSystems = new Feature("LateUpdateSystems");
-
-        Contexts contexts = Contexts.sharedInstance;
-        foreach (var context in contexts.allContexts)
-        {
-            context.OnEntityCreated += OnEntityCreated;
-        }
-
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        return Contexts.sharedInstance.game;
     }
 
-    private void OnSceneLoaded(Scene loadedScene, LoadSceneMode sceneMode)
+    protected override void CreateSystems(IContext _context)
     {
-        Contexts.sharedInstance.game.ReplaceCurrentScene(loadedScene.name);
-    }
-
-    // Use this for initialization
-    void Start()
-    {
-        InitConfigs();
-        Contexts pools = Contexts.sharedInstance;
-
-        CreateSystems(pools.game);
-
-        ExecuteOneOffSystems(pools.game);
-        updateSystems.Initialize();
-        fixedUpdateSystems.Initialize();
-        lateUpdateSystems.Initialize();
-    }
-
-    // add an id to every entity as it's created
-    private void OnEntityCreated(IContext context, IEntity entity)
-    {
-        (entity as GameEntity).AddId(entity.creationIndex);
-    }
-
-    private void ExecuteOneOffSystems(GameContext context)
-    {
-        Systems oneOffSystems = new Feature("OneOffSystems")
-            .Add(new InitializeCameraSystem(context))
-            .Add(new InitializeGameStateSystem())
-            .Add(new InitializeSceneSystem());
-
-        oneOffSystems.Initialize();
-    }
-
-    private void CreateSystems(GameContext context)
-    {
+        GameContext context = (GameContext) _context;
+        
         #region BaseSystems
 
         updateSystems
+            .Add(new InitializeCameraSystem(context))
+            .Add(new InitializeGameStateSystem())
+            .Add(new InitializeSceneSystem())
             //Promises
             .Add(new InitPromisesSystem())
             //Input
@@ -289,6 +244,33 @@ public class GameController : MonoBehaviour
         #endregion
     }
 
+    protected override void AfterAwake()
+    {
+        Contexts contexts = Contexts.sharedInstance;
+        foreach (var context in contexts.allContexts)
+        {
+            context.OnEntityCreated += OnEntityCreated;
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    protected override void BeforeStart()
+    {
+        InitConfigs();
+    }
+
+    private void OnSceneLoaded(Scene loadedScene, LoadSceneMode sceneMode)
+    {
+        Contexts.sharedInstance.game.ReplaceCurrentScene(loadedScene.name);
+    }
+
+    // add an id to every entity as it's created
+    private void OnEntityCreated(IContext context, IEntity entity)
+    {
+        (entity as GameEntity).AddId(entity.creationIndex);
+    }
+
     private void InitConfigs()
     {
         GameConfigurations.SpawnConfiguration = spawnConfiguration;
@@ -298,7 +280,7 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    /*private void Update()
     {
         updateSystems.Execute();
     }
@@ -314,5 +296,5 @@ public class GameController : MonoBehaviour
         updateSystems.Cleanup();
         fixedUpdateSystems.Cleanup();
         lateUpdateSystems.Cleanup();
-    }
+    }*/
 }

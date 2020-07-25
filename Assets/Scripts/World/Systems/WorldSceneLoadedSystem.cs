@@ -123,7 +123,7 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
     {
         foreach (GameEntity entity in _kittyGroup.GetEntities())
         {
-            if (entity.view != null)
+            if (entity.view != null && entity.view.View != null)
             {
                 entity.view.View.Unlink();
                 entity.view.View.DestroyGameObject();
@@ -134,7 +134,7 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
 
         foreach (GameEntity entity in _playerGroup.GetEntities())
         {
-            if (entity.view != null)
+            if (entity.view != null && entity.view.View != null)
             {
                 entity.view.View.Unlink();
                 entity.view.View.DestroyGameObject();
@@ -143,15 +143,30 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
             entity.Destroy();
         }
 
-        UIService.HideWidget(UiAssetTypes.KittyAmountDisplay);
-        kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget.gameObject.Unlink();
-        kittyAmountDisplayEntity.Destroy();
+        if (kittyAmountDisplayEntity != null && kittyAmountDisplayEntity.kittyAmountDisplay != null && kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget != null)
+        {
+            UIService.HideWidget(UiAssetTypes.KittyAmountDisplay);
+            kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget.gameObject.Unlink();
+            kittyAmountDisplayEntity.Destroy();
+        }
 
-        totalKittyAmountEntity.Destroy();
-        savedKittyAmountEntity.Destroy();
+        totalKittyAmountEntity?.Destroy();
 
-        _context.RemoveWinCondition();
-        _context.RemoveLoseCondition();
-        _context.RemoveCameraConfiner();
+        savedKittyAmountEntity?.Destroy();
+
+        if (_context.hasWinCondition)
+        {
+            _context.RemoveWinCondition();
+        }
+
+        if (_context.hasLoseCondition)
+        {
+            _context.RemoveLoseCondition();
+        }
+
+        if (_context.hasCameraConfiner)
+        {
+            _context.RemoveCameraConfiner();
+        }
     }
 }
