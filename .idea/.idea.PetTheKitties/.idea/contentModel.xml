@@ -240,6 +240,13 @@
             <e p="GameEntity.cs" t="Include" />
             <e p="GameMatcher.cs" t="Include" />
           </e>
+          <e p="World" t="Include">
+            <e p="WorldAttribute.cs" t="Include" />
+            <e p="WorldComponentsLookup.cs" t="Include" />
+            <e p="WorldContext.cs" t="Include" />
+            <e p="WorldEntity.cs" t="Include" />
+            <e p="WorldMatcher.cs" t="Include" />
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="_tests" t="Include">
@@ -492,6 +499,7 @@
               <e p="UnloadSceneComponent.cs" t="Include" />
             </e>
             <e p="GameSceneConstants.cs" t="Include" />
+            <e p="MainMenuController.cs" t="Include" />
             <e p="SceneController.cs" t="Include" />
             <e p="Systems" t="Include">
               <e p="ChangeSceneSystem.cs" t="Include" />
@@ -620,7 +628,7 @@
               <e p="WorldSceneLoadedSystem.cs" t="Include" />
             </e>
             <e p="WorldAssetTypes.cs" t="Include" />
-            <e p="WorldController.cs" t="Include" />
+            <e p="WorldGameController.cs" t="Include" />
           </e>
         </e>
         <e p="TextMesh Pro" t="Include">

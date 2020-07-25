@@ -1,12 +1,13 @@
 using System.Collections.Generic;
 using Entitas;
 using Entitas.Extensions;
+using Entitas.Scripts.Common.Systems;
 using Entitas.Unity;
 using Entitas.VisualDebugging.Unity;
 using Entitas.World;
 using UnityEngine;
 
-public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
+public class WorldSceneLoadedSystem : GameInitializeSystem, ITearDownSystem
 {
     private IGroup<GameEntity> _playerGroup;
     private IGroup<GameEntity> _kittyGroup;
@@ -20,17 +21,12 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
         _kittyGroup = context.GetGroup(GameMatcher.Kitty);
     }
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    protected override bool IsInValidState()
     {
-        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CurrentScene, GroupEvent.Added));
+        return true;
     }
 
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.currentScene.Value == GameSceneConstants.WorldScene;
-    }
-
-    protected override void ExecuteSystem(List<GameEntity> entities)
+    protected override void ExecuteSystem()
     {
         CreatePlayer();
         int spawnPointAmount = GameObject.FindGameObjectsWithTag(Tags.KittySpawnPoint).Length;
@@ -50,11 +46,6 @@ public class WorldSceneLoadedSystem : GameReactiveSystem, ITearDownSystem
         savedKittyAmountEntity.AddSavedKittyAmount(0);
 
         _context.SetNewSubstate(SubState.WorldNavigation);
-    }
-
-    protected override bool IsInValidState()
-    {
-        return true;
     }
 
     private void CreatePlayer()
