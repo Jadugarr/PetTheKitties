@@ -34,12 +34,6 @@ public class ExitBattleStateSystem : GameReactiveSystem
         {
             entity.view.View.Unlink();
         }
-        
-        Systems battleSystems = GameSystemService.GetSystemMapping(GameSystemType.Battle);
-        if (battleSystems != null)
-        {
-            GameSystemService.RemoveActiveSystems(battleSystems);
-        }
 
         UIService.HideWidget(new[]
             {UiAssetTypes.ReturnButton, UiAssetTypes.Atb, UiAssetTypes.ActionChooser, UiAssetTypes.BattleResultText});

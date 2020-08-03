@@ -1,73 +1,42 @@
 using Entitas;
 using System;
-using System.Collections.Generic;
 using Configurations;
-using Entitas.Actions.Systems;
-using Entitas.Animations.Systems;
-using Entitas.Battle.Systems;
 using Entitas.Camera.Systems;
-using Entitas.Input.Systems;
-using Entitas.Kitty.Systems;
-using Entitas.Player;
-using Entitas.Position;
+using Entitas.Controllers;
 using Entitas.Scripts.Common.Systems;
-using Entitas.World.Systems;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
-public class GameController : MonoBehaviour
+public class GameController : AGameController
 {
     [SerializeField] private SpawnConfiguration spawnConfiguration;
     [SerializeField] private CharacterConfiguration characterConfiguration;
     [SerializeField] private MovementConstantsConfiguration movementConstantsConfiguration;
     [SerializeField] private AssetReferenceConfiguration assetReferenceConfiguration;
 
-    private void Awake()
+    protected override IContext GetContext()
     {
-        Contexts contexts = Contexts.sharedInstance;
-        foreach (var context in contexts.allContexts)
-        {
-            context.OnEntityCreated += OnEntityCreated;
-        }
+        return Contexts.sharedInstance.game;
     }
 
-    // Use this for initialization
-    void Start()
+    protected override void CreateSystems(IContext _context)
     {
-        InitConfigs();
-        Contexts pools = Contexts.sharedInstance;
+        GameContext context = (GameContext) _context;
+        
+        #region BaseSystems
 
-        CreateUniversalSystems(pools.game);
-        CreateEndFrameSystems(pools.game);
-
-        ExecuteOneOffSystems(pools.game);
-    }
-
-    // add an id to every entity as it's created
-    private void OnEntityCreated(IContext context, IEntity entity)
-    {
-        (entity as GameEntity).AddId(entity.creationIndex);
-    }
-
-    private void ExecuteOneOffSystems(GameContext context)
-    {
-        Systems oneOffSystems = new Feature("OneOffSystems")
+        updateSystems
             .Add(new InitializeCameraSystem(context))
-            .Add(new InitializeGameStateSystem());
-
-        oneOffSystems.Initialize();
-    }
-
-    private void CreateUniversalSystems(GameContext context)
-    {
-        Systems universalSystems = new Feature("UniversalSystems")
+            .Add(new InitializeGameStateSystem())
+            .Add(new InitializeSceneSystem())
             //Promises
             .Add(new InitPromisesSystem())
             //Input
             .Add(new InputSystem(context))
             //Scene
-            .Add(new EnterBattleStateSystem(context))
-            .Add(new ExitBattleStateSystem(context))
+            /*.Add(new EnterBattleStateSystem(context))
+            .Add(new ExitBattleStateSystem(context))*/
             .Add(new EnterMainMenuStateSystem(context))
             .Add(new ExitMainMenuStateSystem(context))
             .Add(new EnterWorldStateSystem(context))
@@ -82,35 +51,121 @@ public class GameController : MonoBehaviour
             .Add(new ChangeSubStateInputMapSystem(context))
             .Add(new EnterPausedSubStateSystem(context))
             .Add(new ExitPausedSubStateSystem(context))
-            .Add(new EnterWaitingSubStateSystem(context))
-            .Add(new ExitWaitingSubStateSystem(context))
-            .Add(new EnterPlayerWonStateSystem(context))
-            .Add(new ExitPlayerWonStateSystem(context))
-            .Add(new EnterPlayerLostStateSystem(context))
-            .Add(new ExitPlayerLostStateSystem(context))
-            .Add(new EnterChooseActionStateSystem(context))
             .Add(new ExitChooseActionStateSystem(context))
-            .Add(new EnterChooseTargetStateSystem(context))
-            .Add(new ExitChooseTargetStateSystem(context))
-            .Add(new EnterExecuteActionStateSystem(context))
-            .Add(new ExitExecuteActionStateSystem(context))
-            .Add(new EnterFinalizeActionStateSystem(context))
-            .Add(new ExitFinalizeActionStateSystem(context))
-            .Add(new EnterWorldNavigationSubStateSystem(context))
-            .Add(new ExitWorldNavigationSubStateSystem(context))
             .Add(new RestartLevelSystem(context));
-        
-        Systems universalFixedUpdateSystems = new Feature("UniversalFixedUpdateSystems");
 
-        GameSystemService.AddActiveSystems(universalSystems);
-        GameSystemService.AddActiveSystems(universalFixedUpdateSystems, SystemsUpdateType.FixedUpdate);
+        #endregion
+
+        #region ChooseActionStateSystems
+
+        /*updateSystems
+            .Add(new InitializeChooseActionSystem(context))
+            .Add(new ActionChosenSystem(context));*/
+
+        #endregion
+
+        #region ChooseTargetSystems
+
+        /*updateSystems
+            .Add(new InitializeChooseTargetSystem(context))
+            .Add(new ActionTargetChosenSystem(context));*/
+
+        #endregion
+
+        #region FinalizeActionSystems
+
+        /*updateSystems
+            .Add(new AddActionTimeSystem(context))
+            .Add(new ActionTimeAddedSystem(context));*/
+
+        #endregion
+
+        #region ExecuteActionSystems
+
+        /*updateSystems
+            //Actions
+            .Add(new InitializeExecuteActionSystem(context))
+            .Add(new ExecutePlayerAttackActionSystem(context))
+            .Add(new ExecuteDefenseActionSystem(context))
+            .Add(new ReleaseDefenseActionSystem(context))
+            .Add(new ActionFinishedSystem(context));*/
+
+        #endregion
+
+        #region BattleLostSystems
+
+        /*updateSystems
+            .Add(new DisplayBattleLostSystem());*/
+
+        #endregion
+
+        #region BattleWonSystems
+
+        /*updateSystems
+            .Add(new DisplayBattleWonSystem());*/
+
+        #endregion
+
+        #region WaitingStateSystems
+
+        /*updateSystems
+            .Add(new ActionTimeSystem(context))
+            //Actions
+            .Add(new ExecuteChooseActionSystem(context))
+            .Add(new ExecuteActionsSystem(context));*/
+
+        #endregion
+
+        #region BattleStateSystems
+
+        /*updateSystems
+            .Add(new InitializeBattleSystem(context))
+            .Add(new InitializeATBSystem(context))
+            //Battle
+            .Add(new CharacterDeathSystem(context))
+            .Add(new TeardownCharacterSystem(context))
+            .Add(new TeardownBattleSystem(context))
+            //WinConditions
+            .Add(new WinConditionControllerSystem(context))
+            .Add(new LoseConditionControllerSystem(context));*/
+
+        #endregion
+
+        #region TestSystems
+
+        updateSystems
+            // Some test systems
+            .Add(new ProcessRaycastTestInputSystem(context))
+            .Add(new RaycastTestSystem(context));
+
+        #endregion
     }
 
-    private void CreateEndFrameSystems(GameContext context)
+    protected override void AfterAwake()
     {
-        // Systems endFrameSystems = new Feature("EndFrameSystems");
-        //
-        // GameSystemService.AddActiveSystems(endFrameSystems, SystemsUpdateType.LateUpdate);
+        Contexts contexts = Contexts.sharedInstance;
+        foreach (var context in contexts.allContexts)
+        {
+            context.OnEntityCreated += OnEntityCreated;
+        }
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    protected override void BeforeStart()
+    {
+        InitConfigs();
+    }
+
+    private void OnSceneLoaded(Scene loadedScene, LoadSceneMode sceneMode)
+    {
+        Contexts.sharedInstance.game.ReplaceCurrentScene(loadedScene.name);
+    }
+
+    // add an id to every entity as it's created
+    private void OnEntityCreated(IContext context, IEntity entity)
+    {
+        (entity as GameEntity).AddId(entity.creationIndex);
     }
 
     private void InitConfigs()
@@ -122,50 +177,21 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void Update()
+    /*private void Update()
     {
-        List<Systems> activeSystems = GameSystemService.GetActiveSystems();
-
-        foreach (Systems activeSystem in activeSystems)
-        {
-            activeSystem.Execute();
-        }
+        updateSystems.Execute();
     }
 
     private void FixedUpdate()
     {
-        List<Systems> fixedUpdateSystems = GameSystemService.GetActiveFixedUpdateSystems();
-
-        foreach (Systems fixedUpdateSystem in fixedUpdateSystems)
-        {
-            fixedUpdateSystem.Execute();
-        }
+        fixedUpdateSystems.Execute();
     }
 
     private void LateUpdate()
     {
-        List<Systems> lateUpdateSystems = GameSystemService.GetActiveLateUpdateSystems();
-        foreach (Systems lateUpdateSystem in lateUpdateSystems)
-        {
-            lateUpdateSystem.Execute();
-        }
-        
-        List<Systems> activeSystems = GameSystemService.GetActiveSystems();
-        List<Systems> fixedUpdateSystems = GameSystemService.GetActiveFixedUpdateSystems();
-        foreach (Systems activeSystem in activeSystems)
-        {
-            activeSystem.Cleanup();
-        }
-        
-        foreach (Systems activeSystem in fixedUpdateSystems)
-        {
-            activeSystem.Cleanup();
-        }
-        
-        foreach (Systems activeSystem in lateUpdateSystems)
-        {
-            activeSystem.Cleanup();
-        }
-        GameSystemService.RefreshActiveSystems();
-    }
+        lateUpdateSystems.Execute();
+        updateSystems.Cleanup();
+        fixedUpdateSystems.Cleanup();
+        lateUpdateSystems.Cleanup();
+    }*/
 }

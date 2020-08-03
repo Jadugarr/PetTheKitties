@@ -86,9 +86,12 @@ public static class UIService
         if (activeWidgets.ContainsKey(widgetName))
         {
             AWidget activeWidget = activeWidgets[widgetName];
-            activeWidget.Hide();
-            activeWidgets.Remove(widgetName);
-            inactiveWidgetPool.Add(widgetName, activeWidget);
+            if (activeWidget != null)
+            {
+                activeWidget.Hide();
+                activeWidgets.Remove(widgetName);
+                inactiveWidgetPool.Add(widgetName, activeWidget);
+            }
         }
     }
 
