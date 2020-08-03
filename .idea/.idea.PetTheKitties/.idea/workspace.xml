@@ -20,8 +20,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d000e499-4345-43d9-8ecf-6364769f742b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Components.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Components/LoadingComponent.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Components/LoadingComponent.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/AllLoadingComponentsRemovedSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/AllLoadingComponentsRemovedSystem.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/LoadingComponentsAddedSystem.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/LoadingComponentsAddedSystem.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/MainMenu/MainMenu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/UI/MainMenu/MainMenu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Contexts.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Contexts.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCameraConfinerComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCameraConfinerComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCurrentSceneComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCurrentSceneComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/World/WorldAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/World/WorldAttribute.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/World/WorldComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/World/WorldComponentsLookup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/World/WorldContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/World/WorldContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/World/WorldEntity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/World/WorldEntity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Generated/World/WorldMatcher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/World/WorldMatcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/GameSceneConstants.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/GameSceneConstants.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +194,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Velocity/Components/CharacterVelocityComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ATBItem/ATBItemWidget.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameDefendComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loading/Systems/AllLoadingComponentsRemovedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/CharacterGravitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Velocity/Systems/SyncVelocitySystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoseConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -216,6 +238,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/BFFF7C0B-1952-412C-B811-8DDDD204A124/18/2ad106f2/TriggerOnEventMatcherExtension.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Schemas/Built In Data_PlayerDataGroupSchema.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Input/Systems/CountTimeSinceLastPauseInputSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loading/Systems/LoadingComponentsAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Player/InteractionTriggerBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/Components/RestartLevelComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/TotalKittyAmountComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -255,6 +278,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Externals/Promises/MainThreadDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionsFulfilledComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CharacterDeathSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Loading/Components/LoadingComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerWonStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Externals/Promises/PromiseState.cs" root0="FORCE_HIGHLIGHTING" />
@@ -295,10 +319,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/ProcessUnpauseInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/ResetTimeSinceLastPauseInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/GameConfigurations.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/KittyAddedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CharacterDeathSystem.cs" />
@@ -328,7 +348,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/EnterBattleStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldNavigationSubStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Components/CurrentSceneComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCurrentSceneComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/InitializeSceneSystem.cs" />
@@ -345,6 +364,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/GameSceneConstants.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/EnterWorldStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Components/LoadingComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/LoadingComponentsAddedSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/AllLoadingComponentsRemovedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
       </list>
     </option>
@@ -489,10 +513,10 @@
     </state>
     <state width="1877" height="222" key="GridCell.Tab.3.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1595279812903" />
     <state width="1877" height="375" key="GridCell.Tab.3.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588422135332" />
-    <state x="-1126" y="235" key="RiderGenerateDialog" timestamp="1595664532435">
+    <state x="-1126" y="235" key="RiderGenerateDialog" timestamp="1596486709228">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1126" y="235" key="RiderGenerateDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1595664532435" />
+    <state x="-1126" y="235" key="RiderGenerateDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1596486709228" />
     <state x="-1151" y="434" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1594552758228">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -505,10 +529,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1217" y="160" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1596469047190" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1596469385603">
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1596482828549">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1596469385603" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1596482828549" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1592581880945" />
   </component>
   <component name="XDebuggerManager">

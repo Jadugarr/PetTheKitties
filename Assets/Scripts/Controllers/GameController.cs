@@ -23,7 +23,7 @@ public class GameController : AGameController
     protected override void CreateSystems(IContext _context)
     {
         GameContext context = (GameContext) _context;
-        
+
         #region BaseSystems
 
         updateSystems
@@ -37,6 +37,8 @@ public class GameController : AGameController
             //Scene
             /*.Add(new EnterBattleStateSystem(context))
             .Add(new ExitBattleStateSystem(context))*/
+            .Add(new LoadingComponentsAddedSystem(context))
+            .Add(new AllLoadingComponentsRemovedSystem(context))
             .Add(new EnterMainMenuStateSystem(context))
             .Add(new ExitMainMenuStateSystem(context))
             .Add(new EnterWorldStateSystem(context))

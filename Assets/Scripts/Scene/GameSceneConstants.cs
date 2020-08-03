@@ -4,4 +4,5 @@
     public static string MainMenuScene = "MainMenu";
     public static string BattleScene = "Battle";
     public static string WorldScene = "World";
+    public static string LoadingScene = "Loading";
 }
