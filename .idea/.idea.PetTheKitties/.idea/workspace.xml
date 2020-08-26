@@ -179,7 +179,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterDirectionSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameDefendComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterFollowSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Components/ControllerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitWorldStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Common/GameControllerType.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoseConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameFollowCharacterComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittensReachedGoalConditionSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -187,6 +189,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameJumpInputAvailableComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Systems/RestartControllerSystem.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/Components/RestartControllerComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameInteractionTriggeredComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Components/ScaredComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePositionComponent.cs" root0="FORCE_HIGHLIGHTING" />
@@ -201,9 +205,11 @@
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameCameraComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/ConditionModifier.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameViewComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/MainMenuController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/WinCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Enums/LoseCondition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GamePlayerInteractionComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Controllers/AGameController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameWinConditionsFulfilledComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameSpeedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Systems/WinConditionControllerSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -232,6 +238,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Feature.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/CharacterStateComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Battle/Components/SpeedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerWonStateSystem.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerWonSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -280,13 +287,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CharacterDeathSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Move/Systems/MoveCharacterSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/AdjustEndingJumpVelocitySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/ProcessJumpInputSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Jump/Systems/HandleJumpEndingStateSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameCharacterVelocityComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Common/GameSystemService.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Input/Systems/InputSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.ChooseAction.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.Universal.cs" />
@@ -316,9 +316,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerWonSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerWonStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/WorldController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AGameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/MainMenuController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" />
@@ -327,10 +325,19 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Components/LoadingComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/LoadingComponentsAddedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/AllLoadingComponentsRemovedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerLostSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerLostStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Components/ControllerComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Components.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Components/RestartControllerComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/GameControllerType.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/MainMenuController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Systems/RestartControllerSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/WorldGameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/Components/ControllerComponent.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/BattleResultText/BattleResultWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/AGameController.cs" />
       </list>
     </option>
   </component>

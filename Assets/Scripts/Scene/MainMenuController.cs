@@ -1,9 +1,12 @@
-using Entitas.Controllers;
-
 namespace Entitas.Scene
 {
     public class MainMenuController : AGameController
     {
+        public override GameControllerType GetGameControllerType()
+        {
+            return GameControllerType.MainMenu;
+        }
+
         protected override IContext GetContext()
         {
             return Contexts.sharedInstance.game;

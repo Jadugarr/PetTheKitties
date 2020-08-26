@@ -1,5 +1,4 @@
 using Entitas.Animations.Systems;
-using Entitas.Controllers;
 using Entitas.Input.Systems;
 using Entitas.Kitty.Systems;
 using Entitas.Position;
@@ -9,6 +8,11 @@ namespace Entitas.World
 {
     public class WorldGameController : AGameController
     {
+        public override GameControllerType GetGameControllerType()
+        {
+            return GameControllerType.World;
+        }
+
         protected override IContext GetContext()
         {
             return Contexts.sharedInstance.game;

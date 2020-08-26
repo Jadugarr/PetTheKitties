@@ -185,6 +185,7 @@
               <e p="GameCharacterVelocityComponent.cs" t="Include" />
               <e p="GameColliderComponent.cs" t="Include" />
               <e p="GameCollisionTriggerComponent.cs" t="Include" />
+              <e p="GameControllerComponent.cs" t="Include" />
               <e p="GameCurrentMovementSpeedComponent.cs" t="Include" />
               <e p="GameCurrentSceneComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
@@ -218,6 +219,7 @@
               <e p="GamePlayerInteractionComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
               <e p="GameRaycastTestComponent.cs" t="Include" />
+              <e p="GameRestartControllerComponent.cs" t="Include" />
               <e p="GameRestartLevelComponent.cs" t="Include" />
               <e p="GameRigidbodyComponent.cs" t="Include" />
               <e p="GameSavedKittyAmountComponent.cs" t="Include" />
@@ -355,6 +357,7 @@
               <e p="IdComponent.cs" t="Include" />
               <e p="RestartLevelComponent.cs" t="Include" />
             </e>
+            <e p="GameControllerType.cs" t="Include" />
             <e p="GameState.cs" t="Include" />
             <e p="GameSystemService.cs" t="Include" />
             <e p="GameSystemType.cs" t="Include" />
@@ -382,7 +385,14 @@
           </e>
           <e p="Controllers" t="Include">
             <e p="AGameController.cs" t="Include" />
+            <e p="Components" t="Include">
+              <e p="ControllerComponent.cs" t="Include" />
+              <e p="RestartControllerComponent.cs" t="Include" />
+            </e>
             <e p="GameController.cs" t="Include" />
+            <e p="Systems" t="Include">
+              <e p="RestartControllerSystem.cs" t="Include" />
+            </e>
             <e p="UIController.cs" t="Include" />
           </e>
           <e p="Enemy" t="Include">

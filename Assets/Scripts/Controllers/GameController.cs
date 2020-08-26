@@ -2,7 +2,6 @@ using Entitas;
 using System;
 using Configurations;
 using Entitas.Camera.Systems;
-using Entitas.Controllers;
 using Entitas.Scripts.Common.Systems;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -54,7 +53,8 @@ public class GameController : AGameController
             .Add(new EnterPausedSubStateSystem(context))
             .Add(new ExitPausedSubStateSystem(context))
             .Add(new ExitChooseActionStateSystem(context))
-            .Add(new RestartLevelSystem(context));
+            .Add(new RestartLevelSystem(context))
+            .Add(new RestartControllerSystem(context));
 
         #endregion
 
@@ -141,6 +141,11 @@ public class GameController : AGameController
             .Add(new RaycastTestSystem(context));
 
         #endregion
+    }
+
+    public override GameControllerType GetGameControllerType()
+    {
+        return GameControllerType.Game;
     }
 
     protected override void AfterAwake()

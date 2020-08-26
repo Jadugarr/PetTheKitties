@@ -62,6 +62,6 @@ public class BattleResultWidget : AWidget
 
     private void OnRestartClicked()
     {
-        context.isRestartLevel = true;
+        context.CreateEntity().AddRestartController(GameControllerType.World);
     }
 }
