@@ -39,7 +39,7 @@ namespace Entitas.World
                 .Add(new HandleGroundedJumpStateSystem(context));
 
             #endregion
-            
+
             #region WorldUpdateSystems
 
             updateSystems
@@ -77,7 +77,9 @@ namespace Entitas.World
                 .Add(new WinConditionControllerSystem(context))
                 .Add(new LoseConditionControllerSystem(context))
                 .Add(new PlayerWonSystem(context))
-                .Add(new ExitPlayerWonStateSystem(context));
+                .Add(new PlayerLostSystem(context))
+                .Add(new ExitPlayerWonStateSystem(context))
+                .Add(new ExitPlayerLostStateSystem(context));
 
             #endregion
 
