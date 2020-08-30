@@ -27,6 +27,7 @@ public class AllLoadingComponentsRemovedSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
+        _context.isMasterLoadingActive = false;
         _context.CreateEntity().AddUnloadScene(GameSceneConstants.LoadingScene);
     }
 }

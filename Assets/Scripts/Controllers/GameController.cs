@@ -33,9 +33,6 @@ public class GameController : AGameController
             .Add(new InitPromisesSystem())
             //Input
             .Add(new InputSystem(context))
-            //Scene
-            /*.Add(new EnterBattleStateSystem(context))
-            .Add(new ExitBattleStateSystem(context))*/
             .Add(new LoadingComponentsAddedSystem(context))
             .Add(new AllLoadingComponentsRemovedSystem(context))
             .Add(new EnterMainMenuStateSystem(context))
@@ -55,81 +52,6 @@ public class GameController : AGameController
             .Add(new ExitChooseActionStateSystem(context))
             .Add(new RestartLevelSystem(context))
             .Add(new RestartControllerSystem(context));
-
-        #endregion
-
-        #region ChooseActionStateSystems
-
-        /*updateSystems
-            .Add(new InitializeChooseActionSystem(context))
-            .Add(new ActionChosenSystem(context));*/
-
-        #endregion
-
-        #region ChooseTargetSystems
-
-        /*updateSystems
-            .Add(new InitializeChooseTargetSystem(context))
-            .Add(new ActionTargetChosenSystem(context));*/
-
-        #endregion
-
-        #region FinalizeActionSystems
-
-        /*updateSystems
-            .Add(new AddActionTimeSystem(context))
-            .Add(new ActionTimeAddedSystem(context));*/
-
-        #endregion
-
-        #region ExecuteActionSystems
-
-        /*updateSystems
-            //Actions
-            .Add(new InitializeExecuteActionSystem(context))
-            .Add(new ExecutePlayerAttackActionSystem(context))
-            .Add(new ExecuteDefenseActionSystem(context))
-            .Add(new ReleaseDefenseActionSystem(context))
-            .Add(new ActionFinishedSystem(context));*/
-
-        #endregion
-
-        #region BattleLostSystems
-
-        /*updateSystems
-            .Add(new DisplayBattleLostSystem());*/
-
-        #endregion
-
-        #region BattleWonSystems
-
-        /*updateSystems
-            .Add(new DisplayBattleWonSystem());*/
-
-        #endregion
-
-        #region WaitingStateSystems
-
-        /*updateSystems
-            .Add(new ActionTimeSystem(context))
-            //Actions
-            .Add(new ExecuteChooseActionSystem(context))
-            .Add(new ExecuteActionsSystem(context));*/
-
-        #endregion
-
-        #region BattleStateSystems
-
-        /*updateSystems
-            .Add(new InitializeBattleSystem(context))
-            .Add(new InitializeATBSystem(context))
-            //Battle
-            .Add(new CharacterDeathSystem(context))
-            .Add(new TeardownCharacterSystem(context))
-            .Add(new TeardownBattleSystem(context))
-            //WinConditions
-            .Add(new WinConditionControllerSystem(context))
-            .Add(new LoseConditionControllerSystem(context));*/
 
         #endregion
 
@@ -182,23 +104,4 @@ public class GameController : AGameController
         GameConfigurations.MovementConstantsConfiguration = movementConstantsConfiguration;
         GameConfigurations.AssetReferenceConfiguration = assetReferenceConfiguration;
     }
-
-    // Update is called once per frame
-    /*private void Update()
-    {
-        updateSystems.Execute();
-    }
-
-    private void FixedUpdate()
-    {
-        fixedUpdateSystems.Execute();
-    }
-
-    private void LateUpdate()
-    {
-        lateUpdateSystems.Execute();
-        updateSystems.Cleanup();
-        fixedUpdateSystems.Cleanup();
-        lateUpdateSystems.Cleanup();
-    }*/
 }

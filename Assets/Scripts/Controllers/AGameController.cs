@@ -97,7 +97,6 @@ public abstract class AGameController : MonoBehaviour
 
     protected abstract void CreateSystems(IContext context);
 
-    // Update is called once per frame
     private void Update()
     {
         updateSystems.Execute();
