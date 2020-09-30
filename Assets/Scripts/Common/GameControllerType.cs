@@ -3,5 +3,6 @@ public enum GameControllerType
     None,
     Game,
     World,
-    MainMenu
+    MainMenu,
+    Loading
 }

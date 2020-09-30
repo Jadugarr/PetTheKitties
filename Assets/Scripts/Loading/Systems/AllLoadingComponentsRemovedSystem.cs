@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Entitas;
 
-public class AllLoadingComponentsRemovedSystem : GameReactiveSystem
+public class AllLoadingComponentsRemovedSystem : GameReactiveSystem, IInitializeSystem
 {
     private IGroup<GameEntity> loadingGroup;
     
@@ -29,5 +29,14 @@ public class AllLoadingComponentsRemovedSystem : GameReactiveSystem
     {
         _context.isMasterLoadingActive = false;
         _context.CreateEntity().AddUnloadScene(GameSceneConstants.LoadingScene);
+    }
+
+    public void Initialize()
+    {
+        if (loadingGroup.count == 0)
+        {
+            _context.isMasterLoadingActive = false;
+            _context.CreateEntity().AddUnloadScene(GameSceneConstants.LoadingScene);
+        }
     }
 }

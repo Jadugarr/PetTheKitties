@@ -34,7 +34,7 @@ public class GameController : AGameController
             //Input
             .Add(new InputSystem(context))
             .Add(new LoadingComponentsAddedSystem(context))
-            .Add(new AllLoadingComponentsRemovedSystem(context))
+            //.Add(new AllLoadingComponentsRemovedSystem(context))
             .Add(new EnterMainMenuStateSystem(context))
             .Add(new ExitMainMenuStateSystem(context))
             .Add(new EnterWorldStateSystem(context))

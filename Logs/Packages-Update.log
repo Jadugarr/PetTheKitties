@@ -151,3 +151,11 @@ Update Mode: updateDependencies
 The following packages were updated:
   com.unity.test-framework from version 1.1.14 to 1.1.16
   com.unity.textmeshpro from version 3.0.0-preview.1 to 3.0.1
+
+=== Wed Sep 30 21:15:18 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.addressables from version 1.8.4 to 1.8.5
