@@ -16,21 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 6a2d86d1b6a962f47ae923322f16599e
-  m_SerializeEntries:
-  - m_GUID: 3f0542ea3a84a784081f02fb0cf75fdd
-    m_Address: WorldPlayer
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 0}
-    m_TargetAsset: {fileID: 0}
-  - m_GUID: 87384f3b9016aa44186364c2a9270c1a
-    m_Address: KittyTemplate
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    m_MainAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
-      type: 3}
-    m_TargetAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
-      type: 3}
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 391054feb7332e540a1cd1cfa41114dc, type: 2}
   m_SchemaSet:
