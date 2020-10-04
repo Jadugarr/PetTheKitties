@@ -528,7 +528,6 @@
               <e p="ChangeSceneSystem.cs" t="Include" />
               <e p="ChangeSubStateInputMapSystem.cs" t="Include" />
               <e p="CleanupSceneLoadedSystem.cs" t="Include" />
-              <e p="CleanupUnloadSceneSystem.cs" t="Include" />
               <e p="EnterBattleStateSystem.cs" t="Include" />
               <e p="EnterMainMenuStateSystem.cs" t="Include" />
               <e p="ExitBattleStateSystem.cs" t="Include" />

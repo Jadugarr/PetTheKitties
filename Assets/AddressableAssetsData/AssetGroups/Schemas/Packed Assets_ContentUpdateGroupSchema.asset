@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Packed Assets_ContentUpdateGroupSchema
   m_EditorClassIdentifier: 
   m_Group: {fileID: 11400000, guid: c9edab54ea1f41044b58e3052cc0170b, type: 2}
-  m_StaticContent: 0
+  m_StaticContent: 1

@@ -35,6 +35,7 @@ public class KittyAddedSystem : GameReactiveSystem
         for (var i = 0; i < entities.Count; i++)
         {
             GameEntity gameEntity = entities[i];
+            gameEntity.isLoading = true;
             Transform spawnPointTransform = spawnPoints[i].transform;
             Addressables.InstantiateAsync(kittyReference, spawnPointTransform.position,
                 spawnPointTransform.rotation).Completed += handle =>
@@ -61,6 +62,8 @@ public class KittyAddedSystem : GameReactiveSystem
                 {
                     gameEntity.AddCollider(collider);
                 }
+
+                gameEntity.isLoading = false;
             };
         }
     }

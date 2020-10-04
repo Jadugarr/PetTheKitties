@@ -33,6 +33,7 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
 
         foreach (GameEntity gameEntity in entities)
         {
+            gameEntity.isLoading = true;
             Addressables.InstantiateAsync(playerReference, playerSpawnPointTransform.position,
                 playerSpawnPointTransform.rotation).Completed += handle =>
             {
@@ -58,6 +59,8 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
                 {
                     gameEntity.AddCollider(collider);
                 }
+                
+                gameEntity.isLoading = false;
             };
         }
     }

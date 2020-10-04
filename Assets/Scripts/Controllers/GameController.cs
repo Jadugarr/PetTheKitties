@@ -34,7 +34,6 @@ public class GameController : AGameController
             //Input
             .Add(new InputSystem(context))
             .Add(new LoadingComponentsAddedSystem(context))
-            //.Add(new AllLoadingComponentsRemovedSystem(context))
             .Add(new EnterMainMenuStateSystem(context))
             .Add(new ExitMainMenuStateSystem(context))
             .Add(new EnterWorldStateSystem(context))
@@ -42,7 +41,6 @@ public class GameController : AGameController
             .Add(new ChangeSceneSystem(context))
             .Add(new UnloadSceneSystem(context))
             .Add(new CleanupSceneLoadedSystem(context))
-            .Add(new CleanupUnloadSceneSystem(context))
             //Game State
             .Add(new ChangeGameStateInputMapSystem(context))
             //Sub State

@@ -29,6 +29,7 @@ public class UnloadSceneSystem : GameReactiveSystem
         {
             var currentEntity = entities[i];
             SceneManager.UnloadSceneAsync(currentEntity.unloadScene.SceneNameToUnload);
+            currentEntity.Destroy();
         }
     }
 }

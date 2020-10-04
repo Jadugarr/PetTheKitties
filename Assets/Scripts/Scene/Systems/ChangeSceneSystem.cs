@@ -7,12 +7,11 @@ using UnityEngine.SceneManagement;
 public class ChangeSceneSystem : GameReactiveSystem, ICleanupSystem
 {
     private IGroup<GameEntity> sceneChangeGroup;
-    private IGroup<GameEntity> loadingGroup;
+    private List<GameEntity> loadingList = new List<GameEntity>();
 
     public ChangeSceneSystem(IContext<GameEntity> context) : base(context)
     {
         sceneChangeGroup = context.GetGroup(GameMatcher.ChangeScene);
-        loadingGroup = context.GetGroup(GameMatcher.Loading);
     }
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
@@ -38,8 +37,11 @@ public class ChangeSceneSystem : GameReactiveSystem, ICleanupSystem
         }
         else
         {
-            _context.CreateEntity().isLoading = true;
-            SceneManager.LoadSceneAsync(entities[0].changeScene.SceneName, entities[0].changeScene.LoadSceneMode).completed += OnSceneLoadCompleted;
+            GameEntity loadingEntity = _context.CreateEntity();
+            loadingEntity.isLoading = true;
+            loadingList.Add(loadingEntity);
+            SceneManager.LoadSceneAsync(entities[0].changeScene.SceneName, entities[0].changeScene.LoadSceneMode)
+                .completed += OnSceneLoadCompleted;
         }
     }
 
@@ -47,9 +49,17 @@ public class ChangeSceneSystem : GameReactiveSystem, ICleanupSystem
     {
         if (asyncOperation.isDone)
         {
-            GameEntity[] loadingEntities = loadingGroup.GetEntities();
-            loadingEntities[0].isLoading = false;
-            loadingEntities[0].Destroy();
+            for (int i = loadingList.Count - 1; i >= 0; i--)
+            {
+                GameEntity loadingEntity = loadingList[i];
+
+                if (loadingEntity != null && loadingEntity.isLoading)
+                {
+                    loadingEntity.isLoading = false;
+                    loadingEntity.Destroy();
+                    break;
+                }
+            }
         }
     }
 
