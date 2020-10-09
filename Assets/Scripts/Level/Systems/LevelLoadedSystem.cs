@@ -10,10 +10,7 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
 {
     private IGroup<GameEntity> _playerGroup;
     private IGroup<GameEntity> _kittyGroup;
-    private GameEntity kittyAmountDisplayEntity;
-    private GameEntity totalKittyAmountEntity;
-    private GameEntity savedKittyAmountEntity;
-    
+
     public LevelLoadedSystem(IContext<GameEntity> context) : base(context)
     {
         _playerGroup = context.GetGroup(GameMatcher.Player);
@@ -46,14 +43,7 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
         }
 
         CreateWinLoseConditions();
-        CreateUiElements();
         AddCameraConfinerEntity();
-
-        totalKittyAmountEntity = _context.CreateEntity();
-        totalKittyAmountEntity.AddTotalKittyAmount(spawnPointAmount);
-
-        savedKittyAmountEntity = _context.CreateEntity();
-        savedKittyAmountEntity.AddSavedKittyAmount(0);
 
         _context.SetNewSubstate(SubState.WorldNavigation);
     }
@@ -100,15 +90,6 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
                 new[] {new LoseConditionState {IsFulfilled = false, LoseCondition = LoseCondition.PlayerDead}});
     }
 
-    private void CreateUiElements()
-    {
-        ValueDisplayWidget valueDisplayWidget =
-            UIService.ShowWidget<ValueDisplayWidget>(UiAssetTypes.KittyAmountDisplay, null);
-        kittyAmountDisplayEntity = _context.CreateEntity();
-        kittyAmountDisplayEntity.AddKittyAmountDisplay(valueDisplayWidget);
-        valueDisplayWidget.gameObject.Link(kittyAmountDisplayEntity);
-    }
-
     private void AddCameraConfinerEntity()
     {
         Collider2D cameraCollider =
@@ -143,17 +124,6 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
 
             entity.Destroy();
         }
-
-        if (kittyAmountDisplayEntity != null && kittyAmountDisplayEntity.kittyAmountDisplay != null && kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget != null)
-        {
-            UIService.HideWidget(UiAssetTypes.KittyAmountDisplay);
-            kittyAmountDisplayEntity.kittyAmountDisplay.KittyAmountDisplayWidget.gameObject.Unlink();
-            kittyAmountDisplayEntity.Destroy();
-        }
-
-        totalKittyAmountEntity?.Destroy();
-
-        savedKittyAmountEntity?.Destroy();
 
         if (_context.hasWinCondition)
         {

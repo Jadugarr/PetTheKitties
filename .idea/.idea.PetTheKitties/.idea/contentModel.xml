@@ -484,6 +484,7 @@
             <e p="Systems" t="Include">
               <e p="LevelLoadedSystem.cs" t="Include" />
               <e p="LoadNextLevelSystem.cs" t="Include" />
+              <e p="UnloadLevelSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Loading" t="Include">

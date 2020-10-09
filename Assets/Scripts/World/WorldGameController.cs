@@ -1,6 +1,7 @@
 using Entitas.Animations.Systems;
 using Entitas.Input.Systems;
 using Entitas.Kitty.Systems;
+using Entitas.Level.Systems;
 using Entitas.Position;
 using Entitas.World.Systems;
 
@@ -118,7 +119,9 @@ namespace Entitas.World
 
             #region Level Systems
 
-            updateSystems.Add(new LevelLoadedSystem(context));
+            updateSystems
+                .Add(new LevelLoadedSystem(context))
+                .Add(new UnloadLevelSystem(context));
 
             #endregion
         }
