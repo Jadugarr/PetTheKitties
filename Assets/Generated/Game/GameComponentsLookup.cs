@@ -45,46 +45,47 @@ public static class GameComponentsLookup {
     public const int FollowCharacter = 34;
     public const int GameState = 35;
     public const int GoalReached = 36;
-    public const int Health = 37;
-    public const int Id = 38;
-    public const int Input = 39;
-    public const int InteractionTriggered = 40;
-    public const int JumpCharacter = 41;
-    public const int JumpForce = 42;
-    public const int JumpInputAvailable = 43;
-    public const int KittyAmountDisplay = 44;
-    public const int Kitty = 45;
-    public const int Level = 46;
-    public const int LevelIndex = 47;
-    public const int Loading = 48;
-    public const int LoseCondition = 49;
-    public const int LoseConditionsFulfilled = 50;
-    public const int MasterLoadingActive = 51;
-    public const int MoveCharacter = 52;
-    public const int MovementSpeed = 53;
-    public const int PauseInputAvailable = 54;
-    public const int Player = 55;
-    public const int Position = 56;
-    public const int RaycastTest = 57;
-    public const int RestartController = 58;
-    public const int RestartLevel = 59;
-    public const int Rigidbody = 60;
-    public const int SavedKittyAmount = 61;
-    public const int Scared = 62;
-    public const int SceneLoaded = 63;
-    public const int Speed = 64;
-    public const int StepSize = 65;
-    public const int SubState = 66;
-    public const int Target = 67;
-    public const int TimeSinceLastJumpInput = 68;
-    public const int TimeSinceLastPauseInput = 69;
-    public const int TotalKittyAmount = 70;
-    public const int UnloadScene = 71;
-    public const int View = 72;
-    public const int WinCondition = 73;
-    public const int WinConditionsFulfilled = 74;
+    public const int HasBeenPet = 37;
+    public const int Health = 38;
+    public const int Id = 39;
+    public const int Input = 40;
+    public const int InteractionTriggered = 41;
+    public const int JumpCharacter = 42;
+    public const int JumpForce = 43;
+    public const int JumpInputAvailable = 44;
+    public const int KittyAmountDisplay = 45;
+    public const int Kitty = 46;
+    public const int Level = 47;
+    public const int LevelIndex = 48;
+    public const int Loading = 49;
+    public const int LoseCondition = 50;
+    public const int LoseConditionsFulfilled = 51;
+    public const int MasterLoadingActive = 52;
+    public const int MoveCharacter = 53;
+    public const int MovementSpeed = 54;
+    public const int PauseInputAvailable = 55;
+    public const int Player = 56;
+    public const int Position = 57;
+    public const int RaycastTest = 58;
+    public const int RestartController = 59;
+    public const int RestartLevel = 60;
+    public const int Rigidbody = 61;
+    public const int SavedKittyAmount = 62;
+    public const int Scared = 63;
+    public const int SceneLoaded = 64;
+    public const int Speed = 65;
+    public const int StepSize = 66;
+    public const int SubState = 67;
+    public const int Target = 68;
+    public const int TimeSinceLastJumpInput = 69;
+    public const int TimeSinceLastPauseInput = 70;
+    public const int TotalKittyAmount = 71;
+    public const int UnloadScene = 72;
+    public const int View = 73;
+    public const int WinCondition = 74;
+    public const int WinConditionsFulfilled = 75;
 
-    public const int TotalComponents = 75;
+    public const int TotalComponents = 76;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -124,6 +125,7 @@ public static class GameComponentsLookup {
         "FollowCharacter",
         "GameState",
         "GoalReached",
+        "HasBeenPet",
         "Health",
         "Id",
         "Input",
@@ -202,6 +204,7 @@ public static class GameComponentsLookup {
         typeof(FollowCharacterComponent),
         typeof(GameStateComponent),
         typeof(GoalReachedComponent),
+        typeof(HasBeenPetComponent),
         typeof(HealthComponent),
         typeof(IdComponent),
         typeof(InputComponent),

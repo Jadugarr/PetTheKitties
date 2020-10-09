@@ -94,7 +94,7 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
     {
         _context.CreateEntity()
             .AddWinCondition(ConditionModifier.All,
-                new[] {new WinConditionState {IsFulfilled = false, WinCondition = WinCondition.KittensReachedGoal}});
+                new[] {new WinConditionState {IsFulfilled = false, WinCondition = WinCondition.KittenPet}});
         _context.CreateEntity()
             .AddLoseCondition(ConditionModifier.All,
                 new[] {new LoseConditionState {IsFulfilled = false, LoseCondition = LoseCondition.PlayerDead}});

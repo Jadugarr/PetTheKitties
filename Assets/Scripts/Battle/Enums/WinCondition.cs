@@ -2,5 +2,6 @@
 {
     None,
     KillEnemies,
-    KittensReachedGoal
+    KittensReachedGoal,
+    KittenPet
 }

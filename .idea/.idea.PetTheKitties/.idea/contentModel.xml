@@ -198,6 +198,7 @@
               <e p="GameFollowCharacterComponent.cs" t="Include" />
               <e p="GameGameStateComponent.cs" t="Include" />
               <e p="GameGoalReachedComponent.cs" t="Include" />
+              <e p="GameHasBeenPetComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
               <e p="GameInputComponent.cs" t="Include" />
@@ -459,6 +460,7 @@
             <e p="Components" t="Include">
               <e p="CharacterReachedGoalComponent.cs" t="Include" />
               <e p="GoalReachedComponent.cs" t="Include" />
+              <e p="HasBeenPetComponent.cs" t="Include" />
               <e p="KittyComponent.cs" t="Include" />
               <e p="PlayerInteractionComponent.cs" t="Include" />
               <e p="SavedKittyAmountComponent.cs" t="Include" />
@@ -466,10 +468,10 @@
             </e>
             <e p="Systems" t="Include">
               <e p="CharacterReachedGoalSystem.cs" t="Include" />
-              <e p="CharacterStartFollowSystem.cs" t="Include" />
               <e p="KittyAddedSystem.cs" t="Include" />
               <e p="KittyInteractionSystem.cs" t="Include" />
               <e p="KittySavedSystem.cs" t="Include" />
+              <e p="PetKittySystem.cs" t="Include" />
             </e>
           </e>
           <e p="Level" t="Include">
@@ -651,6 +653,7 @@
               <e p="CharacterOnGroundSystem.cs" t="Include" />
               <e p="CharacterScaredSystem.cs" t="Include" />
               <e p="CheckCharacterGroundStateSystem.cs" t="Include" />
+              <e p="CheckKittenPetConditionSystem.cs" t="Include" />
               <e p="CheckKittensReachedGoalConditionSystem.cs" t="Include" />
               <e p="EnterWorldStateSystem.cs" t="Include" />
               <e p="ExitPlayerLostStateSystem.cs" t="Include" />

@@ -2,12 +2,12 @@ using System.Collections.Generic;
 using Entitas;
 using UnityEngine;
 
-public class CharacterStartFollowSystem : GameReactiveSystem
+public class PetKittySystem : GameReactiveSystem
 {
     private GameEntity _interactedEntity;
     private IGroup<GameEntity> _playerGroup;
 
-    public CharacterStartFollowSystem(IContext<GameEntity> context) : base(context)
+    public PetKittySystem(IContext<GameEntity> context) : base(context)
     {
         _playerGroup = _context.GetGroup(GameMatcher.Player);
     }
@@ -37,10 +37,7 @@ public class CharacterStartFollowSystem : GameReactiveSystem
 
         if (playerEntity != null)
         {
-            if (!_interactedEntity.isGoalReached)
-            {
-                _interactedEntity.ReplaceFollowCharacter(playerEntity.id.Id);
-            }
+            _interactedEntity.isHasBeenPet = true;
         }
     }
 }

@@ -26,7 +26,8 @@ namespace Entitas.World
 
             updateSystems
                 .Add(new CheckKillEnemiesConditionSystem(context))
-                .Add(new CheckKittensReachedGoalConditionSystem(context));
+                .Add(new CheckKittensReachedGoalConditionSystem(context))
+                .Add(new CheckKittenPetConditionSystem(context));
 
             #endregion
 
@@ -67,7 +68,7 @@ namespace Entitas.World
                 .Add(new CharacterDeathSystem(context))
                 .Add(new CheckInteractInputAvailableSystem(context))
                 .Add(new KittyInteractionSystem(context))
-                .Add(new CharacterStartFollowSystem(context))
+                .Add(new PetKittySystem(context))
                 .Add(new CharacterDirectionSystem(context))
                 .Add(new CharacterFollowSystem(context))
                 .Add(new CharacterScaredSystem(context))
