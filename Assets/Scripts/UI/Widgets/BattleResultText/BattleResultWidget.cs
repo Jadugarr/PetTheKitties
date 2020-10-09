@@ -1,4 +1,5 @@
-﻿using Entitas.Extensions;
+﻿using Entitas;
+using Entitas.Extensions;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -65,11 +66,31 @@ public class BattleResultWidget : AWidget
 
     private void OnRestartClicked()
     {
-        context.CreateEntity().AddRestartController(GameControllerType.World);
+        context.isUnloadLevel = true;
+        context.OnEntityDestroyed += OnLevelUnloadedAndRestart;
+    }
+
+    private void OnLevelUnloadedAndRestart(IContext context1, IEntity entity)
+    {
+        if (context.isUnloadLevel == false)
+        {
+            context.isRestartLevel = true;
+            context.OnEntityDestroyed -= OnLevelUnloadedAndRestart;
+        }
     }
 
     private void OnNextLevelClicked()
     {
-        context.isLoadNextLevel = true;
+        context.isUnloadLevel = true;
+        context.OnEntityDestroyed += OnLevelUnloadedAndLoadNextLevel;
+    }
+
+    private void OnLevelUnloadedAndLoadNextLevel(IContext eventContext, IEntity entity)
+    {
+        if (context.isUnloadLevel == false)
+        {
+            context.isLoadNextLevel = true;
+            context.OnEntityDestroyed -= OnLevelUnloadedAndLoadNextLevel;
+        }
     }
 }

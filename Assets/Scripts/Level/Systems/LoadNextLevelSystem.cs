@@ -33,14 +33,9 @@ public class LoadNextLevelSystem : GameReactiveSystem
     {
         GameEntity levelEntity = levelEntities.GetSingleEntity();
         levelEntity.isLoading = true;
-
-        if (levelEntity.hasView && levelEntity.view.View != null)
-        {
-            levelEntity.view.View.Unlink();
-            GameObject.Destroy(levelEntity.view.View);
-        }
-
-        levelEntity.ReplaceLevelIndex(levelEntity.levelIndex.Value + 1);
+        int levelIndex = levelEntity.levelIndex.Value;
+        int levelAmount = GameConfigurations.AssetReferenceConfiguration.Levels.Length;
+        levelEntity.ReplaceLevelIndex(levelIndex == levelAmount - 1 ? 0 : levelIndex + 1);
         AssetReference nextLevelReference =
             GameConfigurations.AssetReferenceConfiguration.Levels[levelEntity.levelIndex.Value];
         Addressables.InstantiateAsync(nextLevelReference).Completed += handle =>

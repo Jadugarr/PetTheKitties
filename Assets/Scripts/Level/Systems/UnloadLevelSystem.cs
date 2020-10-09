@@ -8,16 +8,18 @@ namespace Entitas.Level.Systems
     {
         private IGroup<GameEntity> _playerGroup;
         private IGroup<GameEntity> _kittyGroup;
+        private IGroup<GameEntity> _levelGroup;
         
         public UnloadLevelSystem(IContext<GameEntity> context) : base(context)
         {
             _playerGroup = context.GetGroup(GameMatcher.Player);
             _kittyGroup = context.GetGroup(GameMatcher.Kitty);
+            _levelGroup = context.GetGroup(GameMatcher.Level);
         }
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.LoadNextLevel, GroupEvent.Added));
+            return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.UnloadLevel, GroupEvent.Added));
         }
 
         protected override bool Filter(GameEntity entity)
@@ -68,6 +70,15 @@ namespace Entitas.Level.Systems
             {
                 _context.RemoveCameraConfiner();
             }
+
+            GameEntity levelEntity = _levelGroup.GetSingleEntity();
+            if (levelEntity.hasView && levelEntity.view.View != null)
+            {
+                levelEntity.view.View.Unlink();
+                levelEntity.view.View.DestroyGameObject();
+            }
+
+            _context.isUnloadLevel = false;
         }
     }
 }

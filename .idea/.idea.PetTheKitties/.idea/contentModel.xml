@@ -237,6 +237,7 @@
               <e p="GameTimeSinceLastJumpInputComponent.cs" t="Include" />
               <e p="GameTimeSinceLastPauseInputComponent.cs" t="Include" />
               <e p="GameTotalKittyAmountComponent.cs" t="Include" />
+              <e p="GameUnloadLevelComponent.cs" t="Include" />
               <e p="GameUnloadSceneComponent.cs" t="Include" />
               <e p="GameViewComponent.cs" t="Include" />
               <e p="GameWinConditionComponent.cs" t="Include" />
@@ -480,6 +481,7 @@
               <e p="LevelComponent.cs" t="Include" />
               <e p="LevelIndexComponent.cs" t="Include" />
               <e p="LoadNextLevelComponent.cs" t="Include" />
+              <e p="UnloadLevelComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="LevelLoadedSystem.cs" t="Include" />

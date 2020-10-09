@@ -2,6 +2,7 @@ using Configurations;
 using Entitas;
 using Entitas.Scripts.Common.Systems;
 using Entitas.Unity;
+using Entitas.VisualDebugging.Unity;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -23,7 +24,7 @@ public class WorldSceneLoadedSystem : GameInitializeSystem, ITearDownSystem
     {
         GameEntity levelEntity = _context.CreateEntity();
         levelEntity.isLevel = true;
-        levelEntity.AddLevelIndex(0);
+        levelEntity.ReplaceLevelIndex(0);
         levelEntity.isLoading = true;
 
         AssetReference levelReference =
@@ -39,8 +40,11 @@ public class WorldSceneLoadedSystem : GameInitializeSystem, ITearDownSystem
     public void TearDown()
     {
         GameEntity levelEntity = levelEntities.GetSingleEntity();
-        levelEntity.view.View.Unlink();
-        GameObject.Destroy(levelEntity.view.View);
-        levelEntity.Destroy();
+        if (levelEntity.hasView && levelEntity.view.View != null)
+        {
+            levelEntity.view.View.Unlink();
+            levelEntity.view.View.DestroyGameObject();
+            levelEntity.Destroy();
+        }
     }
 }
