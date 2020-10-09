@@ -49,6 +49,7 @@ public class GameController : AGameController
             .Add(new ExitPausedSubStateSystem(context))
             .Add(new ExitChooseActionStateSystem(context))
             .Add(new RestartLevelSystem(context))
+            .Add(new LoadNextLevelSystem(context))
             .Add(new RestartControllerSystem(context));
 
         #endregion

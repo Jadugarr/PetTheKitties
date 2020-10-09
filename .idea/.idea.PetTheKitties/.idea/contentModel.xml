@@ -213,6 +213,7 @@
               <e p="GameLevelComponent.cs" t="Include" />
               <e p="GameLevelIndexComponent.cs" t="Include" />
               <e p="GameLoadingComponent.cs" t="Include" />
+              <e p="GameLoadNextLevelComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
               <e p="GameMasterLoadingActiveComponent.cs" t="Include" />
@@ -478,9 +479,11 @@
             <e p="Components" t="Include">
               <e p="LevelComponent.cs" t="Include" />
               <e p="LevelIndexComponent.cs" t="Include" />
+              <e p="LoadNextLevelComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="LevelLoadedSystem.cs" t="Include" />
+              <e p="LoadNextLevelSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Loading" t="Include">

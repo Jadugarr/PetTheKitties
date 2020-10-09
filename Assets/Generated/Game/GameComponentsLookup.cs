@@ -58,34 +58,35 @@ public static class GameComponentsLookup {
     public const int Level = 47;
     public const int LevelIndex = 48;
     public const int Loading = 49;
-    public const int LoseCondition = 50;
-    public const int LoseConditionsFulfilled = 51;
-    public const int MasterLoadingActive = 52;
-    public const int MoveCharacter = 53;
-    public const int MovementSpeed = 54;
-    public const int PauseInputAvailable = 55;
-    public const int Player = 56;
-    public const int Position = 57;
-    public const int RaycastTest = 58;
-    public const int RestartController = 59;
-    public const int RestartLevel = 60;
-    public const int Rigidbody = 61;
-    public const int SavedKittyAmount = 62;
-    public const int Scared = 63;
-    public const int SceneLoaded = 64;
-    public const int Speed = 65;
-    public const int StepSize = 66;
-    public const int SubState = 67;
-    public const int Target = 68;
-    public const int TimeSinceLastJumpInput = 69;
-    public const int TimeSinceLastPauseInput = 70;
-    public const int TotalKittyAmount = 71;
-    public const int UnloadScene = 72;
-    public const int View = 73;
-    public const int WinCondition = 74;
-    public const int WinConditionsFulfilled = 75;
+    public const int LoadNextLevel = 50;
+    public const int LoseCondition = 51;
+    public const int LoseConditionsFulfilled = 52;
+    public const int MasterLoadingActive = 53;
+    public const int MoveCharacter = 54;
+    public const int MovementSpeed = 55;
+    public const int PauseInputAvailable = 56;
+    public const int Player = 57;
+    public const int Position = 58;
+    public const int RaycastTest = 59;
+    public const int RestartController = 60;
+    public const int RestartLevel = 61;
+    public const int Rigidbody = 62;
+    public const int SavedKittyAmount = 63;
+    public const int Scared = 64;
+    public const int SceneLoaded = 65;
+    public const int Speed = 66;
+    public const int StepSize = 67;
+    public const int SubState = 68;
+    public const int Target = 69;
+    public const int TimeSinceLastJumpInput = 70;
+    public const int TimeSinceLastPauseInput = 71;
+    public const int TotalKittyAmount = 72;
+    public const int UnloadScene = 73;
+    public const int View = 74;
+    public const int WinCondition = 75;
+    public const int WinConditionsFulfilled = 76;
 
-    public const int TotalComponents = 76;
+    public const int TotalComponents = 77;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -138,6 +139,7 @@ public static class GameComponentsLookup {
         "Level",
         "LevelIndex",
         "Loading",
+        "LoadNextLevel",
         "LoseCondition",
         "LoseConditionsFulfilled",
         "MasterLoadingActive",
@@ -217,6 +219,7 @@ public static class GameComponentsLookup {
         typeof(LevelComponent),
         typeof(LevelIndexComponent),
         typeof(LoadingComponent),
+        typeof(LoadNextLevelComponent),
         typeof(LoseConditionComponent),
         typeof(LoseConditionsFulfilledComponent),
         typeof(MasterLoadingActiveComponent),

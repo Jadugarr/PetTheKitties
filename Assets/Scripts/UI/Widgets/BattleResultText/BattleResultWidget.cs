@@ -9,6 +9,7 @@ public class BattleResultWidget : AWidget
     [SerializeField] private Button restartButton;
     [SerializeField] private Button mainMenuButton;
     [SerializeField] private Button quitGameButton;
+    [SerializeField] private Button nextLevelButton;
 
     private GameContext context;
 
@@ -19,6 +20,7 @@ public class BattleResultWidget : AWidget
         restartButton.onClick.AddListener(OnRestartClicked);
         mainMenuButton.onClick.AddListener(OnMainMenuClicked);
         quitGameButton.onClick.AddListener(OnQuitClicked);
+        nextLevelButton.onClick.AddListener(OnNextLevelClicked);
     }
 
     public override void Close()
@@ -26,6 +28,7 @@ public class BattleResultWidget : AWidget
         restartButton.onClick.RemoveListener(OnRestartClicked);
         mainMenuButton.onClick.RemoveListener(OnMainMenuClicked);
         quitGameButton.onClick.RemoveListener(OnQuitClicked);
+        nextLevelButton.onClick.RemoveListener(OnNextLevelClicked);
     }
 
     public override string GetName()
@@ -63,5 +66,10 @@ public class BattleResultWidget : AWidget
     private void OnRestartClicked()
     {
         context.CreateEntity().AddRestartController(GameControllerType.World);
+    }
+
+    private void OnNextLevelClicked()
+    {
+        context.isLoadNextLevel = true;
     }
 }

@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using Entitas;
-using UnityEngine;
 
 public class RestartLevelSystem : GameReactiveSystem
 {
@@ -25,14 +24,5 @@ public class RestartLevelSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        /*List<Systems> activeSystems = GameSystemService.GetActiveSystems();
-
-        foreach (Systems activeSystem in activeSystems)
-        {
-            activeSystem.TearDown();
-            activeSystem.Initialize();
-        }
-
-        _context.isRestartLevel = false;*/
     }
 }
