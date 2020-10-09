@@ -16,7 +16,37 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: 6a2d86d1b6a962f47ae923322f16599e
-  m_SerializeEntries: []
+  m_SerializeEntries:
+  - m_GUID: 3f0542ea3a84a784081f02fb0cf75fdd
+    m_Address: Assets/Resources_moved/Players/WorldPlayer.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 1129988597773570, guid: 3f0542ea3a84a784081f02fb0cf75fdd,
+      type: 3}
+    m_TargetAsset: {fileID: 1129988597773570, guid: 3f0542ea3a84a784081f02fb0cf75fdd,
+      type: 3}
+  - m_GUID: 55b3abed6a91095438390a21aa399fb6
+    m_Address: Assets/Prefabs/Levels/Level_001.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 169009829212841218, guid: 55b3abed6a91095438390a21aa399fb6,
+      type: 3}
+    m_TargetAsset: {fileID: 169009829212841218, guid: 55b3abed6a91095438390a21aa399fb6,
+      type: 3}
+  - m_GUID: 87384f3b9016aa44186364c2a9270c1a
+    m_Address: Assets/Resources_moved/NPC/KittyTemplate.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
+      type: 3}
+    m_TargetAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
+      type: 3}
+  - m_GUID: f82ab48159349774589c9a232c847b47
+    m_Address: Assets/Configurations/AssetReferenceConfiguration.asset
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 11400000, guid: f82ab48159349774589c9a232c847b47, type: 2}
+    m_TargetAsset: {fileID: 11400000, guid: f82ab48159349774589c9a232c847b47, type: 2}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 391054feb7332e540a1cd1cfa41114dc, type: 2}
   m_SchemaSet:

@@ -18,3 +18,6 @@ MonoBehaviour:
   KittyReference:
     m_AssetGUID: 87384f3b9016aa44186364c2a9270c1a
     m_SubObjectName: 
+  Levels:
+  - m_AssetGUID: 55b3abed6a91095438390a21aa399fb6
+    m_SubObjectName: 

@@ -10,5 +10,11 @@ namespace Configurations
     {
         public AssetReference WorldPlayerReference;
         public AssetReference KittyReference;
+
+        #region Levels
+
+        public AssetReference[] Levels;
+
+        #endregion
     }
 }

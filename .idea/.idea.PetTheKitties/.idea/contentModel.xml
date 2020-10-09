@@ -209,6 +209,8 @@
               <e p="GameJumpInputAvailableComponent.cs" t="Include" />
               <e p="GameKittyAmountDisplayComponent.cs" t="Include" />
               <e p="GameKittyComponent.cs" t="Include" />
+              <e p="GameLevelComponent.cs" t="Include" />
+              <e p="GameLevelIndexComponent.cs" t="Include" />
               <e p="GameLoadingComponent.cs" t="Include" />
               <e p="GameLoseConditionComponent.cs" t="Include" />
               <e p="GameLoseConditionsFulfilledComponent.cs" t="Include" />
@@ -468,6 +470,15 @@
               <e p="KittyAddedSystem.cs" t="Include" />
               <e p="KittyInteractionSystem.cs" t="Include" />
               <e p="KittySavedSystem.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Level" t="Include">
+            <e p="Components" t="Include">
+              <e p="LevelComponent.cs" t="Include" />
+              <e p="LevelIndexComponent.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="LevelLoadedSystem.cs" t="Include" />
             </e>
           </e>
           <e p="Loading" t="Include">

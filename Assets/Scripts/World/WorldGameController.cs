@@ -114,6 +114,12 @@ namespace Entitas.World
                 .Add(new RenderCharacterStateAnimationsSystem(context));
 
             #endregion
+
+            #region Level Systems
+
+            updateSystems.Add(new LevelLoadedSystem(context));
+
+            #endregion
         }
     }
 }
