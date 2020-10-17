@@ -18,7 +18,7 @@ public class CheckPlayerDeadConditionSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return playerEntities.count == 0;
+        return playerEntities.count == 0 && !_context.isWinConditionsFulfilled && !_context.isLoseConditionsFulfilled;
     }
 
     protected override bool IsInValidState()

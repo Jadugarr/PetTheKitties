@@ -26,16 +26,16 @@ namespace Entitas.World
             #region WinConditionSystems
 
             updateSystems
-                .Add(new CheckKillEnemiesConditionSystem(context))
-                .Add(new CheckKittensReachedGoalConditionSystem(context))
-                .Add(new CheckKittenPetConditionSystem(context));
+                .Add(new CheckKittenPetConditionSystem(context))
+                .Add(new AllWinConditionsFulfilledSystem(context));
 
             #endregion
 
             #region LoseConditionSystems
 
             updateSystems
-                .Add(new CheckPlayerDeadConditionSystem(context));
+                .Add(new CheckPlayerDeadConditionSystem(context))
+                .Add(new AllLoseConditionsFulfilledSystem(context));
 
             #endregion
 

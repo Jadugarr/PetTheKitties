@@ -13,12 +13,12 @@ namespace Entitas.World.Systems
 
         protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
         {
-            return context.CreateCollector(GameMatcher.HasBeenPet);
+            return context.CreateCollector(GameMatcher.AllOf(GameMatcher.Kitty, GameMatcher.HasBeenPet));
         }
 
         protected override bool Filter(GameEntity entity)
         {
-            return true;
+            return entity != null && entity.isKitty && entity.isHasBeenPet && !_context.isWinConditionsFulfilled && !_context.isLoseConditionsFulfilled;
         }
 
         protected override bool IsInValidState()

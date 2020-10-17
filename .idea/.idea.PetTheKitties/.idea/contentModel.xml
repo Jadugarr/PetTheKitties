@@ -325,6 +325,8 @@
               <e p="ActionTargetChosenSystem.cs" t="Include" />
               <e p="ActionTimeAddedSystem.cs" t="Include" />
               <e p="AddActionTimeSystem.cs" t="Include" />
+              <e p="AllLoseConditionsFulfilledSystem.cs" t="Include" />
+              <e p="AllWinConditionsFulfilledSystem.cs" t="Include" />
               <e p="CharacterDeathSystem.cs" t="Include" />
               <e p="CheckKillEnemiesConditionSystem.cs" t="Include" />
               <e p="CheckPlayerDeadConditionSystem.cs" t="Include" />

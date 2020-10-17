@@ -35,6 +35,6 @@ public class WinConditionControllerSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        _context.SetNewSubstate(SubState.PlayerWon);
+        _context.isWinConditionsFulfilled = true;
     }
 }
