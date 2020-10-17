@@ -20,21 +20,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d000e499-4345-43d9-8ecf-6364769f742b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/AllLoseConditionsFulfilledSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/AllLoseConditionsFulfilledSystem.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/AllWinConditionsFulfilledSystem.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/AllWinConditionsFulfilledSystem.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoseConditionsFulfilledComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoseConditionsFulfilledComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameWinConditionsFulfilledComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/Components/GameWinConditionsFulfilledComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Components/LoseConditionsFulfilledComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Components/LoseConditionsFulfilledComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionsFulfilledComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionsFulfilledComponent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/WinConditionControllerSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/WinConditionControllerSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LevelLoadedSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LevelLoadedSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/WorldGameController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/WorldGameController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level_001.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Levels/Level_001.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,6 +237,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/PlayerInteractionComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Kitty/Components/GoalReachedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameEnemySpawnCooldownComponent.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/04258D1C-DC10-4424-8C2A-17A6A31A3CF7/14/84050811/Vector2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/SceneController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Generated/Game/Components/GameMovementSpeedComponent.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Scene/Systems/CleanupSceneLoadedSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -289,7 +279,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitMainMenuStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Scene/GameSceneConstants.cs" />
@@ -340,6 +329,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LevelLoadedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/GroundCheckUtil.cs" />
       </list>
     </option>
   </component>
@@ -385,10 +375,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="7444">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="7444" />
       <option name="selectedOptions">
         <set />
       </option>
@@ -423,38 +413,38 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state width="446" height="450" key="DebuggerActiveHint/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602271354640" />
-    <state width="1877" height="222" key="GridCell.Tab.0.bottom" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.0.bottom" timestamp="1602928617235">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.0.center" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617235" />
+    <state width="1877" height="222" key="GridCell.Tab.0.center" timestamp="1602928617235">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.0.left" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617235" />
+    <state width="1877" height="222" key="GridCell.Tab.0.left" timestamp="1602928617234">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.0.right" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617234" />
+    <state width="1877" height="222" key="GridCell.Tab.0.right" timestamp="1602928617235">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.1.bottom" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617235" />
+    <state width="1877" height="222" key="GridCell.Tab.1.bottom" timestamp="1602928617756">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.1.center" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617756" />
+    <state width="1877" height="222" key="GridCell.Tab.1.center" timestamp="1602928617756">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.1.left" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617756" />
+    <state width="1877" height="222" key="GridCell.Tab.1.left" timestamp="1602928617756">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
-    <state width="1877" height="222" key="GridCell.Tab.1.right" timestamp="1602278790983">
+    <state width="1877" height="222" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617756" />
+    <state width="1877" height="222" key="GridCell.Tab.1.right" timestamp="1602928617756">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="222" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602278790983" />
+    <state width="1877" height="222" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928617756" />
     <state width="1877" height="222" key="GridCell.Tab.2.bottom" timestamp="1602278790984">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -503,10 +493,10 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1217" y="160" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602926794074" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602927615992">
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1602928083221">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602927615992" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602928083221" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

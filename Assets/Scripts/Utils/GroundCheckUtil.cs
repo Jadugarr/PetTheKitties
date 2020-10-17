@@ -140,6 +140,7 @@ public static class GroundCheckUtil
 
     private static bool IsSlope(RaycastHit2D hit)
     {
-        return hit.collider != null && Mathf.Abs(Vector2.SignedAngle(hit.normal, flatGroundNormal)) > 0.01f;
+        float angle = Mathf.Abs(Vector2.SignedAngle(hit.normal, flatGroundNormal));
+        return hit.collider != null && angle > 0.01f && angle <= 45f;
     }
 }
