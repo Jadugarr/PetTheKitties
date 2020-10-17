@@ -34,6 +34,16 @@ namespace Entitas.Level.Systems
 
         protected override void ExecuteSystem(List<GameEntity> entities)
         {
+            if (_context.hasWinCondition)
+            {
+                _context.RemoveWinCondition();
+            }
+
+            if (_context.hasLoseCondition)
+            {
+                _context.RemoveLoseCondition();
+            }
+            
             foreach (GameEntity entity in _kittyGroup.GetEntities())
             {
                 if (entity.view != null && entity.view.View != null)
@@ -54,16 +64,6 @@ namespace Entitas.Level.Systems
                 }
 
                 entity.Destroy();
-            }
-
-            if (_context.hasWinCondition)
-            {
-                _context.RemoveWinCondition();
-            }
-
-            if (_context.hasLoseCondition)
-            {
-                _context.RemoveLoseCondition();
             }
 
             if (_context.hasCameraConfiner)
