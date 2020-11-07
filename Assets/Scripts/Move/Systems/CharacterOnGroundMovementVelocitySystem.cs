@@ -21,7 +21,7 @@ public class CharacterOnGroundMovementVelocitySystem : GameExecuteSystem
     {
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
-            if (characterEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnGround &&
+            if (characterEntity.characterGroundState.Value == CharacterGroundState.OnGround &&
                 characterEntity.characterState.State != CharacterState.Jumping)
             {
                 characterEntity.ReplaceCharacterVelocity(new Vector2(

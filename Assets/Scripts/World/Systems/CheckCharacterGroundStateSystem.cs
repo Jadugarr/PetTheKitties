@@ -83,12 +83,19 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
                 characterGroundStateData.DistanceToGround = 0;
             }
 
-            // if (characterGroundStateData.CharacterGroundState !=
-            //     characterEntity.characterGroundState.CharacterGroundState)
-            // {
-                characterEntity.ReplaceCharacterGroundState(characterGroundStateData.CharacterGroundState,
-                    characterGroundStateData.GroundNormal, characterGroundStateData.DistanceToGround);
-            // }
+            if (characterGroundStateData.CharacterGroundState !=
+                characterEntity.characterGroundState.Value)
+            {
+                characterEntity.ReplaceCharacterGroundState(characterGroundStateData.CharacterGroundState);
+            }
+
+            if (characterGroundStateData.GroundNormal != characterEntity.groundHitNormal.Value)
+            {
+                characterEntity.ReplaceGroundHitNormal(characterGroundStateData.GroundNormal);
+            }
+
+            characterEntity.ReplaceDistanceToGround(characterGroundStateData.DistanceToGround);
+            
         }
     }
 }

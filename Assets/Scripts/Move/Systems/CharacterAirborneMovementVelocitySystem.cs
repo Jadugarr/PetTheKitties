@@ -22,7 +22,7 @@ public class CharacterAirborneMovementVelocitySystem : GameExecuteSystem
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
             
-            if (characterEntity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne)
+            if (characterEntity.characterGroundState.Value == CharacterGroundState.Airborne)
             {
                 characterEntity.ReplaceCharacterVelocity(new Vector2(
                     characterEntity.currentMovementSpeed.CurrentMovementSpeed,

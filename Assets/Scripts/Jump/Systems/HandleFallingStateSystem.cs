@@ -18,7 +18,7 @@ public class HandleFallingStateSystem : GameReactiveSystem
     protected override bool Filter(GameEntity entity)
     {
         return entity.hasCharacterState && entity.characterState != null && entity.characterState.State != CharacterState.Falling
-            && entity.hasCharacterGroundState && entity.characterGroundState != null && entity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne;
+            && entity.hasCharacterGroundState && entity.characterGroundState != null && entity.characterGroundState.Value == CharacterGroundState.Airborne;
     }
 
     protected override bool IsInValidState()

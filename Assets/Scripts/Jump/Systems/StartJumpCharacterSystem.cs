@@ -30,13 +30,15 @@ public class StartJumpCharacterSystem : GameExecuteSystem
                 && HasValidStateToJump(jumpCharacterEntity.characterState.State)
                 && jumpCharacterEntity.hasView
                 && jumpCharacterEntity.hasCharacterGroundState
-                && jumpCharacterEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
+                && jumpCharacterEntity.characterGroundState.Value != CharacterGroundState.Airborne)
             {
                 jumpCharacterEntity.ReplaceCharacterVelocity(new Vector2(
                     jumpCharacterEntity.characterVelocity.Velocity.x,
                     jumpCharacterEntity.jumpForce.JumpForce));
                 jumpCharacterEntity.ReplaceCharacterState(CharacterState.Jumping);
-                jumpCharacterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne, Vector2.zero, 0);
+                jumpCharacterEntity.ReplaceCharacterGroundState(CharacterGroundState.Airborne);
+                jumpCharacterEntity.ReplaceDistanceToGround(0f);
+                jumpCharacterEntity.ReplaceGroundHitNormal(Vector2.zero);
             }
             
             jumpCharacterEntity.RemoveJumpCharacter();

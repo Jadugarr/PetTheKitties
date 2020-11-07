@@ -24,7 +24,7 @@ public class CharacterGravitySystem : GameExecuteSystem
     {
         foreach (GameEntity gameEntity in characterGroup.GetEntities())
         {
-            if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.Airborne)
+            if (gameEntity.characterGroundState.Value == CharacterGroundState.Airborne)
             {
                 gameEntity.ReplaceCharacterVelocity(new Vector2(gameEntity.characterVelocity.Velocity.x,
                     gameEntity.characterVelocity.Velocity.y - gravityFactor * Time.deltaTime));

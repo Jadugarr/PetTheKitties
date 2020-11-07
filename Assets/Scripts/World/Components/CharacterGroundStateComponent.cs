@@ -5,7 +5,5 @@ using UnityEngine;
 [Game]
 public class CharacterGroundStateComponent : IComponent
 {
-    public CharacterGroundState CharacterGroundState;
-    public Vector2 GroundNormal;
-    public float DistanceToGround;
+    public CharacterGroundState Value;
 }

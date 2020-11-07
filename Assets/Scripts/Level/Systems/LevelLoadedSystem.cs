@@ -59,7 +59,9 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
         playerEntity.AddHealth(666);
         playerEntity.AddCharacterState(CharacterState.Idle);
         playerEntity.AddCurrentMovementSpeed(0f);
-        playerEntity.AddCharacterGroundState(CharacterGroundState.Undefined, Vector2.zero, 0);
+        playerEntity.AddCharacterGroundState(CharacterGroundState.Undefined);
+        playerEntity.AddDistanceToGround(0f);
+        playerEntity.AddGroundHitNormal(Vector2.zero);
         playerEntity.AddCharacterDirection(CharacterDirection.None);
         playerEntity.AddStepSize(0.5f);
     }
@@ -75,7 +77,9 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
         kittyEntity.AddAcceleration(20f);
         kittyEntity.AddCharacterState(CharacterState.Idle);
         kittyEntity.AddCurrentMovementSpeed(0f);
-        kittyEntity.AddCharacterGroundState(CharacterGroundState.Undefined, Vector2.zero, 0);
+        kittyEntity.AddCharacterGroundState(CharacterGroundState.Undefined);
+        kittyEntity.AddDistanceToGround(0f);
+        kittyEntity.AddGroundHitNormal(Vector2.zero);
         kittyEntity.AddCharacterDirection(CharacterDirection.None);
         kittyEntity.AddStepSize(0.3f);
     }

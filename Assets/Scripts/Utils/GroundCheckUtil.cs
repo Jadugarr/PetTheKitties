@@ -30,7 +30,7 @@ public static class GroundCheckUtil
             ContactFilter2D contactFilter2D = new ContactFilter2D();
             contactFilter2D.SetLayerMask(LayerMask.GetMask(Tags.Ground));
 
-            CharacterGroundState characterGroundState = characterEntity.characterGroundState.CharacterGroundState;
+            CharacterGroundState characterGroundState = characterEntity.characterGroundState.Value;
             if (characterGroundState == CharacterGroundState.OnGround
             || characterGroundState == CharacterGroundState.OnSlopeAhead
             || characterGroundState == CharacterGroundState.OnSlopeBehind)

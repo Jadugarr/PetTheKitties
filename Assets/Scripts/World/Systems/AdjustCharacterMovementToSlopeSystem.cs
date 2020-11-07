@@ -25,10 +25,10 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
     {
         foreach (GameEntity gameEntity in characterGroup.GetEntities())
         {
-            if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead)
+            if (gameEntity.characterGroundState.Value == CharacterGroundState.OnSlopeAhead)
             {
                 float signedAngleAhead =
-                    Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
+                    Mathf.Abs(Vector2.SignedAngle(gameEntity.groundHitNormal.Value, flatGroundNormal));
                 if (signedAngleAhead <= 46)
                 {
                     Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,
@@ -36,10 +36,10 @@ public class AdjustCharacterMovementToSlopeSystem : GameExecuteSystem
                     gameEntity.ReplaceCharacterVelocity(newVelocity);
                 }
             }
-            else if (gameEntity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeBehind)
+            else if (gameEntity.characterGroundState.Value == CharacterGroundState.OnSlopeBehind)
             {
                 float signedAngleBehind =
-                    Mathf.Abs(Vector2.SignedAngle(gameEntity.characterGroundState.GroundNormal, flatGroundNormal));
+                    Mathf.Abs(Vector2.SignedAngle(gameEntity.groundHitNormal.Value, flatGroundNormal));
                 if (signedAngleBehind <= 46)
                 {
                     Vector2 newVelocity = new Vector2(gameEntity.currentMovementSpeed.CurrentMovementSpeed,

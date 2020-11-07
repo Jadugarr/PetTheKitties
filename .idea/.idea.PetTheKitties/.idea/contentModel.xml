@@ -190,6 +190,7 @@
               <e p="GameCurrentSceneComponent.cs" t="Include" />
               <e p="GameDefendComponent.cs" t="Include" />
               <e p="GameDefenseStatComponent.cs" t="Include" />
+              <e p="GameDistanceToGroundComponent.cs" t="Include" />
               <e p="GameEnemyComponent.cs" t="Include" />
               <e p="GameEnemySpawnCooldownComponent.cs" t="Include" />
               <e p="GameEnemySpawnInputComponent.cs" t="Include" />
@@ -198,6 +199,7 @@
               <e p="GameFollowCharacterComponent.cs" t="Include" />
               <e p="GameGameStateComponent.cs" t="Include" />
               <e p="GameGoalReachedComponent.cs" t="Include" />
+              <e p="GameGroundHitNormalComponent.cs" t="Include" />
               <e p="GameHasBeenPetComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
               <e p="GameIdComponent.cs" t="Include" />
@@ -219,6 +221,7 @@
               <e p="GameMasterLoadingActiveComponent.cs" t="Include" />
               <e p="GameMoveCharacterComponent.cs" t="Include" />
               <e p="GameMovementSpeedComponent.cs" t="Include" />
+              <e p="GameParticleComponent.cs" t="Include" />
               <e p="GamePauseInputAvailableComponent.cs" t="Include" />
               <e p="GamePlayerComponent.cs" t="Include" />
               <e p="GamePlayerInteractionComponent.cs" t="Include" />
@@ -402,6 +405,11 @@
               <e p="RestartControllerSystem.cs" t="Include" />
             </e>
             <e p="UIController.cs" t="Include" />
+          </e>
+          <e p="Effects" t="Include">
+            <e p="Components" t="Include">
+              <e p="ParticleComponent.cs" t="Include" />
+            </e>
           </e>
           <e p="Enemy" t="Include">
             <e p="EnemyComponent.cs" t="Include" />
@@ -651,13 +659,16 @@
             <e p="Components" t="Include">
               <e p="BackgroundComponent.cs" t="Include" />
               <e p="CharacterGroundStateComponent.cs" t="Include" />
+              <e p="DistanceToGroundComponent.cs" t="Include" />
               <e p="FollowCharacterComponent.cs" t="Include" />
+              <e p="GroundHitNormalComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">
               <e p="AdjustCharacterMovementToSlopeSystem.cs" t="Include" />
               <e p="CharacterDirectionSystem.cs" t="Include" />
               <e p="CharacterFollowSystem.cs" t="Include" />
+              <e p="CharacterHitGroundSystem.cs" t="Include" />
               <e p="CharacterOnGroundSystem.cs" t="Include" />
               <e p="CharacterScaredSystem.cs" t="Include" />
               <e p="CheckCharacterGroundStateSystem.cs" t="Include" />

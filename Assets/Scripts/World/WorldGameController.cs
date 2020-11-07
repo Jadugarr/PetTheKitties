@@ -97,6 +97,7 @@ namespace Entitas.World
                 .Add(new SyncMovementAnimationSystem(context))
                 .Add(new CheckCharacterGroundStateSystem(context))
                 .Add(new CharacterOnGroundSystem(context))
+                .Add(new CharacterHitGroundSystem(context))
                 .Add(new SetGravityScaleSystem(context))
                 .Add(new MoveCharacterSystem(context))
                 .Add(new AdjustMoveEndingVelocitySystem(context))

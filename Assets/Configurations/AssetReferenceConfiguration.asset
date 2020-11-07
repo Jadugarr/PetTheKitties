@@ -23,3 +23,6 @@ MonoBehaviour:
     m_SubObjectName: 
   - m_AssetGUID: 32592df94e4f8f74ab14f459c3182293
     m_SubObjectName: 
+  HitGroundParticles:
+    m_AssetGUID: edc6d359ee6c06c478f9a938c6e448c7
+    m_SubObjectName: 

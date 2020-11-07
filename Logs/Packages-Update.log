@@ -159,3 +159,11 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.addressables from version 1.8.4 to 1.8.5
+
+=== Thu Oct 29 20:51:59 2020
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.test-framework from version 1.1.16 to 1.1.18

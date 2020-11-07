@@ -36,7 +36,7 @@ public class HandleGroundedJumpStateSystem : GameReactiveSystem
 //                 GameConfigurations.MovementConstantsConfiguration.MovementEndThresholdX))
 //            {
                 if (gameEntity.hasView && gameEntity.view != null && gameEntity.hasCharacterGroundState &&
-                    gameEntity.characterGroundState.CharacterGroundState != CharacterGroundState.Airborne)
+                    gameEntity.characterGroundState.Value != CharacterGroundState.Airborne)
                 {
                     gameEntity.ReplaceCharacterState(CharacterState.Idle);
                 }

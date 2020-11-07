@@ -16,5 +16,11 @@ namespace Configurations
         public AssetReference[] Levels;
 
         #endregion
+
+        #region Particles
+
+        public AssetReference HitGroundParticles;
+
+        #endregion
     }
 }

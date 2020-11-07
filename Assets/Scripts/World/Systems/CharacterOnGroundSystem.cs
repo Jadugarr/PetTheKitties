@@ -1,26 +1,15 @@
-using System.Collections.Generic;
 using Entitas;
+using Entitas.Scripts.Common.Systems;
 using Entitas.World;
 using UnityEngine;
 
-public class CharacterOnGroundSystem : GameReactiveSystem
+public class CharacterOnGroundSystem : GameExecuteSystem
 {
-    public CharacterOnGroundSystem(IContext<GameEntity> context) : base(context)
-    {
-    }
+    private IGroup<GameEntity> charactersOnGround;
 
-    protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
+    public CharacterOnGroundSystem(GameContext context) : base(context)
     {
-        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CharacterGroundState,
-            GroupEvent.Added));
-    }
-
-    protected override bool Filter(GameEntity entity)
-    {
-        return entity.hasCharacterGroundState && entity.hasPosition &&
-               (entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnGround
-                || entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeAhead
-                || entity.characterGroundState.CharacterGroundState == CharacterGroundState.OnSlopeBehind);
+        charactersOnGround = context.GetGroup(GameMatcher.CharacterGroundState);
     }
 
     protected override bool IsInValidState()
@@ -28,13 +17,18 @@ public class CharacterOnGroundSystem : GameReactiveSystem
         return true;
     }
 
-    protected override void ExecuteSystem(List<GameEntity> entities)
+    protected override void ExecuteSystem()
     {
-        foreach (GameEntity gameEntity in entities)
+        foreach (GameEntity gameEntity in charactersOnGround.GetEntities())
         {
-            Vector3 currentPos = gameEntity.position.position;
-            gameEntity.ReplacePosition(new Vector3(currentPos.x,
-                currentPos.y - Mathf.Abs(gameEntity.characterGroundState.DistanceToGround), currentPos.z));
+            if (gameEntity.characterGroundState.Value == CharacterGroundState.OnGround)
+            {
+                // put character directly on the ground
+                Vector3 currentPos = gameEntity.position.position;
+                Vector3 newPosition = new Vector3(currentPos.x,
+                    currentPos.y - Mathf.Abs(gameEntity.distanceToGround.Value), currentPos.z);
+                gameEntity.ReplacePosition(newPosition);
+            }
         }
     }
 }
