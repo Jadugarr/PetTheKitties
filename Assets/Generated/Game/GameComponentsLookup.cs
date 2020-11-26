@@ -70,27 +70,28 @@ public static class GameComponentsLookup {
     public const int PauseInputAvailable = 59;
     public const int Player = 60;
     public const int Position = 61;
-    public const int RaycastTest = 62;
-    public const int RestartController = 63;
-    public const int RestartLevel = 64;
-    public const int Rigidbody = 65;
-    public const int SavedKittyAmount = 66;
-    public const int Scared = 67;
-    public const int SceneLoaded = 68;
-    public const int Speed = 69;
-    public const int StepSize = 70;
-    public const int SubState = 71;
-    public const int Target = 72;
-    public const int TimeSinceLastJumpInput = 73;
-    public const int TimeSinceLastPauseInput = 74;
-    public const int TotalKittyAmount = 75;
-    public const int UnloadLevel = 76;
-    public const int UnloadScene = 77;
-    public const int View = 78;
-    public const int WinCondition = 79;
-    public const int WinConditionsFulfilled = 80;
+    public const int PreviousCharacterGroundState = 62;
+    public const int RaycastTest = 63;
+    public const int RestartController = 64;
+    public const int RestartLevel = 65;
+    public const int Rigidbody = 66;
+    public const int SavedKittyAmount = 67;
+    public const int Scared = 68;
+    public const int SceneLoaded = 69;
+    public const int Speed = 70;
+    public const int StepSize = 71;
+    public const int SubState = 72;
+    public const int Target = 73;
+    public const int TimeSinceLastJumpInput = 74;
+    public const int TimeSinceLastPauseInput = 75;
+    public const int TotalKittyAmount = 76;
+    public const int UnloadLevel = 77;
+    public const int UnloadScene = 78;
+    public const int View = 79;
+    public const int WinCondition = 80;
+    public const int WinConditionsFulfilled = 81;
 
-    public const int TotalComponents = 81;
+    public const int TotalComponents = 82;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -155,6 +156,7 @@ public static class GameComponentsLookup {
         "PauseInputAvailable",
         "Player",
         "Position",
+        "PreviousCharacterGroundState",
         "RaycastTest",
         "RestartController",
         "RestartLevel",
@@ -239,6 +241,7 @@ public static class GameComponentsLookup {
         typeof(PauseInputAvailableComponent),
         typeof(PlayerComponent),
         typeof(PositionComponent),
+        typeof(PreviousCharacterGroundStateComponent),
         typeof(RaycastTestComponent),
         typeof(RestartControllerComponent),
         typeof(RestartLevelComponent),

@@ -86,6 +86,7 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
             if (characterGroundStateData.CharacterGroundState !=
                 characterEntity.characterGroundState.Value)
             {
+                characterEntity.ReplacePreviousCharacterGroundState(characterEntity.characterGroundState.Value);
                 characterEntity.ReplaceCharacterGroundState(characterGroundStateData.CharacterGroundState);
             }
 

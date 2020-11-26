@@ -226,6 +226,7 @@
               <e p="GamePlayerComponent.cs" t="Include" />
               <e p="GamePlayerInteractionComponent.cs" t="Include" />
               <e p="GamePositionComponent.cs" t="Include" />
+              <e p="GamePreviousCharacterGroundStateComponent.cs" t="Include" />
               <e p="GameRaycastTestComponent.cs" t="Include" />
               <e p="GameRestartControllerComponent.cs" t="Include" />
               <e p="GameRestartLevelComponent.cs" t="Include" />
@@ -662,6 +663,7 @@
               <e p="DistanceToGroundComponent.cs" t="Include" />
               <e p="FollowCharacterComponent.cs" t="Include" />
               <e p="GroundHitNormalComponent.cs" t="Include" />
+              <e p="PreviousCharacterGroundStateComponent.cs" t="Include" />
               <e p="ScaredComponent.cs" t="Include" />
             </e>
             <e p="Systems" t="Include">

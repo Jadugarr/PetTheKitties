@@ -13,21 +13,27 @@ public class CharacterHitGroundSystem : GameReactiveSystem
 
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
-        return context.CreateCollector(new TriggerOnEvent<GameEntity>(GameMatcher.CharacterGroundState,
+        return context.CreateCollector(new TriggerOnEvent<GameEntity>(
+            GameMatcher.AllOf(GameMatcher.CharacterGroundState, GameMatcher.PreviousCharacterGroundState),
             GroupEvent.Added));
     }
 
     protected override bool Filter(GameEntity entity)
     {
         return entity.hasCharacterGroundState && entity.hasPosition &&
-               (entity.characterGroundState.Value == CharacterGroundState.OnGround
-                || entity.characterGroundState.Value == CharacterGroundState.OnSlopeAhead
-                || entity.characterGroundState.Value == CharacterGroundState.OnSlopeBehind);
+               IsValidGroundState(entity.characterGroundState.Value) && !IsValidGroundState(entity.previousCharacterGroundState.Value);
     }
 
     protected override bool IsInValidState()
     {
         return true;
+    }
+
+    private bool IsValidGroundState(CharacterGroundState stateToCheck)
+    {
+        return (stateToCheck == CharacterGroundState.OnGround
+                || stateToCheck == CharacterGroundState.OnSlopeAhead
+                || stateToCheck == CharacterGroundState.OnSlopeBehind);
     }
 
     protected override void ExecuteSystem(List<GameEntity> entities)

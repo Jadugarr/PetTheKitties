@@ -60,6 +60,7 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
         playerEntity.AddCharacterState(CharacterState.Idle);
         playerEntity.AddCurrentMovementSpeed(0f);
         playerEntity.AddCharacterGroundState(CharacterGroundState.Undefined);
+        playerEntity.AddPreviousCharacterGroundState(CharacterGroundState.Undefined);
         playerEntity.AddDistanceToGround(0f);
         playerEntity.AddGroundHitNormal(Vector2.zero);
         playerEntity.AddCharacterDirection(CharacterDirection.None);
@@ -78,6 +79,7 @@ public class LevelLoadedSystem : GameReactiveSystem, ITearDownSystem
         kittyEntity.AddCharacterState(CharacterState.Idle);
         kittyEntity.AddCurrentMovementSpeed(0f);
         kittyEntity.AddCharacterGroundState(CharacterGroundState.Undefined);
+        kittyEntity.AddPreviousCharacterGroundState(CharacterGroundState.Undefined);
         kittyEntity.AddDistanceToGround(0f);
         kittyEntity.AddGroundHitNormal(Vector2.zero);
         kittyEntity.AddCharacterDirection(CharacterDirection.None);
