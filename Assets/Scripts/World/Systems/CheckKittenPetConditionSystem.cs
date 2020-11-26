@@ -18,7 +18,8 @@ namespace Entitas.World.Systems
 
         protected override bool Filter(GameEntity entity)
         {
-            return entity != null && entity.isKitty && entity.isHasBeenPet && !_context.isWinConditionsFulfilled && !_context.isLoseConditionsFulfilled;
+            return entity != null && entity.isKitty && entity.isHasBeenPet && !_context.isWinConditionsFulfilled && !_context.isLoseConditionsFulfilled
+                && _context.hasWinCondition;
         }
 
         protected override bool IsInValidState()

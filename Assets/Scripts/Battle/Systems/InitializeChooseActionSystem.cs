@@ -33,9 +33,9 @@ namespace Entitas.Battle.Systems
                 {
                     if (characterEntity.isPlayer)
                     {
-                        UIService.ShowWidget<AWidget>(UiAssetTypes.ActionChooser,
+                        /*UIService.ShowWidget<AWidget>(UiAssetTypes.ActionChooser,
                             new ActionChooserProperties(currentEntity,
-                                characterEntity.battleActionChoices.BattleActionChoices.ToArray(), context));
+                                characterEntity.battleActionChoices.BattleActionChoices.ToArray(), context));*/
                     }
                     else
                     {

@@ -17,46 +17,54 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 6a2d86d1b6a962f47ae923322f16599e
   m_SerializeEntries:
+  - m_GUID: 288812c45dc1f6f4994dc6ea9446fd62
+    m_Address: MainMenu
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 31097aa1e1bfaa340916c15ff1e09d0d
+    m_Address: PauseOverlay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 32592df94e4f8f74ab14f459c3182293
     m_Address: Level_002
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 169009829212841218, guid: 32592df94e4f8f74ab14f459c3182293,
-      type: 3}
-    m_TargetAsset: {fileID: 169009829212841218, guid: 32592df94e4f8f74ab14f459c3182293,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 3f0542ea3a84a784081f02fb0cf75fdd
     m_Address: WorldPlayer
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 1129988597773570, guid: 3f0542ea3a84a784081f02fb0cf75fdd,
-      type: 3}
-    m_TargetAsset: {fileID: 1129988597773570, guid: 3f0542ea3a84a784081f02fb0cf75fdd,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 55b3abed6a91095438390a21aa399fb6
     m_Address: Level_001
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 169009829212841218, guid: 55b3abed6a91095438390a21aa399fb6,
-      type: 3}
-    m_TargetAsset: {fileID: 169009829212841218, guid: 55b3abed6a91095438390a21aa399fb6,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 87384f3b9016aa44186364c2a9270c1a
     m_Address: Kitty
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
-      type: 3}
-    m_TargetAsset: {fileID: 1030088222483526, guid: 87384f3b9016aa44186364c2a9270c1a,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: aabc2a6186ce5a846973ec7cdd33496d
+    m_Address: BattleResultText
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: edc6d359ee6c06c478f9a938c6e448c7
     m_Address: HitGroundParticles
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 1502564071332328151, guid: edc6d359ee6c06c478f9a938c6e448c7,
-      type: 3}
-    m_TargetAsset: {fileID: 1502564071332328151, guid: edc6d359ee6c06c478f9a938c6e448c7,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: f82ab48159349774589c9a232c847b47
     m_Address: AssetReferenceConfiguration
     m_ReadOnly: 0

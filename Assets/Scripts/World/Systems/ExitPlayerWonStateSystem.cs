@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Configurations;
 using Entitas;
 
 public class ExitPlayerWonStateSystem : GameReactiveSystem
@@ -24,6 +25,6 @@ public class ExitPlayerWonStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        UIService.HideWidget(UiAssetTypes.BattleResultText);
+        UIService.HideWidget(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget);
     }
 }

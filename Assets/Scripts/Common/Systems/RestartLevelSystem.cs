@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Configurations;
 using Entitas;
+using Entitas.Extensions;
 using Entitas.Unity;
 using UnityEngine.AddressableAssets;
 
@@ -29,6 +30,7 @@ public class RestartLevelSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
+        _context.SetNewSubstate(SubState.WorldNavigation);
         GameEntity levelEntity = levelEntities.GetSingleEntity();
         levelEntity.isLoading = true;
 

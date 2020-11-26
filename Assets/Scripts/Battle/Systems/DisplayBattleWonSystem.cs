@@ -1,14 +1,17 @@
-﻿using Entitas;
+﻿using Configurations;
+using Entitas;
 
 public class DisplayBattleWonSystem : IInitializeSystem, ITearDownSystem
 {
     public void Initialize()
     {
-        UIService.ShowWidget<AWidget>(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I won!"));
+#pragma warning disable 4014
+        UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget, new BattleResultWidgetProperties("I won!"));
+#pragma warning restore 4014
     }
 
     public void TearDown()
     {
-        UIService.HideWidget(UiAssetTypes.BattleResultText);
+        UIService.HideWidget(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget);
     }
 }

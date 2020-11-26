@@ -43,9 +43,9 @@ namespace Entitas.Battle.Systems
                     }
                     else
                     {
-                        UIService.ShowWidget<AWidget>(UiAssetTypes.CharacterChooser,
+                        /*UIService.ShowWidget<AWidget>(UiAssetTypes.CharacterChooser,
                             new CharacterChooserProperties(possibleTargetIds,
-                                context, currentEntity));
+                                context, currentEntity));*/
                     }
                 }
             }

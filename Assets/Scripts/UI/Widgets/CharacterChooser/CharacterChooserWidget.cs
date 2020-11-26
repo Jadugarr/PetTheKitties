@@ -42,7 +42,7 @@ public class CharacterChooserWidget : AWidget
 
         if (chooseItemPrefab == null)
         {
-            chooseItemPrefab = UIService.GetAsset(UiAssetTypes.CharacterChooserItem);
+            //chooseItemPrefab = UIService.GetAsset(UiAssetTypes.CharacterChooserItem);
         }
 
         foreach (int possibleEntityId in props.PossibleEntityIds)
@@ -84,6 +84,6 @@ public class CharacterChooserWidget : AWidget
     {
         CharacterChooserProperties props = (CharacterChooserProperties) properties;
         props.ActionEntity.AddTarget(chosenEntityId);
-        UIService.HideWidget(UiAssetTypes.CharacterChooser);
+        //UIService.HideWidget(UiAssetTypes.CharacterChooser);
     }
 }

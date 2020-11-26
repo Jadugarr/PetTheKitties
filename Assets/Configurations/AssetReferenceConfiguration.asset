@@ -26,3 +26,12 @@ MonoBehaviour:
   HitGroundParticles:
     m_AssetGUID: edc6d359ee6c06c478f9a938c6e448c7
     m_SubObjectName: 
+  BattleResultWidget:
+    m_AssetGUID: aabc2a6186ce5a846973ec7cdd33496d
+    m_SubObjectName: 
+  PauseOverlay:
+    m_AssetGUID: 31097aa1e1bfaa340916c15ff1e09d0d
+    m_SubObjectName: 
+  MainMenu:
+    m_AssetGUID: 288812c45dc1f6f4994dc6ea9446fd62
+    m_SubObjectName: 

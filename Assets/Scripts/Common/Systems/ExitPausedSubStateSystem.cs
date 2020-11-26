@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Configurations;
 using Entitas;
 using UnityEngine;
 
@@ -25,7 +26,8 @@ public class ExitPausedSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        UIService.HideWidget(UiAssetTypes.PauseOverlay);
+        UIService.HideWidget(GameConfigurations.AssetReferenceConfiguration.PauseOverlay);
+        UIService.HideWidget(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget);
         Time.timeScale = 1f;
     }
 }

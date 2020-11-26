@@ -20,16 +20,39 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d000e499-4345-43d9-8ecf-6364769f742b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Components/PreviousCharacterGroundStateComponent.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Scripts/World/Components/PreviousCharacterGroundStateComponent.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PetTheKitties/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LevelLoadedSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LevelLoadedSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterHitGroundSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterHitGroundSystem.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/AssetGroups/Default Local Group.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/AddressableAssetsData/Windows/addressables_content_state.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Configurations/AssetReferenceConfiguration.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Configurations/AssetReferenceConfiguration.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Battle/Texts/BattleResultText.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Battle/Texts/BattleResultText.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Common/PauseOverlay.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/Common/PauseOverlay.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/MainMenu/MainMenu.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/UI/MainMenu/MainMenu.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleLostSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleLostSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleWonSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleWonSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeATBSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeATBSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeBattleSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeBattleSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseTargetSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseTargetSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/EnterPausedSubStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/EnterPausedSubStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/ExitPausedSubStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/ExitPausedSubStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ATBBar/ATBBarWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ATBBar/ATBBarWidget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ActionChooser/ActionChooserWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ActionChooser/ActionChooserWidget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/CharacterChooser/CharacterChooserWidget.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/CharacterChooser/CharacterChooserWidget.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerLostStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerLostStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerWonStateSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerWonStateSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerLostSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerLostSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerWonSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerWonSystem.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -283,26 +306,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/Loading/Systems/AllLoadingComponentsRemovedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Loading/LoadingController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Utils/BattleActionUtils.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldPlayerAddedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/UnloadSceneSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ChangeSceneSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/KittyAddedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Level/Components/LevelIndexComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Level/Components/LevelComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Components/HasBeenPetComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Kitty/Systems/PetKittySystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Enums/WinCondition.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Level/Components/LoadNextLevelComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Generated/Game/Components/GameLoadLevelComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Generated/Game/GameComponentsLookup.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Controllers/GameController.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Level/Components/UnloadLevelComponent.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/WorldSceneLoadedSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/BattleResultText/BattleResultWidget.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LoadNextLevelSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Level/Systems/UnloadLevelSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Components/WinConditionsFulfilledComponent.cs" />
@@ -310,9 +313,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/WinConditionControllerSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/AllWinConditionsFulfilledSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/AllLoseConditionsFulfilledSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Effects.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Effects/Components/ParticleComponent.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/WorldGameController.cs" />
@@ -334,6 +334,29 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Level/Systems/LevelLoadedSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckCharacterGroundStateSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CharacterHitGroundSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/RestartLevelSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/CheckPlayerDeadConditionSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/CheckKittenPetConditionSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/UIService.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ActionChooser/ActionChooserWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/EnterPausedSubStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleWonSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseTargetSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeATBSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeChooseActionSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/DisplayBattleLostSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/ExitChooseActionStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Battle/Systems/InitializeBattleSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Common/Systems/ExitPausedSubStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Scene/Systems/ExitBattleStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Configurations/AssetReferenceConfiguration.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Systems/InitializeMainMenuSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/ATBBar/ATBBarWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Widgets/CharacterChooser/CharacterChooserWidget.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerLostStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/ExitPlayerWonStateSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerLostSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World/Systems/PlayerWonSystem.cs" />
       </list>
     </option>
   </component>
@@ -360,6 +383,12 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="do_not_show_unity_auto_save_notification" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -404,7 +433,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1606409224065</updated>
-      <workItem from="1606409228735" duration="533000" />
+      <workItem from="1606409228735" duration="5788000" />
     </task>
     <servers />
   </component>
@@ -510,10 +539,10 @@
     </state>
     <state x="-1217" y="160" width="666" height="536" key="find.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606409374473" />
     <state x="-1217" y="160" width="666" height="536" key="find.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604742245594" />
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606409390766">
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1606416460049">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606409390766" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/-1920.0.1920.1040/0.0.1920.1040@-1920.0.1920.1040" timestamp="1606416460049" />
     <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604739844279" />
   </component>
   <component name="XDebuggerManager">

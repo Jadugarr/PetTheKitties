@@ -22,5 +22,13 @@ namespace Configurations
         public AssetReference HitGroundParticles;
 
         #endregion
+
+        #region Ui elements
+
+        public AssetReference BattleResultWidget;
+        public AssetReference PauseOverlay;
+        public AssetReference MainMenu;
+
+        #endregion
     }
 }

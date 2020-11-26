@@ -36,7 +36,7 @@ public class ActionChooserWidget : AWidget
 
     protected override void OnNewProperties()
     {
-        DestroyItems();
+        /*DestroyItems();
 
         ActionChooserProperties props = (ActionChooserProperties) properties;
 
@@ -54,7 +54,7 @@ public class ActionChooserWidget : AWidget
                 new ActionChooserItemProperties(propsActionType.ActionType, propsActionType.ActionType.ToString(),
                     OnItemClicked));
             chooseItems.Add(newItem);
-        }
+        }*/
     }
 
     public override string GetName()
@@ -83,9 +83,9 @@ public class ActionChooserWidget : AWidget
 
     private void OnItemClicked(ActionType actionType)
     {
-        ActionChooserProperties props = (ActionChooserProperties) properties;
+        /*ActionChooserProperties props = (ActionChooserProperties) properties;
         props.BattleActionEntity.ReplaceBattleAction(props.BattleActionEntity.battleAction.EntityId, actionType,
             ActionATBType.Waiting);
-        UIService.HideWidget(UiAssetTypes.ActionChooser);
+        UIService.HideWidget(UiAssetTypes.ActionChooser);*/
     }
 }

@@ -1,5 +1,6 @@
 
     using System.Collections.Generic;
+    using Configurations;
     using Entitas;
 
     public class PlayerLostSystem : GameReactiveSystem
@@ -25,7 +26,7 @@
 
         protected override void ExecuteSystem(List<GameEntity> entities)
         {
-            UIService.ShowWidget<AWidget>(UiAssetTypes.BattleResultText, new BattleResultWidgetProperties("I lost!"));
+            UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget, new BattleResultWidgetProperties("I lost!"));
         }
 
     }
