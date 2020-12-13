@@ -26,9 +26,9 @@ public class EnterPausedSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.PauseOverlay, null);
-        UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget,
-            new BattleResultWidgetProperties("Pause"));
+        UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.PauseOverlay, new BattleResultWidgetProperties("Paused"));
+        //UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget,
+        //  new BattleResultWidgetProperties("Pause"));
         Time.timeScale = 0f;
     }
 }
