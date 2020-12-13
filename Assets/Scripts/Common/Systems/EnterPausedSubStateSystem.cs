@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Threading.Tasks;
 using Configurations;
 using Entitas;
 using UnityEngine;
@@ -27,10 +26,9 @@ public class EnterPausedSubStateSystem : GameReactiveSystem
 
     protected override void ExecuteSystem(List<GameEntity> entities)
     {
-        Task.WaitAll(
-            UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.PauseOverlay, null),
-            UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget,
-                new BattleResultWidgetProperties("Pause")));
+        UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.PauseOverlay, null);
+        UIService.ShowWidget<AWidget>(GameConfigurations.AssetReferenceConfiguration.BattleResultWidget,
+            new BattleResultWidgetProperties("Pause"));
         Time.timeScale = 0f;
     }
 }
