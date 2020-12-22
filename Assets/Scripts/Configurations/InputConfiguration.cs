@@ -5,7 +5,6 @@ public static class InputConfiguration
 {
     // "string" is the name of the defined axis
     private static Dictionary<GameState, Dictionary<string, InputCommand>> GameStateInputMaps;
-
     private static Dictionary<SubState, Dictionary<string, InputCommand>> SubStateInputMaps;
 
     //The defined inputs of sub states override game state inputs
@@ -53,7 +52,8 @@ public static class InputConfiguration
                     {InputAxis.Pause, InputCommand.Pause},
                     {InputAxis.Interact, InputCommand.Interact},
                     {InputAxis.Jump, InputCommand.Jump},
-                    {InputAxis.RaycastTest, InputCommand.RaycastTest}
+                    {InputAxis.RaycastTest, InputCommand.RaycastTest},
+                    {InputAxis.GrapplingHook, InputCommand.ToggleGrapple},
                 }
             }
         };

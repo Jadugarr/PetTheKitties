@@ -42,6 +42,7 @@ public class WorldPlayerAddedSystem : GameReactiveSystem
                 gameEntity.AddView(playerView);
                 gameEntity.AddPosition(playerView.transform.position);
                 gameEntity.AddCharacterVelocity(Vector2.zero);
+                gameEntity.AddGrapplingDistance(5f);
                 Animator playerAnimator = playerView.GetComponentInChildren<Animator>();
                 if (playerAnimator)
                 {

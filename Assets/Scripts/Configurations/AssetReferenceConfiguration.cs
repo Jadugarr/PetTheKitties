@@ -8,24 +8,35 @@ namespace Configurations
     [CreateAssetMenu(fileName = "AssetReferenceConfiguration", menuName = "Configurations/AssetReferenceConfiguration")]
     public class AssetReferenceConfiguration : ScriptableObject
     {
-        public AssetReference WorldPlayerReference;
+        #region Characters
+
+        [Header("Characters")] public AssetReference WorldPlayerReference;
         public AssetReference KittyReference;
-
-        #region Levels
-
-        public AssetReference[] Levels;
 
         #endregion
 
+        #region Levels
+
+        [Header("Levels")] public AssetReference[] Levels;
+
+        #endregion
+
+
         #region Particles
 
-        public AssetReference HitGroundParticles;
+        [Header("Particles")] public AssetReference HitGroundParticles;
+
+        #endregion
+
+        #region Misc Components
+
+        [Header("Misc Components")] public AssetReference GrapplingHookReticle;
 
         #endregion
 
         #region Ui elements
 
-        public AssetReference BattleResultWidget;
+        [Header("UI Elements")] public AssetReference BattleResultWidget;
         public AssetReference PauseOverlay;
         public AssetReference MainMenu;
 

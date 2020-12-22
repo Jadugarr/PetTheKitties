@@ -11,5 +11,6 @@
     WaitingToChoose = 50,
     ChooseAction = 60,
     PreparingAction = 70,
-    Acting = 80
+    Acting = 80,
+    Grappling = 90,
 }

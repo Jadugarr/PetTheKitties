@@ -50,6 +50,8 @@ namespace Entitas.World
 
             updateSystems
                 //Input
+                .Add(new ProcessToggleGrappleInputSystem(context))
+                .Add(new FreeUpToggleGrappleInputSystem(context))
                 .Add(new ProcessPauseInputSystem(context))
                 .Add(new ProcessUnpauseInputSystem(context))
                 .Add(new ProcessWorldMoveInputSystem(context))
@@ -74,6 +76,8 @@ namespace Entitas.World
                 .Add(new CharacterFollowSystem(context))
                 .Add(new CharacterScaredSystem(context))
                 .Add(new CharacterReachedGoalSystem(context))
+                .Add(new StartGrapplingSystem(context))
+                .Add(new EndGrapplingSystem(context))
                 .Add(new HandleJumpEndingStateSystem(context))
                 .Add(new HandleCharacterMovementStateSystem(context))
                 .Add(new HandleFallingStateSystem(context))

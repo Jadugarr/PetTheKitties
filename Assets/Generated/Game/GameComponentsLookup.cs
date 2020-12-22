@@ -46,52 +46,55 @@ public static class GameComponentsLookup {
     public const int FollowCharacter = 35;
     public const int GameState = 36;
     public const int GoalReached = 37;
-    public const int GroundHitNormal = 38;
-    public const int HasBeenPet = 39;
-    public const int Health = 40;
-    public const int Id = 41;
-    public const int Input = 42;
-    public const int InteractionTriggered = 43;
-    public const int JumpCharacter = 44;
-    public const int JumpForce = 45;
-    public const int JumpInputAvailable = 46;
-    public const int KittyAmountDisplay = 47;
-    public const int Kitty = 48;
-    public const int Level = 49;
-    public const int LevelIndex = 50;
-    public const int Loading = 51;
-    public const int LoadNextLevel = 52;
-    public const int LoseCondition = 53;
-    public const int LoseConditionsFulfilled = 54;
-    public const int MasterLoadingActive = 55;
-    public const int MoveCharacter = 56;
-    public const int MovementSpeed = 57;
-    public const int Particle = 58;
-    public const int PauseInputAvailable = 59;
-    public const int Player = 60;
-    public const int Position = 61;
-    public const int PreviousCharacterGroundState = 62;
-    public const int RaycastTest = 63;
-    public const int RestartController = 64;
-    public const int RestartLevel = 65;
-    public const int Rigidbody = 66;
-    public const int SavedKittyAmount = 67;
-    public const int Scared = 68;
-    public const int SceneLoaded = 69;
-    public const int Speed = 70;
-    public const int StepSize = 71;
-    public const int SubState = 72;
-    public const int Target = 73;
-    public const int TimeSinceLastJumpInput = 74;
-    public const int TimeSinceLastPauseInput = 75;
-    public const int TotalKittyAmount = 76;
-    public const int UnloadLevel = 77;
-    public const int UnloadScene = 78;
-    public const int View = 79;
-    public const int WinCondition = 80;
-    public const int WinConditionsFulfilled = 81;
+    public const int GrapplingDistance = 38;
+    public const int GrapplingHookReticle = 39;
+    public const int GroundHitNormal = 40;
+    public const int HasBeenPet = 41;
+    public const int Health = 42;
+    public const int Id = 43;
+    public const int Input = 44;
+    public const int InteractionTriggered = 45;
+    public const int JumpCharacter = 46;
+    public const int JumpForce = 47;
+    public const int JumpInputAvailable = 48;
+    public const int KittyAmountDisplay = 49;
+    public const int Kitty = 50;
+    public const int Level = 51;
+    public const int LevelIndex = 52;
+    public const int Loading = 53;
+    public const int LoadNextLevel = 54;
+    public const int LoseCondition = 55;
+    public const int LoseConditionsFulfilled = 56;
+    public const int MasterLoadingActive = 57;
+    public const int MoveCharacter = 58;
+    public const int MovementSpeed = 59;
+    public const int Particle = 60;
+    public const int PauseInputAvailable = 61;
+    public const int Player = 62;
+    public const int Position = 63;
+    public const int PreviousCharacterGroundState = 64;
+    public const int RaycastTest = 65;
+    public const int RestartController = 66;
+    public const int RestartLevel = 67;
+    public const int Rigidbody = 68;
+    public const int SavedKittyAmount = 69;
+    public const int Scared = 70;
+    public const int SceneLoaded = 71;
+    public const int Speed = 72;
+    public const int StepSize = 73;
+    public const int SubState = 74;
+    public const int Target = 75;
+    public const int TimeSinceLastJumpInput = 76;
+    public const int TimeSinceLastPauseInput = 77;
+    public const int ToggleGrappleInputAvailable = 78;
+    public const int TotalKittyAmount = 79;
+    public const int UnloadLevel = 80;
+    public const int UnloadScene = 81;
+    public const int View = 82;
+    public const int WinCondition = 83;
+    public const int WinConditionsFulfilled = 84;
 
-    public const int TotalComponents = 82;
+    public const int TotalComponents = 85;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -132,6 +135,8 @@ public static class GameComponentsLookup {
         "FollowCharacter",
         "GameState",
         "GoalReached",
+        "GrapplingDistance",
+        "GrapplingHookReticle",
         "GroundHitNormal",
         "HasBeenPet",
         "Health",
@@ -170,6 +175,7 @@ public static class GameComponentsLookup {
         "Target",
         "TimeSinceLastJumpInput",
         "TimeSinceLastPauseInput",
+        "ToggleGrappleInputAvailable",
         "TotalKittyAmount",
         "UnloadLevel",
         "UnloadScene",
@@ -217,6 +223,8 @@ public static class GameComponentsLookup {
         typeof(FollowCharacterComponent),
         typeof(GameStateComponent),
         typeof(GoalReachedComponent),
+        typeof(GrapplingDistanceComponent),
+        typeof(GrapplingHookReticleComponent),
         typeof(GroundHitNormalComponent),
         typeof(HasBeenPetComponent),
         typeof(HealthComponent),
@@ -255,6 +263,7 @@ public static class GameComponentsLookup {
         typeof(TargetComponent),
         typeof(TimeSinceLastJumpInputComponent),
         typeof(TimeSinceLastPauseInputComponent),
+        typeof(ToggleGrappleInputAvailable),
         typeof(TotalKittyAmountComponent),
         typeof(UnloadLevelComponent),
         typeof(UnloadSceneComponent),

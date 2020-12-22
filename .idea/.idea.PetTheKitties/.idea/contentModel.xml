@@ -199,6 +199,8 @@
               <e p="GameFollowCharacterComponent.cs" t="Include" />
               <e p="GameGameStateComponent.cs" t="Include" />
               <e p="GameGoalReachedComponent.cs" t="Include" />
+              <e p="GameGrapplingDistanceComponent.cs" t="Include" />
+              <e p="GameGrapplingHookReticleComponent.cs" t="Include" />
               <e p="GameGroundHitNormalComponent.cs" t="Include" />
               <e p="GameHasBeenPetComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
@@ -240,6 +242,7 @@
               <e p="GameTargetComponent.cs" t="Include" />
               <e p="GameTimeSinceLastJumpInputComponent.cs" t="Include" />
               <e p="GameTimeSinceLastPauseInputComponent.cs" t="Include" />
+              <e p="GameToggleGrappleInputAvailableComponent.cs" t="Include" />
               <e p="GameTotalKittyAmountComponent.cs" t="Include" />
               <e p="GameUnloadLevelComponent.cs" t="Include" />
               <e p="GameUnloadSceneComponent.cs" t="Include" />
@@ -428,6 +431,19 @@
             <e p="GameStateComponent.cs" t="Include" />
             <e p="InitializeGameStateSystem.cs" t="Include" />
             <e p="SubStateComponent.cs" t="Include" />
+          </e>
+          <e p="GrapplingHook" t="Include">
+            <e p="Components" t="Include">
+              <e p="GrapplingDistanceComponent.cs" t="Include" />
+              <e p="GrapplingHookReticleComponent.cs" t="Include" />
+              <e p="ToggleGrappleInputAvailable.cs" t="Include" />
+            </e>
+            <e p="Systems" t="Include">
+              <e p="EndGrapplingSystem.cs" t="Include" />
+              <e p="FreeUpToggleGrappleInputSystem.cs" t="Include" />
+              <e p="ProcessToggleGrappleInputSystem.cs" t="Include" />
+              <e p="StartGrapplingSystem.cs" t="Include" />
+            </e>
           </e>
           <e p="Input" t="Include">
             <e p="Components" t="Include">
