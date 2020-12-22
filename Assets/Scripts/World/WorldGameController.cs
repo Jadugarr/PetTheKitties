@@ -110,6 +110,7 @@ namespace Entitas.World
                 .Add(new AdjustEndingJumpVelocitySystem(context))
                 .Add(new CharacterOnGroundMovementVelocitySystem(context))
                 .Add(new CharacterAirborneMovementVelocitySystem(context))
+                .Add(new MoveReticleWithMouseSystem(context))
                 // Gravity
                 .Add(new CharacterGravitySystem(context))
                 //Position

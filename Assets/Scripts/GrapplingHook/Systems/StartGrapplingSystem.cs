@@ -48,6 +48,7 @@ public class StartGrapplingSystem : GameReactiveSystem
                     GameEntity reticleEntity = _context.CreateEntity();
                     reticleEntity.isGrapplingHookReticle = true;
                     reticleEntity.AddView(spawnedReticle);
+                    reticleEntity.AddPosition(reticlePosition);
                     spawnedReticle.Link(reticleEntity);
                 }
             };

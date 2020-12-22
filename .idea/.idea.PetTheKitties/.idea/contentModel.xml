@@ -441,6 +441,7 @@
             <e p="Systems" t="Include">
               <e p="EndGrapplingSystem.cs" t="Include" />
               <e p="FreeUpToggleGrappleInputSystem.cs" t="Include" />
+              <e p="MoveReticleWithMouseSystem.cs" t="Include" />
               <e p="ProcessToggleGrappleInputSystem.cs" t="Include" />
               <e p="StartGrapplingSystem.cs" t="Include" />
             </e>
