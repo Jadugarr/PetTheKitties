@@ -11,5 +11,6 @@
     Interact,
     Jump,
     RaycastTest,
-    ToggleGrapple
+    ToggleGrapple,
+    UseGrapple,
 }

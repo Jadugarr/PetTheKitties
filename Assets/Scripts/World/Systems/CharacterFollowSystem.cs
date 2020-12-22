@@ -27,8 +27,8 @@ namespace Entitas.World.Systems
                 GameEntity entityToFollow = _context.GetEntityWithId(followEntity.followCharacter.EntityToFollowId);
                 if (entityToFollow != null)
                 {
-                    float currentDistance = Vector2.Distance(entityToFollow.view.View.transform.position,
-                        followEntity.view.View.transform.position);
+                    float currentDistance = Vector2.Distance(entityToFollow.position.position,
+                        followEntity.position.position);
 
                     if (currentDistance > MaxDistanceToCharacter)
                     {
@@ -36,8 +36,8 @@ namespace Entitas.World.Systems
 
                         if (characterView)
                         {
-                            Vector2 moveDirection = entityToFollow.view.View.transform.position -
-                                                    followEntity.view.View.transform.position;
+                            Vector2 moveDirection = entityToFollow.position.position -
+                                                    followEntity.position.position;
 
                             followEntity.ReplaceMoveCharacter(followEntity.id.Id, moveDirection);
                             followEntity.ReplaceCharacterDirection(moveDirection.x < 0

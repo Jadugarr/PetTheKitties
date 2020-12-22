@@ -53,7 +53,8 @@ public static class InputConfiguration
                     {InputAxis.Interact, InputCommand.Interact},
                     {InputAxis.Jump, InputCommand.Jump},
                     {InputAxis.RaycastTest, InputCommand.RaycastTest},
-                    {InputAxis.GrapplingHook, InputCommand.ToggleGrapple},
+                    {InputAxis.ToggleGrapplingHook, InputCommand.ToggleGrapple},
+                    {InputAxis.UseGrapplingHook, InputCommand.UseGrapple}
                 }
             }
         };

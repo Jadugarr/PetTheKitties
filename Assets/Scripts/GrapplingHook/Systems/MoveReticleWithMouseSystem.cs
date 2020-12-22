@@ -28,7 +28,7 @@ public class MoveReticleWithMouseSystem : GameExecuteSystem
             CameraComponent cameraEntity = _context.camera;
             
             Vector2 mousePosition = cameraEntity.Camera.ScreenToWorldPoint(Input.mousePosition);
-            Vector2 playerPosition = playerEntity.view.View.transform.position;
+            Vector2 playerPosition = playerEntity.position.position;
             Vector2 direction = mousePosition - playerPosition;
             float playerToMouseDistance = Vector2.Distance(mousePosition, playerPosition);
             direction = direction.normalized;

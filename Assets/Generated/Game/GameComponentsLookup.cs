@@ -90,11 +90,13 @@ public static class GameComponentsLookup {
     public const int TotalKittyAmount = 79;
     public const int UnloadLevel = 80;
     public const int UnloadScene = 81;
-    public const int View = 82;
-    public const int WinCondition = 83;
-    public const int WinConditionsFulfilled = 84;
+    public const int UseGrapplingHook = 82;
+    public const int UseGrapplingHookInputAvailable = 83;
+    public const int View = 84;
+    public const int WinCondition = 85;
+    public const int WinConditionsFulfilled = 86;
 
-    public const int TotalComponents = 85;
+    public const int TotalComponents = 87;
 
     public static readonly string[] componentNames = {
         "Acceleration",
@@ -179,6 +181,8 @@ public static class GameComponentsLookup {
         "TotalKittyAmount",
         "UnloadLevel",
         "UnloadScene",
+        "UseGrapplingHook",
+        "UseGrapplingHookInputAvailable",
         "View",
         "WinCondition",
         "WinConditionsFulfilled"
@@ -267,6 +271,8 @@ public static class GameComponentsLookup {
         typeof(TotalKittyAmountComponent),
         typeof(UnloadLevelComponent),
         typeof(UnloadSceneComponent),
+        typeof(UseGrapplingHookComponent),
+        typeof(UseGrapplingHookInputAvailableComponent),
         typeof(ViewComponent),
         typeof(WinConditionComponent),
         typeof(WinConditionsFulfilledComponent)

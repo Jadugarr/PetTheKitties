@@ -37,7 +37,7 @@ public class StartGrapplingSystem : GameReactiveSystem
             GameEntity playerEntity = _playerGroup.GetSingleEntity();
             AssetReference grapplingHookReticle = GameConfigurations.AssetReferenceConfiguration.GrapplingHookReticle;
             
-            Vector3 playerPosition = playerEntity.view.View.transform.position;
+            Vector3 playerPosition = playerEntity.position.position;
             Vector3 reticlePosition = new Vector3(playerPosition.x, playerPosition.y + 2f, playerPosition.z);
             grapplingHookReticle.InstantiateAsync(reticlePosition, Quaternion.identity).Completed += handle =>
             {

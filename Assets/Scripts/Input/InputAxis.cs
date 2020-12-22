@@ -7,7 +7,8 @@ public static class InputAxis
     public static string Interact = "Interact";
     public static string Jump = "Jump";
     public static string RaycastTest = "RaycastTest";
-    public static string GrapplingHook = "GrapplingHook";
+    public static string ToggleGrapplingHook = "ToggleGrapplingHook";
+    public static string UseGrapplingHook = "UseGrapplingHook";
 
     public static readonly string[] AxisList =
     {
@@ -17,6 +18,7 @@ public static class InputAxis
         Interact,
         Jump,
         RaycastTest,
-        GrapplingHook
+        ToggleGrapplingHook,
+        UseGrapplingHook
     };
 }

@@ -51,7 +51,9 @@ namespace Entitas.World
             updateSystems
                 //Input
                 .Add(new ProcessToggleGrappleInputSystem(context))
+                .Add(new ProcessUseGrapplingHookInputSystem(context))
                 .Add(new FreeUpToggleGrappleInputSystem(context))
+                .Add(new FreeUpUseGrapplingHookInputSystem(context))
                 .Add(new ProcessPauseInputSystem(context))
                 .Add(new ProcessUnpauseInputSystem(context))
                 .Add(new ProcessWorldMoveInputSystem(context))
@@ -110,7 +112,9 @@ namespace Entitas.World
                 .Add(new AdjustEndingJumpVelocitySystem(context))
                 .Add(new CharacterOnGroundMovementVelocitySystem(context))
                 .Add(new CharacterAirborneMovementVelocitySystem(context))
+                // Grappling Hook
                 .Add(new MoveReticleWithMouseSystem(context))
+                .Add(new UseGrapplingHookSystem(context))
                 // Gravity
                 .Add(new CharacterGravitySystem(context))
                 //Position
