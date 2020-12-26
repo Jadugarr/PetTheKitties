@@ -69,24 +69,26 @@ MonoBehaviour:
     m_Address: AssetReferenceConfiguration
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 11400000, guid: f82ab48159349774589c9a232c847b47, type: 2}
-    m_TargetAsset: {fileID: 11400000, guid: f82ab48159349774589c9a232c847b47, type: 2}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 129c9c463fe33fe45ab914a37347fcf5
     m_Address: Level_Prototype
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 169009829212841218, guid: 129c9c463fe33fe45ab914a37347fcf5,
-      type: 3}
-    m_TargetAsset: {fileID: 169009829212841218, guid: 129c9c463fe33fe45ab914a37347fcf5,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   - m_GUID: 2cfca427bccad3042a043c52d3c052ff
     m_Address: GrapplingHookReticle
     m_ReadOnly: 0
     m_SerializedLabels: []
-    m_MainAsset: {fileID: 4569168674976429005, guid: 2cfca427bccad3042a043c52d3c052ff,
-      type: 3}
-    m_TargetAsset: {fileID: 4569168674976429005, guid: 2cfca427bccad3042a043c52d3c052ff,
-      type: 3}
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
+  - m_GUID: 564dcae949d9bf84e88af415e5658490
+    m_Address: GrapplingHookLine
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    m_MainAsset: {fileID: 0}
+    m_TargetAsset: {fileID: 0}
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 391054feb7332e540a1cd1cfa41114dc, type: 2}
   m_SchemaSet:

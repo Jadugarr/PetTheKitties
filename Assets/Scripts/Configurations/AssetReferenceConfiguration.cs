@@ -31,6 +31,7 @@ namespace Configurations
         #region Misc Components
 
         [Header("Misc Components")] public AssetReference GrapplingHookReticle;
+        public AssetReference GrapplingHookLine;
 
         #endregion
 

@@ -115,6 +115,8 @@ namespace Entitas.World
                 // Grappling Hook
                 .Add(new MoveReticleWithMouseSystem(context))
                 .Add(new UseGrapplingHookSystem(context))
+                .Add(new GrapplingHookExtendLineSystem(context))
+                .Add(new GrapplingHookReachedTargetSystem(context))
                 // Gravity
                 .Add(new CharacterGravitySystem(context))
                 //Position

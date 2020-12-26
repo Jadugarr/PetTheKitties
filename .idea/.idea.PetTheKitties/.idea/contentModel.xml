@@ -200,7 +200,13 @@
               <e p="GameGameStateComponent.cs" t="Include" />
               <e p="GameGoalReachedComponent.cs" t="Include" />
               <e p="GameGrapplingDistanceComponent.cs" t="Include" />
+              <e p="GameGrapplingHookCurrentPointComponent.cs" t="Include" />
+              <e p="GameGrapplingHookEndPointComponent.cs" t="Include" />
+              <e p="GameGrapplingHookLineComponent.cs" t="Include" />
+              <e p="GameGrapplingHookLineRendererComponent.cs" t="Include" />
               <e p="GameGrapplingHookReticleComponent.cs" t="Include" />
+              <e p="GameGrapplingHookSpeedComponent.cs" t="Include" />
+              <e p="GameGrapplingHookStartingPointComponent.cs" t="Include" />
               <e p="GameGroundHitNormalComponent.cs" t="Include" />
               <e p="GameHasBeenPetComponent.cs" t="Include" />
               <e p="GameHealthComponent.cs" t="Include" />
@@ -427,6 +433,7 @@
           </e>
           <e p="Extensions" t="Include">
             <e p="GameContextExtensions.cs" t="Include" />
+            <e p="GameEntityExtensions.cs" t="Include" />
             <e p="Vector2Extension.cs" t="Include" />
           </e>
           <e p="GameState" t="Include">
@@ -437,7 +444,13 @@
           <e p="GrapplingHook" t="Include">
             <e p="Components" t="Include">
               <e p="GrapplingDistanceComponent.cs" t="Include" />
+              <e p="GrapplingHookCurrentPointComponent.cs" t="Include" />
+              <e p="GrapplingHookEndPointComponent.cs" t="Include" />
+              <e p="GrapplingHookLineComponent.cs" t="Include" />
+              <e p="GrapplingHookLineRendererComponent.cs" t="Include" />
               <e p="GrapplingHookReticleComponent.cs" t="Include" />
+              <e p="GrapplingHookSpeedComponent.cs" t="Include" />
+              <e p="GrapplingHookStartingPointComponent.cs" t="Include" />
               <e p="ToggleGrappleInputAvailable.cs" t="Include" />
               <e p="UseGrapplingHookComponent.cs" t="Include" />
               <e p="UseGrapplingHookInputAvailableComponent.cs" t="Include" />
@@ -446,6 +459,8 @@
               <e p="EndGrapplingSystem.cs" t="Include" />
               <e p="FreeUpToggleGrappleInputSystem.cs" t="Include" />
               <e p="FreeUpUseGrapplingHookInputSystem.cs" t="Include" />
+              <e p="GrapplingHookExtendLineSystem.cs" t="Include" />
+              <e p="GrapplingHookReachedTargetSystem.cs" t="Include" />
               <e p="MoveReticleWithMouseSystem.cs" t="Include" />
               <e p="ProcessToggleGrappleInputSystem.cs" t="Include" />
               <e p="ProcessUseGrapplingHookInputSystem.cs" t="Include" />

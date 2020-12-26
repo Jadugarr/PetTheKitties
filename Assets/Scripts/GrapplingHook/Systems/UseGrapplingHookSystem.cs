@@ -1,6 +1,9 @@
 using System.Collections.Generic;
+using Configurations;
 using Entitas;
+using Entitas.Unity;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 public class UseGrapplingHookSystem : GameReactiveSystem
 {
@@ -32,7 +35,26 @@ public class UseGrapplingHookSystem : GameReactiveSystem
         
         foreach (GameEntity entity in entities)
         {
-            Vector2 entityPosition = entity.position.position;
+            AssetReference grapplingHookLineReference =
+                GameConfigurations.AssetReferenceConfiguration.GrapplingHookLine;
+
+            grapplingHookLineReference.InstantiateAsync(entity.position.position, Quaternion.identity)
+                .Completed += handle =>
+            {
+                GameEntity grapplingHookEntity = _context.CreateEntity();
+                grapplingHookEntity.isGrapplingHookLine = true;
+                grapplingHookEntity.AddGrapplingHookStartingPoint(entity.position.position);
+                grapplingHookEntity.AddGrapplingHookEndPoint(reticleEntity.position.position);
+                grapplingHookEntity.AddGrapplingHookCurrentPoint(entity.position.position);
+                grapplingHookEntity.AddGrapplingHookSpeed(1f);
+                grapplingHookEntity.AddView(handle.Result);
+                grapplingHookEntity.AddPosition(handle.Result.transform.position);
+                grapplingHookEntity.AddGrapplingHookLineRenderer(handle.Result.GetComponent<LineRenderer>());
+                handle.Result.SetActive(true);
+                handle.Result.Link(grapplingHookEntity);
+            };
+
+            /*Vector2 entityPosition = entity.position.position;
             Vector2 reticlePosition = reticleEntity.position.position;
             
             ContactFilter2D contactFilter2D = new ContactFilter2D();
@@ -70,7 +92,7 @@ public class UseGrapplingHookSystem : GameReactiveSystem
                 
                 Vector2 newPosition = new Vector2(newX, newY);
                 entity.ReplacePosition(newPosition);
-            }
+            }*/
 
             entity.isUseGrapplingHook = false;
         }
