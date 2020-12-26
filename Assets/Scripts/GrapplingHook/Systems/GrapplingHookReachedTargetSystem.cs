@@ -11,14 +11,19 @@ public class GrapplingHookReachedTargetSystem : GameReactiveSystem
     protected override ICollector<GameEntity> GetTrigger(IContext<GameEntity> context)
     {
         return context.CreateCollector(GameMatcher.AllOf(GameMatcher.GrapplingHookLine,
-            GameMatcher.GrapplingHookCurrentPoint, GameMatcher.GrapplingHookEndPoint));
+            GameMatcher.GrapplingHookCurrentPoint, GameMatcher.GrapplingHookEndPoint, GameMatcher.GrapplingHookUserId));
     }
 
     protected override bool Filter(GameEntity entity)
     {
-        float distance = Vector3.Distance(entity.grapplingHookCurrentPoint.Value, entity.grapplingHookEndPoint.Value);
+        if (entity != null && entity.hasGrapplingHookCurrentPoint && entity.hasGrapplingHookEndPoint && entity.hasGrapplingHookUserId)
+        {
+            float distance = Vector3.Distance(entity.grapplingHookCurrentPoint.Value, entity.grapplingHookEndPoint.Value);
 
-        return distance <= 0.01f;
+            return distance <= 0.01f;
+        }
+
+        return false;
     }
 
     protected override bool IsInValidState()
@@ -30,6 +35,9 @@ public class GrapplingHookReachedTargetSystem : GameReactiveSystem
     {
         foreach (GameEntity entity in entities)
         {
+            GameEntity userEntity = _context.GetEntityWithId(entity.grapplingHookUserId.Value);
+            userEntity.RemoveUsedGrapplingHookId();
+            
             entity.DestroyEntity();
         }
     }
