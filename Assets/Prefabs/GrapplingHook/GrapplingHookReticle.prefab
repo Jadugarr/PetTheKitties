@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 8994826450102678372}
   - component: {fileID: 3417779175038473891}
-  m_Layer: 11
-  m_Name: GrapplingMarker
+  m_Layer: 9
+  m_Name: GrapplingHookReticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

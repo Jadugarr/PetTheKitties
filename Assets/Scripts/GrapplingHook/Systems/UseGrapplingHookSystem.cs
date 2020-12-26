@@ -46,7 +46,7 @@ public class UseGrapplingHookSystem : GameReactiveSystem
                 grapplingHookEntity.AddGrapplingHookStartingPoint(entity.position.position);
                 grapplingHookEntity.AddGrapplingHookEndPoint(reticleEntity.position.position);
                 grapplingHookEntity.AddGrapplingHookCurrentPoint(entity.position.position);
-                grapplingHookEntity.AddGrapplingHookSpeed(1f);
+                grapplingHookEntity.AddGrapplingHookSpeed(30f);
                 grapplingHookEntity.AddView(handle.Result);
                 grapplingHookEntity.AddPosition(handle.Result.transform.position);
                 grapplingHookEntity.AddGrapplingHookLineRenderer(handle.Result.GetComponent<LineRenderer>());

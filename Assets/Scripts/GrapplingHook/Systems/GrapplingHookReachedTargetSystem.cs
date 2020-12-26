@@ -18,9 +18,15 @@ public class GrapplingHookReachedTargetSystem : GameReactiveSystem
     {
         if (entity != null && entity.hasGrapplingHookCurrentPoint && entity.hasGrapplingHookEndPoint && entity.hasGrapplingHookUserId)
         {
+            GameEntity userEntity = _context.GetEntityWithId(entity.grapplingHookUserId.Value);
+
+            Vector2 originDirection = ((Vector3)entity.grapplingHookCurrentPoint.Value - userEntity.position.position).normalized;
+            Vector2 currentDirection = (entity.grapplingHookEndPoint.Value - entity.grapplingHookCurrentPoint.Value).normalized;
+
+            float angle = Vector2.Angle(originDirection, currentDirection);
             float distance = Vector3.Distance(entity.grapplingHookCurrentPoint.Value, entity.grapplingHookEndPoint.Value);
 
-            return distance <= 0.01f;
+            return distance <= 0.01f || angle != 0f;
         }
 
         return false;
