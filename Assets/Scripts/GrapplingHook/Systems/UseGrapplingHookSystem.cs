@@ -55,8 +55,6 @@ public class UseGrapplingHookSystem : GameReactiveSystem
                 handle.Result.SetActive(true);
                 handle.Result.Link(grapplingHookEntity);
             };
-
-            entity.isUseGrapplingHook = false;
         }
     }
 }

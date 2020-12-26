@@ -70,6 +70,7 @@ public class GrapplingHookHitTargetSystem : GameReactiveSystem
                 userEntity.ReplacePosition(newPosition);
                 
                 userEntity.RemoveUsedGrapplingHookId();
+                userEntity.isUseGrapplingHook = false;
                 
                 grapplingHookEntity.DestroyEntity();
             }

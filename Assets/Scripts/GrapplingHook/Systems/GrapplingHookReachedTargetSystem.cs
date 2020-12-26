@@ -43,6 +43,7 @@ public class GrapplingHookReachedTargetSystem : GameReactiveSystem
         {
             GameEntity userEntity = _context.GetEntityWithId(entity.grapplingHookUserId.Value);
             userEntity.RemoveUsedGrapplingHookId();
+            userEntity.isUseGrapplingHook = false;
             
             entity.DestroyEntity();
         }

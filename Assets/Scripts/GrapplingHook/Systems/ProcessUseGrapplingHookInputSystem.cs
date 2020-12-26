@@ -33,7 +33,11 @@ public class ProcessUseGrapplingHookInputSystem : GameReactiveSystem
         if (_playerGroup.count > 0)
         {
             GameEntity playerEntity = _playerGroup.GetSingleEntity();
-            playerEntity.isUseGrapplingHook = true;
+            
+            if (!playerEntity.isUseGrapplingHook)
+            {
+                playerEntity.isUseGrapplingHook = true;
+            }
 
             _context.isUseGrapplingHookInputAvailable = false;
         }
