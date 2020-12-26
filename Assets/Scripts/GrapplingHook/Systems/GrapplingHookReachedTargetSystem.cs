@@ -16,14 +16,9 @@ public class GrapplingHookReachedTargetSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        if (entity != null && entity.hasGrapplingHookCurrentPoint && entity.hasGrapplingHookEndPoint)
-        {
-            float distance = Vector3.Distance(entity.grapplingHookCurrentPoint.Value, entity.grapplingHookEndPoint.Value);
+        float distance = Vector3.Distance(entity.grapplingHookCurrentPoint.Value, entity.grapplingHookEndPoint.Value);
 
-            return distance <= 0.01f;
-        }
-
-        return false;
+        return distance <= 0.01f;
     }
 
     protected override bool IsInValidState()
