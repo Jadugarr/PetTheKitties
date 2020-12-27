@@ -22,20 +22,23 @@ public class GrapplingHookExtendLineSystem : GameExecuteSystem
     {
         foreach (GameEntity entity in _grapplingHookLineGroup.GetEntities())
         {
-            Vector3 startPos = entity.grapplingHookStartingPoint.Value;
-            Vector3 endPos = entity.grapplingHookEndPoint.Value;
-            Vector3 currentPos = entity.grapplingHookCurrentPoint.Value;
-
-            if (Vector3.Distance(currentPos, endPos) > 0.01f)
+            if (!entity.isGrapplingHookHitTarget)
             {
-                Vector3 dir = (endPos - currentPos).normalized;
+                Vector3 startPos = entity.grapplingHookStartingPoint.Value;
+                Vector3 endPos = entity.grapplingHookEndPoint.Value;
+                Vector3 currentPos = entity.grapplingHookCurrentPoint.Value;
 
-                Vector3 newPos = currentPos + dir * (entity.grapplingHookSpeed.Value * Time.deltaTime);
+                if (Vector3.Distance(currentPos, endPos) > 0.01f)
+                {
+                    Vector3 dir = (endPos - currentPos).normalized;
 
-                entity.ReplaceGrapplingHookCurrentPoint(newPos);
-                LineRenderer lineRenderer = entity.grapplingHookLineRenderer.Value;
-                lineRenderer.positionCount = 2;
-                lineRenderer.SetPositions(new []{startPos, newPos});
+                    Vector3 newPos = currentPos + dir * (entity.grapplingHookSpeed.Value * Time.fixedDeltaTime);
+
+                    entity.ReplaceGrapplingHookCurrentPoint(newPos);
+                    LineRenderer lineRenderer = entity.grapplingHookLineRenderer.Value;
+                    lineRenderer.positionCount = 2;
+                    lineRenderer.SetPositions(new []{startPos, newPos});
+                }
             }
         }
     }

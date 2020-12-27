@@ -41,9 +41,11 @@ public class GrapplingHookHitTargetSystem : GameReactiveSystem
 
             if (results.Count > 0)
             {
-                RaycastHit2D hit = results[0];
                 GameEntity userEntity = _context.GetEntityWithId(grapplingHookEntity.grapplingHookUserId.Value);
+                userEntity.ReplaceCharacterState(CharacterState.Grappled);
+                grapplingHookEntity.isGrapplingHookHitTarget = true;
 
+                /*RaycastHit2D hit = results[0];
                 Vector2 characterBounds = userEntity.collider.Collider.size;
                 float newX;
                 float newY;
@@ -72,7 +74,7 @@ public class GrapplingHookHitTargetSystem : GameReactiveSystem
                 userEntity.RemoveUsedGrapplingHookId();
                 userEntity.isUseGrapplingHook = false;
                 
-                grapplingHookEntity.DestroyEntity();
+                grapplingHookEntity.DestroyEntity();*/
             }
         }
     }

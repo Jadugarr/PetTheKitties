@@ -13,4 +13,6 @@
     PreparingAction = 70,
     Acting = 80,
     Grappling = 90,
+    Grappled = 91,
+    Planted = 92,
 }

@@ -30,9 +30,22 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
         foreach (GameEntity characterEntity in characterGroup.GetEntities())
         {
             CharacterGroundStateData characterGroundStateData;
-            if (characterEntity.characterState.State != CharacterState.Jumping
-                && characterEntity.characterState.State != CharacterState.JumpEnding
-                && characterEntity.characterState.State != CharacterState.JumpStart)
+
+            if (characterEntity.characterState.State == CharacterState.Grappled)
+            {
+                characterGroundStateData.GroundNormal = Vector2.zero;
+                characterGroundStateData.CharacterGroundState = CharacterGroundState.Grappled;
+                characterGroundStateData.DistanceToGround = 0;
+            }
+            else if (characterEntity.characterState.State == CharacterState.Planted)
+            {
+                characterGroundStateData.GroundNormal = Vector2.zero;
+                characterGroundStateData.CharacterGroundState = CharacterGroundState.Planted;
+                characterGroundStateData.DistanceToGround = 0;
+            }
+            else if (characterEntity.characterState.State != CharacterState.Jumping
+                     && characterEntity.characterState.State != CharacterState.JumpEnding
+                     && characterEntity.characterState.State != CharacterState.JumpStart)
             {
                 CharacterSlopeState characterSlopeState =
                     GroundCheckUtil.CheckIfCharacterOnSlope(characterEntity, out Vector2 slopeNormal);

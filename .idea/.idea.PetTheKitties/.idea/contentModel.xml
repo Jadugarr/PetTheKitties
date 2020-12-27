@@ -202,6 +202,7 @@
               <e p="GameGrapplingDistanceComponent.cs" t="Include" />
               <e p="GameGrapplingHookCurrentPointComponent.cs" t="Include" />
               <e p="GameGrapplingHookEndPointComponent.cs" t="Include" />
+              <e p="GameGrapplingHookHitTargetComponent.cs" t="Include" />
               <e p="GameGrapplingHookLineComponent.cs" t="Include" />
               <e p="GameGrapplingHookLineRendererComponent.cs" t="Include" />
               <e p="GameGrapplingHookReticleComponent.cs" t="Include" />
@@ -448,6 +449,7 @@
               <e p="GrapplingDistanceComponent.cs" t="Include" />
               <e p="GrapplingHookCurrentPointComponent.cs" t="Include" />
               <e p="GrapplingHookEndPointComponent.cs" t="Include" />
+              <e p="GrapplingHookHitTargetComponent.cs" t="Include" />
               <e p="GrapplingHookLineComponent.cs" t="Include" />
               <e p="GrapplingHookLineRendererComponent.cs" t="Include" />
               <e p="GrapplingHookReticleComponent.cs" t="Include" />
@@ -469,6 +471,7 @@
               <e p="MoveReticleWithMouseSystem.cs" t="Include" />
               <e p="ProcessToggleGrappleInputSystem.cs" t="Include" />
               <e p="ProcessUseGrapplingHookInputSystem.cs" t="Include" />
+              <e p="PullCharacterToGrapplingHookSystem.cs" t="Include" />
               <e p="StartGrapplingSystem.cs" t="Include" />
               <e p="UseGrapplingHookSystem.cs" t="Include" />
             </e>
