@@ -468,6 +468,7 @@
               <e p="GrapplingHookExtendLineSystem.cs" t="Include" />
               <e p="GrapplingHookHitTargetSystem.cs" t="Include" />
               <e p="GrapplingHookReachedTargetSystem.cs" t="Include" />
+              <e p="KeepGrapplingHookStartingPointAtPlayerPositionSystem.cs" t="Include" />
               <e p="MoveReticleWithMouseSystem.cs" t="Include" />
               <e p="ProcessToggleGrappleInputSystem.cs" t="Include" />
               <e p="ProcessUseGrapplingHookInputSystem.cs" t="Include" />
