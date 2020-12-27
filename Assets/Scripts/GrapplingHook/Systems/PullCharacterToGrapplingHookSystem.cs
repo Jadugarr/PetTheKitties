@@ -25,9 +25,12 @@ public class PullCharacterToGrapplingHookSystem : GameExecuteSystem
         if (playerEntity != null && playerEntity.characterState.State == CharacterState.Grappled)
         {
             GameEntity hookEntity = _grapplingHookGroup.GetSingleEntity();
-            Vector2 dir = (hookEntity.grapplingHookCurrentPoint.Value - (Vector2)playerEntity.position.position).normalized;
+            if (hookEntity != null)
+            {
+                Vector2 dir = (hookEntity.grapplingHookCurrentPoint.Value - (Vector2)playerEntity.position.position).normalized;
             
-            playerEntity.ReplacePosition(playerEntity.position.position + (Vector3)(dir * Time.fixedDeltaTime));
+                playerEntity.ReplacePosition(playerEntity.position.position + (Vector3)(dir * Time.fixedDeltaTime));
+            }
         }
     }
 }

@@ -16,7 +16,7 @@ public class GrapplingHookReachedTargetSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        if (entity != null && entity.hasGrapplingHookCurrentPoint && entity.hasGrapplingHookEndPoint && entity.hasGrapplingHookUserId)
+        if (entity != null && entity.hasGrapplingHookCurrentPoint && entity.hasGrapplingHookEndPoint && entity.hasGrapplingHookUserId && entity.isGrapplingHookHitTarget == false)
         {
             GameEntity userEntity = _context.GetEntityWithId(entity.grapplingHookUserId.Value);
 

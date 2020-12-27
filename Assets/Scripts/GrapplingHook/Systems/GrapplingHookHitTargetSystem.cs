@@ -41,9 +41,13 @@ public class GrapplingHookHitTargetSystem : GameReactiveSystem
 
             if (results.Count > 0)
             {
+                Vector2 hitPoint = results[0].point;
                 GameEntity userEntity = _context.GetEntityWithId(grapplingHookEntity.grapplingHookUserId.Value);
                 userEntity.ReplaceCharacterState(CharacterState.Grappled);
                 grapplingHookEntity.isGrapplingHookHitTarget = true;
+                
+                grapplingHookEntity.ReplaceGrapplingHookCurrentPoint(hitPoint);
+                grapplingHookEntity.grapplingHookLineRenderer.Value.SetPosition(1, hitPoint);
 
                 /*RaycastHit2D hit = results[0];
                 Vector2 characterBounds = userEntity.collider.Collider.size;
