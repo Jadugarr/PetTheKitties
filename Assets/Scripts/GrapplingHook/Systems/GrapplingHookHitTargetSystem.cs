@@ -48,37 +48,6 @@ public class GrapplingHookHitTargetSystem : GameReactiveSystem
                 
                 grapplingHookEntity.ReplaceGrapplingHookCurrentPoint(hitPoint);
                 grapplingHookEntity.grapplingHookLineRenderer.Value.SetPosition(1, hitPoint);
-
-                /*RaycastHit2D hit = results[0];
-                Vector2 characterBounds = userEntity.collider.Collider.size;
-                float newX;
-                float newY;
-
-                if (direction.x >= 0)
-                {
-                    newX = hit.point.x - characterBounds.y / 2f;
-                }
-                else
-                {
-                    newX = hit.point.x + characterBounds.y / 2f;
-                }
-
-                if (direction.y >= 0)
-                {
-                    newY = hit.point.y - characterBounds.x / 2f;
-                }
-                else
-                {
-                    newY = hit.point.y + characterBounds.x / 2f;
-                }
-
-                Vector2 newPosition = new Vector2(newX, newY);
-                userEntity.ReplacePosition(newPosition);
-                
-                userEntity.RemoveUsedGrapplingHookId();
-                userEntity.isUseGrapplingHook = false;
-                
-                grapplingHookEntity.DestroyEntity();*/
             }
         }
     }

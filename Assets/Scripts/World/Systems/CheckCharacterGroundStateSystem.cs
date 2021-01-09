@@ -31,7 +31,14 @@ public class CheckCharacterGroundStateSystem : GameExecuteSystem
         {
             CharacterGroundStateData characterGroundStateData;
 
-            if (characterEntity.characterState.State == CharacterState.Grappled)
+            if (characterEntity.characterState.State == CharacterState.Grappling
+                && characterEntity.characterGroundState.Value == CharacterGroundState.Planted)
+            {
+                characterGroundStateData.GroundNormal = Vector2.zero;
+                characterGroundStateData.CharacterGroundState = CharacterGroundState.Planted;
+                characterGroundStateData.DistanceToGround = 0;
+            }
+            else if (characterEntity.characterState.State == CharacterState.Grappled)
             {
                 characterGroundStateData.GroundNormal = Vector2.zero;
                 characterGroundStateData.CharacterGroundState = CharacterGroundState.Grappled;

@@ -21,7 +21,7 @@ public class StartGrapplingSystem : GameReactiveSystem
 
     protected override bool Filter(GameEntity entity)
     {
-        return entity.characterState.State == CharacterState.Grappling && entity.isPlayer;
+        return entity != null && entity.hasCharacterState && entity.characterState.State == CharacterState.Grappling && entity.isPlayer;
     }
 
     protected override bool IsInValidState()

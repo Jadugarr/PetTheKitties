@@ -29,7 +29,7 @@ public class PullCharacterToGrapplingHookSystem : GameExecuteSystem
             {
                 Vector2 dir = (hookEntity.grapplingHookCurrentPoint.Value - (Vector2)playerEntity.position.position).normalized;
             
-                playerEntity.ReplacePosition(playerEntity.position.position + (Vector3)(dir * Time.fixedDeltaTime));
+                playerEntity.ReplacePosition(playerEntity.position.position + (Vector3)(dir * 10f * Time.fixedDeltaTime));
             }
         }
     }
